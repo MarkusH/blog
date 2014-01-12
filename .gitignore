@@ -1,0 +1,10 @@
+.*
+bower_components/
+build/
+node_modules/
+content.bak/
+theme/static/css/
+theme/static/js/
+
+! .gitignore
+! .gitmodules
