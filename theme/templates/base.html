@@ -1,9 +1,8 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    {% block head %}
-      <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-      <meta charset="utf-8" />
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
       {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
       {% endif %}
@@ -28,7 +27,7 @@
       {% if TAG_FEED_RSS and tag %}
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
       {% endif %}
-    {% endblock %}
+    {% block head %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>

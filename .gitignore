@@ -6,5 +6,7 @@ content.bak/
 theme/static/css/
 theme/static/js/
 
+production.ini
+
 ! .gitignore
 ! .gitmodules
