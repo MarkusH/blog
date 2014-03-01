@@ -1,0 +1,35 @@
+===================
+KDE 4.10 RC1 is out
+===================
+
+:tags: Arch Linux, KDE
+:author: Markus Holtermann
+
+
+Two days ago the `KDE`_ team `released`_ the first release candidate of the
+*Plasma Workspaces* towards version 4.10. The biggest changes that directly
+catches ones eyes are the graphical modifications and improvements. For me they
+look much more seamless. I also like the new wallpaper. Looking under to hood,
+there are many changes. I just want to point out my most favorite ones:
+
+* A new `QtQuick`_ based screen locker.
+* Scriptable effects – One can easily write desktop effects without knowledge of
+  C/C++
+* The notification applet is now based on `QML`_ and feels much smoother
+* The Nepomuk Indexer has been rewritten and is much faster as far as I can see.
+
+
+Of course there are many, many more changes.
+
+.. gallery::
+   :small: 1
+
+   .. image:: /images/kde410tb.png
+      :alt: KDE 4.10 RC1
+      :target: /images/kde410.png
+
+
+.. _KDE: http://kde.org/
+.. _released: http://kde.org/announcements/announce-4.10-rc1.php
+.. _QtQuick: http://qt.digia.com/Product/qt-quick/
+.. _QML: http://en.wikipedia.org/wiki/QML
