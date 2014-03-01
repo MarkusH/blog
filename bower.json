@@ -1,0 +1,17 @@
+{
+  "name": "homepage",
+  "version": "0.0.1",
+  "authors": [
+    "Markus Holtermann <info@markusholtermann.eu>"
+  ],
+  "license": "BSD",
+  "homepage": "http://markusholtermann.eu",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+  <header>
+    <h1 class="entry-title"><a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
+           title="Permalink to {{ page.title|striptags }}">{{ page.title }}</a></h1>
+    {% if page.translations %}
+      <div class="post-info">
+        <div class="medium-offset-10 large-offset-10 medium-2 large-2 columns show-for-medium-up">
+          <i class="fa fa-flag-checkered"></i> {% for translation in page.translations -%}
+              <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+            {%- endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </header>
+  {{ page.content }}
+</article>
+{% endblock %}

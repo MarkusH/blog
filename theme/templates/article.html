@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head %}
+  <meta name="keywords" contents="{{ article.keywords|join(' ') }}" />
+  <meta name="description" contents="{{ article.description }}" />
+  <meta name="tags" contents="{{ article.tags|join(' ') }}" />
+{% endblock %}
+
+{% block content %}
+<article>
+  {% include 'article_infos.html' %}
+  {{ article.content }}
+  {% include 'article_footer.html' %}
+</article>
+{% endblock %}

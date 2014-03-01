@@ -7,17 +7,19 @@ env.content_path = 'content'
 env.deploy_path = 'build'
 DEPLOY_PATH = env.deploy_path
 
-# Remote server configuration
-production = 'markusholtermann.eu'
 dest_path = '/srv/http/markusholtermann.eu'
 
 
 def clean():
     if os.path.isdir(DEPLOY_PATH):
         local('rm -rf {deploy_path}/*'.format(**env))
-        local('mkdir {deploy_path}'.format(**env))
+        local('mkdir -p {deploy_path}'.format(**env))
+
+def grunt():
+    local('./node_modules/grunt-cli/bin/grunt')
 
 def build():
+    grunt()
     local('pelican -o {deploy_path} -s pelicanconf.py {content_path}'.format(**env))
 
 def rebuild():
@@ -35,13 +37,17 @@ def reserve():
     serve()
 
 def preview():
+    grunt()
     local('pelican -o {deploy_path} -s publishconf.py {content_path}'.format(**env))
 
-@hosts(production)
-def publish():
-    local('pelican -o {deploy_path} -s publishconf.py {content_path}'.format(**env))
+def rsync():
     project.rsync_project(
         remote_dir=dest_path,
         local_dir=DEPLOY_PATH.rstrip('/') + '/',
-        delete=True
+        delete=True,
+        ssh_opts='-i /home/markus/.ssh/id_rsa-vserver',
     )
+
+def publish():
+    preview()
+    rsync()

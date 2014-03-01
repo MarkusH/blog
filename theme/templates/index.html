@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  {% for article in articles_page.object_list %}
+    <article>
+      {% include 'article_infos.html' %}
+      {{ article.content }}
+      {% include 'article_footer.html' %}
+    </article>{% if not loop.last %}<hr>{% endif %}
+  {% endfor %}
+  {% include 'pagination.html' %}
+{% endblock %}

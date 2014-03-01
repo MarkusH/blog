@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+@import "_settings";
+
+// @import "foundation/components/accordion";
+// @import "foundation/components/alert-boxes";
+@import "foundation/components/block-grid";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/button-groups";
+// @import "foundation/components/buttons";
+@import "foundation/components/clearing";
+// @import "foundation/components/dropdown";
+// @import "foundation/components/dropdown-buttons";
+// @import "foundation/components/flex-video";
+// @import "foundation/components/forms";
+@import "foundation/components/grid";
+@import "foundation/components/inline-lists";
+// @import "foundation/components/joyride";
+// @import "foundation/components/keystrokes";
+@import "foundation/components/labels";
+// @import "foundation/components/magellan";
+// @import "foundation/components/orbit";
+@import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/reveal";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/split-buttons";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+@import "foundation/components/tables";
+// @import "foundation/components/tabs";
+@import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+@import "foundation/components/top-bar";
+@import "foundation/components/type";
+// @import @import "foundation/components/offcanvas";h
+@import "foundation/components/visibility";
+
+article {
+  margin-top: 3rem;
+
+  footer {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  div.line-block {
+    margin-bottom: $paragraph-margin-bottom;
+  }
+
+  @import "_highlight";
+
+  .citation {
+    border: none;
+    margin-bottom: 0;
+    .label {
+      background-color: #fff;
+      color: #008cba;
+    }
+  }
+
+  .post-info {
+    @include grid-row();
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    .label {
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  .clearing-container > .carousel > .clearing-thumbs > li {
+    clear: none
+  }
+  
+  @media #{$small-only} {
+    .post-info {
+      .columns {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+
+  @media #{$medium-up} {
+    p {
+      letter-spacing: 1px;
+      word-spacing: 3px;
+    }
+    h2, h3, h4, h5, h6 {
+      margin-top: 2rem;
+      &:hover:after {
+        color: darken($secondary-color, 10);
+        font-family: 'FontAwesome';
+        font-size: 1rem;
+        content: "\f13d";
+      }
+    }
+  }
+}
+
+@media #{$medium-up} {
+  img {
+    &.align-left {
+      float: left;
+    }
+    &.align-right {
+      float: right;
+    }
+  }
+}
+
+#footer {
+  margin-top: 3rem;
+  text-align: center;
+}
