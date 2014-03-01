@@ -14,6 +14,9 @@ TIMEZONE = 'Europe/Berlin'
 
 DEFAULT_LANG = 'en'
 
+PLUGIN_PATH = os.path.join(BASE_DIR, 'pelican-plugins')
+PLUGINS = ['plugins']
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -43,6 +46,8 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 PAGE_DIR = 'pages'
 STATIC_PATHS = ('images', )
+
+THEME = os.path.join(BASE_DIR, 'theme')
 
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})__((?P<lang>[a-z]{2})__)?(?P<slug>.*)'
 
