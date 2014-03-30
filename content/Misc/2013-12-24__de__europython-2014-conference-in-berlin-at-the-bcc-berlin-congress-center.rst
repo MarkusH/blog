@@ -104,7 +104,7 @@ Positionen aktiv zu werden. Die PyLadies Berlin haben zurzeit rund 100
 Mitglieder.
 
 
-Quelle: `ep2014.europython.eu`_, 12. Dez 2013, 23:30
+Quelle: `ep2014.europython.eu`_, 12. Dez 2013, 23:30 CET
 
 
 .. _ep2014.europython.eu: https://ep2014.europython.eu/en/conference/press-releases/europython-2014-at-bcc-berlin/

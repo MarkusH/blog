@@ -102,7 +102,7 @@ engage with and take an active role within the Python community as developers.
 PyLadies Berlin has around 100 members.
 
 
-Source: `ep2014.europython.eu`_, Dec 12, 2013, 11:30pm
+Source: `ep2014.europython.eu`_, Dec 12, 2013, 11:30pm CET
 
 
 .. _ep2014.europython.eu: https://ep2014.europython.eu/en/conference/press-releases/europython-2014-at-bcc-berlin/
