@@ -76,7 +76,25 @@ article {
   }
 
   .clearing-container > .carousel > .clearing-thumbs > li {
-    clear: none
+    clear: none;
+  }
+
+  :not(.clearing-container) > .carousel > .clearing-thumbs > li {
+    &.noclear {
+      clear: none;
+    }
+    &.span50 {
+      width: 50%;
+    }
+    &.span66 {
+      width: 66.6666666666666%;
+    }
+    &.span75 {
+      width: 75%;
+    }
+    &.span100 {
+      width: 100%;
+    }
   }
   
   @media #{$small-only} {

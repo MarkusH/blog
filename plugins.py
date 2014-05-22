@@ -39,6 +39,15 @@ class Gallery(Directive):
         for fig in figures:
             fig.attributes['classes'].append('th')
             li = nodes.list_item()
+            span = []
+            try:
+                span.extend(fig.children[0].attributes['classes'])
+            except IndexError:
+                try:
+                    span.extend(fig.attributes['classes'])
+                except IndexError:
+                    pass
+            li.attributes['classes'].extend(span)
             li.append(fig)
             cont.append(li)
         return [cont]
