@@ -23,7 +23,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS =  (
+LINKS = (
     ('Arch Linux', 'http://archlinux.org/'),
     ('aufgebauscht', 'http://blog.fbausch.de/'),
     ('Gentoo', 'http://www.gentoo.org/'),

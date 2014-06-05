@@ -15,30 +15,38 @@ def clean():
         local('rm -rf {deploy_path}/*'.format(**env))
         local('mkdir -p {deploy_path}'.format(**env))
 
+
 def grunt():
     local('./node_modules/grunt-cli/bin/grunt')
+
 
 def build():
     grunt()
     local('pelican -o {deploy_path} -s pelicanconf.py {content_path}'.format(**env))
 
+
 def rebuild():
     clean()
     build()
 
+
 def regenerate():
     local('pelican -o {deploy_path}  -r -s pelicanconf.py {content_path}'.format(**env))
 
+
 def serve():
     local('cd {deploy_path} && python -m SimpleHTTPServer'.format(**env))
+
 
 def reserve():
     build()
     serve()
 
+
 def preview():
     grunt()
     local('pelican -o {deploy_path} -s publishconf.py {content_path}'.format(**env))
+
 
 def rsync():
     project.rsync_project(
@@ -47,6 +55,7 @@ def rsync():
         delete=True,
         ssh_opts='-i /home/markus/.ssh/id_rsa-vserver',
     )
+
 
 def publish():
     preview()
