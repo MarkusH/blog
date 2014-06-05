@@ -22,7 +22,7 @@ knew DjangoCon Europe 2014 was going to be in France from the beginning, it
 took some months until the announcement was made that the event would happen
 somewhere on the Côte d'Azur. The community, though, was kept in the dark about
 the exact location for a few more months. Eventually the *Île des Embiez*, a
-small island between Toulon and Marseille, was announce and *djangoisland*
+small island between Toulon and Marseille, was announced and *djangoisland*
 born.
 
 
