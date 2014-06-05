@@ -5,6 +5,10 @@ The conference island -- DjangoCon Europe 2014
 :tags: Community, Django, DjangoCon
 :author: Markus Holtermann
 
+.. image:: /images/djangoconeu2014/logo.png
+   :align: right
+   :alt: DjangoCon 2014 -- Île des Embiez
+
 It has been a while since I had the time to write another blog post. As you
 might have noticed, I'm an organizer of 2014's EuroPython in Berlin. My job as
 the web team leader requires some responsibility I'm eager to fulfill,
@@ -227,6 +231,8 @@ License
 
    The photos in this blog post are licensed under a `Creative Commons
    Attribution-ShareAlike 4.0 International License.`_.
+
+   The DjangoCon 2014 logo is from http://2014.djangocon.eu/
 
 
 .. _Advanced Web Typography:
