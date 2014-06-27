@@ -14,7 +14,7 @@ TIMEZONE = 'Europe/Berlin'
 
 DEFAULT_LANG = 'en'
 
-PLUGIN_PATH = os.path.join(BASE_DIR, 'pelican-plugins')
+PLUGIN_PATHS = (os.path.join(BASE_DIR, 'pelican-plugins'),)
 PLUGINS = ['plugins']
 
 # Feed generation is usually not desired when developing
@@ -44,8 +44,8 @@ RELATIVE_URLS = True
 
 DISPLAY_CATEGORIES_ON_MENU = False
 
-PAGE_DIR = 'pages'
-STATIC_PATHS = ('images', )
+PAGE_PATHS = ('pages',)
+STATIC_PATHS = ('images',)
 
 THEME = os.path.join(BASE_DIR, 'theme')
 
