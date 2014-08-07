@@ -116,17 +116,40 @@ article {
         content: "\f13d";
       }
     }
+    .margin-left {
+      margin-left: $paragraph-margin-bottom;
+    }
+    .margin-right {
+      margin-right: $paragraph-margin-bottom;
+    }
+    .margin-bottom {
+      margin-bottom: $paragraph-margin-bottom;
+    }
+    img, div {
+      &.align-left {
+        float: left;
+      }
+      &.align-right {
+        float: right;
+      }
+    }
+    img.align-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    div.figure.align-center {
+      text-align: center;
+      p {
+        text-align: center;
+      }
+    }
   }
 }
 
-@media #{$medium-up} {
-  img {
-    &.align-left {
-      float: left;
-    }
-    &.align-right {
-      float: right;
-    }
+td {
+  ol, ul {
+    margin-bottom: 0;
   }
 }
 
