@@ -4,6 +4,7 @@ bower_components/
 build/
 cache/
 content.bak/
+dist
 node_modules/
 pelican-plugins/
 theme/static/css/
