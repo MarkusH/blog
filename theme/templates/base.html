@@ -73,13 +73,8 @@
     <script src="{{ SITEURL }}/theme/js/foundation.js"></script>
     <script src="{{ SITEURL }}/theme/js/foundation.clearing.js"></script>
     <script src="{{ SITEURL }}/theme/js/foundation.topbar.js"></script>
-    <script>
-      $(document).foundation();
-      $.each($('h2,h3,h4,h5,h6', $('article')), function(e, i) {
-        var link = $('<a></a>');
-        link.attr('href', '#' + $(i).parent().attr('id'));
-        $(i).wrapInner(link);
-      })
-    </script>
+    <script>$(document).foundation();$.each($("h2,h3,h4,h5,h6",$("article")),function(e,t){var n=$("<a></a>");n.attr("href","#"+$(t).parent().attr("id"));$(t).wrapInner(n)});</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({jax:["input/TeX","output/SVG"],extensions:["tex2jax.js"],TeX:{extensions:["AMSmath.js","AMSsymbols.js"]},SVG:{scale:90},tex2jax:{inlineMath: [['$$','$$']],displayMath:[]}})</script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
   </body>
 </html>

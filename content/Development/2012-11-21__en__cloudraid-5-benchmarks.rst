@@ -2,9 +2,8 @@
 [CloudRAID] 5. Benchmarks
 =========================
 
-
-:tags: Apache, C/C++, Cluster, Eclipse, Encryption, Java, Network, Security,
-   Server, Studium
+:tags: Apache, C/C++, CloudRAID, Cluster, Eclipse, Encryption, Java, Network,
+   Security, Server, Studium
 :author: Markus Holtermann
 
 
@@ -20,15 +19,16 @@ even more one of the most important piece, the following chapter will show some
 performance tests and benchmark results.
 
 
-5.1. Environment
-================
+5.1. Environments
+-----------------
 
 In order to make the benchmarks reproducible this chapter will set up some
 benchmark environments. They define the hardware as well as the software that is
 used for the benchmark tests.
 
-**Environment 1:**
-------------------
+
+Environment 1
+~~~~~~~~~~~~~~
 
 ================  ================================================
 CPU               Intel® Core™ 2 Duo CPU P8600 @ 2.40 GHz
@@ -41,8 +41,8 @@ Operating System  Arch Linux 64bit
 ================  ================================================
 
 
-**Environment 2:**
-------------------
+Environment 2
+~~~~~~~~~~~~~
 
 ================  ================================================
 CPU               Intel® Core™ 2 Duo CPU E6600 @ 2.40 GHz
@@ -56,8 +56,8 @@ Operating System  Arch Linux 64bit
 ================  ================================================
 
 
-**Environment 3:**
-------------------
+Environment 3
+~~~~~~~~~~~~~
 
 ================  ================================================
 CPU               AMD Phenom™ II X6 1090T
@@ -68,8 +68,8 @@ Operating System  Arch Linux 64bit
 ================  ================================================
 
 
-**Environment 4:**
-------------------
+Environment 4
+~~~~~~~~~~~~~
 
 ================  ================================================
 CPU               Intel® Core™ i7 920 @ 2.67 GHz
@@ -81,7 +81,7 @@ Operating System  Arch Linux 64bit
 
 
 5.2. Comparison of Java, Python, and C
-======================================
+--------------------------------------
 
 One of the key functions of ``CloudRAID`` is to ensure data-security and
 data-safety. Therefore ``CloudRAID`` uses the previously explained ARC4
@@ -144,7 +144,7 @@ changed and GCC was slightly faster than Clang.
 
 
 5.3. RAID Level 5 Benchmarks
-============================
+----------------------------
 
 To get the performance of the final implementation, some benchmarks on the
 environments, that have been defined in 6.1 on page 54, have been performed.
@@ -157,7 +157,7 @@ anomalies for large files.
 
 
 5.3.1. Split
-------------
+~~~~~~~~~~~~
 
 Figure 1 shows the average run-time for the split process in the given benchmark
 environments. One can see that for the files 100 kiB to 100 MiB the run-time
@@ -195,7 +195,7 @@ Figure 2: Split statistics for Tower 2 for huge files
 
 
 5.3.2. Merge
-------------
+~~~~~~~~~~~~
 
 After a file has been split into its three *device files* and regarding
 information has been stored in the *meta data file*, the benchmark tool combines
@@ -258,7 +258,7 @@ Figure 4: Merge statistics for third environment for huge files
 
 
 5.3.3. Comparison
------------------
+~~~~~~~~~~~~~~~~~
 
 While the figures above only show the compared speed for either split or merge
 for all four benchmark environments, figure 5 illustrates the relative speed
@@ -295,6 +295,7 @@ Sources
 .. [Hol12] Markus Holtermann. Bachelorthesis: Testing Approach for an in-kernel Crypto Functionality – For Linux on System z, June 4, 2012. *(unpublished)* 
 
 
-.. _CloudRAID: http://markusholtermann.eu/article/cloudraid-1-introduction/
+.. _CloudRAID:
+   {filename}/Development/2012-10-28__en__cloudraid-1-introduction.rst
 .. _PyPy: http://pypy.org/
 .. _Clang: http://clang.llvm.org/

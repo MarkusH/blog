@@ -8,9 +8,9 @@ docutils==0.11
 ecdsa==0.11
 feedgenerator==1.7
 paramiko==1.14.0
--e git+git@github.com:getpelican/pelican.git@7fabd712a1b91eeb9a71f3f4b10d4c979acfe799#egg=pelican-master
+pelican==3.4.0
 pycrypto==2.6.1
 pytz==2014.4
 six==1.7.2
-smartypants==1.8.3
-typogrify==2.0.1
+smartypants==1.8.6
+typogrify==2.0.4

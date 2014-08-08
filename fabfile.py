@@ -58,5 +58,6 @@ def rsync():
 
 
 def publish():
+    clean()
     preview()
     rsync()

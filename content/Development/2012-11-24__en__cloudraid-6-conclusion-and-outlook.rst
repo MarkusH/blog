@@ -2,8 +2,8 @@
 [CloudRAID] 6. Conclusion and Outlook
 =====================================
 
-:tags: Apache, Cluster, Eclipse, Encryption, Java, Network, Security, Server,
-   Studium
+:tags: Apache, CloudRAID, Cluster, Eclipse, Encryption, Java, Network,
+   Security, Server, Studium
 :author: Markus Holtermann
 
 
@@ -15,5 +15,7 @@ This is the last part of the student research paper about ``CloudRAID``. Florian
 ideas that could make ``CloudRAID`` more convenient, e.g. adding a search
 possibility.
 
-.. _CloudRAID: http://markusholtermann.eu/article/cloudraid-1-introduction/
-.. _summarizes the pros and cons: http://blog.fbausch.de/2012/11/24/cloudraid-6-conclusion-and-outlook/
+.. _CloudRAID:
+   {filename}/Development/2012-10-28__en__cloudraid-1-introduction.rst
+.. _summarizes the pros and cons:
+   http://blog.fbausch.de/2012/11/24/cloudraid-6-conclusion-and-outlook/

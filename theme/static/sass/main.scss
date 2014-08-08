@@ -138,10 +138,18 @@ article {
       margin-left: auto;
       margin-right: auto;
     }
-    div.figure.align-center {
-      text-align: center;
-      p {
+    div.figure {
+      &.align-left p {
+        margin-right: $paragraph-margin-bottom;
+      }
+      &.align-right p {
+        margin-left: $paragraph-margin-bottom;
+      }
+      &.align-center {
         text-align: center;
+        p {
+          text-align: center;
+        }
       }
     }
   }
