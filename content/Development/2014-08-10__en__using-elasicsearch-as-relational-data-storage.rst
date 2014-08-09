@@ -7,9 +7,9 @@ Using Elasticsearch as Relational Data Storage
 :status: draft
 
 
-This lenghty blog post is about a university project Alex, a fellow student at
+This lengthy blog post is about a university project Alex, a fellow student at
 my university, and I have been developing over the last months as part of our
-Master studies. We are both quite experienced software developers focussing on
+Master studies. We are both quite experienced software developers focusing on
 application and web development. As part of a university project we had
 absolutely no requirements on a coding language or styling. As the only
 requirement was being a web site and we both knew absolutely nothing about on
@@ -34,7 +34,7 @@ and *Data Journalism*. The city of Berlin offers a `similar service`_ already,
 although the user experience is just *"meh"*.
 
 We took the data set the group acquired in the last semester and normalized it
-even more. We also performed some addtional cleaning. For example if a URL was
+even more. We also performed some additional cleaning. For example if a URL was
 given for a school we checked whether that URL was reachable or not and
 accordingly removed those URLs that couldn't be reached.
 
@@ -46,11 +46,11 @@ Looking at the problem from a system architects point of view clearly shows
 relations between many parts. While a school has a single address it might have
 multiple types, like elementary school and high school. A school probably
 teaches multiple languages, not only German but English, French, Dutch or
-Chineese too. Thus a relational data store / database like PostgreSQL or MySQL
+Chinese too. Thus a relational data store / database like PostgreSQL or MySQL
 would be one's first choices.
 
 Contrary to what a system architect normally would do we chose a technology not
-inteded for the given use case: a vanilla `Elasticsearch`_ instance. We chose
+intended for the given use case: a vanilla `Elasticsearch`_ instance. We chose
 this technology for several reasons:
 
 * We both professionally develop software using SQL databases. Therefore it was
@@ -59,7 +59,7 @@ this technology for several reasons:
 * The data set contains a lot of optional data. So there was a requirement for
   a "dynamic" data model for the schools.
 * But most important: we wanted to learn something new that we could
-  potentionally use in our further as developers
+  potentially use in our further as developers
 * And last but not least we wanted to figure out if one can only use
   Elasticsearch, as this is way outside its common use cases.
 
@@ -74,7 +74,7 @@ CSV format. Later these CSV files are used to import the data into the
 Elasticsearch instance.
 
 Before doing this we created a data model bringing some of the features of a
-realtional database into Elasticsearch. Additionally this step is used to set
+relational database into Elasticsearch. Additionally this step is used to set
 up and configure how Elasticsearch handles the data, mainly (not) analyzing and
 (not) indexing.
 
@@ -129,8 +129,8 @@ Types`_ for two reasons:
     nested document is stored in the same Lucene block as the main document.
     [ES13]_
 
-Although writing may require reindexing the entire document, this is no problem
-for our use case as the data is imported once.
+Although writing may require re-indexing the entire document, this is no
+problem for our use case as the data is imported once.
 
 The actual import was done by a small Python script using `Click`_ that
 connects to the Elasticsearch instance creates the necessary document structure
@@ -141,17 +141,17 @@ profiles, etc.).
 The Front-End
 =============
 
-We are no designers. But we wanted to create a webpage that is both faster and
+We are no designers. But we wanted to create a web-page that is both faster and
 more functional than what the original web page of the city of Berlin offers.
 We did not target mobile browsers in particular but if we could support them in
 a reasonable way, then we would do that. Markus is a fan of `Zurb Foundation`_,
 therefore we decided to use this CSS framework as a starting point for our
 layout.
 
-Since our datastore is an Elasticsearch instance we had the possibility to
+Since our data-store is an Elasticsearch instance we had the possibility to
 retrieve data directly from the browser via JSON requests. Therefore we decided
 to create a single page application and eventually chose AngularJS. We also
-delved a little bit into the world of Website frontend development tooling by
+delved a little bit into the world of Website front-end development tooling by
 using the current state of the art Bower, Grunt and Compass tooling.
 
 Our app has three important components:
@@ -220,13 +220,13 @@ using a ``HTTP POST`` query to the search URL with a body like:
         }
     }
 
-The idea is to aggregate all distinc values available for various fields. The
+The idea is to aggregate all distinct values available for various fields. The
 ``nested`` block does that for the district (as this is a nested object), the
-``branches`` block exemplarily shows how it is done for direct attributes.
+``branches`` block exemplary shows how it is done for direct attributes.
 
 The ``"size": 0`` definition in the outer block tells Elasticsearch to not
 return any results entries. Inside the aggregation definition it makes
-Elasticsearch return all distinc values.
+Elasticsearch return all distinct values.
 
 
 The Map
@@ -243,7 +243,7 @@ The detail page is quite straightforward. One requirement we defined for the
 detail page was, that we should be able to provide a deep linking option. This
 was actually quite easy to implement using the `ngRoute`_ module of AngularJS. 
 
-The url is defined to look like this: "domain.de/#/schools/BSN". The BSN is a
+The URL is defined to look like this: "domain.de/#/schools/BSN". The BSN is a
 unique identifier for each school in Berlin (we assume it stands for Berlin
 School Number). The ``ngRoute`` module allows to specify parameter captures in
 the route definition, so it's very easy to access parts of the current URL in
@@ -272,7 +272,7 @@ Deployment
 
 As already stated above, we chose a way for the implementation that lets us
 circumvent the usage of an application server (as it would be needed for Java
-or Python). Instead the page only requires a Webserver and Elasticsearch to
+or Python). Instead the page only requires a webserver and Elasticsearch to
 run.
 
 

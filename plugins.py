@@ -89,7 +89,7 @@ def patch_typogrify(readers):
     except ImportError:
         return
 
-    def wrapper(text, ignore_tags=None):
+    def typogrify_wrapper(text, ignore_tags=None):
         from typogrify.filters import _typogrify
         ignore_tags = ignore_tags or []
         ignore_tags.append('math')
@@ -97,7 +97,20 @@ def patch_typogrify(readers):
 
     if not hasattr(filters, '_typogrify'):
         setattr(filters, '_typogrify', getattr(filters, 'typogrify'))
-        setattr(filters, 'typogrify', wrapper)
+        setattr(filters, 'typogrify', typogrify_wrapper)
+
+    def smartypants_wrapper(text):
+        try:
+            import smartypants
+        except ImportError:
+            raise TypogrifyError("Error in {% smartypants %} filter: The Python smartypants library isn't installed.")
+        else:
+            attr = smartypants.default_smartypants_attr | smartypants.Attr.w
+            output = smartypants.smartypants(text, attr=attr)
+            return output
+
+    setattr(filters, 'smartypants', smartypants_wrapper)
+
 
 
 def register():
