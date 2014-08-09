@@ -66,6 +66,7 @@ local mirror and would run git-fetch afterwards.
 Enjoy the script.
 
 
-.. _how to install gitolite: http://markusholtermann.eu/article/my-own-git-server-installing-gitolite/
+.. _how to install gitolite:
+   {filename}/Linux/2011-09-16__en__my-own-git-server-installing-gitolite.rst
 .. _mirroring gitolite: http://noqqe.de/blog/2013/02/17/mirroring-gitolite/
 .. _man (1) page to git-fetch: http://linux.die.net/man/1/git-fetch

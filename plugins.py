@@ -6,6 +6,7 @@ from docutils.parsers.rst import directives, Directive
 from docutils.writers.html4css1 import HTMLTranslator
 
 from pelican import signals
+from pelican.readers import PelicanHTMLTranslator
 
 
 class GalleryNode(nodes.bullet_list):
@@ -61,11 +62,44 @@ def _depart_GalleryNode(self, node):
     self.body.append('</ul>\n')
 
 
+def visit_math(self, node, math_env=''):
+    try:
+        self._visit_math(node, math_env)
+    except nodes.SkipNode:
+        # content processed
+        if '</div>' in self.body[-1] and '<div class="math">' in self.body[-4]:
+            self.body[-1] = '</math>\n'
+            self.body[-4] = '<math>\n'
+    raise nodes.SkipNode
+
+
 def register_rst_directives(readers):
     directives.register_directive('gallery', Gallery)
     setattr(HTMLTranslator, 'visit_GalleryNode', _visit_GalleryNode)
     setattr(HTMLTranslator, 'depart_GalleryNode', _depart_GalleryNode)
 
+    if not hasattr(HTMLTranslator, '_visit_math'):
+        setattr(HTMLTranslator, '_visit_math', getattr(HTMLTranslator, 'visit_math'))
+        setattr(HTMLTranslator, 'visit_math', visit_math)
+
+
+def patch_typogrify(readers):
+    try:
+        from typogrify import filters
+    except ImportError:
+        return
+
+    def wrapper(text, ignore_tags=None):
+        from typogrify.filters import _typogrify
+        ignore_tags = ignore_tags or []
+        ignore_tags.append('math')
+        return _typogrify(text, ignore_tags=ignore_tags)
+
+    if not hasattr(filters, '_typogrify'):
+        setattr(filters, '_typogrify', getattr(filters, 'typogrify'))
+        setattr(filters, 'typogrify', wrapper)
+
 
 def register():
     signals.readers_init.connect(register_rst_directives)
+    signals.readers_init.connect(patch_typogrify)

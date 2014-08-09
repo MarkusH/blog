@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(__file__)
 
 AUTHOR = 'Markus Holtermann'
 SITENAME = 'markusholtermann.eu'
@@ -62,3 +62,7 @@ PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = PAGE_URL + 'index.html'
 PAGE_LANG_URL = '{lang}/' + PAGE_URL
 PAGE_LANG_SAVE_AS = PAGE_LANG_URL + 'index.html'
+
+DOCUTILS_SETTINGS = {
+    'math_output': 'MathJAX',
+}

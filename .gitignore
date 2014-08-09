@@ -1,8 +1,12 @@
 .*
+*.egg-info
 bower_components/
 build/
-node_modules/
+cache/
 content.bak/
+dist
+node_modules/
+pelican-plugins/
 theme/static/css/
 theme/static/js/
 

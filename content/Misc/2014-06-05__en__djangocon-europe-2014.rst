@@ -8,6 +8,7 @@ The conference island -- DjangoCon Europe 2014
 .. image:: /images/djangoconeu2014/logo.png
    :align: right
    :alt: DjangoCon 2014 -- Île des Embiez
+   :class: margin-left
 
 It has been a while since I had the time to write another blog post. As you
 might have noticed, I'm an organizer of 2014's EuroPython in Berlin. My job as

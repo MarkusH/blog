@@ -2,8 +2,8 @@
 [CloudRAID] 4. Implementation (Continuation 2)
 ==============================================
 
-
-:tags: Apache, Cluster, Eclipse, Encryption, Java, Security, Server, Studium
+:tags: Apache, CloudRAID, Cluster, Eclipse, Encryption, Java, Security, Server,
+   Studium
 :author: Markus Holtermann
 
 
@@ -15,10 +15,11 @@ After the implementation of the `CloudRAID backend has been introduced`_ and the
 the `compression API and the client application`_ on his blog in a new post.
 
 
-.. _CloudRAID: http://markusholtermann.eu/article/cloudraid-1-introduction/
+.. _CloudRAID:
+   {filename}/Development/2012-10-28__en__cloudraid-1-introduction.rst
 .. _CloudRAID backend has been introduced:
-   http://markusholtermann.eu/article/cloudraid-4-implementation/
+   {filename}/Development/2012-11-13__en__cloudraid-4-implementation.rst
 .. _specification of the REST API endpoints:
-   http://markusholtermann.eu/article/cloudraid-4-implementation-continuation/
+   {filename}/Development/2012-11-15__en__cloudraid-4-implementation-continuation.rst
 .. _compression API and the client application:
-   http://blog.fbausch.de/2012/11/18/cloudraid-4-implementation-continuation/
+   http://blog.fbausch.de/cloudraid-4-implementation-continuation/

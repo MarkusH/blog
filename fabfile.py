@@ -5,13 +5,10 @@ import os
 # Local path configuration (can be absolute or relative to fabfile)
 env.content_path = 'content'
 env.deploy_path = 'build'
-DEPLOY_PATH = env.deploy_path
-
-dest_path = '/srv/http/markusholtermann.eu'
 
 
 def clean():
-    if os.path.isdir(DEPLOY_PATH):
+    if os.path.isdir(env.deploy_path):
         local('rm -rf {deploy_path}/*'.format(**env))
         local('mkdir -p {deploy_path}'.format(**env))
 
@@ -49,14 +46,16 @@ def preview():
 
 
 def rsync():
+    env.deploy_path = 'dist'
     project.rsync_project(
-        remote_dir=dest_path,
-        local_dir=DEPLOY_PATH.rstrip('/') + '/',
+        remote_dir=env.dest_path,
+        local_dir=env.deploy_path.rstrip('/') + '/',
         delete=True,
         ssh_opts='-i /home/markus/.ssh/id_rsa-vserver',
     )
 
 
 def publish():
+    env.deploy_path = 'dist'
     preview()
     rsync()

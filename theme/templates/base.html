@@ -29,6 +29,17 @@
       {% endif %}
     {% block head %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gruppo|Merriweather:400,300:Oxygen+Mono">
+    <script src="{{ SITEURL }}/theme/js/modernizr.js"></script>
+    <script src="{{ SITEURL }}/theme/js/jquery.js"></script>
+    <script src="{{ SITEURL }}/theme/js/foundation.js"></script>
+    <script src="{{ SITEURL }}/theme/js/foundation.clearing.js"></script>
+    <script src="{{ SITEURL }}/theme/js/foundation.topbar.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({jax:["input/TeX","output/SVG"],extensions:["tex2jax.js"],TeX:{extensions:["AMSmath.js","AMSsymbols.js"]},SVG:{scale:90},tex2jax:{inlineMath: [['$$','$$']],displayMath:[]}})</script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
   </head>
   <body>
     <div class="row">
@@ -64,22 +75,6 @@
         <p>The content is <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
       </div>
     </div>
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gruppo|Merriweather:400,300:Oxygen+Mono">
-    <script src="{{ SITEURL }}/theme/js/modernizr.js"></script>
-    <script src="{{ SITEURL }}/theme/js/jquery.js"></script>
-    <script src="{{ SITEURL }}/theme/js/foundation.js"></script>
-    <script src="{{ SITEURL }}/theme/js/foundation.clearing.js"></script>
-    <script src="{{ SITEURL }}/theme/js/foundation.topbar.js"></script>
-    <script>
-      $(document).foundation();
-      $.each($('h2,h3,h4,h5,h6', $('article')), function(e, i) {
-        var link = $('<a></a>');
-        link.attr('href', '#' + $(i).parent().attr('id'));
-        $(i).wrapInner(link);
-      })
-    </script>
+    <script>$(document).foundation();$.each($("h2,h3,h4,h5,h6",$("article")),function(e,t){var n=$("<a></a>");n.attr("href","#"+$(t).parent().attr("id"));$(t).wrapInner(n)});</script>
   </body>
 </html>
