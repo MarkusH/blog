@@ -4,11 +4,10 @@ Using Elasticsearch as Relational Data Storage
 
 :tags: AngularJS, Elasticsearch
 :authors: Alexander Grießer, Markus Holtermann
-:status: draft
 
 
-This lengthy blog post is about a university project Alex, a fellow student at
-my university, and I have been developing over the last months as part of our
+This blog post is about a university project Alex, a fellow student at my
+university, and I have been developing over the last months as part of our
 Master studies. We are both quite experienced software developers focusing on
 application and web development. As part of a university project we had
 absolutely no requirements on a coding language or styling. As the only
@@ -247,7 +246,7 @@ The URL is defined to look like this: "domain.de/#/schools/BSN". The BSN is a
 unique identifier for each school in Berlin (we assume it stands for Berlin
 School Number). The ``ngRoute`` module allows to specify parameter captures in
 the route definition, so it's very easy to access parts of the current URL in
-the javascript code. The route definition for the school detail page is:
+the JavaScript code. The route definition for the school detail page is:
 
 .. code-block:: javascript
 
@@ -272,7 +271,7 @@ Deployment
 
 As already stated above, we chose a way for the implementation that lets us
 circumvent the usage of an application server (as it would be needed for Java
-or Python). Instead the page only requires a webserver and Elasticsearch to
+or Python). Instead the page only requires a web server and Elasticsearch to
 run.
 
 
@@ -341,7 +340,7 @@ Elasticsearch Setup
 Apart from the protections of Elasticsearch mentioned above, it is **highly
 recommended** to disable dynamic scripting as this would potentially expose the
 entire server to the outside world. Setting the Elasticsearch network host to
-``127.0.0.1`` is also required. Otherwise people could connect directly do
+``127.0.0.1`` is also **required**. Otherwise people could connect directly do
 Elasticsearch and any of the Nginx protections wouldn't matter.
 
 
@@ -349,6 +348,7 @@ Website Config
 --------------
 
 .. code-block:: json
+
     {
         "elasticsearch": {
             "index": "school",
