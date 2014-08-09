@@ -6,7 +6,7 @@ Using Elasticsearch as Relational Data Storage
 :authors: Alexander Grießer, Markus Holtermann
 
 
-This blog post is about a university project Alex, a fellow student at my
+This blog post is about a `university project`_ Alex, a fellow student at my
 university, and I have been developing over the last months as part of our
 Master studies. We are both quite experienced software developers focusing on
 application and web development. As part of a university project we had
@@ -369,6 +369,7 @@ Sources and Additional Reading
 .. [ES13] Zachary Tong. Managing Relations inside Elasticsearch. February 20,
    2013 http://www.elasticsearch.org/blog/managing-relations-inside-elasticsearch/
 
+.. _university project: https://github.com/Markush2010/berlin-school-data/
 .. _AngularJS: https://angularjs.org/
 .. _similar service: http://www.berlin.de/sen/bildung/schulverzeichnis_und_portraets/anwendung/
 .. _Elasticsearch: http://www.elasticsearch.org/
