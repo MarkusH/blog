@@ -3,7 +3,7 @@
 ===========================
 
 :tags: Apache, CloudRAID, Cluster, Eclipse, Encryption Java, Network, Security,
-   Server, Studium,
+   Server, Studium
 :author: Markus Holtermann
 
 
