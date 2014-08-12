@@ -103,6 +103,7 @@ def patch_typogrify(readers):
         try:
             import smartypants
         except ImportError:
+            from typogrify.filters import TypogrifyError
             raise TypogrifyError("Error in {% smartypants %} filter: The Python smartypants library isn't installed.")
         else:
             attr = smartypants.default_smartypants_attr | smartypants.Attr.w
@@ -111,6 +112,7 @@ def patch_typogrify(readers):
 
     setattr(filters, 'smartypants', smartypants_wrapper)
 
+    setattr(filters, 'widont', lambda text: text)
 
 
 def register():
