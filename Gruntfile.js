@@ -50,10 +50,34 @@ module.exports = function(grunt) {
           dest: 'theme/static/js'
         }]
       }
+    },
+    concat: {
+      options: {
+        separator: ';',
+        stripBanners: {block: true},
+        process: function(src, filepath) {
+          if (filepath === 'theme/static/js/jquery.js') {
+            src = src.replace(/\/\*!/g, '\n\/\*!');
+            src = src.replace(/^(\/\*!| \*.*)\n/gm, '');
+          }
+          return src;
+        },
+      },
+      dist: {
+        src: [
+          'theme/static/js/modernizr.js',
+          'theme/static/js/jquery.js',
+          'theme/static/js/foundation.js',
+          'theme/static/js/foundation.clearing.js',
+          'theme/static/js/foundation.topbar.js',
+        ],
+        dest: 'theme/static/js/main.js',
+      },
     }
   });
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['sass', 'copy', 'uglify']);
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.registerTask('default', ['sass', 'copy', 'uglify', 'concat']);
 };
