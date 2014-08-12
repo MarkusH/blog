@@ -45,7 +45,7 @@ RELATIVE_URLS = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
 PAGE_PATHS = ('pages',)
-STATIC_PATHS = ('images',)
+STATIC_PATHS = ('files', 'images',)
 
 THEME = os.path.join(BASE_DIR, 'theme')
 

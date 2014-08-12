@@ -21,6 +21,6 @@ Mein `vorheriger Schlüssel`_ lief am 31. Dezember 2013 aus:
     7835 BD5D 46AC 9CC6 848A  DE33 03C2 732F 351E D8B3
 
 
-.. _meinen GPG Schlüssel: //markusholtermann.eu/D41C7E39.asc
-.. _vorheriger Schlüssel: //markusholtermann.eu/351ED8B3.asc
+.. _meinen GPG Schlüssel: {filename}/files/D41C7E39.asc
+.. _vorheriger Schlüssel: {filename}/files/351ED8B3.asc
 
