@@ -104,6 +104,10 @@ article {
         padding-bottom: 1rem;
       }
     }
+    table.docutils.citation td a {
+      // prevents overflowing urls
+      word-break: break-all;
+    }
   }
 
   @media #{$medium-up} {
