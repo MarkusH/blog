@@ -167,7 +167,7 @@ Our app has three important components:
       :alt: Startseite
       :target: /images/berlin-school-data/school1.png
 
-   .. image:: /images/berlin-school-data/school1tb.jpg
+   .. image:: /images/berlin-school-data/school2tb.jpg
       :alt: Ein paar angewendete Filter
       :target: /images/berlin-school-data/school2.png
 
