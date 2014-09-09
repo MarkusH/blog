@@ -27,17 +27,8 @@ def rebuild():
     build()
 
 
-def regenerate():
-    local('pelican -o {deploy_path}  -r -s pelicanconf.py {content_path}'.format(**env))
-
-
 def serve():
     local('cd {deploy_path} && python -m SimpleHTTPServer'.format(**env))
-
-
-def reserve():
-    build()
-    serve()
 
 
 def preview():
