@@ -161,12 +161,6 @@ article {
   @media #{$medium-up} {
     h2, h3, h4, h5, h6 {
       margin-top: 2rem;
-      &:hover:after {
-        color: darken($secondary-color, 10);
-        font-family: 'FontAwesome';
-        font-size: 1rem;
-        content: "\f13d";
-      }
     }
     .margin-left {
       margin-left: $paragraph-margin-bottom;
