@@ -339,15 +339,30 @@ in a newly added column, add something like ``lambda x, y: None`` as
 For more details on the ``RunPython`` operation please see the `docs`_.
 
 
-Backwards migrations roll too many operations back
+The callable for e.g. upload_to cannot be found
+===============================================
+
+There are a few model fields out their that take callables as arguments to do
+further processing. One of those fields is the ``FileField`` that has an
+``upload_to`` argument which accepts a string as well as a function to
+dynamically derive the storage location. To make migrations work automatically,
+this function has to be directly importable from a package or module.
+
+The same goes for classes for custom fields: The way Python works doesn't allow
+importing inner classes. Move the class to the module level and you'll be fine.
+
+See the chapter about `serializing values`_ in the docs.
+
+
+Backwards migrations roll-back too many operations
 ==================================================
 
 The way Django handles the order of migrations and the fact that Django
 strictly enforces dependencies between migration to be present during
 migration, is different compared to South. While the forwards migration plans
 won't really differ from South's, Django behaves completely different when it
-comes to backwards migrations (at least as of 1.7, follow `Django issue
-#23474`_ for updates).
+comes to backwards migrations (at least in 1.7, follow `Django issue #23474`_
+for updates).
 
 By design Django will roll back the database to the state it would have if you
 roll forward and stop after a given migration. To make this more clear, let's
@@ -433,5 +448,8 @@ Do you recognize the missing ``app_a.0003`` here.
 
 .. _docs:
     https://docs.djangoproject.com/en/1.7/ref/migration-operations/#runpython
+
+.. _serializing values:
+    https://docs.djangoproject.com/en/1.7/topics/migrations/#serializing-values
 
 .. _Django issue #23474: https://code.djangoproject.com/ticket/23426
