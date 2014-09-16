@@ -197,8 +197,8 @@ You can see all migrations in all installed apps, as well as their status
      [ ] 0001_initial
 
 
-What is the ``('myapp', '__first__')`` dependency?
-==================================================
+What is the "('myapp', '__first__')" dependency?
+================================================
 
 Let's say, ``authors`` is a third party app that doesn't ship with Django
 migrations. Remove the migrations folder as well as
@@ -246,7 +246,7 @@ The dependency ``('author', '__first__'),`` tells Django to apply a migration
 after the first migration in the referenced app, independent of its name.
 
 
-How do I run a data migration?
+How do I add a data migration?
 ==============================
 
 If you used `South`_ you might know about the ``datamigration`` command that
@@ -278,6 +278,16 @@ Within this migration you can now add the `operations`_ you want to perform.
 For data migrations you can use ``migrations.RunSQL`` or
 ``migrations.RunPython``.
 
+.. important::
+
+    If you add an empty migration file to an app and want to run operations
+    that require another app to be migrated to a specific state, you *have to*
+    add the required dependencies explicitly!
+
+
+Running native SQL commands during migrations
+---------------------------------------------
+
 If you are able to express your data changes in SQL, *please* do so, this will
 be faster than through the ORM. But keep in mind, that this might not be the
 solution if you have to fight multiple database back-ends.
@@ -302,19 +312,126 @@ usecase for that yet.
 .. warning::
 
     As of now, if you want to use ``%`` as a wildecard in e.g. the ``WHERE``-
-    clause, you need to escape it with another ``%`` character (
-    `Django issue #23426`_)::
+    clause, you need to escape it with another ``%`` character
+    (`Django issue #23426`_)::
 
         migrations.RunSQL("UPDATE myapp_mymodel SET col1 = 'a' WHERE col2 LIKE '%%val%%';")
+
+
+Run custom Python code during migrations
+----------------------------------------
+
+Apart from the ``RunSQL`` operation Django 1.7 comes with a ``RunPython``
+operation. This allows you to inject custom Python function do be run during a
+forwards or a backwards migration.
+
+``RunPython`` accepts 1 to 3 arguments: ``code``, ``reverse_code`` and
+``atomic``. ``code`` is require and accepts any callable with two arguments, so
+does ``reverse_code`` which is optional, though. ``atomic`` defaults to
+``True``.
+
+Please keep in mind that a ``reverse_code`` of ``None`` (the default) prevents
+the migration from being rolled back. If you want to be able to roll-back,
+because your Python code in ``code`` computes some initial data for every row
+in a newly added column, add something like ``lambda x, y: None`` as
+``reverse_code``.
+
+For more details on the ``RunPython`` operation please see the `docs`_.
 
 
 Backwards migrations roll too many operations back
 ==================================================
 
+The way Django handles the order of migrations and the fact that Django
+strictly enforces dependencies between migration to be present during
+migration, is different compared to South. While the forwards migration plans
+won't really differ from South's, Django behaves completely different when it
+comes to backwards migrations (at least as of 1.7, follow `Django issue
+#23474`_ for updates).
+
+By design Django will roll back the database to the state it would have if you
+roll forward and stop after a given migration. To make this more clear, let's
+take the following scenario from the Django tests:
+
+.. code-block:: code
+
+    app_a:  0001 <-- 0002 <--- 0003 <-- 0004
+                             /
+    app_b:  0001 <-- 0002 <-/
+
+If you run ``python manage.py migrate`` you will end up with:
+
+.. code-block:: code
+
+    [X] app_a.0001
+    [X] app_a.0002 ... (depends on app_a.0001)
+    [X] app_b.0001
+    [X] app_b.0002 ... (depends on app_b.0001)
+    [X] app_a.0003 ... (depends on app_a.0002, app_b.0002)
+    [X] app_a.0004 ... (depends on app_a.0003)
+
+If you run ``python manage.py migrate app_a 0003`` from this state, you will
+end up with:
+
+.. code-block:: code
+
+    [X] app_a.0001
+    [X] app_a.0002 ... (depends on app_a.0001)
+    [X] app_b.0001
+    [X] app_b.0002 ... (depends on app_b.0001)
+    [X] app_a.0003 ... (depends on app_a.0002, app_b.0002)
+    [ ] app_a.0004 ... (depends on app_a.0003)
+
+being applied.
+
+The difference happens when you roll-back past a dependency.
+
+If you run ``python manage.py migrate app_a 0002`` from the initial state, you
+will end up with:
+
+.. code-block:: code
+
+    [X] app_a.0001
+    [X] app_a.0002 ... (depends on app_a.0001)
+    [X] app_b.0001
+    [X] app_b.0002 ... (depends on app_b.0001)
+    [ ] app_a.0003 ... (depends on app_a.0002, app_b.0002)
+    [ ] app_a.0004 ... (depends on app_a.0003)
+
+being applied.
+
+But if you run ``python manage.py migrate app_b 0002``, from the initial state,
+you will end up with:
+
+.. code-block:: code
+
+    [X] app_a.0001
+    [X] app_a.0002 ... (depends on app_a.0001)
+    [X] app_b.0001
+    [X] app_b.0002 ... (depends on app_b.0001)
+    [ ] app_a.0003 ... (depends on app_a.0002, app_b.0002)
+    [ ] app_a.0004 ... (depends on app_a.0003)
+
+being applied.
+
+Do you recognize the missing ``app_a.0003`` here.
+
 
 .. _Django 1.7 was released:
-.. _Freenode:
-.. _South:
-.. _Andrew Godwin:
+    https://www.djangoproject.com/weblog/2014/sep/02/release-17-final/
+
+.. _Freenode: http://freenode.net/
+
+.. _South: http://south.aeracode.org/
+
+.. _Andrew Godwin: http://www.aeracode.org/
+
 .. _operations:
+    https://docs.djangoproject.com/en/1.7/ref/migration-operations/#special-operations
+
 .. _Django issue #23426: https://code.djangoproject.com/ticket/23426
+
+.. _docs:
+    https://docs.djangoproject.com/en/1.7/ref/migration-operations/#runpython
+
+.. _Django issue #23474: https://code.djangoproject.com/ticket/23426
