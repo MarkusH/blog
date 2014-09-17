@@ -50,7 +50,9 @@ will be written in new migration files.
 .. hint::
 
    One thing you might notice at some point, the models created by Django
-   on-the-fly belong to the Python module ``__fake__``.
+   on-the-fly belong to the Python module ``__fake__``. This is the reason why
+   you won't be able to access custom function on the model and why e.g. an
+   overwritten ``save()`` will not be called.
 
 To work around circular dependencies, Django splits a single migration file
 into multiple within the same app. The resulting dependencies are declared in a
@@ -200,8 +202,8 @@ You can see all migrations in all installed apps, as well as their status
 What is the "('myapp', '__first__')" dependency?
 ================================================
 
-Let's say, ``authors`` is a third party app that doesn't ship with Django
-migrations. Remove the migrations folder as well as
+Let's say, ``author`` is a third party app that doesn't ship with Django
+migrations. Remove the migrations folder ``author/migrations`` as well as
 ``book/migrations/0001_initial.py`` to start over. When you now run
 ``makemigrations``` you will end up with a single migration file for ``book``:
 
@@ -243,7 +245,8 @@ migrations. Remove the migrations folder as well as
         ]
 
 The dependency ``('author', '__first__'),`` tells Django to apply a migration
-after the first migration in the referenced app, independent of its name.
+at some point after the first migration in the referenced app, independent of
+its name.
 
 
 How do I add a data migration?
@@ -302,7 +305,7 @@ consist of multiple statements).
                       "UPDATE myapp_mymodel SET col2 = col3 * col3;")
 
 If you don't specify the ``reverse_sql`` argument, you won't be able to
-roll-back beyond this migration. The default is ``None``, using ``"SELECT 1``
+roll-back beyond this migration. The default is ``None``, using ``"SELECT 1;"``
 is fine for a roll-back.
 
 With the ``state_operations`` attribute you are able to modify the model state
@@ -311,8 +314,8 @@ usecase for that yet.
 
 .. warning::
 
-    As of now, if you want to use ``%`` as a wildecard in e.g. the ``WHERE``-
-    clause, you need to escape it with another ``%`` character
+    As of time of writing, if you want to use ``%`` as a wildecard in e.g. the
+    ``WHERE``- clause, you need to escape it with another ``%`` character
     (`Django issue #23426`_)::
 
         migrations.RunSQL("UPDATE myapp_mymodel SET col1 = 'a' WHERE col2 LIKE '%%val%%';")
@@ -322,8 +325,8 @@ Run custom Python code during migrations
 ----------------------------------------
 
 Apart from the ``RunSQL`` operation Django 1.7 comes with a ``RunPython``
-operation. This allows you to inject custom Python function do be run during a
-forwards or a backwards migration.
+operation. This allows you to run custom Python function during a forwards or a
+backwards migration.
 
 ``RunPython`` accepts 1 to 3 arguments: ``code``, ``reverse_code`` and
 ``atomic``. ``code`` is require and accepts any callable with two arguments, so
