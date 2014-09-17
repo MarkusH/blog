@@ -4,7 +4,6 @@ Django 1.7: Database Migrations done right
 
 :tags: Database, Django, Migration
 :author: Markus Holtermann
-:status: draft
 
 
 .. image:: /images/logos/django-negative-250x.png
