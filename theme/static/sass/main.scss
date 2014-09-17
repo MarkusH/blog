@@ -21,7 +21,7 @@
 // @import "foundation/components/magellan";
 // @import "foundation/components/orbit";
 @import "foundation/components/pagination";
-// @import "foundation/components/panels";
+@import "foundation/components/panels";
 // @import "foundation/components/pricing-tables";
 // @import "foundation/components/progress-bars";
 // @import "foundation/components/reveal";
@@ -38,6 +38,30 @@
 // @import @import "foundation/components/offcanvas";h
 @import "foundation/components/visibility";
 
+@mixin admonition($fg, $bg, $icon) {
+  @include panel();
+    color: $fg;
+    background: $bg;
+    border-color: $fg;
+
+    & > .admonition-title {
+      color: $fg;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: rem-calc(20) / 2;
+
+      &:before {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: inherit;
+        padding-right: 0.5em;
+        content: $icon;
+      }
+  }
+}
+
 article {
   margin-top: 3rem;
 
@@ -52,6 +76,30 @@ article {
 
   div.line-block {
     margin-bottom: $paragraph-margin-bottom;
+  }
+
+  div.danger, div.error, div.important {
+    @include admonition(
+      scale-color($alert-color, $lightness: -14%),
+      scale-color($alert-color, $lightness: 85%),
+      "\f057"
+    )
+  }
+
+  div.attention, div.caution, div.warning {
+    @include admonition(
+      scale-color($warning-color, $lightness: -14%),
+      scale-color($warning-color, $lightness: 85%),
+      "\f071"
+    )
+  }
+
+  div.note, div.tip, div.hint {
+    @include admonition(
+      scale-color($info-color, $lightness: -44%),
+      scale-color($info-color, $lightness: 85%),
+      "\f05a"
+    )
   }
 
   @import "_highlight";
@@ -113,12 +161,6 @@ article {
   @media #{$medium-up} {
     h2, h3, h4, h5, h6 {
       margin-top: 2rem;
-      &:hover:after {
-        color: darken($secondary-color, 10);
-        font-family: 'FontAwesome';
-        font-size: 1rem;
-        content: "\f13d";
-      }
     }
     .margin-left {
       margin-left: $paragraph-margin-bottom;
