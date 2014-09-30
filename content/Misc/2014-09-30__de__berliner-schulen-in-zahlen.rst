@@ -4,11 +4,10 @@ Berliner Schulen in Zahlen
 
 :tags: Berlin, Projekte, Studium
 :authors: Alexander Grießer, Markus Holtermann
-:status: draft
 
 
 Berlin. 2014. 1093 Bildungseinrichtungen. 835 Zeilen Javascript Code. 573
-Zeilen HTML Code. 347 Zeilen Python Code. 31 Schularten. 29 Schulzweige.  19
+Zeilen HTML Code. 347 Zeilen Python Code. 31 Schularten. 29 Schulzweige. 19
 Ausstattungskriterien. 15 Sprachen. 12 Stadtteile. 2 Möglichkeiten das selbe zu
 sagen. 1 Seminar: Ini 2.0.
 
