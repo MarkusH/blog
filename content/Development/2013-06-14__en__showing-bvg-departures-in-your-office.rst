@@ -132,7 +132,7 @@ Links
 
 .. _Python User Group Berlin: http://www.meetup.com/Python-Users-Berlin-PUB/events/105128552/
 .. _Slides:
-.. _here: http://download.markusholtermann.eu/BVG-Grabber-LightningTalk.pdf
+.. _here: https://speakerdeck.com/markush/showing-bvg-departures-in-your-office
 .. _Freitagsrunde: http://freitagsrunde.org
 .. _bvg-grabber on github.com:
 .. _bvg-grabber: https://github.com/markush2010/bvg-grabber
