@@ -4,28 +4,13 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     <meta charset="utf-8" />
     {% if FEED_ALL_ATOM %}
-      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
-    {% endif %}
-    {% if FEED_ALL_RSS %}
-      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
-    {% endif %}
-    {% if FEED_ATOM %}
-      <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
-    {% endif %}
-    {% if FEED_RSS %}
-      <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Full Atom Feed" />
     {% endif %}
     {% if CATEGORY_FEED_ATOM and category %}
-      <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
-    {% endif %}
-    {% if CATEGORY_FEED_RSS and category %}
-      <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+      <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Category {{ category }} Atom Feed" />
     {% endif %}
     {% if TAG_FEED_ATOM and tag %}
-      <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
-    {% endif %}
-    {% if TAG_FEED_RSS and tag %}
-      <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+      <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
     {% endif %}
     {% block head %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,10 +50,29 @@
       </div>
     </div>
     <div id="footer" class="row">
-      <div class="large-8 columns large-offset-2">
-        <p>Powered by <a href="http://blog.getpelican.com/">Pelican</a></p>
-        <p>Icons from <a href="http://fontawesome.io/">Font Awesome</a></p>
-        <p>The content is <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
+      <div class="columns">
+        <div class="row">
+          <div class="large-10 columns large-offset-1 text-center">
+            <ul class="inline-list">
+              {% if FEED_ALL_ATOM %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"><i class="fa fa-rss"></i> Subscribe to all articles</a></li>
+              {% endif %}
+              {% if CATEGORY_FEED_ATOM and category %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}"><i class="fa fa-rss"></i> Subscribe to {{ category }}</a></li>
+              {% endif %}
+              {% if TAG_FEED_ATOM and tag %}
+                <li><a href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}"><i class="fa fa-rss"></i> Subscribe to {{ tag }}</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-8 columns large-offset-2">
+            <p>Powered by <a href="http://blog.getpelican.com/">Pelican</a></p>
+            <p>Icons from <a href="http://fontawesome.io/">Font Awesome</a></p>
+            <p>The content is <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
+          </div>
+        </div>
       </div>
     </div>
     <script>$(document).foundation();$.each($("h2,h3,h4,h5,h6",$("article")),function(e,t){var n=$("<a></a>");n.attr("href","#"+$(t).parent().attr("id"));$(t).wrapInner(n)});</script>

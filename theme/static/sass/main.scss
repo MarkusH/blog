@@ -210,4 +210,8 @@ td {
 #footer {
   margin-top: 3rem;
   text-align: center;
+
+  ul.inline-list {
+    display: inline-block;
+  }
 }
