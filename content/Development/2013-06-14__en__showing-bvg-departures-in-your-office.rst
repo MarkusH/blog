@@ -135,5 +135,5 @@ Links
 .. _here: https://speakerdeck.com/markush/showing-bvg-departures-in-your-office
 .. _Freitagsrunde: http://freitagsrunde.org
 .. _bvg-grabber on github.com:
-.. _bvg-grabber: https://github.com/markush2010/bvg-grabber
+.. _bvg-grabber: https://github.com/MarkusH/bvg-grabber
 .. _BVG: http://bvg.de

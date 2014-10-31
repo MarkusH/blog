@@ -100,8 +100,8 @@ strict sense, but uses the ideas and techniques of those systems.
 
 .. _Florian Bausch: http://blog.fbausch.de
 .. _Apache 2 License: http://www.apache.org/licenses/LICENSE-2.0.html
-.. _GitHub: https://github.com/Markush2010/CloudRAID
-.. _Markus Holtermann: http://markusholtermann.eu
+.. _GitHub: https://github.com/MarkusH/CloudRAID
+.. _Markus Holtermann: https://markusholtermann.eu
 
 .. _Introduction:
    {filename}/Development/2012-10-28__en__cloudraid-1-introduction.rst

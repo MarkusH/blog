@@ -369,7 +369,7 @@ Sources and Additional Reading
 .. [ES13] Zachary Tong. Managing Relations inside Elasticsearch. February 20,
    2013 http://www.elasticsearch.org/blog/managing-relations-inside-elasticsearch/
 
-.. _university project: https://github.com/Markush2010/berlin-school-data/
+.. _university project: https://github.com/MarkusH/berlin-school-data/
 .. _AngularJS: https://angularjs.org/
 .. _similar service: http://www.berlin.de/sen/bildung/schulverzeichnis_und_portraets/anwendung/
 .. _Elasticsearch: http://www.elasticsearch.org/

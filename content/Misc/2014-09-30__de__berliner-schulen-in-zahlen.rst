@@ -123,6 +123,6 @@ Koalitionsvertrags zu erinnern.
 .. _Elasticsearch Instanz: http://www.elasticsearch.org/
 .. _AJAX: http://de.wikipedia.org/wiki/Ajax_%28Programmierung%29
 .. _öffentlichen Github Projekt:
-   https://github.com/Markush2010/berlin-school-data
+   https://github.com/MarkusH/berlin-school-data
 .. _veröffentlicht:
    {filename}/Development/2014-08-10__en__using-elasicsearch-as-relational-data-storage.rst
