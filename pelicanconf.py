@@ -15,7 +15,7 @@ TIMEZONE = 'Europe/Berlin'
 DEFAULT_LANG = 'en'
 
 PLUGIN_PATHS = (os.path.join(BASE_DIR, 'pelican-plugins'),)
-PLUGINS = ['plugins']
+PLUGINS = ['plugins', 'sitemap']
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
@@ -65,4 +65,18 @@ PAGE_LANG_SAVE_AS = PAGE_LANG_URL + 'index.html'
 
 DOCUTILS_SETTINGS = {
     'math_output': 'MathJAX',
+}
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.7,
+        'indexes': 0.5,
+        'pages': 0.3
+    },
+    'changefreqs': {
+        'articles': 'daily',
+        'indexes': 'daily',
+        'pages': 'daily'
+    }
 }
