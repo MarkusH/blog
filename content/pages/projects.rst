@@ -54,7 +54,7 @@ Django
 :Code: https://github.com/django/django
 :Documentation: https://docs.djangoproject.com/en/
 :Download: https://pypi.python.org/pypi/Django
-:License: MIT License
+:License: BSD License
 :Version:
     .. image:: https://pypip.in/v/Django/badge.png?text=version&style=flat-square
         :alt: Django version
