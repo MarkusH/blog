@@ -17,9 +17,13 @@ def grunt():
     local('./node_modules/grunt-cli/bin/grunt')
 
 
+def pelican():
+    local('pelican -o {deploy_path} -s pelicanconf.py {content_path}'.format(**env))
+
+
 def build():
     grunt()
-    local('pelican -o {deploy_path} -s pelicanconf.py {content_path}'.format(**env))
+    pelican()
 
 
 def rebuild():
