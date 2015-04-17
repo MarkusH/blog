@@ -87,8 +87,9 @@ version with a hole bunch of new features and improvements:
 The features and changes I'm particularly happy about are the serialization of
 model managers in migrations (`#23822`_) which I have worked on for quite a
 while and of course the performance improvements in migrations. It was some
-hard work but thanks to the amazing work Claude Paroz did on `#23745`_ and
-Marten Kenbeek did on `#24366`_ the migrations in 1.8 are noticeable faster.
+hard work but thanks to the amazing work `Claude Paroz`_ did on `#23745`_ and
+`Marten Kenbeek`_ did on `#24366`_ the migrations in 1.8 are noticeable faster.
+Of course thanks to all contributors who made the release the way it is :)
 
 
 
@@ -137,7 +138,11 @@ Marten Kenbeek did on `#24366`_ the migrations in 1.8 are noticeable faster.
     https://www.djangoproject.com/weblog/2015/apr/01/release-18-final/
 .. _#23822:
     https://code.djangoproject.com/ticket/23822
+.. _Claude Paroz:
+    https://github.com/claudep
 .. _#23745:
     https://code.djangoproject.com/ticket/23745
+.. _Marten Kenbeek:
+    https://github.com/knbk
 .. _#24366:
     https://code.djangoproject.com/ticket/24366
