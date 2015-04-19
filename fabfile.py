@@ -73,7 +73,7 @@ def build_remote():
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
         run('./node_modules/grunt-cli/bin/grunt')
         run('pelican -o dist -s publishconf.py content')
-        # run('rsync -a ./dist/ {deploy_dir}'.format(**env))
+        run('rsync -a ./dist/ {deploy_dir}'.format(**env))
 
 
 @task
