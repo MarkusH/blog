@@ -62,6 +62,7 @@ def git():
     """
     with cd(env.repo_dir):
         run('git pull')
+        run('git checkout -f {branch}'.format(**env))
         run('git submodule init')
         run('git submodule update')
 
@@ -96,7 +97,7 @@ def rsync():
     Remote -- Rsync
     """
     with cd(env.repo_dir):
-        run('rsync -a ./dist/ {deploy_dir}'.format(**env))
+        run('rsync -av ./dist/ {deploy_dir}'.format(**env))
 
 
 @task
