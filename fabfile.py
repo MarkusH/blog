@@ -50,7 +50,7 @@ def bootstrap():
     if not os.path.isdir(env.venv_dir):
         os.makedirs(os.path.dirname(env.venv_dir))
     run('virtualenv {venv_dir}'.format(**env))
-    run('gem install --user-install sass:3.2.13')  # older versions "don't work"
+    run('gem install --user-install sass:3.4.13')
     update()
 
 
