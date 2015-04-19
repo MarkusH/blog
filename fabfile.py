@@ -87,6 +87,15 @@ def build_remote():
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
         run('./node_modules/grunt-cli/bin/grunt')
         run('pelican -o dist -s publishconf.py content')
+
+
+@task
+@verify_remote
+def rsync():
+    """
+    Remote -- Rsync
+    """
+    with cd(env.repo_dir):
         run('rsync -a ./dist/ {deploy_dir}'.format(**env))
 
 
@@ -94,11 +103,12 @@ def build_remote():
 @verify_remote
 def deploy():
     """
-    Remote -- Do everything that's needed to deploy.
+    Remote -- Do everything needed to deploy: git, update, build_remote, rsync
     """
     git()
     update()
     build_remote()
+    rsync()
 
 
 @task
