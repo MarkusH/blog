@@ -1,56 +1,110 @@
-from fabric.api import *
-import fabric.contrib.project as project
+from functools import wraps
 import os
 
-# Local path configuration (can be absolute or relative to fabfile)
-env.content_path = 'content'
-env.deploy_path = 'build'
+from fabric.api import abort, cd, env, local, run, task
+from fabric.context_managers import path
+from fabvenv import virtualenv
+
+env.use_ssh_config = True
+
+_defaults = {
+    'branch': 'master',
+    'repository': 'git@github.com:MarkusH/blog.git',
+
+    'deploy_dir': None,
+    'repo_dir': None,
+    'sass_dir': None,
+    'venv_dir': None,
+}
+for k, v in _defaults.items():
+    env.setdefault(k, v)
 
 
+def verify_remote(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        if env.deploy_dir is None:
+            abort('No deploy_dir specified')
+        if env.repo_dir is None:
+            abort('No repo_dir specified')
+        if env.sass_dir is None:
+            abort('No sass_dir specified')
+        if env.venv_dir is None:
+            abort('No venv_dir specified')
+        func(*args, **kwargs)
+
+    return wrapper
+
+
+@task
+@verify_remote
+def update():
+    """
+    Installs and updates all requirements.
+    """
+    with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
+        run('git pull')
+        run('pip install -r requirements.txt')
+        run('npm install')
+        run('./node_modules/bower/bin/bower install')
+
+
+@task
+@verify_remote
+def deploy():
+    """
+    Deploys the latest changes:
+
+    1. Pulls changes
+    2. Builds CSS/JS
+    3. Builds HTML
+    4. Rsync data
+    """
+    with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
+        run('git pull')
+        run('./node_modules/grunt-cli/bin/grunt')
+        run('pelican -o dist -s publishconf.py content')
+        # run('rsync -a ./dist/ {deploy_dir}'.format(**env))
+
+
+@task
 def clean():
-    if os.path.isdir(env.deploy_path):
-        local('rm -rf {deploy_path}/*'.format(**env))
-        local('mkdir -p {deploy_path}'.format(**env))
+    """
+    Cleans local build directory.
+    """
+    if os.path.isdir('build'):
+        local('rm -rf build/*')
+        local('mkdir -p build')
 
 
+@task
 def grunt():
+    """
+    Runs grunt locally
+    """
     local('./node_modules/grunt-cli/bin/grunt')
 
 
+@task
 def pelican():
-    local('pelican -o {deploy_path} -s pelicanconf.py {content_path}'.format(**env))
+    """
+    Runs pelican locally
+    """
+    local('pelican -o build -s pelicanconf.py content')
 
 
+@task
 def build():
+    """
+    Builds the page.
+    """
     grunt()
     pelican()
 
 
-def rebuild():
-    clean()
-    build()
-
-
+@task
 def serve():
+    """
+    Runs a local HTTP server.
+    """
     local('cd {deploy_path} && python -m SimpleHTTPServer'.format(**env))
-
-
-def preview():
-    grunt()
-    local('pelican -o {deploy_path} -s publishconf.py {content_path}'.format(**env))
-
-
-def rsync():
-    env.deploy_path = 'dist'
-    project.rsync_project(
-        remote_dir=env.dest_path,
-        local_dir=env.deploy_path.rstrip('/') + '/',
-        delete=True,
-        ssh_opts='-i /home/markus/.ssh/id_rsa-vserver',
-    )
-
-
-def publish():
-    env.deploy_path = 'dist'
-    preview()
-    rsync()
