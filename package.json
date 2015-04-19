@@ -1,12 +1,12 @@
 {
   "name": "homepage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/Markush2010/blog"
   },
   "devDependencies": {
-    "bower": "~1.2.8",
+    "bower": "~1.4.1",
     "grunt": "~0.4.2",
     "grunt-cli": "~0.1.11",
     "grunt-contrib-concat": "~0.5.0",
