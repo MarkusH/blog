@@ -38,12 +38,23 @@ def verify_remote(func):
 
 @task
 @verify_remote
+def git():
+    """
+    Installs and updates all requirements.
+    """
+    with cd(env.repo_dir):
+        run('git pull')
+        run('git submodule init')
+        run('git submodule update')
+
+
+@task
+@verify_remote
 def update():
     """
     Installs and updates all requirements.
     """
-    with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
-        run('git pull')
+    with cd(env.repo_dir), virtualenv(env.venv_dir):
         run('pip install -r requirements.txt')
         run('npm install')
         run('./node_modules/bower/bin/bower install')
@@ -51,20 +62,26 @@ def update():
 
 @task
 @verify_remote
-def deploy():
+def build_remote():
     """
     Deploys the latest changes:
 
-    1. Pulls changes
-    2. Builds CSS/JS
-    3. Builds HTML
-    4. Rsync data
+    1. Builds CSS/JS
+    2. Builds HTML
+    3. Rsync data
     """
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
-        run('git pull')
         run('./node_modules/grunt-cli/bin/grunt')
         run('pelican -o dist -s publishconf.py content')
         # run('rsync -a ./dist/ {deploy_dir}'.format(**env))
+
+
+@task
+@verify_remote
+def deploy():
+    git()
+    update()
+    build_remote()
 
 
 @task
