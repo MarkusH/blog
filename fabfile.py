@@ -39,6 +39,9 @@ def verify_remote(func):
 @task
 @verify_remote
 def bootstrap():
+    """
+    Remote -- Bootstrap git repo, virtualenv, sass, grunt, bower
+    """
     if not os.path.isdir(env.repo_dir):
         os.makedirs(env.repo_dir)
     with cd(env.repo_dir):
@@ -55,7 +58,7 @@ def bootstrap():
 @verify_remote
 def git():
     """
-    Installs and updates all requirements.
+    Remote -- Installs and updates all requirements.
     """
     with cd(env.repo_dir):
         run('git pull')
@@ -67,7 +70,7 @@ def git():
 @verify_remote
 def update():
     """
-    Installs and updates all requirements.
+    Remote -- Installs and updates all requirements.
     """
     with cd(env.repo_dir), virtualenv(env.venv_dir):
         run('pip install -r requirements.txt')
@@ -79,11 +82,7 @@ def update():
 @verify_remote
 def build_remote():
     """
-    Deploys the latest changes:
-
-    1. Builds CSS/JS
-    2. Builds HTML
-    3. Rsync data
+    Remote -- Deploys the latest changes.
     """
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
         run('./node_modules/grunt-cli/bin/grunt')
@@ -94,6 +93,9 @@ def build_remote():
 @task
 @verify_remote
 def deploy():
+    """
+    Remote -- Do everything that's needed to deploy.
+    """
     git()
     update()
     build_remote()
