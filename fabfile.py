@@ -38,6 +38,21 @@ def verify_remote(func):
 
 @task
 @verify_remote
+def bootstrap():
+    if not os.path.isdir(env.repo_dir):
+        os.makedirs(env.repo_dir)
+    with cd(env.repo_dir):
+        run('git clone {repository} .'.format(**env))
+
+    if not os.path.isdir(env.venv_dir):
+        os.makedirs(os.path.dirname(env.venv_dir))
+    run('virtualenv {venv_dir}'.format(**env))
+    run('gem install --user-install sass:3.2.13')  # older versions "don't work"
+    update()
+
+
+@task
+@verify_remote
 def git():
     """
     Installs and updates all requirements.
