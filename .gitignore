@@ -12,5 +12,5 @@ theme/static/js/
 
 production.ini
 
-! .gitignore
-! .gitmodules
+!.gitignore
+!.gitmodules
