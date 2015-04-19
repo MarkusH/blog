@@ -141,4 +141,4 @@ def serve():
     """
     Runs a local HTTP server.
     """
-    local('cd {deploy_path} && python -m SimpleHTTPServer'.format(**env))
+    local('cd build && python -m SimpleHTTPServer')
