@@ -1,3 +1,6 @@
 [submodule "pelican_plugins"]
 	path = pelican_plugins
 	url = https://github.com/getpelican/pelican-plugins
+[submodule "materialize"]
+	path = materialize
+	url = https://github.com/Dogfalo/materialize.git
