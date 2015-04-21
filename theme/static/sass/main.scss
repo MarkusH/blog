@@ -2,209 +2,49 @@
 
 @import "_settings";
 
-// @import "foundation/components/accordion";
-// @import "foundation/components/alert-boxes";
-@import "foundation/components/block-grid";
-// @import "foundation/components/breadcrumbs";
-// @import "foundation/components/button-groups";
-// @import "foundation/components/buttons";
-@import "foundation/components/clearing";
-// @import "foundation/components/dropdown";
-// @import "foundation/components/dropdown-buttons";
-// @import "foundation/components/flex-video";
-// @import "foundation/components/forms";
-@import "foundation/components/grid";
-@import "foundation/components/inline-lists";
-// @import "foundation/components/joyride";
-// @import "foundation/components/keystrokes";
-@import "foundation/components/labels";
-// @import "foundation/components/magellan";
-// @import "foundation/components/orbit";
-@import "foundation/components/pagination";
-@import "foundation/components/panels";
-// @import "foundation/components/pricing-tables";
-// @import "foundation/components/progress-bars";
-// @import "foundation/components/reveal";
-// @import "foundation/components/side-nav";
-// @import "foundation/components/split-buttons";
-// @import "foundation/components/sub-nav";
-// @import "foundation/components/switch";
-@import "foundation/components/tables";
-// @import "foundation/components/tabs";
-@import "foundation/components/thumbs";
-// @import "foundation/components/tooltips";
-@import "foundation/components/top-bar";
-@import "foundation/components/type";
-// @import @import "foundation/components/offcanvas";h
-@import "foundation/components/visibility";
+// Mixins
+@import "components/prefixer";
+@import "components/mixins";
+@import "components/color";
 
-@mixin admonition($fg, $bg, $icon) {
-  @include panel();
-    color: $fg;
-    background: $bg;
-    border-color: $fg;
+// Variables;
+@import "components/variables";
 
-    & > .admonition-title {
-      color: $fg;
-      font-weight: bold;
-      line-height: 1;
-      margin-bottom: rem-calc(20) / 2;
+// Reset
+@import "components/normalize";
 
-      &:before {
-        font-family: FontAwesome;
-        font-weight: normal;
-        font-style: normal;
-        display: inline-block;
-        text-decoration: inherit;
-        padding-right: 0.5em;
-        content: $icon;
-      }
-  }
-}
+// components
+@import "components/global";
+@import "components/icons-material-design";
+@import "components/grid";
+@import "components/navbar";
+@import "components/roboto";
+@import "components/typography";
+@import "components/cards";
+// @import "components/toast";
+// @import "components/tabs";
+// @import "components/tooltip";
+// @import "components/buttons";
+// @import "components/dropdown";
+@import "components/waves";
+// @import "components/modal";
+// @import "components/collapsible";
+@import "components/materialbox";
+// @import "components/form";
+// @import "components/table_of_contents";
+@import "components/sideNav";
+// @import "components/preloader";
+@import "components/slider";
+// @import "components/date_picker/default.scss";
+// @import "components/date_picker/default.date.scss";
+// @import "components/date_picker/default.time.scss";
 
 article {
-  margin-top: 3rem;
-
-  footer {
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-  }
-
-  p {
-    text-align: justify;
-  }
-
-  div.line-block {
-    margin-bottom: $paragraph-margin-bottom;
-  }
-
-  div.danger, div.error, div.important {
-    @include admonition(
-      scale-color($alert-color, $lightness: -14%),
-      scale-color($alert-color, $lightness: 85%),
-      "\f057"
-    )
-  }
-
-  div.attention, div.caution, div.warning {
-    @include admonition(
-      scale-color($warning-color, $lightness: -14%),
-      scale-color($warning-color, $lightness: 85%),
-      "\f071"
-    )
-  }
-
-  div.note, div.tip, div.hint {
-    @include admonition(
-      scale-color($info-color, $lightness: -44%),
-      scale-color($info-color, $lightness: 85%),
-      "\f05a"
-    )
-  }
-
   @import "_highlight";
-
-  .citation {
-    border: none;
-    margin-bottom: 0;
-    .label {
-      background-color: #fff;
-      color: #008cba;
-    }
-  }
-
-  .post-info {
-    @include grid-row();
-    font-size: 0.85rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    .label {
-      margin-bottom: 0.3rem;
-    }
-  }
-
-  .clearing-container > .carousel > .clearing-thumbs > li {
-    clear: none;
-  }
-
-  :not(.clearing-container) > .carousel > .clearing-thumbs > li {
-    &.noclear {
-      clear: none;
-    }
-    &.span50 {
-      width: 50%;
-    }
-    &.span66 {
-      width: 66.6666666666666%;
-    }
-    &.span75 {
-      width: 75%;
-    }
-    &.span100 {
-      width: 100%;
-    }
-  }
-  
-  @media #{$small-only} {
-    .post-info {
-      .columns {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-      }
-    }
-    table.docutils.citation td a {
-      // prevents overflowing urls
-      word-break: break-all;
-    }
-  }
-
-  @media #{$medium-up} {
-    h2, h3, h4, h5, h6 {
-      margin-top: 2rem;
-    }
-    .margin-left {
-      margin-left: $paragraph-margin-bottom;
-    }
-    .margin-right {
-      margin-right: $paragraph-margin-bottom;
-    }
-    .margin-bottom {
-      margin-bottom: $paragraph-margin-bottom;
-    }
-    img, div {
-      &.align-left {
-        float: left;
-      }
-      &.align-right {
-        float: right;
-      }
-    }
-    img.align-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    div.figure {
-      &.align-left p {
-        margin-right: $paragraph-margin-bottom;
-      }
-      &.align-right p {
-        margin-left: $paragraph-margin-bottom;
-      }
-      &.align-center {
-        text-align: center;
-        p {
-          text-align: center;
-        }
-      }
-    }
-  }
 }
 
-td {
-  ol, ul {
-    margin-bottom: 0;
-  }
+ul ul {
+    padding-left: 1rem;
 }
 
 #footer {
@@ -218,4 +58,8 @@ td {
 
 #MathJax_Message {
   display: none !important;
+}
+
+.row.gallery .col {
+    padding: 2px 5px !important;
 }
