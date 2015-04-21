@@ -39,15 +39,19 @@
 // @import "components/date_picker/default.date.scss";
 // @import "components/date_picker/default.time.scss";
 
+@import "_overrides";
+
 @import "_highlight";
 
 .pagination {
   display: inline-block;
 }
 
-ul ul {
-  padding-left: 1rem;
+.meta {
+  color: $primary-color-light;
 }
+
+
 
 #MathJax_Message {
   display: none !important;

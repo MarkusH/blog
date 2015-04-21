@@ -1,0 +1,28 @@
+ul ul {
+  padding-left: 1rem;
+}
+
+.card {
+  .card-content {
+    .card-title {
+      line-height: 1.5;
+      padding-bottom: 12px;
+    }
+  }
+  .card-title {
+    a {
+      // color: $primary-color;
+      &:hover {
+        // color: $primary-color;
+      }
+    }
+  }
+  .card-action {
+    a {
+      color: $primary-color-light;
+      &:hover {
+        color: $primary-color-light;
+      }
+    }
+  }
+}

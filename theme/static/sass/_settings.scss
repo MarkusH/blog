@@ -1,0 +1,21 @@
+$primary-color-light: #9FA8DA;  // indigo lighten-3
+$primary-color: #3F51B5;  // indigo
+$primary-color-dark: #303F9F;  // indigo darken-2
+$primary-color-text: #FFFFFF;
+
+$accent-color: #ff3d00;  // deep-orange accent-3
+$primary-text-color: #212121;  // grey darken-4
+$secondary-text-color: #757575;  // grey darken-1
+$divider-color: #bdbdbd;  // grey lighten-1
+
+/* Settings */
+
+$link-color: $accent-color;
+
+$footer-bg-color: $accent-color;
+
+$off-black: $primary-text-color;
+
+/* Custom */
+
+$card-link-color: $link-color !default;
