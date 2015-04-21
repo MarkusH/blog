@@ -15,6 +15,7 @@
     "grunt-contrib-watch": "~0.6.1"
   },
   "devDependencies": {
+    "grunt-contrib-watch": "^0.6.1",
     "npm-check-updates": "^1.5.1"
   }
 }

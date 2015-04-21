@@ -44,11 +44,21 @@ module.exports = function(grunt) {
         ],
         dest: 'theme/static/js/main.js',
       },
+    },
+    watch: {
+      options: {
+        atBegin: true
+      },  
+      sass: {
+        files: ['materialize/sass/**', 'theme/static/sass/**'],
+        tasks: ['default'],
+      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.registerTask('default', ['sass', 'copy', 'uglify', 'concat']);
 };
