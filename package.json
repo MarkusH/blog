@@ -6,7 +6,6 @@
     "url": "https://github.com/Markush2010/blog"
   },
   "dependencies": {
-    "bower": "~1.4.1",
     "grunt": "~0.4.5",
     "grunt-cli": "~0.1.13",
     "grunt-contrib-concat": "~0.5.1",
