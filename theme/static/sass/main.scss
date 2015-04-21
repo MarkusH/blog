@@ -39,27 +39,23 @@
 // @import "components/date_picker/default.date.scss";
 // @import "components/date_picker/default.time.scss";
 
-article {
-  @import "_highlight";
+@import "_highlight";
+
+.pagination {
+  display: inline-block;
 }
 
 ul ul {
-    padding-left: 1rem;
-}
-
-#footer {
-  margin-top: 3rem;
-  text-align: center;
-
-  ul.inline-list {
-    display: inline-block;
-  }
+  padding-left: 1rem;
 }
 
 #MathJax_Message {
   display: none !important;
 }
 
+
+
+
 .row.gallery .col {
-    padding: 2px 5px !important;
+  padding: 2px 5px !important;
 }

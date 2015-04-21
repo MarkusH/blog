@@ -1,37 +1,37 @@
-<div class="pagination-centered">
-  <ul class="pagination">
-    {% if articles_page.has_previous() %}
-      {% if articles_page.previous_page_number() == 1 %}
-        <li class="arrow"><a href="{{ SITEURL }}/{{ page_name }}.html"><i class="fa fa-angle-double-left"></i></a></li>
-      {% else %}
-        <li class="arrow"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html"><i class="fa fa-angle-double-left"></i></a></li>
-      {% endif %}
+<div class="center">
+<ul class="pagination">
+  {% if articles_page.has_previous() %}
+    {% if articles_page.previous_page_number() == 1 %}
+      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}.html"><i class="mdi-navigation-chevron-left"></i></a></li>
     {% else %}
-      <li class="arrow unavailable"><a href=""><i class="fa fa-angle-double-left"></i></a></li>
+      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html"><i class="mdi-navigation-chevron-left"></i></a></li>
     {% endif %}
-    
-    {% set offset_start = 1 %}
-    {% if articles_page.number > 4 %}
-      {% set offset_start = articles_page.number - 3 %}
-    {% endif %}
+  {% else %}
+    <li class="disabled"><a href=""><i class="mdi-navigation-chevron-left"></i></a></li>
+  {% endif %}
+  
+  {% set offset_start = 1 %}
+  {% if articles_page.number > 4 %}
+    {% set offset_start = articles_page.number - 3 %}
+  {% endif %}
 
-    {% set offset_end = articles_paginator.num_pages %}
-    {% if articles_page.number < articles_paginator.num_pages - 3 %}
-      {% set offset_end = articles_page.number + 3 %}
-    {% endif %}
+  {% set offset_end = articles_paginator.num_pages %}
+  {% if articles_page.number < articles_paginator.num_pages - 3 %}
+    {% set offset_end = articles_page.number + 3 %}
+  {% endif %}
 
-    {% for number in range(offset_start, offset_end + 1) %}
-      {% if number == 1 %}
-        <li{% if number == articles_page.number%} class="current"{% endif %}><a href="{{ SITEURL }}/{{ page_name }}.html">{{ number }}</a></li>
-      {% else %}
-        <li{% if number == articles_page.number%} class="current"{% endif %}><a href="{{ SITEURL }}/{{ page_name }}{{ number }}.html">{{ number }}</a></li>
-      {% endif %}
-    {% endfor %}
-
-    {% if articles_page.has_next() %}
-      <li class="arrow"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html"><i class="fa fa-angle-double-right"></i></a></li>
+  {% for number in range(offset_start, offset_end + 1) %}
+    {% if number == 1 %}
+      <li class="{% if number == articles_page.number%}active{% else %}waves-effect{% endif %}"><a href="{{ SITEURL }}/{{ page_name }}.html">{{ number }}</a></li>
     {% else %}
-      <li class="arrow unavailable"><a href=""><i class="fa fa-angle-double-right"></i></a></li>
+      <li class="{% if number == articles_page.number%}active{% else %}waves-effect{% endif %}"><a href="{{ SITEURL }}/{{ page_name }}{{ number }}.html">{{ number }}</a></li>
     {% endif %}
-  </ul>
+  {% endfor %}
+
+  {% if articles_page.has_next() %}
+    <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html"><i class="mdi-navigation-chevron-right"></i></a></li>
+  {% else %}
+    <li class="disabled"><a href=""><i class="mdi-navigation-chevron-right"></i></a></li>
+  {% endif %}
+</ul>
 </div>
