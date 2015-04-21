@@ -1,8 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta charset="utf-8" />
+
     {% if FEED_ALL_ATOM %}
       <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Full Atom Feed" />
     {% endif %}
@@ -13,42 +15,35 @@
       <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
     {% endif %}
     {% block head %}{% endblock %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gruppo|Merriweather:400,300:Oxygen+Mono">
+    {# <link href="{{ SITEURL }}/theme/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" /> #}
+    <link href="{{ SITEURL }}/theme/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <script type="text/x-mathjax-config">MathJax.Hub.Config({jax:["input/TeX","output/SVG"],extensions:["tex2jax.js"],TeX:{extensions:["AMSmath.js","AMSsymbols.js"]},SVG:{scale:90},tex2jax:{inlineMath: [['$$','$$']],displayMath:[]}})</script>
-    <script src="{{ SITEURL }}/theme/js/main.js"></script>
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
   </head>
   <body>
-    <div class="row">
-      <div class="large-10 columns large-offset-1">
-        <div class="contain-to-grid">
-          <nav class="top-bar" data-topbar>
-            <ul class="title-area">
-              <li class="name">
-                <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
-              </li>
-              <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-            </ul>
-            <section class="top-bar-section">
-              <ul class="right">
-                {% for pg in PAGES %}
-                  <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
-                {% endfor %}
-              </ul>
-            </section>
-          </nav>
-        </div>
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="{{ SITEURL }}" class="brand-logo">{{ SITENAME }}</a>
+        <ul class="right hide-on-med-and-down">
+          {% for pg in PAGES %}
+          <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          {% for pg in PAGES %}
+          <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       </div>
-    </div>
-    <div class="row">
-      <div class="large-10 columns large-offset-1">
+    </nav>
+    <div class="container">
+      <div class="section">
         {% block content %}{% endblock %}
       </div>
     </div>
+
+    <!--
     <div id="footer" class="row">
       <div class="columns">
         <div class="row">
@@ -76,5 +71,49 @@
       </div>
     </div>
     <script>$(document).foundation();$.each($("h2,h3,h4,h5,h6",$("article")),function(e,t){var n=$("<a></a>");n.attr("href","#"+$(t).parent().attr("id"));$(t).wrapInner(n)});</script>
+    -->
+
+
+    <footer class="page-footer orange">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Markus Holtermann</h5>
+            <p class="grey-text text-lighten-4">Brief biography about me</p>
+            <p class="grey-text text-lighten-4">The content is licensed under a <a rel="license" class="white-text" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Settings</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Powered by <a class="orange-text text-lighten-3 center" href="http://blog.getpelican.com/">Pelican</a>
+        <span class="right">Made with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="{{ SITEURL }}/theme/js/main.js"></script>
   </body>
 </html>

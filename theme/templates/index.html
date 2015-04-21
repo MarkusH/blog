@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-  {% for article in articles_page.object_list %}
-    <article>
-      {% include 'article_infos.html' %}
-      {{ article.content }}
-      {% include 'article_footer.html' %}
-    </article>{% if not loop.last %}<hr>{% endif %}
-  {% endfor %}
+  <div class="row" id="posts">
+    {% for article in articles_page.object_list %}
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="http://lorempixel.com/485/273/technics/2">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{ article.title }}</span>
+          <p>{{ article.summary }}</p>
+        </div>
+        <div class="card-action">
+          <a href='{{ SITEURL }}/{{ article.url }}'>Read more</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
   {% include 'pagination.html' %}
 {% endblock %}
