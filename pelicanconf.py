@@ -7,7 +7,7 @@ import os
 BASE_DIR = os.path.dirname(__file__)
 
 AUTHOR = 'Markus Holtermann'
-SITENAME = 'markusholtermann.eu'
+SITENAME = 'markusholtermann'
 SITEURL = 'http://127.0.0.1:8000'
 
 TIMEZONE = 'Europe/Berlin'
