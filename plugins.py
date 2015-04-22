@@ -6,7 +6,6 @@ from docutils.parsers.rst import directives, Directive
 from docutils.writers.html4css1 import HTMLTranslator
 
 from pelican import signals
-from pelican.readers import PelicanHTMLTranslator
 
 
 class GalleryNode(nodes.bullet_list):
@@ -54,14 +53,28 @@ class Gallery(Directive):
         return [cont]
 
 
-def _visit_GalleryNode(self, node):
+methods = []
+moves = [
+    ('visit_math', '_visit_math'),
+]
+
+
+def register_method(f):
+    methods.append((f.__name__, f))
+    return f
+
+
+@register_method
+def visit_GalleryNode(self, node):
     self.body.append(self.starttag(node, 'ul', **{'data-clearing': ''}))
 
 
-def _depart_GalleryNode(self, node):
+@register_method
+def depart_GalleryNode(self, node):
     self.body.append('</ul>\n')
 
 
+@register_method
 def visit_math(self, node, math_env=''):
     try:
         self._visit_math(node, math_env)
@@ -73,14 +86,26 @@ def visit_math(self, node, math_env=''):
     raise nodes.SkipNode
 
 
+@register_method
+def visit_section(self, node):
+    self.section_level += 1
+
+
+@register_method
+def depart_section(self, node):
+    self.section_level -= 1
+
+
 def register_rst_directives(readers):
     directives.register_directive('gallery', Gallery)
-    setattr(HTMLTranslator, 'visit_GalleryNode', _visit_GalleryNode)
-    setattr(HTMLTranslator, 'depart_GalleryNode', _depart_GalleryNode)
 
-    if not hasattr(HTMLTranslator, '_visit_math'):
-        setattr(HTMLTranslator, '_visit_math', getattr(HTMLTranslator, 'visit_math'))
-        setattr(HTMLTranslator, 'visit_math', visit_math)
+    for old, new in moves:
+        if not hasattr(HTMLTranslator, new):
+            old_method = getattr(HTMLTranslator, old)
+            setattr(HTMLTranslator, new, old_method)
+
+    for name, method in methods:
+        setattr(HTMLTranslator, name, method)
 
 
 def patch_typogrify(readers):
