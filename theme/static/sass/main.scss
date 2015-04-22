@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+@import "_functions";
 @import "_settings";
 
 // Mixins
@@ -49,6 +50,30 @@
 
 .meta {
   color: $primary-color-light;
+  .tags {
+    font-size: rem-calc(14);
+    margin-top: 0.5rem;
+  }
+  a {
+    color: $primary-color-light;
+    @include transition(color .3s ease);
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.card {
+  .card-content {
+    ul {
+      margin-left: 1.5rem;
+      padding: 0;
+      list-style-type: disc;
+      li {
+        list-style-type: disc;
+      }
+    }
+  }
 }
 
 

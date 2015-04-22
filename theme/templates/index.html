@@ -9,16 +9,18 @@
         </div>
         <div class="card-content">
           <div class="meta">
-            <span class="category">{{ article.category }}</span> &bull;
-            <span class="date">{{ article.locale_date }}</span> &bull;
+            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category">{{ article.category }}</a> &bull;
+            {{ article.locale_date }} &bull;
             {% for author in article.authors %}
-            <span class="author">{{ author }}</span>{% if not loop.last %}, {% endif %}
+            <a href="{{ SITEURL }}/{{ author.url }}" class="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
           </div>
           <div class="card-title">
             <a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a>
           </div>
-          <p>{{ article.summary }}</p>
+          <div class="flow-text">
+            {{ article.summary }}
+          </div>
         </div>
         <div class="card-action">
           <a href='{{ SITEURL }}/{{ article.url }}'>Read more</a>
