@@ -1,29 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import find_packages, setup
 
 setup(
     name='homepage',
     version='0.0.0',
-    description='Homepage scripts',
-    long_description='Homepage scripts',
+    description='The code and content on markusholtermann.eu',
     author='Markus Holtermann',
     author_email='info@markusholtermann.eu',
-    url='https://github.com/Markush2010/blog',
-    # packages=[],
-    # package_dir={'importer': 'importer'},
-    # include_package_data=True,
+    url='https://github.com/MarkusH/blog',
+    packages=find_packages(),
     license="BSD",
     entry_points='''
         [pygments.lexers]
         jni = pygments_lexer:JNILexer
     ''',
     zip_safe=False,
-    classifiers=[
-        'Development Status :: 4 - Beta',
-    ],
 )

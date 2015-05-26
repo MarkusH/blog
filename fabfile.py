@@ -141,7 +141,7 @@ def pelican():
 @task
 def build():
     """
-    Builds the page.
+    Builds the page locally
     """
     grunt()
     pelican()
