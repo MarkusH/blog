@@ -4,7 +4,7 @@ Pictures from NYC
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: NYC4.jpg
+:image: nyc2009/nyc4.jpg
 
 
 Yesterday a friend of mine asked around if someone has ever been in New York
@@ -19,28 +19,28 @@ Enjoy them!
    :medium: 3
    :large: 4
 
-   .. image:: NYC1.jpg
+   .. image:: nyc2009/nyc1.jpg
       :alt: View from the Empire State Building to Midtown Manhattan and Central Park
 
-   .. image:: NYC2.jpg
+   .. image:: nyc2009/nyc2.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
 
-   .. image:: NYC3.jpg
+   .. image:: nyc2009/nyc3.jpg
       :alt: View from the Staten Island Ferries to the Statue of Liberty
 
-   .. image:: NYC4.jpg
+   .. image:: nyc2009/nyc4.jpg
       :alt: View from the Staten Island Ferries to the Statue of Liberty
 
-   .. image:: NYC5.jpg
+   .. image:: nyc2009/nyc5.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
 
-   .. image:: NYC6.jpg
+   .. image:: nyc2009/nyc6.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
 
-   .. image:: NYC7.jpg
+   .. image:: nyc2009/nyc7.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
 
-   .. image:: NYC8.jpg
+   .. image:: nyc2009/nyc8.jpg
       :alt: View from a Circle Line Harbor Cruise towards Ellis Island
 
 
