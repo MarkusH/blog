@@ -24,7 +24,7 @@ introduced in 1988 under the title *Redundant Arrays of Inexpensive Disks*
 nowadays. The paper by Petterson, Gibson and Katz introduces the RAID levels 1
 to 5 as follows.
 
-.. figure:: /images/cloudraid-raid1.png
+.. figure:: /images/cloudraid/raid1.png
    :align: right
    :alt: RAID 1
 
@@ -36,7 +36,7 @@ disk capacity [DK88]_ (ch. 7, p. 112) for two disks. In general the space
 efficiency is at $$1/n$$. The fault tolerance is $$n-1$$ since all disks
 contain the same data and all but the last can fail without any data-loss.
 
-.. figure:: /images/cloudraid-raid2.png
+.. figure:: /images/cloudraid/raid2.png
    :align: right
    :alt: RAID 2
 
@@ -50,7 +50,7 @@ tolerance than RAID level 3, 4 or even 5. RAID level 2 can recover from one
 drive failure and has a space efficiency of $$1 - 1/(n * log_2(n-1))$$
 [Wik12b]_.
 
-.. figure:: /images/cloudraid-raid3.png
+.. figure:: /images/cloudraid/raid3.png
    :align: right
    :alt: RAID 3
 
@@ -63,7 +63,7 @@ dedicated for the parity, RAID level 3 provides a space efficiency of ``1 -
 minimum number of disks, space efficiency and fault tolerance are the same for
 RAID level 4 and 5.
 
-.. figure:: /images/cloudraid-raid4.png
+.. figure:: /images/cloudraid/raid4.png
    :align: right
    :alt: RAID 4
 
@@ -75,7 +75,7 @@ bit- or byte-wise [DK88]_ (ch. 10, pp. 113f). This improves *Input / Output*
 (I/O) performance, but can result in a bottleneck, since the parity is stored
 on a single device.
 
-.. figure:: /images/cloudraid-raid5.png
+.. figure:: /images/cloudraid/raid5.png
    :align: right
    :alt: RAID 5
 

@@ -199,7 +199,7 @@ access. On Unix systems this includes the binary ``b`` mode for ``fopen()``.
    encryption and will be passed to the ``hmac()`` function together with its
    length ``keylen``.
 
-   .. figure:: /images/cloudraid-flowchart-native-split.png
+   .. figure:: /images/cloudraid/flowchart-native-split.png
       :align: center
       :alt: Split process operation flowchart
 
@@ -255,7 +255,7 @@ access. On Unix systems this includes the binary ``b`` mode for ``fopen()``.
    and will be passed to the ``hmac()`` function together with its length
    ``keylen`` in the same way as in ``split_file()``.
 
-   .. figure:: /images/cloudraid-flowchart-native-merge.png
+   .. figure:: /images/cloudraid/flowchart-native-merge.png
       :align: center
       :alt: Merge process operation flowchart
 

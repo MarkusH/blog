@@ -67,7 +67,7 @@ not a good idea as is shown later on. To work around the availability concerns,
 one might use multiple cloud storage provides and ends up with a lot of work to
 synchronize the storages.
 
-.. figure:: /images/cloudraid-structural-idea.png
+.. figure:: /images/cloudraid/structural-idea.png
    :align: right
    :alt: Structural layout idea
    :class: margin-left
