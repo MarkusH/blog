@@ -4,12 +4,12 @@ Django 1.7: Database Migrations done right
 
 :tags: Database, Django, Migration
 :author: Markus Holtermann
+:image: django-logo.png
+:summary: About two weeks ago Django 1.7 was released with a lot of new and
+   shiny features, such the App Loading Refactoring, Custom Lookups, the Checks
+   Framework the buildin Migration support and many more. The release notes are
+   the longest in Django's history and span approx. 1,800 lines.
 
-
-.. image:: /images/logos/django-negative-250x.png
-   :align: right
-   :alt: Django -- The Web framework for perfectionists with deadlines.
-   :class: margin-left
 
 About two weeks ago `Django 1.7 was released`_ with a lot of new and shiny
 features, such the *App Loading Refactoring*, *Custom Lookups*, the *Checks

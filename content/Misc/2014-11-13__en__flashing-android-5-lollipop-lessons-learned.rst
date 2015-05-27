@@ -4,6 +4,13 @@ Flashing Android 5 "Lollipop": Lessons Learned
 
 :tags: Android, Lessons Learned
 :author: Markus Holtermann
+:image: android5.png
+:summary: Yesterday evening Google finally published the Android 5 "Lollipop"
+   factory images. Eagerly waiting for the update I couldn't hold myself and
+   flashed my Nexus 5. This was the first time on the Nexus 5, the previous
+   KitKat updates came OTA. Though I'm not really familiar with the whole
+   flashing thing, the entire process went smoothly. At least kind of.
+
 
 Yesterday evening Google finally published the `Android 5 "Lollipop" factory
 images`_. Eagerly waiting for the update I couldn't hold myself and flashed my

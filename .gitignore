@@ -3,6 +3,7 @@
 bower_components/
 build/
 cache/
+content/images/thumb/
 content.bak/
 dist
 node_modules/

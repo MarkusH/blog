@@ -4,10 +4,16 @@ Django file and memory mail back-end for tests
 
 :tags: Django, Testing
 :author: Markus Holtermann
+:image: django-logo.png
+:summary: Whenever you write unit or integration tests for your Django
+    application that involves sending mails, you end up with the LocMem mail
+    back-end as a default set by Django during test setup. However, if you want
+    to have a look at all the mails that have been sent, you are probably going
+    to choose the File mail back-end.
 
 
 Whenever you write unit or integration tests for your Django application that
-involve sending mails, you end up with the ``LocMem`` mail back-end
+involves sending mails, you end up with the ``LocMem`` mail back-end
 (``django.core.mail.backends.console .EmailBackend``) as a default set by
 Django during test setup. However, if you want to have a look at all the mails
 that have been sent, you are probably going to choose the ``File`` mail
