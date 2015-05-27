@@ -5,99 +5,78 @@ Projects
 :slug: projects
 :lang: en
 
-
 .. contents::
-   :depth: 2
+   :depth: 1
    :local:
+
 
 Own projects
 ============
 
-django-dynamic-forms
---------------------
+.. project:: django-dynamic-forms
+   :homepage: http://github.com/MarkusH/django-dynamic-forms
+   :docs: http://django-dynamic-forms.readthedocs.org/en/latest/
+   :download: https://pypi.python.org/pypi/django-dynamic-forms/
+   :license: BSD License
 
-:Homepage: http://github.com/MarkusH/django-dynamic-forms
-:Documentation: http://django-dynamic-forms.readthedocs.org/en/latest/
-:Download: https://pypi.python.org/pypi/django-dynamic-forms
-:License: BSD License
-:Version:
-    .. image:: https://pypip.in/v/django-dynamic-forms/badge.png?text=version&style=flat-square
-        :alt: django-dynamic-forms version
-
-django-dynamic-forms lets you create your forms through the Django admin. You
-can add and remove form fields as you need them. That makes it perfect for
-creating survey or application forms.
+   django-dynamic-forms lets you create your forms through the Django admin.
+   You can add and remove form fields as you need them. That makes it perfect
+   for creating survey or application forms.
 
 
-django-login-canary
--------------------
+.. project:: django-login-canary
+   :homepage: http://github.com/MarkusH/django-login-canary
+   :docs: None, see the readme
+   :download: https://pypi.python.org/pypi/django-login-canary
+   :license: MIT License
 
-:Homepage: http://github.com/MarkusH/django-login-canary
-:Documentation: None, see the readme
-:Download: https://pypi.python.org/pypi/django-login-canary
-:License: MIT License
-:Version:
-    .. image:: https://pypip.in/v/django-login-canary/badge.png?text=version&style=flat-square
-        :alt: django-login-canary version
-
-django-login-canary is a reusable Django application to notify users upon
-successful and failed logins.
+   django-login-canary is a reusable Django application to notify users upon
+   successful and failed logins.
 
 
 Contributor
 ===========
 
-Django
-------
+.. project:: Django
+   :homepage: https://www.djangoproject.com/
+   :code: https://github.com/django/django
+   :docs: https://docs.djangoproject.com/en/
+   :download: https://pypi.python.org/pypi/Django
+   :license: BSD License
 
-:Homepage: https://www.djangoproject.com/
-:Code: https://github.com/django/django
-:Documentation: https://docs.djangoproject.com/en/
-:Download: https://pypi.python.org/pypi/Django
-:License: BSD License
-:Version:
-    .. image:: https://pypip.in/v/Django/badge.png?text=version&style=flat-square
-        :alt: Django version
-
-Django is a high-level Python Web framework that encourages rapid development
-and clean, pragmatic design. Thanks for checking it out.
+   Django is a high-level Python Web framework that encourages rapid
+   development and clean, pragmatic design. Thanks for checking it out.
 
 
-Inyoka
-------
+.. project:: Inyoka
+   :homepage: http://ubuntuusers.de/inyoka/
+   :code: Not yet open source
+   :docs: N/A
+   :download: N/A
+   :license: BSD License
 
-:Homepage: http://ubuntuusers.de/inyoka/
-:Code: Not yet open source
-:Documentation: N/A
-:Download: N/A
-:License: BSD License
-:Version: N/A
+   Inyoka is a portal software powering the German `ubuntuusers.de`_ website.
+   It features a bulletin board, Wiki, news area, planet, pastebin and
+   calender.
 
-Inyoka is a portal software powering the German `ubuntuusers.de`_ website. It
-features a bulletin board, Wiki, news area, planet, pastebin and calender.
-
-.. _ubuntuusers.de: http://ubuntuusers.de/
+   .. _ubuntuusers.de: http://ubuntuusers.de/
 
 
-djep
-----
+.. project:: djep
+   :homepage: https://ep2014.europython.eu/
+   :code: https://github.com/pysv/djep
+   :license: BSD License
 
-:Homepage: https://ep2014.europython.eu/
-:Code: https://github.com/pysv/djep
-:License: BSD License
-
-The software that powered multiple PyCon DE conference websites as well as the
-EuroPython 2014.
+   The software that powered multiple PyCon DE conference websites as well as
+   the EuroPython 2014.
 
 
 Proof of Concepts
 =================
 
-django-sshlogin
----------------
+.. project:: django-sshlogin
+   :code: https://github.com/MarkusH/django-sshlogin
+   :license: BSD License
 
-:Code: https://github.com/MarkusH/django-sshlogin
-:License: BSD License
-
-A key-based login via SSH generates a token that is valid for 10 seconds and
-can be used to authenticate on a website.
+   A key-based login via SSH generates a token that is valid for 10 seconds and
+   can be used to authenticate on a website.
