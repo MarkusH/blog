@@ -4,6 +4,7 @@ Pictures from NYC
 
 :tags: Holiday
 :author: Markus Holtermann
+:image: NYC4.jpg
 
 
 Yesterday a friend of mine asked around if someone has ever been in New York

@@ -4,6 +4,11 @@ Festival of Lights 2014
 
 :tags: Berlin
 :author: Markus Holtermann
+:image: festival-of-light-2014.jpg
+:summary: From October 10 to 19, 2014 the 10. Festival of Lights happened in
+   Berlin after its foundation in 2005. This year's theme was "Colours of Joy".
+   During those 10 nights many monuments and important places and buildings are
+   turned into artworks by national and international artists.
 
 
 From October 10 to 19, 2014 the `10. Festival of Lights`_ happened in Berlin

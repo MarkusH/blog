@@ -4,6 +4,12 @@ The conference island -- DjangoCon Europe 2014
 
 :tags: Community, Django, DjangoCon
 :author: Markus Holtermann
+:image: djangoconeu14.jpg
+:summary: About a month ago, I attended DjangoCon Europe on the Île des Embiez,
+   a small island between Toulon and Marseille. After an incredible circus
+   edition 2013 in Warsaw, this year's organizers stepped up to the plate to
+   host another amazing conference.
+
 
 .. image:: /images/djangoconeu2014/logo.png
    :align: right
