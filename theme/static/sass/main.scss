@@ -16,7 +16,7 @@
 
 // components
 @import "components/global";
-@import "components/icons-material-design";
+// @import "components/icons-material-design";
 @import "components/grid";
 @import "components/navbar";
 @import "components/roboto";
@@ -25,11 +25,11 @@
 // @import "components/toast";
 // @import "components/tabs";
 // @import "components/tooltip";
-// @import "components/buttons";
+@import "components/buttons";
 // @import "components/dropdown";
 @import "components/waves";
 // @import "components/modal";
-// @import "components/collapsible";
+@import "components/collapsible";
 @import "components/materialbox";
 // @import "components/form";
 // @import "components/table_of_contents";
@@ -43,6 +43,8 @@
 @import "_overrides";
 
 @import "_highlight";
+
+@import "_icons";
 
 .pagination {
   display: inline-block;

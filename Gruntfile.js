@@ -14,6 +14,19 @@ module.exports = function(grunt) {
         }]
       }
     },
+    webfont: {
+        icons: {
+            src: 'theme/static/font-src/*.svg',
+            dest: 'theme/static/font',
+            destCss: 'theme/static/sass',
+            options: {
+              htmlDemo: false,
+              stylesheet: 'scss',
+              syntax: 'bootstrap',
+              types: 'eot,woff,ttf,svg'
+            }
+        }
+    },
     sass: {
       dist: {
         options: {
@@ -59,6 +72,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-webfont');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['sass', 'copy', 'uglify', 'concat']);
+  grunt.registerTask('default', ['webfont', 'sass', 'copy', 'uglify', 'concat']);
 };

@@ -10,6 +10,7 @@ pelican-plugins/
 theme/static/css/
 theme/static/font/
 theme/static/js/
+theme/static/sass/_icons.scss
 
 production.ini
 

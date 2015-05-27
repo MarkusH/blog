@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-webfont": "^0.5.2",
+    "mdi": "^1.0.62-beta",
     "npm-check-updates": "^1.5.1"
   }
 }
