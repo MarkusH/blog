@@ -29,9 +29,9 @@
   {% endfor %}
 
   {% if articles_page.has_next() %}
-    <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html"><i class="mdi-navigation-chevron-right"></i></a></li>
+    <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html"><i class="icon-chevron-right"></i></a></li>
   {% else %}
-    <li class="disabled"><a href=""><i class="mdi-navigation-chevron-right"></i></a></li>
+    <li class="disabled"><a href=""><i class="icon-chevron-right"></i></a></li>
   {% endif %}
 </ul>
 </div>
