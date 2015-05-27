@@ -5,10 +5,6 @@ Projects
 :slug: projects
 :lang: en
 
-.. contents::
-   :depth: 1
-   :local:
-
 
 Own projects
 ============

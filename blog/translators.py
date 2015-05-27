@@ -39,16 +39,19 @@ class ProjectTranslator:
         self.body.append(self.starttag(node, 'div', CLASS='collapsible-body'))
         self.body.append(self.starttag(node, 'p'))
 
+    def depart_project_desc(self, node):
+        self.body.append('</p>')
+        self.body.append('</div>')
+        self.body.append('</li>')
+
     def _visit_project_item(self, node):
         self.body.append(self.starttag(node, 'li'))
-        self.body.append(self.starttag(node, 'div', CLASS='collapsible-header'))
+        self.body.append(self.starttag(node, 'div', CLASS='collapsible-header active'))
         self.body.append(self.starttag(node, 'i', CLASS=node.icon))
         self.body.append('</i>')
         self.body.append(node.label)
         self.body.append(': ')
-        # self.body.append('</div>')
-        # self.body.append(self.starttag(node, 'div', CLASS='collapsible-body'))
-        # self.body.append(self.starttag(node, 'p'))
+        self.body.append(self.starttag(node, 'span', CLASS='hide-on-med-and-down'))
 
     visit_project_code = _visit_project_item
     visit_project_docs = _visit_project_item
@@ -57,7 +60,14 @@ class ProjectTranslator:
     visit_project_license = _visit_project_item
 
     def _depart_project_item(self, node):
-        # self.body.append('</p>')
+        start = (len(self.body) - 1) - self.body[::-1].index('<span class="hide-on-med-and-down">\n')
+        content = self.body[start + 1:]
+        self.body.append('</span>')
+        self.body.append('</div>')
+        self.body.append(self.starttag(node, 'div', CLASS='collapsible-body hide-on-large-only'))
+        self.body.append(self.starttag(node, 'p'))
+        self.body.extend(content)
+        self.body.append('</p>')
         self.body.append('</div>')
         self.body.append('</li>')
 
@@ -66,7 +76,6 @@ class ProjectTranslator:
     depart_project_download = _depart_project_item
     depart_project_homepage = _depart_project_item
     depart_project_license = _depart_project_item
-    depart_project_desc = _depart_project_item
 
 
 class BlogHTMLTranslator(GalleryTranslator, ProjectTranslator,
