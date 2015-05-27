@@ -4,11 +4,11 @@
 Taken from the Pygments C lexer
 """
 
-
 from pygments.lexer import RegexLexer, include, bygroups, using, this
 from pygments.util import get_bool_opt
-from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
-    Number, Punctuation, Error
+from pygments.token import (
+    Comment, Error, Keyword, Name, Number, Operator, Punctuation, String, Text,
+)
 
 __all__ = ['JNILexer']
 

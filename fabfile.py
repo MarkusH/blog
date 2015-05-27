@@ -135,7 +135,7 @@ def pelican():
     """
     Runs pelican locally
     """
-    local('pelican -o build -s pelicanconf.py content')
+    local('pelican -o build -s pelicanconf.py content --ignore-cache')
 
 
 @task

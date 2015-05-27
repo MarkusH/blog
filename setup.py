@@ -14,7 +14,7 @@ setup(
     license="BSD",
     entry_points='''
         [pygments.lexers]
-        jni = pygments_lexer:JNILexer
+        jni = blog.pygments_lexer:JNILexer
     ''',
     zip_safe=False,
 )
