@@ -6,6 +6,7 @@ from docutils.parsers.rst.directives import register_directive
 from pelican import signals
 
 from . import directives
+from .imaging import gen_article_thumbnails
 from .readers import BlogReader
 
 
@@ -16,6 +17,7 @@ def register():
     register_directives()
     signals.readers_init.connect(add_reader)
     signals.readers_init.connect(patch_typogrify)
+    signals.article_generator_finalized.connect(thumbnail_generator)
 
 
 def register_directives():
@@ -25,6 +27,12 @@ def register_directives():
 
 def add_reader(readers):
     readers.reader_classes['rst'] = BlogReader
+
+
+def thumbnail_generator(article_generator):
+    for article in article_generator.articles:
+        if hasattr(article, 'image'):
+            gen_article_thumbnails('content/images/' + article.image)
 
 
 def patch_typogrify(readers):
