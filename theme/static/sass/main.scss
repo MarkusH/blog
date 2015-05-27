@@ -40,11 +40,43 @@
 // @import "components/date_picker/default.date.scss";
 // @import "components/date_picker/default.time.scss";
 
-@import "_overrides";
-
 @import "_highlight";
 
 @import "_icons";
+
+html{
+  @media only screen and (min-width: 0) {
+    font-size: 14px;
+  }
+  
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 14px;
+  }
+  
+  @media only screen and (min-width: $large-screen) {
+    font-size: 14px;
+  }
+}
+
+@media #{$small-and-down} {
+  nav {
+    .brand-logo {
+      font-size: 1.8rem;
+    }
+  }
+  .container {
+      width: 96%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+tt {
+  color: #444444;
+  font-size: 0.9em;
+}
 
 .pagination {
   display: inline-block;
@@ -70,7 +102,7 @@
 
 .card {
   .card-content {
-    ul {
+    ul.simple {
       margin-left: 1.5rem;
       padding: 0;
       list-style-type: disc;
@@ -78,20 +110,30 @@
         list-style-type: disc;
       }
     }
+    .card-title {
+      color: $primary-color;
+      line-height: 1.5;
+      padding-bottom: 12px;
+    }
+    h1, h2, h3, h4, h5, h6 { color: $primary-color; }
+  }
+  .card-action {
+    a {
+      color: $primary-color-light;
+      &:hover {
+        color: $primary-color-light;
+      }
+    }
   }
 }
 
-tt {
-  color: #444444;
-  font-size: 0.9em;
+.gallery img {
+  width: 100%;
 }
 
 #MathJax_Message {
   display: none !important;
 }
-
-
-
 
 .row.gallery .col {
   padding: 2px 5px !important;
