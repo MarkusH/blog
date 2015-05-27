@@ -1,12 +1,37 @@
+from docutils import nodes
 from docutils.core import Publisher
 from docutils.io import StringOutput
-from pelican.readers import RstReader
+from pelican.readers import RstReader, render_node_to_html
 
 from .translators import BlogHTMLTranslator
 
 
 class BlogReader(RstReader):
     enabled = True
+
+    def _parse_metadata(self, document):
+        """Return the dict containing document metadata"""
+        output = {}
+        for docinfo in document.traverse(nodes.docinfo):
+            for element in docinfo.children:
+                if element.tagname == 'field':  # custom fields (e.g. summary)
+                    name_elem, body_elem = element.children
+                    name = name_elem.astext()
+                    if name in ('summary', 'image_credits'):
+                        value = render_node_to_html(document, body_elem)
+                    else:
+                        value = body_elem.astext()
+                elif element.tagname == 'authors':  # author list
+                    name = element.tagname
+                    value = [element.astext() for element in element.children]
+                    value = ','.join(value)  # METADATA_PROCESSORS expects a string
+                else:  # standard fields (e.g. address)
+                    name = element.tagname
+                    value = element.astext()
+                name = name.lower()
+
+                output[name] = self.process_metadata(name, value)
+        return output
 
     def _get_publisher(self, source_path):
         extra_params = {

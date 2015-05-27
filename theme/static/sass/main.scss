@@ -56,6 +56,9 @@
     font-size: rem-calc(14);
     margin-top: 0.5rem;
   }
+  .image-credits p {
+    display: inline;
+  }
   a {
     color: $primary-color-light;
     @include transition(color .3s ease);
