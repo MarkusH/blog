@@ -164,21 +164,17 @@ Our app has three important components:
    :small: 1
    :medium: 2
 
-   .. image:: /images/berlin-school-data/school1tb.jpg
+   .. image:: berlin-school-data/school1.png
       :alt: Startseite
-      :target: /images/berlin-school-data/school1.png
 
-   .. image:: /images/berlin-school-data/school2tb.jpg
+   .. image:: berlin-school-data/school2.png
       :alt: Ein paar angewendete Filter
-      :target: /images/berlin-school-data/school2.png
 
-   .. image:: /images/berlin-school-data/school3tb.jpg
+   .. image:: berlin-school-data/school3.png
       :alt: Detailansicht einer Schule
-      :target: /images/berlin-school-data/school3.png
 
-   .. image:: /images/berlin-school-data/school4tb.jpg
+   .. image:: berlin-school-data/school4.png
       :alt: Heatmap Betreuungsschlüssel
-      :target: /images/berlin-school-data/school4.png
 
 
 The Filter

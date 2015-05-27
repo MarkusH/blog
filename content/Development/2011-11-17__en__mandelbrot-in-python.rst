@@ -65,6 +65,5 @@ to PNG with a size of 1.7MB:
 .. gallery::
    :small: 1
 
-   .. image:: /images/mandelbrottb.png
+   .. image:: mandelbrot.png
       :alt: KDE 4.10 RC1
-      :target: /images/mandelbrot.png

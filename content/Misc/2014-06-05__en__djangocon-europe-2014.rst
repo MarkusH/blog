@@ -56,21 +56,17 @@ that bad. We walked through the city to the harbor and grabbed some lunch.
    :small: 1
    :medium: 3
 
-   .. image:: /images/djangoconeu2014/DCE14-01tb.jpg
+   .. image:: djangoconeu2014/DCE14-01.jpg
       :alt: DjangoCon Europe 2014 -- Toulon
-      :target: /images/djangoconeu2014/DCE14-01.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-02tb.jpg
+   .. image:: djangoconeu2014/DCE14-02.jpg
       :alt: DjangoCon Europe 2014 -- Toulon
-      :target: /images/djangoconeu2014/DCE14-02.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-03tb.jpg
+   .. image:: djangoconeu2014/DCE14-03.jpg
       :alt: DjangoCon Europe 2014 -- Toulon harbor
-      :target: /images/djangoconeu2014/DCE14-03.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-04tb.jpg
+   .. image:: djangoconeu2014/DCE14-04.jpg
       :alt: DjangoCon Europe 2014 -- Toulon harbor
-      :target: /images/djangoconeu2014/DCE14-04.jpg
       :class: span100
 
 Back at the central bus station we met quite a lot other DjangoCon attendees
@@ -81,17 +77,14 @@ island.
    :small: 1
    :medium: 3
 
-   .. image:: /images/djangoconeu2014/DCE14-05tb.jpg
+   .. image:: djangoconeu2014/DCE14-05.jpg
       :alt: DjangoCon Europe 2014 -- La Brusc
-      :target: /images/djangoconeu2014/DCE14-05.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-06tb.jpg
+   .. image:: djangoconeu2014/DCE14-06.jpg
       :alt: DjangoCon Europe 2014 -- Ferry to the island
-      :target: /images/djangoconeu2014/DCE14-06.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-07tb.jpg
+   .. image:: djangoconeu2014/DCE14-07.jpg
       :alt: DjangoCon Europe 2014 -- Arrived on the Island
-      :target: /images/djangoconeu2014/DCE14-07.jpg
 
 At about 6pm we arrived at the hotel. After I checked into my room I had an
 amazing view from the balkony.
@@ -100,18 +93,15 @@ amazing view from the balkony.
    :small: 1
    :medium: 3
 
-   .. image:: /images/djangoconeu2014/DCE14-08tb.jpg
+   .. image:: djangoconeu2014/DCE14-08.jpg
       :alt: DjangoCon Europe 2014 -- Hotel entrance
-      :target: /images/djangoconeu2014/DCE14-08.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-09tb.jpg
+   .. image:: djangoconeu2014/DCE14-09.jpg
       :alt: DjangoCon Europe 2014 -- View from the hotel to the harbor
-      :target: /images/djangoconeu2014/DCE14-09.jpg
       :class: span66
 
-   .. image:: /images/djangoconeu2014/DCE14-10tb.jpg
+   .. image:: djangoconeu2014/DCE14-10.jpg
       :alt: DjangoCon Europe 2014 -- View from the hotel to the harbor
-      :target: /images/djangoconeu2014/DCE14-10.jpg
       :class: span100
 
 
@@ -129,70 +119,55 @@ Here are some photos that capture some nice views.
    :small: 1
    :medium: 3
 
-   .. image:: /images/djangoconeu2014/DCE14-11tb.jpg
+   .. image:: djangoconeu2014/DCE14-11.jpg
       :alt: DjangoCon Europe 2014 -- Harbor on the island
-      :target: /images/djangoconeu2014/DCE14-11.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-12tb.jpg
+   .. image:: djangoconeu2014/DCE14-12.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-12.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-13tb.jpg
+   .. image:: djangoconeu2014/DCE14-13.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-13.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-14tb.jpg
+   .. image:: djangoconeu2014/DCE14-14.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-14.jpg
       :class: span100
 
-   .. image:: /images/djangoconeu2014/DCE14-15tb.jpg
+   .. image:: djangoconeu2014/DCE14-15.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-15.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-16tb.jpg
+   .. image:: djangoconeu2014/DCE14-16.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-16.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-17tb.jpg
+   .. image:: djangoconeu2014/DCE14-17.jpg
       :alt: DjangoCon Europe 2014 -- Be aware of the goats!
-      :target: /images/djangoconeu2014/DCE14-17.jpg
       :class: noclear
 
-   .. image:: /images/djangoconeu2014/DCE14-18tb.jpg
+   .. image:: djangoconeu2014/DCE14-18.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-18.jpg
       :class: span100
 
-   .. image:: /images/djangoconeu2014/DCE14-19tb.jpg
+   .. image:: djangoconeu2014/DCE14-19.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-19.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-20tb.jpg
+   .. image:: djangoconeu2014/DCE14-20.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-20.jpg
       :class: noclear
 
-   .. image:: /images/djangoconeu2014/DCE14-21tb.jpg
+   .. image:: djangoconeu2014/DCE14-21.jpg
       :alt: DjangoCon Europe 2014 -- Picnic
-      :target: /images/djangoconeu2014/DCE14-21.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-22tb.jpg
+   .. image:: djangoconeu2014/DCE14-22.jpg
       :alt: DjangoCon Europe 2014 -- The highest point on the island
-      :target: /images/djangoconeu2014/DCE14-22.jpg
       :class: span100
 
-   .. image:: /images/djangoconeu2014/DCE14-23tb.jpg
+   .. image:: djangoconeu2014/DCE14-23.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-23.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-24tb.jpg
+   .. image:: djangoconeu2014/DCE14-24.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-24.jpg
 
-   .. image:: /images/djangoconeu2014/DCE14-25tb.jpg
+   .. image:: djangoconeu2014/DCE14-25.jpg
       :alt: DjangoCon Europe 2014
-      :target: /images/djangoconeu2014/DCE14-25.jpg
 
 
 The Conference

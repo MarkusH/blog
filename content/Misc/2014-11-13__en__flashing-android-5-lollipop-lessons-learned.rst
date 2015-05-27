@@ -22,13 +22,11 @@ time I flashed my HTC Desire HD with some CyanogenMod fork back in summer
 .. gallery::
    :small: 2
 
-   .. image:: /images/android-5-lollipop1tb.png
+   .. image:: android-5-lollipop1.png
       :alt: Android 5 "Lollipop"
-      :target: /images/android-5-lollipop1.png
 
-   .. image:: /images/android-5-lollipop2tb.png
+   .. image:: android-5-lollipop2.png
       :alt: Android 5 "Lollipop"
-      :target: /images/android-5-lollipop2.png
 
 This post is more about the things I messed up because they changed or were
 different to flashing on the HTC Desire HD and thus is a note to myself what I

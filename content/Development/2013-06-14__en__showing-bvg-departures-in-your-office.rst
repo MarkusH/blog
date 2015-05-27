@@ -24,13 +24,11 @@ departures of the bus stop and show them in the room.
 .. gallery::
    :small: 2
 
-   .. image:: /images/BVG-Grabber-LightningTalk-installation1tb.jpg
+   .. image:: BVG-Grabber-LightningTalk-installation1.jpg
       :alt: bvg-grabber in use
-      :target: /images/BVG-Grabber-LightningTalk-installation1.jpg
 
-   .. image:: /images/BVG-Grabber-LightningTalk-installation2tb.jpg
+   .. image:: BVG-Grabber-LightningTalk-installation2.jpg
       :alt: bvg-grabber in use
-      :target: /images/BVG-Grabber-LightningTalk-installation2.jpg
 
 At first the information retrieval was hard-coded and it was only possible to
 get the departures for a single bus stop. After a short time we got the feature

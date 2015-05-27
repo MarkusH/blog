@@ -4,6 +4,11 @@ Berliner Schulen in Zahlen
 
 :tags: Berlin, Projekte, Studium
 :authors: Alexander Grießer, Markus Holtermann
+:image: west-berlin-dust.jpg
+:image_credits:  Licensed under the terms of the `Creative Commons Attribution-
+   ShareAlike 2.0 Generic (CC BY-SA 2.0)
+   <https://creativecommons.org/licenses/by-sa/2.0/>`_ by `Sascha Kohlmann
+   <https://www.flickr.com/photos/skohlmann/12177486313/>`_
 
 
 Berlin. 2014. 1093 Bildungseinrichtungen. 835 Zeilen Javascript Code. 573
@@ -61,25 +66,20 @@ Webseite:
    :small: 1
    :medium: 2
 
-   .. image:: /images/berlin-school-data/school1tb.jpg
+   .. image:: berlin-school-data/school1.png
       :alt: Startseite
-      :target: /images/berlin-school-data/school1.png
 
-   .. image:: /images/berlin-school-data/school1tb.jpg
+   .. image:: berlin-school-data/school1.png
       :alt: Ein paar angewendete Filter
-      :target: /images/berlin-school-data/school2.png
 
-   .. image:: /images/berlin-school-data/school3tb.jpg
+   .. image:: berlin-school-data/school3.png
       :alt: Detailansicht einer Schule
-      :target: /images/berlin-school-data/school3.png
 
-   .. image:: /images/berlin-school-data/school4tb.jpg
+   .. image:: berlin-school-data/school4.png
       :alt: Heatmap Betreuungsschlüssel
-      :target: /images/berlin-school-data/school4.png
 
-   .. image:: /images/berlin-school-data/school5tb.jpg
+   .. image:: berlin-school-data/school5.png
       :alt: Impressum
-      :target: /images/berlin-school-data/school5.png
 
 Bis jetzt sind wir ohne technische Details ausgekommen, aber so ganz kommen wir
 in diesem Abschnitt nicht drum herum. Die Webseite ist als sogenannte

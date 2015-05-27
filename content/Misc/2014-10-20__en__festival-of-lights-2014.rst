@@ -32,49 +32,35 @@ Brandenburg Gate
 .. gallery::
    :small: 2
 
-   .. image:: /images/festival-of-lights2014/FoL01-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL01-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL01-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL01tb.jpg
+   .. image:: festival-of-lights2014/FoL01.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL01.jpg
 
-
-   .. image:: /images/festival-of-lights2014/FoL02-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL02-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL02-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL02tb.jpg
+   .. image:: festival-of-lights2014/FoL02.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL02.jpg
 
-
-   .. image:: /images/festival-of-lights2014/FoL03-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL03-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL03-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL03tb.jpg
+   .. image:: festival-of-lights2014/FoL03.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL03.jpg
 
-
-   .. image:: /images/festival-of-lights2014/FoL04-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL04-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL04-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL04tb.jpg
+   .. image:: festival-of-lights2014/FoL04.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL04.jpg
 
-
-   .. image:: /images/festival-of-lights2014/FoL05-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL05-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL05-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL05tb.jpg
+   .. image:: festival-of-lights2014/FoL05.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL05.jpg
 
 
 Potsdam Square
@@ -83,22 +69,18 @@ Potsdam Square
 .. gallery::
    :small: 2
 
-   .. image:: /images/festival-of-lights2014/FoL06-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL06-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL06-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL06tb.jpg
+   .. image:: festival-of-lights2014/FoL06.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL06.jpg
 
 
-   .. image:: /images/festival-of-lights2014/FoL07-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL07-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL07-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL07tb.jpg
+   .. image:: festival-of-lights2014/FoL07.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL07.jpg
 
 
 Humboldt University and Hotel de Rome
@@ -107,49 +89,39 @@ Humboldt University and Hotel de Rome
 .. gallery::
    :small: 2
 
-   .. image:: /images/festival-of-lights2014/FoL08-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL08-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL08-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL08tb.jpg
+   .. image:: festival-of-lights2014/FoL08.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL08.jpg
 
 
-   .. image:: /images/festival-of-lights2014/FoL09-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL09-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL09-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL09tb.jpg
+   .. image:: festival-of-lights2014/FoL09.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL09.jpg
 
 
-   .. image:: /images/festival-of-lights2014/FoL10-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL10-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL10-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL10tb.jpg
+   .. image:: festival-of-lights2014/FoL10.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL10.jpg
 
 
-   .. image:: /images/festival-of-lights2014/FoL11-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL11-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL11-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL11tb.jpg
+   .. image:: festival-of-lights2014/FoL11.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL11.jpg
 
 
-   .. image:: /images/festival-of-lights2014/FoL12-bwtb.jpg
+   .. image:: festival-of-lights2014/FoL12-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL12-bw.jpg
 
-   .. image:: /images/festival-of-lights2014/FoL12tb.jpg
+   .. image:: festival-of-lights2014/FoL12.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-      :target: /images/festival-of-lights2014/FoL12.jpg
 
 
 License

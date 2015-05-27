@@ -19,37 +19,29 @@ Enjoy them!
    :medium: 3
    :large: 4
 
-   .. image:: /images/NYC1tb.jpg
+   .. image:: NYC1.jpg
       :alt: View from the Empire State Building to Midtown Manhattan and Central Park
-      :target: /images/NYC1.jpg
 
-   .. image:: /images/NYC2tb.jpg
+   .. image:: NYC2.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
-      :target: /images/NYC2.jpg
 
-   .. image:: /images/NYC3tb.jpg
+   .. image:: NYC3.jpg
       :alt: View from the Staten Island Ferries to the Statue of Liberty
-      :target: /images/NYC3.jpg
 
-   .. image:: /images/NYC4tb.jpg
+   .. image:: NYC4.jpg
       :alt: View from the Staten Island Ferries to the Statue of Liberty
-      :target: /images/NYC4.jpg
 
-   .. image:: /images/NYC5tb.jpg
+   .. image:: NYC5.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
-      :target: /images/NYC5.jpg
 
-   .. image:: /images/NYC6tb.jpg
+   .. image:: NYC6.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
-      :target: /images/NYC6.jpg
 
-   .. image:: /images/NYC7tb.jpg
+   .. image:: NYC7.jpg
       :alt: View from the Staten Island Ferries to Downtown Manhattan
-      :target: /images/NYC7.jpg
 
-   .. image:: /images/NYC8tb.jpg
+   .. image:: NYC8.jpg
       :alt: View from a Circle Line Harbor Cruise towards Ellis Island
-      :target: /images/NYC8.jpg
 
 
 .. figure:: /images/cc-by-nc-sa-3.0-88x31.png
