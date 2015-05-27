@@ -32,7 +32,7 @@ def add_reader(readers):
 def thumbnail_generator(article_generator):
     for article in article_generator.articles:
         if hasattr(article, 'image'):
-            gen_article_thumbnails('content/images/' + article.image)
+            gen_article_thumbnails(article.image)
 
 
 def patch_typogrify(readers):

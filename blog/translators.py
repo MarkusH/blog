@@ -7,10 +7,20 @@ __all__ = ['BlogHTMLTranslator']
 class GalleryTranslator:
 
     def visit_gallery_node(self, node):
-        self.body.append(self.starttag(node, 'ul', **{'data-clearing': ''}))
+        self.body.append(self.starttag(node, 'div', CLASS='row gallery'))
+        for image in node.images:
+            self.body.append(self.starttag(image, 'a', HREF='/images/' + image.source))
+            self.body.append(self.starttag(node, 'picture', CLASS='activator'))
+            self.body.append('<!--[if IE 9]><video style="display: none;"><![endif]-->')
+            self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 993px)">' % image.thumbs[2])
+            self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 601px)">' % image.thumbs[1])
+            self.body.append('<!--[if IE 9]></video><![endif]-->')
+            self.body.append('<img srcset="/images/thumb/%s" alt="%s">' % (image.thumbs[0], image['alt']))
+            self.body.append('</picture>')
+            self.body.append('</a>')
 
     def depart_gallery_node(self, node):
-        self.body.append('</ul>\n')
+        self.body.append('</div>')
 
 
 class ProjectTranslator:

@@ -1,9 +1,11 @@
 from __future__ import unicode_literals
 
+import math
+
 from docutils import nodes
 from docutils.parsers.rst import directives, Directive
-from docutils.transforms import parts
 
+from .imaging import gen_article_thumbnails
 from .nodes import (
     gallery_node, project_code, project_desc, project_docs, project_download,
     project_homepage, project_license, project_node,
@@ -22,33 +24,40 @@ class Gallery(Directive):
     has_content = True
 
     def run(self):
-        classes = ['clearing-thumbs']
-        if 'small' in self.options:
-            classes.append('small-block-grid-%d' % self.options['small'])
-        if 'medium' in self.options:
-            classes.append('medium-block-grid-%d' % self.options['medium'])
-        if 'large' in self.options:
-            classes.append('large-block-grid-%d' % self.options['large'])
+        gallery = gallery_node(self.content)
+        self.state.nested_parse(self.content, self.content_offset, gallery)
+        images = gallery.children
+        gallery.clear()
+        gallery.images = []
 
-        cont = gallery_node(self.content, classes=classes)
-        self.state.nested_parse(self.content, self.content_offset, cont)
-        figures = cont.children
-        cont.clear()
-        for fig in figures:
-            fig.attributes['classes'].append('th')
-            li = nodes.list_item()
-            span = []
-            try:
-                span.extend(fig.children[0].attributes['classes'])
-            except IndexError:
-                try:
-                    span.extend(fig.attributes['classes'])
-                except IndexError:
-                    pass
-            li.attributes['classes'].extend(span)
-            li.append(fig)
-            cont.append(li)
-        return [cont]
+        classes = ['col']
+        max_widths = {
+            's': 500.594,
+            'm': 768.688,
+            'l': 1007.906,
+        }
+        counts = {}
+        counts['s'] = self.options.get('small', 1)
+        counts['m'] = self.options.get('medium', counts['s'])
+        counts['l'] = self.options.get('large', counts['m'])
+
+        spans = {k: 12 / v for k, v in counts.items()}
+
+        sizes = []
+        for key in ('s', 'm', 'l'):
+            classes.append('%s%d' % (key, spans[key]))
+            padding = 10.5 * counts[key] * 2  # padding on left and right
+            size = int(math.ceil((max_widths[key] - padding) / counts[key]))
+            sizes.append((size, size))
+
+        for img in images:
+            img['classes'].extend(classes)
+            target = img.attributes.get('uri', img.attributes.get('refuri'))
+            assert target
+            img.source = target
+            img.thumbs = gen_article_thumbnails(target, sizes=sizes)
+            gallery.images.append(img)
+        return [gallery]
 
 
 class Project(Directive):
