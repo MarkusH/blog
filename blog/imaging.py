@@ -17,13 +17,13 @@ SIZES = (
 
 def gen_article_thumbnails(source):
     out = []
+    source_dir = dirname(source)
+    source_name = basename(source)
+    name, ext = splitext(source_name)
+    dest_dir = join(source_dir, 'thumb')
+    if not exists(dest_dir):
+        os.makedirs(dest_dir)
     for width, height in SIZES:
-        source_dir = dirname(source)
-        source_name = basename(source)
-        name, ext = splitext(source_name)
-        dest_dir = join(source_dir, 'thumb')
-        if not exists(dest_dir):
-            os.makedirs(dest_dir)
         dest_name = '{0}-{1}x{2}{3}'.format(name, width, height, ext)
         dest = join(dest_dir, dest_name)
         out.append(dest)
