@@ -2,11 +2,19 @@
 {% block content %}
   <div class="row" id="posts">
     {% for article in articles_page.object_list %}
-    <div class="col s12 m6 l{% if article.date.day % 4 == 0 %}8{% else %}4{% endif %}">
+    <div class="col s12 m6 l4">
       <div class="card">
+        {% if article.image %}
         <div class="card-image">
-          <img class="activator" src="http://lorempixel.com/485/273/technics/{{ loop.index0 % 9 + 1 }}">
+          <picture class="activator">
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-485x273.png" media="(min-width: 993px)">
+            <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-786x230.png" media="(min-width: 601px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-485x273.png">
+          </picture>
         </div>
+        {% endif %}
         <div class="card-content">
           <div class="meta">
             <a href="{{ SITEURL }}/{{ article.category.url }}" class="category">{{ article.category }}</a> &bull;
