@@ -6,6 +6,7 @@ EuroPython 2014 Conference in Berlin at the bcc Berlin Congress Center
 :author: Markus Holtermann
 :summary: Organizers expect up to 1,200 attendees
 
+
 .. image:: /images/ep14-logo-250x.png
    :align: right
    :alt: EuroPython 2014, July 21-27, Berlin

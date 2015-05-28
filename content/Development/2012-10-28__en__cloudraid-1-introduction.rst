@@ -5,6 +5,10 @@
 :tags: Apache, CloudRAID, Cluster, Eclipse, Encryption Java, Network, Security,
    Server, Studium
 :author: Markus Holtermann
+:summary: During last year a fellow student of mine, Florian Bausch, and I
+   wrote a student research paper about how to provide availability, redundancy
+   and security of data in the overall existing and "well known" cloud. This is
+   the first chapter of our papaer.
 
 
 During last year a fellow student of mine, `Florian Bausch`_, and I wrote a
@@ -125,7 +129,7 @@ strict sense, but uses the ideas and techniques of those systems.
 .. _Implementation:
    {filename}/Development/2012-11-13__en__cloudraid-4-implementation.rst
 .. _JNI API:
-   {filename}/Development/2012-11-13__en__cloudraid-4-implementation.rst#jni-api
+   {filename}/Development/2012-11-13__en__cloudraid-4-implementation.rst
 .. _RESTful API Endpoint Specifications:
    {filename}/Development/2012-11-15__en__cloudraid-4-implementation-continuation.rst#restful-api-endpoint-specifications
 .. _Compression on RESTful API:

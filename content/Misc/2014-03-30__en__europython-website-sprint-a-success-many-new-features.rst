@@ -4,6 +4,9 @@ EuroPython website sprint a success - many new features implemented
 
 :tags: Community, Django, EuroPython, Sprint
 :author: Markus Holtermann
+:summary: Last weekend the EuroPython web team met in Berlin in order to bring
+   the EuroPython 2014 website software forward.
+
 
 Last weekend the web team `met`_ in Berlin (and was supported by one member
 remotely) in the rooms of Veit Schiele Communications GmbH in order to bring the

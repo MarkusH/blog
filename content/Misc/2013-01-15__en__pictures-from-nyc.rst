@@ -5,6 +5,8 @@ Pictures from NYC
 :tags: Holiday
 :author: Markus Holtermann
 :image: nyc2009/nyc4.jpg
+:summary: Some of my favorite pictures from my last trip to New York City in
+   summer 2009.
 
 
 Yesterday a friend of mine asked around if someone has ever been in New York

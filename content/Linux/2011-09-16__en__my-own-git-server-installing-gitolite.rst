@@ -4,6 +4,9 @@ My own Git server - installing gitolite
 
 :tags: Debian, Git, Linux, Server
 :author: Markus Holtermann
+:summary: Yesterday I wanted to share some code with some friends, but I didn't
+   want to create a repository on `GitHub`_, so I decided to install my own git
+   server. After some minutes googleing I decided on gitolite.
 
 
 Yesterday I wanted to share some code with some friends, but I didn't want to

@@ -4,11 +4,15 @@ bakery -- Where cookies are made!
 
 :tags: Django, Git, Python
 :author: Markus Holtermann
+:summary: Djangodash is a coding contest where teams have 48 hours time to
+    start and sprint a project. We worked on a website to host cookiecutter
+    projects.
+
 
 It has been some time since my last blog post. So here's an update. This is
 about a great event I participated in last weekend, the `djangodash 2013`_.
 
-The djangodash is an coding contest where teams have 48 hours time to start and
+The djangodash is a coding contest where teams have 48 hours time to start and
 sprint a project. As this dash is called *djangodash*, the Django must be used.
 Furthermore the teams are limited to at most 3 members and a couple of other
 `rules`_.

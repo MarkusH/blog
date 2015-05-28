@@ -8,6 +8,10 @@ A lot has happended!
 :image_credits: Licensed under the terms of the `Creative Commons Attribution
    2.0 Generic (CC BY 2.0) <https://creativecommons.org/licenses/by/2.0/>`_ by
    `Kevin Dooley <https://www.flickr.com/photos/pagedooley/8317353637>`_
+:summary: It has been 5 months that I wrote something on my blog. I still
+   remember the time writing the article. On my way to Django: Under The Hood
+   2014. And shortly after that my time to write something here vanished.
+   For various reasons.
 
 
 It has been 5 months that I wrote something on my blog. I still remember the

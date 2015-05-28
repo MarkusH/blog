@@ -4,6 +4,7 @@ Showing BVG Departures In Your Office
 
 :tags: Git, Linux, Python, Studium
 :author: Markus Holtermann
+:summary: A small Python application to fetch departures from the BVG website.
 
 
 Yesterday evening I gave a lightning talk at the `Python User Group Berlin`_

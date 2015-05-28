@@ -6,6 +6,7 @@ EuroPython 2014 im bcc Berlin Congress Center
 :author: Markus Holtermann
 :summary: Veranstalter rechnen mit bis zu 1200 Besuchern
 
+
 .. image:: /images/ep14-logo-250x.png
    :align: right
    :alt: EuroPython 2014, July 21-27, Berlin

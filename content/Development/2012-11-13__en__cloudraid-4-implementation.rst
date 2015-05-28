@@ -5,6 +5,8 @@
 :tags: Apache, C/C++, CloudRAID, Cluster, Eclipse, Encryption, Java, Network,
    Security, Server, Studium
 :author: Markus Holtermann
+:summary: This post is a continuation of the blog series about the student
+   research paper CloudRAID. It features the underlying JNI implementation.
 
 
 This post is a continuation of the blog series about the student research paper

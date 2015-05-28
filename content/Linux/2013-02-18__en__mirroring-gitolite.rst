@@ -4,6 +4,9 @@ Mirroring gitolite
 
 :tags: Bash, Git, Network, Server
 :author: Markus Holtermann
+:summary: A long time ago I wrote an article about how to install gitolite.
+   Yesterday an article popped up in my feed reader that shows a short script
+   on how to mirroring gitolite servers.
 
 
 A long time ago I wrote an article about `how to install gitolite`_. Yesterday

@@ -5,6 +5,8 @@ Mandelbrot in Python
 
 :tags: Arch, Linux, PyPy, Python
 :author: Markus Holtermann
+:summary: I just found a nice Python script that draws the Mandelbrot set. Have
+   a look!
 
 
 I just `found <http://preshing.com/20110926/high-resolution-mandelbrot-in-obfuscated-python>`_

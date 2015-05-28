@@ -4,6 +4,10 @@ Logitech mouse M705 double click problem
 
 :tags: Stuff
 :author: Markus Holtermann
+:summary: A few years back, it must be around 2011, I bought a Logitech M705
+   mouse. A few days ago this mouse behaved wired. Almost every single left
+   click turned into a double click. Looking through the Internet it seemed to
+   be a common problem.
 
 
 A few years back, it must be around 2011, I bought a `Logitech M705 mouse`_. A

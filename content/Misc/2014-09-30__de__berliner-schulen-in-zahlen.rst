@@ -9,6 +9,7 @@ Berliner Schulen in Zahlen
    ShareAlike 2.0 Generic (CC BY-SA 2.0)
    <https://creativecommons.org/licenses/by-sa/2.0/>`_ by `Sascha Kohlmann
    <https://www.flickr.com/photos/skohlmann/12177486313/>`_
+:summary: Eine Übersicht über die Schulen in Berlin.
 
 
 Berlin. 2014. 1093 Bildungseinrichtungen. 835 Zeilen Javascript Code. 573

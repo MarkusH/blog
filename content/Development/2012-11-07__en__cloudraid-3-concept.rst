@@ -5,6 +5,9 @@
 :tags: Apache, C/C++, CloudRAID, Cluster, Eclipse, Encryption, Java, Network,
    Security, Server, Studium
 :author: Markus Holtermann
+:summary: This post is a continuation of the blog series about the student
+   research paper CloudRAID. It presents the requirements, general architecture
+   and gives some insight on the server architecture.
 
 
 This post is a continuation of the blog series about the student research paper

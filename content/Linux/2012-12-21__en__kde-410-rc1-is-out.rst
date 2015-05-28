@@ -4,6 +4,9 @@ KDE 4.10 RC1 is out
 
 :tags: Arch Linux, KDE
 :author: Markus Holtermann
+:summary: Two days ago the KDE team released the first release candidate of the
+   Plasma Workspaces towards version 4.10. The biggest changes that directly
+   catches ones eyes are the graphical modifications and improvements.
 
 
 Two days ago the `KDE`_ team `released`_ the first release candidate of the

@@ -5,6 +5,9 @@ Using Elasticsearch as Relational Data Storage
 :tags: AngularJS, Elasticsearch
 :authors: Alexander Grießer, Markus Holtermann
 :image: elasticsearch.png
+:summary: This blog post is about a university project Alex and I have been
+   developing over the last months as part of our Master studies using
+   AngularJS and Elasticsearch.
 
 
 This blog post is about a `university project`_ Alex, a fellow student at my
