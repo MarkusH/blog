@@ -4,6 +4,11 @@ Showing BVG Departures In Your Office
 
 :tags: Git, Linux, Python, Studium
 :author: Markus Holtermann
+:image: subway-berlin.jpg
+:image_credits: Licensed under the terms of the `Creative Commons
+   Attribution-ShareAlike 2.0 Germany (CC BY-SA 2.0 DE)
+   <http://creativecommons.org/licenses/by-sa/2.0/de/deed.en>`_ by `Jcornelius
+   <http://commons.wikimedia.org/w/index.php?title=File:U-Bahn_Berlin_verschiedene_Fahrzeugtypen_Friedrichsfelde.JPG&oldid=158648414>`_
 :summary: A small Python application to fetch departures from the BVG website.
 
 
