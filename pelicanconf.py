@@ -15,7 +15,7 @@ TIMEZONE = 'Europe/Berlin'
 DEFAULT_LANG = 'en'
 
 PLUGIN_PATHS = (os.path.join(BASE_DIR, 'pelican_plugins'),)
-PLUGINS = ['blog.plugins', 'sitemap']
+PLUGINS = ['blog.plugins', 'share_post', 'sitemap']
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
