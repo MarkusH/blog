@@ -42,13 +42,9 @@ def bootstrap():
     """
     Remote -- Bootstrap git repo, virtualenv, sass, grunt, bower
     """
-    if not os.path.isdir(env.repo_dir):
-        os.makedirs(env.repo_dir)
+    run('mkdir -p {repo_dir}'.format(**env))
     with cd(env.repo_dir):
         run('git clone {repository} .'.format(**env))
-
-    if not os.path.isdir(env.venv_dir):
-        os.makedirs(os.path.dirname(env.venv_dir))
     run('virtualenv {venv_dir}'.format(**env))
     run('gem install --user-install sass:3.4.13')
     update()
