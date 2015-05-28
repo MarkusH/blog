@@ -66,7 +66,7 @@ def gen_article_thumbnails(source, sizes=None):
         dest_name = '{0}-{1}x{2}{3}'.format(name, width, height, ext)
         dest = join(dest_dir, dest_name)
         out.append(join(source_dir, dest_name))
-        if skip:
+        if skip and exists(dest):
             continue
         cmd = [
             'convert',
