@@ -4,6 +4,11 @@ bakery -- Where cookies are made!
 
 :tags: Django, Git, Python
 :author: Markus Holtermann
+:image: cookies.jpg
+:image_credits: Licensed under the terms of the `Creative Commons
+   Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0)
+   <https://creativecommons.org/licenses/by-nc/2.0/>`_ by `David Lifson
+   <https://www.flickr.com/photos/dlifson/3418813640>`_
 :summary: Djangodash is a coding contest where teams have 48 hours time to
     start and sprint a project. We worked on a website to host cookiecutter
     projects.
