@@ -73,7 +73,6 @@ def update():
     with cd(env.repo_dir), virtualenv(env.venv_dir):
         run('pip install -r requirements.txt')
         run('npm install')
-        run('./node_modules/bower/bin/bower install')
 
 
 @task
