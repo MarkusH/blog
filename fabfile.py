@@ -59,8 +59,8 @@ def git():
     Remote -- Installs and updates all requirements.
     """
     with cd(env.repo_dir):
-        run('git pull')
         run('git checkout -f {branch}'.format(**env))
+        run('git pull origin {branch}'.format(**env))
         run('git submodule init')
         run('git submodule update')
 
