@@ -35,7 +35,7 @@ def write_manifest(data):
 
 
 def get_hash(filename):
-    with open(filename) as fp:
+    with open(filename, 'rb') as fp:
         data = fp.read()
     m = hashlib.md5()
     m.update(data)

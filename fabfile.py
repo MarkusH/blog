@@ -83,8 +83,8 @@ def build_remote():
     Remote -- Deploys the latest changes.
     """
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
-        run('./node_modules/grunt-cli/bin/grunt')
-        run('pelican -o dist -s publishconf.py content')
+        run('./node_modules/grunt-cli/bin/grunt -v')
+        run('pelican -o dist -s publishconf.py content -D')
 
 
 @task
