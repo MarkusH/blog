@@ -9,6 +9,7 @@ env.use_ssh_config = True
 
 _defaults = {
     'branch': 'master',
+    'pelicanconf': 'publishconf.py',
     'repository': 'git@github.com:MarkusH/blog.git',
 
     'deploy_dir': None,
@@ -84,7 +85,7 @@ def build_remote():
     """
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
         run('./node_modules/grunt-cli/bin/grunt -v')
-        run('pelican -o dist -s publishconf.py content -D')
+        run('pelican -o dist -s {pelicanconf} content -D'.format(**env))
 
 
 @task
