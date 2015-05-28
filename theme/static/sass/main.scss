@@ -127,6 +127,15 @@ tt {
   }
 }
 
+.page-footer > .container {
+  p {
+    @extend .grey-text.text-lighten-4;
+    a {
+      @extend .orange-text.text-lighten-3;
+    }
+  }
+}
+
 .gallery img {
   width: 100%;
 }

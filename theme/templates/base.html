@@ -47,62 +47,28 @@
         {% block content %}{% endblock %}
       </div>
     </div>
-
-    <!--
-    <div id="footer" class="row">
-      <div class="columns">
-        <div class="row">
-          <div class="large-10 columns large-offset-1 text-center">
-            <ul class="inline-list">
-              {% if FEED_ALL_ATOM %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"><i class="fa fa-rss"></i> Subscribe to all articles</a></li>
-              {% endif %}
-              {% if CATEGORY_FEED_ATOM and category %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}"><i class="fa fa-rss"></i> Subscribe to {{ category }}</a></li>
-              {% endif %}
-              {% if TAG_FEED_ATOM and tag %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}"><i class="fa fa-rss"></i> Subscribe to {{ tag }}</a></li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-8 columns large-offset-2">
-            <p>Powered by <a href="http://blog.getpelican.com/">Pelican</a></p>
-            <p>Icons from <a href="http://fontawesome.io/">Font Awesome</a></p>
-            <p>The content is <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script>$(document).foundation();$.each($("h2,h3,h4,h5,h6",$("article")),function(e,t){var n=$("<a></a>");n.attr("href","#"+$(t).parent().attr("id"));$(t).wrapInner(n)});</script>
-    -->
-
-
     <footer class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
             <h5 class="white-text">Markus Holtermann</h5>
-            <p class="grey-text text-lighten-4">Brief biography about me</p>
-            <p class="grey-text text-lighten-4">The content is licensed under a <a rel="license" class="white-text" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
+            <p>Computer Science Master's student at <a href="http://www.tu-berlin.de/">Technical University of Berlin, Germany</a> and a <a href="https://www.djangoproject.com/">Django core developer</a>.</p>
+            <p>The content is licensed under a <a rel="license" class="white-text" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
           </div>
           <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
+            <h5 class="white-text">Links</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <li><a class="white-text" href="/tags.html">Tags</a></li>
+              <li><a class="white-text" href="/categories.html">Categories</a></li>
+              <li><a class="white-text" href="/imprint/">Imprint</a></li>
             </ul>
           </div>
           <div class="col l3 s12">
             <h5 class="white-text">Connect</h5>
             <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <li><a class="white-text" href="https://github.com/MarkusH"><i class="icon-github-circle"></i> Github</a></li>
+              <li><a class="white-text" href="https://plus.google.com/+MarkusHoltermann"><i class="icon-google-plus"></i> Google+</a></li>
+              <li><a class="white-text" href="https://twitter.com/m_holtermann"><i class="icon-twitter"></i> Twitter</a></li>
             </ul>
           </div>
         </div>
