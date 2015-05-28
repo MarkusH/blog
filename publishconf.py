@@ -12,6 +12,7 @@ from pelicanconf import *
 
 SITEURL = 'https://markusholtermann.eu'
 RELATIVE_URLS = False
+LOAD_CONTENT_CACHE = True
 
 DELETE_OUTPUT_DIRECTORY = True
 

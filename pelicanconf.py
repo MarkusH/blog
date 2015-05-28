@@ -13,6 +13,7 @@ SITEURL = 'http://127.0.0.1:8000'
 TIMEZONE = 'Europe/Berlin'
 
 DEFAULT_LANG = 'en'
+LOAD_CONTENT_CACHE = False
 
 PLUGIN_PATHS = (os.path.join(BASE_DIR, 'pelican_plugins'),)
 PLUGINS = ['blog.plugins', 'share_post', 'sitemap']
@@ -21,21 +22,6 @@ FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TAG_FEED_ATOM = 'feeds/tag.%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
-
-# Blogroll
-LINKS = (
-    ('Arch Linux', 'http://archlinux.org/'),
-    ('aufgebauscht', 'http://blog.fbausch.de/'),
-    ('Gentoo', 'http://www.gentoo.org/'),
-    ('Ubuntu', 'http://ubuntu.com/'),
-    ('ubuntuusers.de', 'http://ubuntuusers.de/'),
-)
-
-# Social widget
-SOCIAL = (
-    ('Google+', 'https://plus.google.com/+MarkusHoltermann'),
-    ('Twitter', 'https://twitter.com/m_holtermann'),
-)
 
 DEFAULT_DATE_FORMAT = '%b %d, %Y'
 DEFAULT_PAGINATION = 15
