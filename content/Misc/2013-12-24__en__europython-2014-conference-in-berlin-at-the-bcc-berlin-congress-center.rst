@@ -4,6 +4,7 @@ EuroPython 2014 Conference in Berlin at the bcc Berlin Congress Center
 
 :tags: Community, Django, EuroPython, PyPy, Python
 :author: Markus Holtermann
+:image: ep14-header.jpg
 :summary: Organizers expect up to 1,200 attendees
 
 
