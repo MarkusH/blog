@@ -1,3 +1,5 @@
+import hashlib
+import json
 import os
 import subprocess
 
@@ -14,32 +16,68 @@ COVER_IMAGE_SIZES = (
     (1026, 300),  # 1 col, large
 )
 
+IMG_BASE_DIR = join('content', 'images')
+THUMB_BASE_DIR = join(IMG_BASE_DIR, 'thumb')
+MANIFEST_FILE = join(THUMB_BASE_DIR, '.manifest.json')
+
+
+def load_manifest():
+    data = {}
+    if exists(MANIFEST_FILE):
+        with open(MANIFEST_FILE) as fp:
+            data = json.load(fp)
+    return data
+
+
+def write_manifest(data):
+    with open(MANIFEST_FILE, 'w') as fp:
+        json.dump(data, fp)
+
+
+def get_hash(filename):
+    with open(filename) as fp:
+        data = fp.read()
+    m = hashlib.md5()
+    m.update(data)
+    return m.hexdigest()
+
 
 def gen_article_thumbnails(source, sizes=None):
     out = []
-    img_base_dir = join('content', 'images')
-    thumb_base_dir = join(img_base_dir, 'thumb')
     source_dir = dirname(source)
     source_name = basename(source)
     name, ext = splitext(source_name)
-    dest_dir = join(thumb_base_dir, source_dir)
+    source_file = join(IMG_BASE_DIR, source)
+    dest_dir = join(THUMB_BASE_DIR, source_dir)
     if not exists(dest_dir):
         os.makedirs(dest_dir)
+
+    manifest = load_manifest()
+    hash = get_hash(source_file)
+    if hash == manifest.get(source, ''):
+        skip = True
+    else:
+        skip = False
+        manifest[source] = hash
+
     if sizes is None:
         sizes = COVER_IMAGE_SIZES
     for width, height in sizes:
         dest_name = '{0}-{1}x{2}{3}'.format(name, width, height, ext)
         dest = join(dest_dir, dest_name)
         out.append(join(source_dir, dest_name))
-        if exists(dest):
+        if skip:
             continue
         cmd = [
             'convert',
-            join(img_base_dir, source),
+            source_file,
             '-resize', '{0}x{1}^'.format(width, height),
             '-gravity', 'center',
             '-crop', '{0}x{1}+0+0'.format(width, height),
             dest,
         ]
         subprocess.call(cmd)
+
+    if not skip:
+        write_manifest(manifest)
     return out
