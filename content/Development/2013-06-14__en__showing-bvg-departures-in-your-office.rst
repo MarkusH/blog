@@ -24,10 +24,10 @@ departures of the bus stop and show them in the room.
 .. gallery::
    :small: 2
 
-   .. image:: BVG-Grabber-LightningTalk-installation1.jpg
+   .. image:: bvg-grabber-lightningtalk1.jpg
       :alt: bvg-grabber in use
 
-   .. image:: BVG-Grabber-LightningTalk-installation2.jpg
+   .. image:: bvg-grabber-lightningtalk2.jpg
       :alt: bvg-grabber in use
 
 At first the information retrieval was hard-coded and it was only possible to
