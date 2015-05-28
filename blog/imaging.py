@@ -1,5 +1,4 @@
 import os
-import pprint
 import subprocess
 
 from os.path import basename, dirname, exists, join, splitext
