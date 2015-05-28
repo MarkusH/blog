@@ -4,7 +4,7 @@ The conference island -- DjangoCon Europe 2014
 
 :tags: Community, Django, DjangoCon
 :author: Markus Holtermann
-:image: djangoconeu14.jpg
+:image: djangoconeu2014/dce19.jpg
 :summary: About a month ago, I attended DjangoCon Europe on the Île des Embiez,
    a small island between Toulon and Marseille. After an incredible circus
    edition 2013 in Warsaw, this year's organizers stepped up to the plate to
@@ -56,16 +56,16 @@ that bad. We walked through the city to the harbor and grabbed some lunch.
    :small: 1
    :medium: 3
 
-   .. image:: djangoconeu2014/DCE14-01.jpg
+   .. image:: djangoconeu2014/dce01.jpg
       :alt: DjangoCon Europe 2014 -- Toulon
 
-   .. image:: djangoconeu2014/DCE14-02.jpg
+   .. image:: djangoconeu2014/dce02.jpg
       :alt: DjangoCon Europe 2014 -- Toulon
 
-   .. image:: djangoconeu2014/DCE14-03.jpg
+   .. image:: djangoconeu2014/dce03.jpg
       :alt: DjangoCon Europe 2014 -- Toulon harbor
 
-   .. image:: djangoconeu2014/DCE14-04.jpg
+   .. image:: djangoconeu2014/dce04.jpg
       :alt: DjangoCon Europe 2014 -- Toulon harbor
       :class: span100
 
@@ -77,13 +77,13 @@ island.
    :small: 1
    :medium: 3
 
-   .. image:: djangoconeu2014/DCE14-05.jpg
+   .. image:: djangoconeu2014/dce05.jpg
       :alt: DjangoCon Europe 2014 -- La Brusc
 
-   .. image:: djangoconeu2014/DCE14-06.jpg
+   .. image:: djangoconeu2014/dce06.jpg
       :alt: DjangoCon Europe 2014 -- Ferry to the island
 
-   .. image:: djangoconeu2014/DCE14-07.jpg
+   .. image:: djangoconeu2014/dce07.jpg
       :alt: DjangoCon Europe 2014 -- Arrived on the Island
 
 At about 6pm we arrived at the hotel. After I checked into my room I had an
@@ -93,14 +93,14 @@ amazing view from the balkony.
    :small: 1
    :medium: 3
 
-   .. image:: djangoconeu2014/DCE14-08.jpg
+   .. image:: djangoconeu2014/dce08.jpg
       :alt: DjangoCon Europe 2014 -- Hotel entrance
 
-   .. image:: djangoconeu2014/DCE14-09.jpg
+   .. image:: djangoconeu2014/dce09.jpg
       :alt: DjangoCon Europe 2014 -- View from the hotel to the harbor
       :class: span66
 
-   .. image:: djangoconeu2014/DCE14-10.jpg
+   .. image:: djangoconeu2014/dce10.jpg
       :alt: DjangoCon Europe 2014 -- View from the hotel to the harbor
       :class: span100
 
@@ -119,54 +119,54 @@ Here are some photos that capture some nice views.
    :small: 1
    :medium: 3
 
-   .. image:: djangoconeu2014/DCE14-11.jpg
+   .. image:: djangoconeu2014/dce11.jpg
       :alt: DjangoCon Europe 2014 -- Harbor on the island
 
-   .. image:: djangoconeu2014/DCE14-12.jpg
+   .. image:: djangoconeu2014/dce12.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-13.jpg
+   .. image:: djangoconeu2014/dce13.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-14.jpg
+   .. image:: djangoconeu2014/dce14.jpg
       :alt: DjangoCon Europe 2014
       :class: span100
 
-   .. image:: djangoconeu2014/DCE14-15.jpg
+   .. image:: djangoconeu2014/dce15.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-16.jpg
+   .. image:: djangoconeu2014/dce16.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-17.jpg
+   .. image:: djangoconeu2014/dce17.jpg
       :alt: DjangoCon Europe 2014 -- Be aware of the goats!
       :class: noclear
 
-   .. image:: djangoconeu2014/DCE14-18.jpg
+   .. image:: djangoconeu2014/dce18.jpg
       :alt: DjangoCon Europe 2014
       :class: span100
 
-   .. image:: djangoconeu2014/DCE14-19.jpg
+   .. image:: djangoconeu2014/dce19.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-20.jpg
+   .. image:: djangoconeu2014/dce20.jpg
       :alt: DjangoCon Europe 2014
       :class: noclear
 
-   .. image:: djangoconeu2014/DCE14-21.jpg
+   .. image:: djangoconeu2014/dce21.jpg
       :alt: DjangoCon Europe 2014 -- Picnic
 
-   .. image:: djangoconeu2014/DCE14-22.jpg
+   .. image:: djangoconeu2014/dce22.jpg
       :alt: DjangoCon Europe 2014 -- The highest point on the island
       :class: span100
 
-   .. image:: djangoconeu2014/DCE14-23.jpg
+   .. image:: djangoconeu2014/dce23.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-24.jpg
+   .. image:: djangoconeu2014/dce24.jpg
       :alt: DjangoCon Europe 2014
 
-   .. image:: djangoconeu2014/DCE14-25.jpg
+   .. image:: djangoconeu2014/dce25.jpg
       :alt: DjangoCon Europe 2014
 
 
