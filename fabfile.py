@@ -45,8 +45,9 @@ def bootstrap():
     run('mkdir -p {repo_dir}'.format(**env))
     with cd(env.repo_dir):
         run('git clone {repository} .'.format(**env))
-    run('virtualenv {venv_dir}'.format(**env))
-    run('gem install --user-install sass:3.4.13')
+        run('git checkout {branch}'.format(**env))
+        run('virtualenv {venv_dir}'.format(**env))
+        run('gem install --user-install sass:3.4.13')
     update()
 
 
