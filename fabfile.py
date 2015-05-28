@@ -48,6 +48,7 @@ def bootstrap():
         run('git checkout {branch}'.format(**env))
         run('virtualenv {venv_dir}'.format(**env))
         run('gem install --user-install sass:3.4.13')
+    git()
     update()
 
 
