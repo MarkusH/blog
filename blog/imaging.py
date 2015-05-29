@@ -5,6 +5,9 @@ import subprocess
 
 from os.path import basename, dirname, exists, join, splitext
 
+FILENAME = object()
+
+
 COVER_IMAGE_SIZES = (
     # index
     (520, 293),  # 1 col, small
@@ -19,6 +22,11 @@ COVER_IMAGE_SIZES = (
 IMG_BASE_DIR = join('content', 'images')
 THUMB_BASE_DIR = join(IMG_BASE_DIR, 'thumb')
 MANIFEST_FILE = join(THUMB_BASE_DIR, '.manifest.json')
+
+OPTIMIZE_COMMANDS = {
+    '.jpg': ['jpegtran', '-copy', 'none', '-optimize', '-outfile', FILENAME, FILENAME],
+    '.png': ['optipng', FILENAME],
+}
 
 
 def load_manifest():
@@ -40,6 +48,13 @@ def get_hash(filename):
     m = hashlib.md5()
     m.update(data)
     return m.hexdigest()
+
+
+def get_optimize_command(ext, filename):
+    if ext not in OPTIMIZE_COMMANDS:
+        return None
+    cmd = OPTIMIZE_COMMANDS[ext]
+    return [(filename if part is FILENAME else part) for part in cmd]
 
 
 def gen_article_thumbnails(source, sizes=None):
@@ -77,6 +92,10 @@ def gen_article_thumbnails(source, sizes=None):
             dest,
         ]
         subprocess.call(cmd)
+
+        optimize = get_optimize_command(ext, dest)
+        if optimize:
+            subprocess.call(optimize)
 
     if not skip:
         write_manifest(manifest)

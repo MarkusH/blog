@@ -15,5 +15,3 @@ RELATIVE_URLS = False
 LOAD_CONTENT_CACHE = True
 
 DELETE_OUTPUT_DIRECTORY = True
-
-PLUGINS.extend(['optimize_images'])
