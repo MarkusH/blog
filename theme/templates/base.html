@@ -15,15 +15,11 @@
       <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
     {% endif %}
     {% block head %}{% endblock %}
-    {# <link href="{{ SITEURL }}/theme/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" /> #}
     <link href="{{ SITEURL }}/theme/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <script type="text/x-mathjax-config">MathJax.Hub.Config({jax:["input/TeX","output/SVG"],extensions:["tex2jax.js"],TeX:{extensions:["AMSmath.js","AMSsymbols.js"]},SVG:{scale:90},tex2jax:{inlineMath: [['$$','$$']],displayMath:[]}})</script>
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
-    <script type="text/javascript">
-      // Picture element HTML5 shiv
-      document.createElement("picture");
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/picturefill/2.3.1/picturefill.min.js" async></script>
+    <script type="text/javascript">/*Picture element HTML5 shiv*/document.createElement("picture");</script>
+    <script async src="{{ SITEURL }}/theme/js/head.js"></script>
   </head>
   <body>
     <nav class="" role="navigation">
@@ -82,9 +78,6 @@
     </footer>
 
     <!--  Scripts-->
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
-    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
-    <script src="{{ SITEURL }}/theme/js/main.js"></script>
+    <script async src="{{ SITEURL }}/theme/js/main.js"></script>
   </body>
 </html>
