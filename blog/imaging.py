@@ -110,7 +110,7 @@ def gen_equation_image(equation):
         os.makedirs(EQUATION_BASE_DIR)
 
     content = [
-        r'\documentclass[convert={density=150},preview]{standalone}',
+        r'\documentclass[convert={density=150,outext=.png},preview]{standalone}',
         r'\usepackage{amsmath}',
         r'\begin{document}',
     ]
@@ -142,5 +142,9 @@ def gen_equation_image(equation):
             cwd=dirname(tfp.name)
         )
         shutil.move(source_file, dest_file)
+        for ext in ('.aux', '.log', '.pdf'):
+            fn = name + ext
+            if exists(fn):
+                os.unlink(fn)
 
     return out
