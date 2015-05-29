@@ -114,5 +114,7 @@ class PNGMath(Directive):
     def run(self):
         self. assert_has_content()
         filename = gen_equation_image(self.content)
-        node = pngmath(src=filename, width=self.options.get('width', None))
+        node = pngmath(src=filename)
+        if 'width' in self.options:
+            node.width = self.options.get('width', None)
         return [node]
