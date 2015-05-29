@@ -84,7 +84,7 @@ def gen_article_thumbnails(source, sizes=None):
         if skip and exists(dest):
             continue
         cmd = [
-            'convert',
+            'convert', '-verbose',
             source_file,
             '-resize', '{0}x{1}^'.format(width, height),
             '-gravity', 'center',
