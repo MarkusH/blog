@@ -5,10 +5,10 @@ import math
 from docutils import nodes
 from docutils.parsers.rst import directives, Directive
 
-from .imaging import gen_article_thumbnails
+from .imaging import gen_article_thumbnails, gen_equation_image
 from .nodes import (
-    gallery_node, project_code, project_desc, project_docs, project_download,
-    project_homepage, project_license, project_node,
+    gallery_node, pngmath, project_code, project_desc, project_docs,
+    project_download, project_homepage, project_license, project_node,
 )
 
 
@@ -103,3 +103,16 @@ class Project(Directive):
                 project += item
 
         return [project]
+
+
+class PNGMath(Directive):
+    option_spec = {
+        'width': directives.unchanged,
+    }
+    has_content = True
+
+    def run(self):
+        self. assert_has_content()
+        filename = gen_equation_image(self.content)
+        node = pngmath(src=filename, width=self.options.get('width', None))
+        return [node]

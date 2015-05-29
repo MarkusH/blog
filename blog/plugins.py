@@ -23,6 +23,7 @@ def register():
 def register_directives():
     register_directive('gallery', directives.Gallery)
     register_directive('project', directives.Project)
+    register_directive('pngmath', directives.PNGMath)
 
 
 def add_reader(readers):

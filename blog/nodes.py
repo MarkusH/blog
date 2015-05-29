@@ -42,3 +42,7 @@ class project_homepage(nodes.TextElement):
 class project_license(nodes.TextElement):
     label = 'License'
     icon = 'icon-gavel'
+
+
+class pngmath(nodes.TextElement):
+    tagname = 'img'

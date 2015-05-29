@@ -1,7 +1,9 @@
 import hashlib
 import json
 import os
+import shutil
 import subprocess
+import tempfile
 
 from os.path import basename, dirname, exists, join, splitext
 
@@ -20,6 +22,7 @@ COVER_IMAGE_SIZES = (
 )
 
 IMG_BASE_DIR = join('content', 'images')
+EQUATION_BASE_DIR = join(IMG_BASE_DIR, 'equation')
 THUMB_BASE_DIR = join(IMG_BASE_DIR, 'thumb')
 MANIFEST_FILE = join(THUMB_BASE_DIR, '.manifest.json')
 
@@ -99,4 +102,45 @@ def gen_article_thumbnails(source, sizes=None):
 
     if not skip:
         write_manifest(manifest)
+    return out
+
+
+def gen_equation_image(equation):
+    if not exists(EQUATION_BASE_DIR):
+        os.makedirs(EQUATION_BASE_DIR)
+
+    content = [
+        r'\documentclass[convert={density=150},preview]{standalone}',
+        r'\usepackage{amsmath}',
+        r'\begin{document}',
+    ]
+    content.extend(equation)
+    content.extend([
+        r'\end{document}'
+    ])
+
+    text = '\n'.join(content)
+    hash = hashlib.md5(text).hexdigest()
+    dest_file = join(EQUATION_BASE_DIR, hash + '.png')
+
+    out = dest_file[len('content'):]
+
+    if exists(dest_file):
+        return out
+
+    with tempfile.NamedTemporaryFile('w', suffix='.tex') as tfp:
+        tfp.write(text)
+        tfp.flush()
+        subprocess.check_call(
+            ['pdflatex', '-shell-escape', tfp.name],
+            cwd=dirname(tfp.name)
+        )
+        name, ext = splitext(tfp.name)
+        source_file = name + '.png'
+        subprocess.check_call(
+            ['convert', '-trim', source_file, source_file],
+            cwd=dirname(tfp.name)
+        )
+        shutil.move(source_file, dest_file)
+
     return out

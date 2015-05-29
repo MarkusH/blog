@@ -24,7 +24,6 @@ class GalleryTranslator:
 
 
 class ProjectTranslator:
-    pass
 
     def visit_project_node(self, node):
         self.body.append(self.starttag(node, 'div', CLASS='project'))
@@ -88,8 +87,18 @@ class ProjectTranslator:
     depart_project_license = _depart_project_item
 
 
+class PNGMathTranslator:
+
+    def visit_pngmath(self, node):
+        self.body.append('<div class="math center">')
+        self.body.append(node.emptytag())
+
+    def depart_pngmath(self, node):
+        self.body.append('</div>')
+
+
 class BlogHTMLTranslator(GalleryTranslator, ProjectTranslator,
-                         PelicanHTMLTranslator):
+                         PNGMathTranslator, PelicanHTMLTranslator):
 
     def visit_math(self, node, math_env=''):
         try:
