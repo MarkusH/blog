@@ -232,21 +232,23 @@ access. On Unix systems this includes the binary ``b`` mode for ``fopen()``.
    Depending on the input length ``in_len`` the values of ``out_len[0]`` to
    ``out_len[2]`` may vary:
 
-   .. math::
+   .. pngmath::
 
-      \overrightarrow{\text{out_len}} = \left\{
-      \begin{array}{l l}
-          \begin{pmatrix}
-              \text{in_len}\\
-              0\\
-              \text{in_len}
-          \end{pmatrix} & \quad \text{if in_len $\leq$ BS}\\
-          \begin{pmatrix}
-              \text{BS}\\
-              \text{in_len} - \text{BS}\\
-              \text{BS}
-          \end{pmatrix} & \quad \text{if in_len $>$ BS}\\
-      \end{array} \right.
+      \begin{equation*}
+        \overrightarrow{\text{out\_len}} = \left\{
+        \begin{array}{l l}
+            \begin{pmatrix}
+                \text{in\_len}\\
+                0\\
+                \text{in\_len}
+            \end{pmatrix} & \quad \text{if in\_len $\leq$ BS}\\
+            \begin{pmatrix}
+                \text{BS}\\
+                \text{in\_len} - \text{BS}\\
+                \text{BS}
+            \end{pmatrix} & \quad \text{if in\_len $>$ BS}\\
+        \end{array} \right.
+      \end{equation*}
 
 #. ``merge_file()`` is the inverse function to ``split_file()``. It basically
    has the same function signature, but the first parameter specifies the
@@ -318,28 +320,29 @@ access. On Unix systems this includes the binary ``b`` mode for ``fopen()``.
 The general mode of operation can be expressed by the following two
 expressions:
 
-.. math::
+.. pngmath::
 
-    H \; &= \; \text{The underlying hash function, here SHA-256}\\
-    B \; &= \; \text{The internal block size of $H$ in bytes, here 64}\\
-    L \; &= \; \text{The block size of the output of $H$ in bytes, here 32}\\
-    K \; &= \; \text{The input key}\\
-    S \; &= \; \text{The salt}\\
-    |x| \; &= \; \text{Defines the length of a string x}\\
-    \oplus \; &= \; \text{Bitwise XOR}\\
-    \| \; &= \; \text{Concatenation}
+    \begin{align*}
+      H \; &= \; \text{The underlying hash function, here SHA-256}\\
+      B \; &= \; \text{The internal block size of $H$ in bytes, here 64}\\
+      L \; &= \; \text{The block size of the output of $H$ in bytes, here 32}\\
+      K \; &= \; \text{The input key}\\
+      S \; &= \; \text{The salt}\\
+      |x| \; &= \; \text{Defines the length of a string x}\\
+      \oplus \; &= \; \text{Bitwise XOR}\\
+      \| \; &= \; \text{Concatenation}\\
+      x^y \; &= \; \underbrace{x\| x\|\cdots x\| x}_\text{$y$ times}\\
+      pad_i \; &= \; 0x36^B\\
+      pad_o \; &= \; 0x5C^B\\
+      K_0 \; &= \; \left\{
+          \begin{array}{l l}
+              K \| 0x00^{B-|K|} & \quad \text{if $|K| < B$ }\\
+              K & \quad \text{if $|K| = B$}\\
+              H(K) \| 0x00^{B-L} & \quad \text{if $|K| > B$ }\\
+          \end{array} \right.\\
+      \text{HMAC} \; &= \; H((K_0 \oplus pad_o) \| H((K_0 \oplus pad_i) \| S))
+    \end{align*}
 
-    x^y \; &= \; \underbrace{x\| x\|\cdots x\| x}_\text{$y$ times}\\
-    pad_i \; &= \; 0x36^B\\
-    pad_o \; &= \; 0x5C^B\\
-    K_0 \; &= \; \left\{
-        \begin{array}{l l}
-            K \| 0x00^{B-|K|} & \quad \text{if $|K| < B$ }\\
-            K & \quad \text{if $|K| = B$}\\
-            H(K) \| 0x00^{B-L} & \quad \text{if $|K| > B$ }\\
-        \end{array} \right.
-
-    \text{HMAC} \; = \; H((K_0 \oplus pad_o) \| H((K_0 \oplus pad_i) \| S))
 
 The implementation of the HMAC [NIS02]_ standard has been validated by
 computing the digest values for the test cases 1, 2, 3, 4, 6 and 7 defined in

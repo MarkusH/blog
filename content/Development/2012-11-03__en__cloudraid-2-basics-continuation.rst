@@ -36,7 +36,7 @@ to 5 as follows.
 **RAID Level 1** provides a high data-safety with a complete fall-back to a
 secondary device. This "mirroring" has a space efficiency of 50% of the total
 disk capacity [DK88]_ (ch. 7, p. 112) for two disks. In general the space
-efficiency is at $$1/n$$. The fault tolerance is $$n-1$$ since all disks
+efficiency is at ``1/n``. The fault tolerance is ``n-1`` since all disks
 contain the same data and all but the last can fail without any data-loss.
 
 .. figure:: /images/cloudraid/raid2.png
@@ -50,8 +50,12 @@ contain the same data and all but the last can fail without any data-loss.
 which is stored on multiple check disks. Nowadays RAID systems of level 2 are
 not used any more. They are too prohibitive and do not provide more fault
 tolerance than RAID level 3, 4 or even 5. RAID level 2 can recover from one
-drive failure and has a space efficiency of $$1 - 1/(n * log_2(n-1))$$
-[Wik12b]_.
+drive failure and has a space efficiency of [Wik12b]_:
+
+.. pngmath::
+
+   $1 - 1/(n * log_2(n-1))$
+
 
 .. figure:: /images/cloudraid/raid3.png
    :align: right
@@ -123,12 +127,12 @@ hash sum. A strong hash function will always return a distinct hash sum for a
 specific input and does not (or at least tries to minimize) the likelihood of
 hash collisions. Hash collisions occur when a hash function returns the same
 hash sum for two different input values. This can easily be shown by the
-following formula, where $$x$$ and $$y$$ define the input values and $$H$$
+following formula, where ``x`` and ``y`` define the input values and ``H``
 defines the hash function:
 
-.. math::
+.. pngmath::
 
-   \exists x \exists y: H(x)=H(y) \quad x \neq y
+   $\exists x \exists y: H(x)=H(y) \quad x \neq y$
 
 Based on these requirements, the NIST and the German "Bundesnetzagentur"
 recommend and claim the use of algorithms of the `Secure Hash Algorithm (SHA)-2
