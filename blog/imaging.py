@@ -119,8 +119,8 @@ def gen_equation_image(equation):
         r'\end{document}'
     ])
 
-    text = '\n'.join(content).encode('utf-8')
-    hash = hashlib.md5(text).hexdigest()
+    text = '\n'.join(content)
+    hash = hashlib.md5(text.encode('utf-8')).hexdigest()
     dest_file = join(EQUATION_BASE_DIR, hash + '.png')
 
     out = dest_file[len('content'):]
