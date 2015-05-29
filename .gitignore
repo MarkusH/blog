@@ -4,6 +4,7 @@ __pycache__
 bower_components/
 build/
 cache/
+content/images/equation/
 content/images/thumb/
 content.bak/
 dist
