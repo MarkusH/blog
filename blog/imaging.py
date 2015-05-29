@@ -131,13 +131,13 @@ def gen_equation_image(equation):
     with tempfile.NamedTemporaryFile('w', suffix='.tex') as tfp:
         tfp.write(text)
         tfp.flush()
-        subprocess.check_call(
+        subprocess.check(
             ['pdflatex', '-shell-escape', tfp.name],
             cwd=dirname(tfp.name)
         )
         name, ext = splitext(tfp.name)
         source_file = name + '.png'
-        subprocess.check_call(
+        subprocess.check(
             ['convert', '-trim', source_file, source_file],
             cwd=dirname(tfp.name)
         )
