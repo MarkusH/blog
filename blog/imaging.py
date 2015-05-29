@@ -138,7 +138,7 @@ def gen_equation_image(equation):
         name, ext = splitext(tfp.name)
         source_file = name + '.png'
         subprocess.call(
-            ['convert', '-trim', source_file, source_file],
+            ['convert', '-verbose', '-trim', source_file, source_file],
             cwd=dirname(tfp.name)
         )
         shutil.move(source_file, dest_file)
