@@ -46,3 +46,7 @@ class project_license(nodes.TextElement):
 
 class pngmath(nodes.TextElement):
     tagname = 'img'
+
+
+class speakerdeck(nodes.TextElement):
+    pass

@@ -9,6 +9,7 @@ from .imaging import gen_article_thumbnails, gen_equation_image
 from .nodes import (
     gallery_node, pngmath, project_code, project_desc, project_docs,
     project_download, project_homepage, project_license, project_node,
+    speakerdeck,
 )
 
 
@@ -117,4 +118,19 @@ class PNGMath(Directive):
         node = pngmath(src=filename)
         if 'width' in self.options:
             node.width = self.options.get('width', None)
+        return [node]
+
+
+class Speakerdeck(Directive):
+    required_arguments = 1
+    option_spec = {
+        'ratio': directives.unchanged,
+    }
+    has_content = False
+
+    def run(self):
+        node = speakerdeck(
+            key=self.arguments[0],
+            ratio=self.options.get('ratio', '1.3333333333')
+        )
         return [node]

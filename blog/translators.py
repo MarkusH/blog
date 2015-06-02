@@ -97,8 +97,27 @@ class PNGMathTranslator:
         self.body.append('</div>')
 
 
+class SpeakerdeckTranslator:
+
+    def visit_speakerdeck(self, node):
+        key = node['key']
+        ratio = node['ratio']
+        self.body.append('<div class="speakerdeck">')
+        self.body.append(
+            '<script async class="speakerdeck-embed" data-id="{key}" '
+            'data-ratio="{ratio}" '
+            'src="//speakerdeck.com/assets/embed.js">'.format(
+                key=key, ratio=ratio,
+            )
+        )
+
+    def depart_speakerdeck(self, node):
+        self.body.append('</script></div>')
+
+
 class BlogHTMLTranslator(GalleryTranslator, ProjectTranslator,
-                         PNGMathTranslator, PelicanHTMLTranslator):
+                         PNGMathTranslator, SpeakerdeckTranslator,
+                         PelicanHTMLTranslator):
 
     def visit_math(self, node, math_env=''):
         try:
