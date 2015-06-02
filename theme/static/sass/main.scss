@@ -132,6 +132,20 @@ tt {
   }
 }
 
+.speakerdeck {
+  @media only screen and (min-width: 0) {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: $medium-screen) {
+    width: 75%;
+  }
+  
+  @media only screen and (min-width: $large-screen) {
+    width: 50%;
+  }
+}
+
 .page-footer > .container {
   p {
     @extend .grey-text.text-lighten-4;
