@@ -251,6 +251,24 @@ Cardiff:
       :alt: One Direction fans on their way to Cardiff stadium
 
 
+License
+=======
+
+.. figure:: /images/cc-by-sa-3.0-88x31.png
+   :align: right
+   :alt: Creative Commons License
+   :target: http://creativecommons.org/licenses/by-sa/4.0/
+
+   The photos in this blog post are licensed under a `Creative Commons
+   Attribution-ShareAlike 4.0 International License
+   <http://creativecommons.org/licenses/by-sa/4.0/>`_.
+
+The article image (group photo) is licensed under the terms of the
+`Creative Commons Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)
+<https://creativecommons.org/licenses/by-sa/2.0/>`_ by `Patryk Zawadzki
+<https://www.flickr.com/photos/patrys/18510465600/>`_.
+
+
 .. _DjangoCon Europe 2015: http://2015.djangocon.eu/
 .. _DjangoGirls: http://djangogirls.org/
 .. _Daniele Procida: https://twitter.com/evildmp
