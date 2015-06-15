@@ -26,7 +26,7 @@
             <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
             {{ article.locale_date }} &bull;
             {% for author in article.authors %}
-            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">>{{ author }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
             {% if article.image_credits %}
             <div class="image-credits">Article image: {{ article.image_credits }}</div>
