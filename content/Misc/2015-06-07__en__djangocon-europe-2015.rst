@@ -33,10 +33,10 @@ the times I have be to UK before, were shorter. And all these other trips were
 way rainier that this time.
 
 My plane left Berlin Tegel Airport (TXL) on May 30th at 6am, quite early in the
-morning. On the plus side, I already met Erik Romijn, another Django committer,
-at Amsterdam Schiphol Airport (AMS) for our flight to Cardiff Airport (CWL).
-Interestingly, our airline, KLM, overbooked the flight and was offering 250 EUR
-to the first person that would take a later flight.
+morning. On the plus side, I already met `Erik Romijn`_, another Django
+committer, at Amsterdam Schiphol Airport (AMS) for our flight to Cardiff
+Airport (CWL). Interestingly, our airline, KLM, overbooked the flight and was
+offering 250 EUR to the first person that would take a later flight.
 
 On both, the flight from TXL to AMS and after the conference from CWL to AMS,
 KLM served sandwiches. And these sandwiches perfectly aligned with one of the
@@ -272,6 +272,7 @@ The article image (group photo) is licensed under the terms of the
 .. _DjangoCon Europe 2015: http://2015.djangocon.eu/
 .. _DjangoGirls: http://djangogirls.org/
 .. _Daniele Procida: https://twitter.com/evildmp
+.. _Erik Romijn: https://twitter.com/erikpub
 .. _Cardiff University: https://twitter.com/cardiffuni
 .. _django-dynamic-forms: https://github.com/MarkusH/django-dynamic-forms
 .. _Forms are static -- No, they aren't:
