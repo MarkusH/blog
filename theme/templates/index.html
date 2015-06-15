@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="row" id="posts">
+  <div class="row" id="posts" itemscope itemtype="http://schema.org/Blog">
     {% for article in articles_page.object_list %}
     <div class="col s12 m6 l4">
-      <div class="card">
+      <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
         {% if article.image %}
-        <div class="card-image">
+        <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ SITEURL }}/{{ article.url }}">
             <picture class="activator">
               <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -15,23 +15,27 @@
               <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}">
             </picture>
           </a>
+          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}" />
+          {% if article.image_credits %}
+          <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
+          {% endif %}
         </div>
         {% endif %}
         <div class="card-content">
           <div class="meta">
-            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category">{{ article.category }}</a> &bull;
+            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
             {{ article.locale_date }} &bull;
             {% for author in article.authors %}
-            <a href="{{ SITEURL }}/{{ author.url }}" class="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">>{{ author }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
             {% if article.image_credits %}
             <div class="image-credits">Article image: {{ article.image_credits }}</div>
             {% endif %}
           </div>
-          <div class="card-title">
+          <div class="card-title" itemprop="name">
             <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
           </div>
-          <div class="flow-text">
+          <div class="flow-text" itemprop="about">
             {{ article.summary|striptags|truncate(160) }}
           </div>
         </div>

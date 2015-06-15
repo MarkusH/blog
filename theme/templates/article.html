@@ -8,9 +8,9 @@
 {% block content %}
   <div class="row">
     <div class="col s12 l10 offset-l1">
-      <div class="card">
+      <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
         {% if article.image %}
-        <div class="card-image">
+        <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
           <picture class="activator">
             <!--[if IE 9]><video style="display: none;"><![endif]-->
             <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-1026x300.{{ article.image.rpartition('.')[2] }}" media="(min-width: 993px)">
@@ -18,16 +18,21 @@
             <!--[if IE 9]></video><![endif]-->
             <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}">
           </picture>
+          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}" />
+          <meta itemprop="representativeOfPage" content="true" />
+          {% if article.image_credits %}
+          <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
+          {% endif %}
         </div>
         {% endif %}
         <div class="card-content">
           <div class="meta">
-            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category">{{ article.category }}</a> &bull;
-            <span class="date">{{ article.locale_date }}</span> &bull;
+            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
+            <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.locale_date }}</time> &bull;
             {% for author in article.authors %}
-            <a href="{{ SITEURL }}/{{ author.url }}" class="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
-            <div class="tags">
+            <div class="tags" itemprop="keywords">
               {% for tag in article.tags|sort %}
               <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
               {% endfor %}
@@ -36,9 +41,9 @@
             <div class="image-credits">Article image: {{ article.image_credits }}</div>
             {% endif %}
           </div>
-          <div class="flow-text">
+          <div class="flow-text" itemprop="articleBody">
             <div class="card-title">
-              <h1>{{ article.title }}</h1>
+              <h1 itemprop="name">{{ article.title }}</h1>
             </div>
             {{ article.content }}
           </div>
