@@ -315,9 +315,13 @@ usecase for that yet.
 
     As of time of writing, if you want to use ``%`` as a wildecard in e.g. the
     ``WHERE``- clause, you need to escape it with another ``%`` character
-    (`Django issue #23426`_)::
+    (`Django issue #23426`_):
 
-        migrations.RunSQL("UPDATE myapp_mymodel SET col1 = 'a' WHERE col2 LIKE '%%val%%';")
+    .. code-block:: python
+
+        migrations.RunSQL(
+            "UPDATE myapp_mymodel SET col1 = 'a' WHERE col2 LIKE '%%val%%';"
+        )
 
 
 Run custom Python code during migrations

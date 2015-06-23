@@ -121,6 +121,34 @@ tt {
         margin-bottom: 0.75rem;
       }
     }
+    .error {
+      @extend .red;
+      a {
+        @extend .white-text;
+      }
+    }
+    .hint {
+      @extend .yellow;
+    }
+    .tip {
+      @extend .light-green;
+      a {
+        @extend .white-text;
+      }
+    }
+    .important, .warning {
+      @extend .orange;
+      a {
+        @extend .white-text;
+      }
+    }
+    .error, .hint, .important, .tip, .warning {
+      .admonition-title {
+        @extend .card-title;
+        @extend .black-text;
+      }
+      @extend .card-panel;
+    }
   }
   .card-action {
     a {
