@@ -34,6 +34,8 @@ PATH = 'content'
 PAGE_PATHS = ['pages']
 STATIC_PATHS = ['files', 'images']
 
+CATEGORY_EXCLUDES = {'australia'}
+
 THEME = os.path.join(BASE_DIR, 'theme')
 
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})__((?P<lang>[a-z]{2})__)?(?P<slug>.*)'
