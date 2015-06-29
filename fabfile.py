@@ -85,7 +85,7 @@ def build_remote():
     """
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
         run('./node_modules/grunt-cli/bin/grunt -v')
-        run('pelican -o dist -s {pelicanconf} content -D'.format(**env))
+        run('pelican -o dist -s {pelicanconf}'.format(**env))
 
 
 @task
@@ -133,7 +133,7 @@ def pelican():
     """
     Runs pelican locally
     """
-    local('pelican -o build -s pelicanconf.py content --ignore-cache')
+    local('pelican -o build -s pelicanconf.py --ignore-cache')
 
 
 @task
