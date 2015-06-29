@@ -8,7 +8,7 @@ Impressum
 Verantwortlich für den Inhalt dieser Internetseite:
 
 | **Markus Holtermann**
-| 14057 Berlin
+| 47906 Kempen
 | Germany
 
 Diese Internetseite enthält Links zu anderen Webseiten. Als ich diese Links

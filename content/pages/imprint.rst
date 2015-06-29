@@ -8,7 +8,7 @@ Imprint
 Responsible for the content of that website:
 
 | **Markus Holtermann**
-| 14057 Berlin
+| 47906 Kempen
 | Germany
 
 This website may contain links to other sites. When I published these links, I
