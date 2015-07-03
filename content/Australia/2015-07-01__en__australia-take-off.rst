@@ -4,7 +4,7 @@ Australia -- Take Off
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: kangaroos.jpg
+:image: australia-daily/day0-cover.jpg
 :image_credits: Licensed under the terms of the `Attribution-NonCommercial 2.0
    Generic (CC BY-NC 2.0) <https://creativecommons.org/licenses/by-nc/2.0/>`_
    by `Duncan Rawlinson
@@ -27,7 +27,7 @@ As a start, here's my luggage:
 .. gallery::
    :small: 1
 
-   .. image:: australia-daily/day0.jpg
+   .. image:: australia-daily/day0-01.jpg
       :alt: My luggage
 
 
