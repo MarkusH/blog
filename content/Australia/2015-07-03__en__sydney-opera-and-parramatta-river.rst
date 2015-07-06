@@ -4,7 +4,7 @@ Sydney Opera House and Parramatta River
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: australia-daily/day1-cover.jpg
+:image: australia-daily/day001-cover.jpg
 :summary: Sydney is Australia's largest city and the first stop of my journey.
 
 
@@ -15,10 +15,10 @@ And so far I haven't experienced any jet-lag.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day1-01.jpg
+   .. image:: australia-daily/day001-01.jpg
       :alt: My plane from Hong Kong to Sydney
 
-   .. image:: australia-daily/day1-02.jpg
+   .. image:: australia-daily/day001-02.jpg
       :alt: Hong Kong Airport is located next to the water and between two
          mountain crests.
 
@@ -30,16 +30,16 @@ on the skyline and the Harbour Bridge.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day1-03.jpg
+   .. image:: australia-daily/day001-03.jpg
       :alt: Sydney Opera House
 
-   .. image:: australia-daily/day1-04.jpg
+   .. image:: australia-daily/day001-04.jpg
       :alt: Harbour Bridge
 
-   .. image:: australia-daily/day1-05.jpg
+   .. image:: australia-daily/day001-05.jpg
       :alt: Sydney Skyline
 
-   .. image:: australia-daily/day1-06.jpg
+   .. image:: australia-daily/day001-06.jpg
       :alt: Sydney Skyline
 
 

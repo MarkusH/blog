@@ -4,7 +4,7 @@ Jervis Bay
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: australia-daily/day4-cover.jpg
+:image: australia-daily/day004-cover.jpg
 :summary: The Jervis Bay is a small bay on Australia's east coast and it's
    being said that it has the clearest and cleanest sea water on the planet.
 
@@ -18,10 +18,10 @@ so did I.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day4-01.jpg
+   .. image:: australia-daily/day004-01.jpg
       :alt: Hunchback jumping out of the sea
 
-   .. image:: australia-daily/day4-02.jpg
+   .. image:: australia-daily/day004-02.jpg
       :alt: Two Hunchbacks spraying their water fountains
 
 

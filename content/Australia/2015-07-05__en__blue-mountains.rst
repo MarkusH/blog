@@ -4,7 +4,7 @@ Blue Mountains
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: australia-daily/day3-cover.jpg
+:image: australia-daily/day003-cover.jpg
 :summary: The Blue Mountains start about 50km west of Sydney and are named
    after their blue tinge when viewed from a distance. It is believed that
    this is due to the terpenoids emitted by the eucalyptus trees.
@@ -30,10 +30,10 @@ near the same-named city and have a total height of about 190 meters.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day3-01.jpg
+   .. image:: australia-daily/day003-01.jpg
       :alt: A small side waterfall right above Wentworth Falls
 
-   .. image:: australia-daily/day3-02.jpg
+   .. image:: australia-daily/day003-02.jpg
       :alt: The Wentworth Falls
 
 
@@ -47,10 +47,10 @@ Katoomba is a small village in the Blue Mountains. It's main attraction is the
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day3-03.jpg
+   .. image:: australia-daily/day003-03.jpg
       :alt: Three Sisters
 
-   .. image:: australia-daily/day3-04.jpg
+   .. image:: australia-daily/day003-04.jpg
       :alt: Three Sisters
 
 
@@ -61,10 +61,10 @@ almost dried out -- I saw two parrots, though.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day3-05.jpg
+   .. image:: australia-daily/day003-05.jpg
       :alt: A parrot
 
-   .. image:: australia-daily/day3-06.jpg
+   .. image:: australia-daily/day003-06.jpg
       :alt: A cocky (cockatoo)
 
 

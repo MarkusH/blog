@@ -4,7 +4,7 @@ Sydney Tower and Darling Harbour
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: australia-daily/day2-cover.jpg
+:image: australia-daily/day002-cover.jpg
 :summary: Sydney Tower is Sydney's tallest structure, it is also the second
    tallest observation tower in the Southern Hemisphere, after Auckland's Sky
    Tower.
@@ -20,17 +20,17 @@ identity card (ISIC) I got a discount on the ticket.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day2-01.jpg
+   .. image:: australia-daily/day002-01.jpg
       :alt: Look at the Sydney Tower
 
-   .. image:: australia-daily/day2-02.jpg
+   .. image:: australia-daily/day002-02.jpg
       :alt: The estuary mouth of the Parramatta River and the entrance to
          Sydney's harbour
 
-   .. image:: australia-daily/day2-03.jpg
+   .. image:: australia-daily/day002-03.jpg
       :alt: Sydney's South with the airport on the top right
 
-   .. image:: australia-daily/day2-04.jpg
+   .. image:: australia-daily/day002-04.jpg
       :alt: View on the Darling Harbour district
 
 From the Sydney Tower I walked through "The Rocks" over to the Darling Harbour
@@ -41,16 +41,16 @@ and the Skyline.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day2-05.jpg
+   .. image:: australia-daily/day002-05.jpg
       :alt: Sydney Opera House from the Harbour Bridge
 
-   .. image:: australia-daily/day2-06.jpg
+   .. image:: australia-daily/day002-06.jpg
       :alt: Darling Harbour
 
-   .. image:: australia-daily/day2-07.jpg
+   .. image:: australia-daily/day002-07.jpg
       :alt: Sydney Skyline
 
-   .. image:: australia-daily/day2-08.jpg
+   .. image:: australia-daily/day002-08.jpg
       :alt: Sydney Skyline
 
 
