@@ -4,7 +4,7 @@ Green Island
 
 :tags: Holiday
 :author: Markus Holtermann
-:image: australia-daily/day007-01.jpg
+:image: australia-daily/day007-cover.jpg
 :summary: The Green Island is about 45 minutes boat ride east of Cairns and
    right at the border to the Great Barrier Reef.
 
@@ -19,7 +19,7 @@ one of the many palms on the island.
    :small: 1
    :medium: 2
 
-   .. image:: australia-daily/day007-01.jpg
+   .. image:: australia-daily/day007-cover.jpg
       :alt: Green Island
 
    .. image:: australia-daily/day007-02.jpg
