@@ -4,15 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-
     {% if FEED_ALL_ATOM %}
-      <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Full Atom Feed" />
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Full Atom Feed" />
     {% endif %}
     {% if CATEGORY_FEED_ATOM and category %}
-      <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Category {{ category }} Atom Feed" />
+    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Category {{ category }} Atom Feed" />
     {% endif %}
     {% if TAG_FEED_ATOM and tag %}
-      <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
+    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
     {% endif %}
     {% block head %}{% endblock %}
     <link href="{{ SITEURL }}/theme/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -28,7 +27,6 @@
           <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
           {% endfor %}
         </ul>
-
         <ul id="nav-mobile" class="side-nav">
           <li{% if category == "australia" %} class="active"{% endif %}><a href="{{ SITEURL }}/category/australia.html">Australia</a></li>
           {% for pg in PAGES %}
