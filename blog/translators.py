@@ -15,7 +15,9 @@ class GalleryTranslator:
             self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 993px)">' % image.thumbs[2])
             self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 601px)">' % image.thumbs[1])
             self.body.append('<!--[if IE 9]></video><![endif]-->')
-            self.body.append('<img srcset="/images/thumb/%s" alt="%s">' % (image.thumbs[0], image['alt']))
+            self.body.append('<img srcset="/images/thumb/%s" alt="%s" title="%s">' % (
+                image.thumbs[0], image['alt'], image['alt'])
+            )
             self.body.append('</picture>')
             self.body.append('</a>')
 
