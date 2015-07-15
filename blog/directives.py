@@ -37,11 +37,14 @@ class Gallery(Directive):
             'm': 768.688,
             'l': 1007.906,
         }
+        # Determine the number of images per row for every resolution, fall
+        # back to the count for the next lower resolution if non specified.
         counts = {}
         counts['s'] = self.options.get('small', 1)
         counts['m'] = self.options.get('medium', counts['s'])
         counts['l'] = self.options.get('large', counts['m'])
 
+        # We use a 12-column grid. How many columns does each image span per size
         spans = {k: 12 / v for k, v in counts.items()}
 
         sizes = []
