@@ -3,7 +3,7 @@ Mandelbrot in Python
 ====================
 
 
-:tags: Arch, Linux, PyPy, Python
+:tags: Arch Linux, Linux, PyPy, Python
 :author: Markus Holtermann
 :summary: I just found a nice Python script that draws the Mandelbrot set. Have
    a look!

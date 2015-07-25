@@ -2,7 +2,7 @@
 LVM on secondary LUKS device
 ============================
 
-:tags: Arch, Encryption, Linux, Security
+:tags: Arch Linux, Encryption, Linux, Security
 :author: Markus Holtermann
 :summary: Today I ran into a problem when I set up my new SSD.
 
