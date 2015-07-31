@@ -9,6 +9,15 @@ Talks
 2015
 ====
 
+The Necessity of Configuration and System Management Tools
+----------------------------------------------------------
+
+I gave this talk during `PyCon Australia 2015 <http://2015.pycon-au.org/>`_ in
+Brisbane.
+
+.. speakerdeck:: 3c742309f97a46f682f4679746221545
+
+
 "Forms are static" -- "No, they aren't"
 ---------------------------------------
 
