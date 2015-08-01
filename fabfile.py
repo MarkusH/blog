@@ -86,6 +86,8 @@ def build_remote():
     with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
         run('./node_modules/grunt-cli/bin/grunt -v')
         run('pelican -o dist -s {pelicanconf}'.format(**env))
+        run('find dist/theme -type f -exec gzip --keep --force --verbose -9 {} \;')
+        run('find dist/images -type f -exec gzip --keep --force --verbose -9 {} \;')
 
 
 @task
