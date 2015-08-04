@@ -97,7 +97,7 @@ def rsync():
     Remote -- Rsync
     """
     with cd(env.repo_dir):
-        run('rsync -av ./dist/ {deploy_dir}'.format(**env))
+        run('rsync -av --delete ./dist/ {deploy_dir}'.format(**env))
 
 
 @task
