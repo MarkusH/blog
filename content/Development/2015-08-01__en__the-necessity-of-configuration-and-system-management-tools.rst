@@ -1,12 +1,13 @@
-==========================================================
-The Necessity of Configuration and System Management Tools
-==========================================================
+==================================================================
+Update: The Necessity of Configuration and System Management Tools
+==================================================================
 
 :tags: Ansible, Chef, Linux, Network, Puppet, Server, Studium
 :author: Markus Holtermann
 :image: mastersthesis/taxonomy.png
 :summary: Over the last months I wrote my Master's Thesis which I'm publishing
    with this post.
+:modified: 2015-08-04
 
 
 Over the last months I wrote my Master's Thesis in Computer Science about
@@ -77,6 +78,8 @@ Download
 
 * `Master's Thesis`_
 * `Presentation from PyCon Australia 2015`_
+* `Video recording from PyCon Australia 2015`_ -- I have to admit I was quite
+  nervous
 
 
 .. _Technical University of Berlin, Germany: http://www.tu-berlin.de
@@ -89,3 +92,4 @@ Download
 
 .. _Master's Thesis: {filename}/files/masterthesis-v1.1.pdf
 .. _Presentation from PyCon Australia 2015: https://speakerdeck.com/markush/the-necessity-of-configuration-and-system-management-tools
+.. _Video recording from PyCon Australia 2015: https://www.youtube.com/watch?v=1NowxI9WATs
