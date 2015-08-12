@@ -2,12 +2,13 @@
 from __future__ import unicode_literals
 
 from functools import partial
+from itertools import chain
 
 from docutils.parsers.rst.directives import register_directive
 
 from pelican import signals
 
-from . import directives
+from . import directives, search
 from .imaging import gen_article_thumbnails
 from .readers import BlogReader
 
@@ -22,6 +23,7 @@ def register():
     signals.article_generator_finalized.connect(thumbnail_generator)
     signals.article_generator_finalized.connect(exclude_articles_from_index)
     signals.article_writer_finalized.connect(write_excluded_articles)
+    signals.article_writer_finalized.connect(index_posts)
 
 
 def register_directives():
@@ -61,6 +63,17 @@ def write_excluded_articles(article_generator, writer):
         article_generator.articles_delayed, article_generator.articles
     )
     article_generator.translations = translations
+
+
+def index_posts(article_generator, writer):
+    try:
+        search.connect()
+    except Exception:
+        pass
+    else:
+        search.init()
+        for article in chain(article_generator.articles, article_generator.articles_delayed):
+            search.index(article)
 
 
 def patch_typogrify(readers):
