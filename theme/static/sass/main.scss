@@ -149,6 +149,12 @@ tt {
       }
       @extend .card-panel;
     }
+    em {
+      color: $secondary-color;
+    }
+    a em {
+      color: $primary-color;
+    }
   }
   .card-action {
     a {
@@ -199,4 +205,45 @@ tt {
 }
 .twitter {
   background-color: #326ADA;
+}
+
+.search {
+  @media #{$medium-and-down} {
+    input {
+      color: #444;
+    }
+  }
+  @media only screen and (min-width: $large-screen) {
+    input {
+      border-width: 0;
+      background-color: $primary-color;
+      color: $primary-color-text;
+      display: inline;
+      padding: 2px;
+      transition: width 1s, padding 1s;
+      width: 26px;
+    }
+    .button {
+      color: $primary-color-text;
+      cursor: pointer;
+      display: inline;
+      font-size: 1.4rem;
+      height: auto;
+      line-height: $navbar-height;
+      position: absolute;
+      right: 2px;
+      top: 0;
+    }
+    input:focus,
+    input[value]:not([value=""]) {
+      width: 200px;
+      border-width: 2px;
+      padding: 2px 26px 2px 2px;
+      background-color: $primary-color-text;
+      color: $primary-color;
+      + .button {
+        color: $primary-color;
+      }
+    }
+  }
 }
