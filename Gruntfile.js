@@ -15,17 +15,17 @@ module.exports = function(grunt) {
       }
     },
     webfont: {
-        icons: {
-            src: 'theme/static/font-src/*.svg',
-            dest: 'theme/static/font',
-            destCss: 'theme/static/sass',
-            options: {
-              htmlDemo: false,
-              stylesheet: 'scss',
-              syntax: 'bootstrap',
-              types: 'eot,woff,ttf,svg'
-            }
+      icons: {
+        src: 'theme/static/font-src/*.svg',
+        dest: 'theme/static/font',
+        destCss: 'theme/static/sass',
+        options: {
+          htmlDemo: false,
+          stylesheet: 'scss',
+          syntax: 'bootstrap',
+          types: 'eot,woff,ttf,svg'
         }
+      }
     },
     sass: {
       dist: {

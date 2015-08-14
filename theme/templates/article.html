@@ -18,10 +18,10 @@
         <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
           <picture class="activator">
             <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-1026x300.{{ article.image.rpartition('.')[2] }}" media="(min-width: 993px)">
-            <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-786x230.{{ article.image.rpartition('.')[2] }}" media="(min-width: 601px)">
+            <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1026x300.{{ article.image.rpartition('.')[2] }}" media="(min-width: 993px)">
+            <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-786x230.{{ article.image.rpartition('.')[2] }}" media="(min-width: 601px)">
             <!--[if IE 9]></video><![endif]-->
-            <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}">
+            <img srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}">
           </picture>
           <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}" />
           <meta itemprop="representativeOfPage" content="true" />
