@@ -8,7 +8,8 @@ BASE_DIR = os.path.dirname(__file__)
 
 AUTHOR = 'Markus Holtermann'
 SITENAME = 'markusholtermann'
-SITEURL = 'http://127.0.0.1:8000'
+SITEURL = 'http://markusholtermann.local'
+SEARCHURL = SITEURL + '/search/'
 
 TIMEZONE = 'Europe/Berlin'
 
@@ -26,7 +27,7 @@ TRANSLATION_FEED_ATOM = None
 DEFAULT_DATE_FORMAT = '%b %d, %Y'
 DEFAULT_PAGINATION = 15
 
-RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 DISPLAY_CATEGORIES_ON_MENU = False
 

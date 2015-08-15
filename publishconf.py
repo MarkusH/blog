@@ -11,7 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'https://markusholtermann.eu'
-RELATIVE_URLS = False
+SEARCHURL = 'https://markusholtermann.eu/search/'
 LOAD_CONTENT_CACHE = True
 
 DELETE_OUTPUT_DIRECTORY = True

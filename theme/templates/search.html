@@ -1,0 +1,83 @@
+{% extends "search/index.html" %}
+{% block content %}
+  <div class="row" id="posts" itemscope itemtype="http://schema.org/Blog">
+    {% for article in articles %}
+    <div class="col s12 l10 offset-l1">
+      <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
+        {% if article.image %}
+        <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
+          <picture class="activator">
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1026x300.{{ article.image.rpartition('.')[2] }}" media="(min-width: 993px)">
+            <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-786x230.{{ article.image.rpartition('.')[2] }}" media="(min-width: 601px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}">
+          </picture>
+          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}" />
+          <meta itemprop="representativeOfPage" content="true" />
+          {% if article.image_credits %}
+          <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="card-content highlight">
+          <div class="meta">
+            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
+            {{ article.locale_date }} &bull;
+            {% if article.image_credits %}
+            <div class="image-credits">Article image: {{ article.image_credits }}</div>
+            {% endif %}
+          </div>
+          <div class="card-title">
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|safe }}</a>
+          </div>
+          <div class="flow-text" itemprop="about">
+            {{ article.text|safe }}
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="{{ SITEURL }}/{{ article.url }}">Read more</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="center">
+    <ul class="pagination">
+      {% if has_previous_page %}
+        {% if page - 1 == 1 %}
+          <li class="waves-effect"><a href="{{ SEARCHURL }}?q={{ query }}"><i class="icon-chevron-left"></i></a></li>
+        {% else %}
+          <li class="waves-effect"><a href="{{ SEARCHURL }}?q={{ query }}&amp;p={{ page - 1 }}"><i class="icon-chevron-left"></i></a></li>
+        {% endif %}
+      {% else %}
+        <li class="disabled"><a href=""><i class="icon-chevron-left"></i></a></li>
+      {% endif %}
+      
+      {% set offset_start = 1 %}
+      {% if page > 4 %}
+        {% set offset_start = page - 3 %}
+      {% endif %}
+
+      {% set offset_end = num_pages %}
+      {% if page < num_pages - 3 %}
+        {% set offset_end = page + 3 %}
+      {% endif %}
+
+      {% for number in range(offset_start, offset_end + 1) %}
+        {% if number == 1 %}
+          <li class="{% if number == page %}active{% else %}waves-effect{% endif %}"><a href="{{ SEARCHURL }}?q={{ query }}">{{ number }}</a></li>
+        {% else %}
+          <li class="{% if number == page %}active{% else %}waves-effect{% endif %}"><a href="{{ SEARCHURL }}?q={{ query }}&amp;p={{ number - 1 }}">{{ number }}</a></li>
+        {% endif %}
+      {% endfor %}
+
+      {% if has_next_page %}
+        <li class="waves-effect"><a href="{{ SEARCHURL }}?q={{ query }}&amp;p={{ page + 1 }}"><i class="icon-chevron-right"></i></a></li>
+      {% else %}
+        <li class="disabled"><a href=""><i class="icon-chevron-right"></i></a></li>
+      {% endif %}
+    </ul>
+  </div>
+{% endblock %}
