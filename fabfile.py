@@ -152,4 +152,6 @@ def serve():
     """
     Runs a local HTTP server.
     """
-    local('cd build && python -m SimpleHTTPServer')
+    local('sudo systemctl start nginx.service')
+    local('echo -e "Server running on\n\thttp://markusholtermann.local"')
+    local('python blog/wsgi.py')
