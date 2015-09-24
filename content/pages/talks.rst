@@ -9,6 +9,18 @@ Talks
 2015
 ====
 
+What's new in Django 1.9
+------------------------
+
+I gave this presentation at the `Sydney Django meetup
+<www.meetup.com/SyDjango/events/225080835/>`_ on Nov 24th, 2015.
+
+See the full Django 1.9 release notes for details and all changes:
+https://docs.djangoproject.com/en/dev/releases/1.9/
+
+.. speakerdeck:: 63961d8b68d743688bf5c72a820c3a11
+
+
 The Necessity of Configuration and System Management Tools
 ----------------------------------------------------------
 
