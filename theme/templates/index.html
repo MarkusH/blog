@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% block title %}{{ super() }}{% endblock title %}
+
 {% block content %}
   <div class="row" id="posts" itemscope itemtype="http://schema.org/Blog">
     {% for article in articles_page.object_list %}

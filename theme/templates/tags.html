@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% block title %}{{ super() }} &mdash; Tags{% endblock title %}
+
 {% block content %}
 <div class="collection">
   {% for tag, articles in tags|sort %}

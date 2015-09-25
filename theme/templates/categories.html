@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% block title %}{{ super() }} &mdash; Categories{% endblock title %}
+
 {% block content %}
 <div class="collection">
   {% for category, articles in categories %}
