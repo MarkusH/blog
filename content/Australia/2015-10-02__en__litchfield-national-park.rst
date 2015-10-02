@@ -5,7 +5,7 @@ Litchfield National Park
 :tags: Holiday
 :author: Markus Holtermann
 :image: australia-daily/day088-cover.jpg
-:summary: The 1500 sqkm Litchfield National Park is located about 100 km south
+:summary: The 1500 km² Litchfield National Park is located about 100 km south
    of the city of Darwin in the Northern Territory.
 
 
