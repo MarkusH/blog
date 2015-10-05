@@ -79,15 +79,54 @@ def update():
 
 @task
 @verify_remote
+def grunt_remote():
+    """
+    Remote -- Runs Grunt
+    """
+    with cd(env.repo_dir), path(env.sass_dir):
+        run('./node_modules/grunt-cli/bin/grunt -v')
+
+
+@task
+@verify_remote
+def pelican_remote():
+    """
+    Remote -- Runs Pelican
+    """
+    with cd(env.repo_dir), virtualenv(env.venv_dir):
+        run('pelican -o dist -s {pelicanconf}'.format(**env))
+
+
+@task
+@verify_remote
+def zip_theme_remote():
+    """
+    Remote -- Zips theme files
+    """
+    with cd(env.repo_dir):
+        run('find dist/theme -type f -exec gzip --keep --force --verbose -9 {} \;')
+
+
+@task
+@verify_remote
+def zip_images_remote():
+    """
+    Remote -- Zips images
+    """
+    with cd(env.repo_dir):
+        run('find dist/images -type f -exec gzip --keep --force --verbose -9 {} \;')
+
+
+@task
+@verify_remote
 def build_remote():
     """
     Remote -- Deploys the latest changes.
     """
-    with cd(env.repo_dir), path(env.sass_dir), virtualenv(env.venv_dir):
-        run('./node_modules/grunt-cli/bin/grunt -v')
-        run('pelican -o dist -s {pelicanconf}'.format(**env))
-        run('find dist/theme -type f -exec gzip --keep --force --verbose -9 {} \;')
-        run('find dist/images -type f -exec gzip --keep --force --verbose -9 {} \;')
+    grunt_remote()
+    pelican_remote()
+    zip_theme_remote()
+    zip_images_remote()
 
 
 @task
