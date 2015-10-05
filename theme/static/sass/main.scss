@@ -149,6 +149,9 @@ tt {
       }
       @extend .card-panel;
     }
+    table.footnote td.label {
+      vertical-align: top;
+    }
   }
   .card-action {
     a {
