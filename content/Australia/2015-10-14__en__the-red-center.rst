@@ -154,7 +154,7 @@ it's highest mountain Mt Olga.
 .. _Stuart Highway: https://en.wikipedia.org/wiki/Stuart_Highway
 .. _Alice Springs: https://en.wikipedia.org/wiki/Alice_Springs
 .. _MacDonnell Ranges: https://en.wikipedia.org/wiki/MacDonnell_Ranges
-.. _Kings_Canyon: https://en.wikipedia.org/wiki/Kings_Canyon_(Northern_Territory)
+.. _Kings Canyon: https://en.wikipedia.org/wiki/Kings_Canyon_(Northern_Territory)
 .. _Uluru: https://en.wikipedia.org/wiki/Uluru
 .. _Uluru-Kata Tjuta National Park: https://en.wikipedia.org/wiki/Uluṟu-Kata_Tjuṯa_National_Park
 .. _Kata Tjuta: https://en.wikipedia.org/wiki/Kata_Tja
