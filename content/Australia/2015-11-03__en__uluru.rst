@@ -1,0 +1,83 @@
+==================
+Uluru / Ayers Rock
+==================
+
+:tags: Holiday
+:author: Markus Holtermann
+:image: australia-daily/day106-cover.jpg
+:summary: Uluru is a tens of million old sand stone rock and the the most
+   sacred and spiritual important place of the Anangu, the indigenous people
+   living in Australia's center.
+
+Uluru is a tens of million old sand stone rock and the the most sacred and
+spiritual important place of the Anangu, the indigenous people living in
+Australia's center. It is located 25 km east of Kata Tjuta, about 400 km
+southwest of Alice Springs and part of the *Uluru - Kata Tjuta National Park*.
+
+In 1985 the land was given back to the Anangu which then leased it back to the
+Northern Territory. The park organization was given to a management board
+consisting of 4 male Anangu, 4 female Anangu as well as 4 people from the
+Northern Territory government. The board takes care of all decisions relevant
+to the park's development and future.
+
+
+The Climb
+=========
+
+While the Anangu discourage you to climb Uluru it is accepted by law and part
+of the lease agreement. However, I've the ratio of people climbing Uluru goes
+below 25% of all visitors (current ratio is at about 32%) the board is allowed
+to disallow what people call *the climb* once and for all. Furthermore, a
+current referendum ending in 2019 discusses the topic and may result in a
+closure as well.
+
+The climb starts with a 300 m steep ascent with only a handrail. While I didn't
+climb up a friend of mine did. The next photos have been taken by him (all
+rights reserved).
+
+.. gallery::
+   :small: 1
+   :medium: 2
+
+   .. image:: australia-daily/day106-01.jpg
+      :alt: Handrail for the climb of Uluru
+
+   .. image:: australia-daily/day106-02.jpg
+      :alt: View from Uluru
+
+
+
+The Boardwalk
+=============
+
+Instead of climbing I did half the board work right during sunrise. I started
+at the eastern part and made my way to the west side via over the southern
+hillside.
+
+When you look at Uluru from a scientific perspective you see lots of caves.
+They are a result of erosions caused by rain and wind. If you consider the
+Anangu culture they were caused from spear impacts and other weird sounding
+reasons.
+
+I timed my boardwalk such that I was at the *Mala Walk* by 8am to join a free
+ranger guided walk. While I experienced a few free walks that weren't worth the
+time, this 1.5 hour walk totally was worth it. The ranger -- indigenous though
+not an Anangu -- told the cultural story behind Uluru and explained its
+importance to the Anangu. Given this additional knowledge the above mentioned
+reasons don't sound too off anymore.
+
+.. gallery::
+   :small: 1
+   :medium: 2
+
+   .. image:: australia-daily/day106-03.jpg
+      :alt: Uluru Boardwalk
+
+   .. image:: australia-daily/day106-04.jpg
+      :alt: Uluru Boardwalk
+
+   .. image:: australia-daily/day106-05.jpg
+      :alt: Uluru Boardwalk: Kangaroos on Uluru
+
+   .. image:: australia-daily/day106-06.jpg
+      :alt: Uluru Boardwalk: Erosions
