@@ -93,6 +93,7 @@ def gen_article_thumbnails(source, sizes=None):
             '-gravity', 'center',
             '-crop', '{0}x{1}+0+0'.format(width, height),
             '+repage',
+            '-auto-orient',
             dest,
         ]
         subprocess.call(cmd)
