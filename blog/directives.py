@@ -31,7 +31,6 @@ class Gallery(Directive):
         gallery.clear()
         gallery.images = []
 
-        classes = ['col']
         max_widths = {
             's': 500.594,
             'm': 768.688,
@@ -44,17 +43,28 @@ class Gallery(Directive):
         counts['m'] = self.options.get('medium', counts['s'])
         counts['l'] = self.options.get('large', counts['m'])
 
-        # We use a 12-column grid. How many columns does each image span per size
+        # We use a 12-column grid. How many columns does each image span per
+        # size normally, not accounting for extra wide images.
         spans = {k: 12 / v for k, v in counts.items()}
 
-        sizes = []
-        for key in ('s', 'm', 'l'):
-            classes.append('%s%d' % (key, spans[key]))
-            padding = 10.5 * counts[key] * 2  # padding on left and right
-            size = int(math.ceil((max_widths[key] - padding) / counts[key]))
-            sizes.append((size, size))
-
         for img in images:
+            classes = ['col']
+            sizes = []
+            for key in ('s', 'm', 'l'):
+                # Check if we should use a multiple of the default columns
+                multiplier = img.attributes.get('%scols' % key, 1)
+                # Create the CSS classes, e.g. s12, m6, l6
+                classes.append('%s%d' % (key, spans[key] * multiplier))
+                # Total padding on left and right and between all images in this row
+                # - 10.5 is the padding in px
+                # - * 2 is for either side of the image
+                # - counts[key] is the number of images in a row
+                # - multiplier is 1 except for wide images
+                padding_w = 10.5 * (counts[key] - multiplier + 1) * 2
+                width = int(math.ceil((max_widths[key] - padding_w) * multiplier / counts[key]))
+                padding_h = 10.5 * counts[key] * 2
+                height = int(math.ceil((max_widths[key] - padding_h) / counts[key]))
+                sizes.append((width, height))
             img['classes'].extend(classes)
             target = img.attributes.get('uri', img.attributes.get('refuri'))
             assert target
