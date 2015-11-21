@@ -17,6 +17,7 @@ def register():
     Pelican entry point
     """
     register_directives()
+    patch_docutils_image()
     signals.readers_init.connect(add_reader)
     signals.readers_init.connect(patch_typogrify)
     signals.article_generator_finalized.connect(thumbnail_generator)
@@ -61,6 +62,14 @@ def write_excluded_articles(article_generator, writer):
         article_generator.articles_delayed, article_generator.articles
     )
     article_generator.translations = translations
+
+
+def patch_docutils_image():
+    from docutils.parsers.rst.directives import nonnegative_int
+    from docutils.parsers.rst.directives.images import Image
+    Image.option_spec['scols'] = nonnegative_int
+    Image.option_spec['mcols'] = nonnegative_int
+    Image.option_spec['lcols'] = nonnegative_int
 
 
 def patch_typogrify(readers):
