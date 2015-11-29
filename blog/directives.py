@@ -50,9 +50,11 @@ class Gallery(Directive):
         for img in images:
             classes = ['col']
             sizes = []
+            last_col_span = 1
             for key in ('s', 'm', 'l'):
                 # Check if we should use a multiple of the default columns
-                multiplier = img.attributes.get('%scols' % key, 1)
+                multiplier = img.attributes.get('%scols' % key, last_col_span)
+                last_col_span = multiplier
                 # Create the CSS classes, e.g. s12, m6, l6
                 classes.append('%s%d' % (key, spans[key] * multiplier))
                 # Total padding on left and right and between all images in this row
