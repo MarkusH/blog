@@ -81,7 +81,7 @@ the ``extra`` keyword argument.
            except ImportError:
                pygments = None
 
-           # Check f sqlparse is available for indentation
+           # Check if sqlparse is available for indentation
            try:
                import sqlparse
            except ImportError:
