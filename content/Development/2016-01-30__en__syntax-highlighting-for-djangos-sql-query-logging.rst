@@ -121,6 +121,10 @@ handler and ``django.db.backends`` logger:
            }
        },
        'handlers': {
+           'console': {
+               'level': 'DEBUG',
+               'class': 'logging.StreamHandler',
+           },
            'sql': {
                'class': 'logging.StreamHandler',
                'formatter': 'sql',
@@ -133,9 +137,13 @@ handler and ``django.db.backends`` logger:
                'level': 'DEBUG',
                'propagate': False,
            },
+           'django.db.backends.schema': {
+               'handlers': ['console'],
+               'level': 'DEBUG',
+               'propagate': False,
+           },
        }
    }
-
 
 
 .. _Python's logging module: https://docs.python.org/3/library/logging.html
