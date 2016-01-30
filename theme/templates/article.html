@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}{{ super() }} &mdash; {{ article.title }}{% endblock title %}
+{% block title %}{{ super() }} &mdash; {{ article.title|striptags }}{% endblock title %}
 
 {% block head %}
     <meta name="description" contents="{{ article.summary|striptags }}" />
     <meta name="tags" contents="{{ article.tags|join(' ') }}" />
     <meta property="og:type" content="article" />
-    <meta itemprop="og:headline" content="{{ SITENAME }} &mdash; {{ article.title }}" />
+    <meta itemprop="og:headline" content="{{ SITENAME }} &mdash; {{ article.title|striptags }}" />
     <meta itemprop="og:description" content="{{ article.summary|striptags }}" />
     {% if article.image %}
     <meta property="og:image" content="{{ SITEURL }}/images/thumb/{{ article.image }}" />
