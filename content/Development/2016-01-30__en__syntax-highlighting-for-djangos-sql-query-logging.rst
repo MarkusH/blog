@@ -102,8 +102,8 @@ the ``extra`` keyword argument.
                    TerminalTrueColorFormatter(style='monokai')
                )
 
-           # Set the record's message to the formatted query
-           record.message = sql
+           # Set the record's statement to the formatted query
+           record.statement = sql
            return super(SQLFormatter, self).format(record)
 
 Update your ``LOGGING`` configuration to include the ``sql`` formatter, ``sql``
@@ -117,7 +117,7 @@ handler and ``django.db.backends`` logger:
        'formatters': {
            'sql': {
                '()': 'path.to.your.SQLFormatter',
-               'format': '[%(duration).3f] %(message)s',
+               'format': '[%(duration).3f] %(statement)s',
            }
        },
        'handlers': {
