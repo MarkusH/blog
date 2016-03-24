@@ -4,10 +4,12 @@ $(document).ready(function(){
 
   // Masonry layout for index pages
   var $container = $('#posts');
-  $container.imagesLoaded(function(){
+  var layout = function(){
     $container.masonry({
-        columnWidth: '.s12, .m6, .l4',
-        itemSelector: '.col'
+      columnWidth: '.s12, .m6, .l4',
+      itemSelector: '.col'
     });
-  });
+  };
+  layout();
+  $container.imagesLoaded(layout);
 });
