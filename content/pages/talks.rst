@@ -6,6 +6,31 @@ Talks
 :lang: en
 
 
+2016
+====
+
+Don't be afraid of writing migrations
+-------------------------------------
+
+With Django 1.7 the built-in migrations framework was introduced. With the
+release of version 1.9, the migrations framework is much more robust, faster
+and can handle many more edge cases.
+
+While the makemigrations management command became smarter in the last two
+releases in terms of detecting what has changed and what migrations to
+generate, there are still a couple of things Django cannot do automatically.
+
+I will point out some of the common cases where you should get your hands
+dirty, and show you how writing migrations is easier than you think. Migrations
+are just Python code, and are as much a part of your apps as your models,
+forms, and views. After all, they were always meant to be human-writable.
+
+`Blog article <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-migrations.rst>`_
+
+.. speakerdeck:: 4a655fe76c8c4526992c313885e66920
+   :ratio: 1.77777777777
+
+
 2015
 ====
 
