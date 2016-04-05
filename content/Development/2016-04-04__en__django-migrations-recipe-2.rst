@@ -8,7 +8,7 @@ Django Migrations Recipe #2
 :summary: This recipe show how one can add a non-nullable column to a table
    with already existing data.
 
-This is the first migration recipe I publish for Django's migration framework.
+This is the second migration recipe I publish for Django's migration framework.
 I published it as part of my `talk at DjangoCon Europe 2016 in Budapest
 <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-
 migrations.rst>`_. This recipe will show how to add a non-nullable column to a

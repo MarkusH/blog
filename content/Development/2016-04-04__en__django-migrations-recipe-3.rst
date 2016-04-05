@@ -8,7 +8,7 @@ Django Migrations Recipe #3
 :summary: This recipe show how to rename an app that does not have any incoming
    dependencies.
 
-This is the first migration recipe I publish for Django's migration framework.
+This is the third migration recipe I publish for Django's migration framework.
 I published it as part of my `talk at DjangoCon Europe 2016 in Budapest
 <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-
 migrations.rst>`_. This recipe will show how to rename an app. For simplicity
