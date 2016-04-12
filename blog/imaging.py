@@ -19,6 +19,9 @@ COVER_IMAGE_SIZES = (
     # 1 col, small: as above
     (786, 230),  # 1 col, medium
     (1026, 300),  # 1 col, large
+    # Open Graph
+    # Google: https://developers.google.com/+/web/snippet/article-rendering#example_with_full-bleed_image
+    (1012, 422),  # 2 x (506, 211)
 )
 
 IMG_BASE_DIR = join('content', 'images')
