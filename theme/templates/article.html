@@ -2,22 +2,24 @@
 {% block title %}{{ super() }} &mdash; {{ article.title|striptags }}{% endblock title %}
 
 {% block head %}
-    <meta name="description" contents="{{ article.summary|striptags }}" />
-    <meta name="tags" contents="{{ article.tags|join(' ') }}" />
     <meta property="og:type" content="article" />
-    <meta itemprop="og:headline" content="{{ SITENAME }} &mdash; {{ article.title|striptags }}" />
-    <meta itemprop="og:description" content="{{ article.summary|striptags }}" />
+    <meta property="og:title" content="{{ article.title|striptags }}" />
+    <meta property="og:description" content="{{ article.summary|striptags }}" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
     {% if article.image %}
-    <meta property="og:image" content="{{ SITEURL }}/images/thumb/{{ article.image }}" />
+    <meta property="og:image" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
     {% endif %}
+    <meta name="description" content="{{ article.summary|striptags }}" />
+    <meta name="tags" content="{{ article.tags|join(' ') }}" />
 {% endblock %}
 
 {% block content %}
   <div class="row">
     <div class="col s12 l10 offset-l1">
       <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
+        <meta itemprop="datePublished" content="{{ article.date.isoformat() }}"/>
         {% if article.image %}
-        <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
+        <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
           <picture class="activator">
             <!--[if IE 9]><video style="display: none;"><![endif]-->
             <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-1026x300.{{ article.image.rpartition('.')[2] }}" media="(min-width: 993px)">
@@ -25,7 +27,7 @@
             <!--[if IE 9]></video><![endif]-->
             <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}">
           </picture>
-          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-520x293.{{ article.image.rpartition('.')[2] }}" />
+          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
           <meta itemprop="representativeOfPage" content="true" />
           {% if article.image_credits %}
           <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
@@ -50,7 +52,7 @@
           </div>
           <div class="flow-text" itemprop="articleBody">
             <div class="card-title">
-              <h1 itemprop="name">{{ article.title }}</h1>
+              <h1 itemprop="headline">{{ article.title }}</h1>
             </div>
             {{ article.content }}
           </div>
