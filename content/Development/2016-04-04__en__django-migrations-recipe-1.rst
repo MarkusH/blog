@@ -4,8 +4,9 @@ Django Migrations Recipe #1
 
 :tags: Django, DjangoCon, Migration
 :author: Markus Holtermann
+:modified: 2016-05-02
 :image: migration-recipe-1.jpg
-:summary: This recipe show how one can optimize a migration Django creates.
+:summary: This recipe shows how one can optimize a migration Django creates.
 
 This is the first migration recipe I publish for Django's migration framework.
 I published it as part of my `talk at DjangoCon Europe 2016 in Budapest
