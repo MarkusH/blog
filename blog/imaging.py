@@ -103,7 +103,10 @@ def gen_article_thumbnails(source, sizes=None):
 
         optimize = get_optimize_command(ext, dest)
         if optimize:
-            subprocess.call(optimize)
+            try:
+                subprocess.call(optimize)
+            except OSError:
+                raise OSError("Image optimzation failed. All dependencies installed?")
 
     if not skip:
         write_manifest(manifest)
