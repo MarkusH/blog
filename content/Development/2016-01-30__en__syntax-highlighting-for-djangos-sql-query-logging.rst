@@ -4,6 +4,7 @@ Syntax highlighting for Django's SQL query logging
 
 :tags: Database, Django, Logging, SQL
 :author: Markus Holtermann
+:modified: 2016-05-16
 :image: django-logo.png
 :summary: Django provides a logger for all SQL queries you run and adds syntax
    highlighting to the console output.
@@ -145,5 +146,9 @@ handler and ``django.db.backends`` logger:
        }
    }
 
+**Update**: In case you're working with a 256 color terminal, you should use
+the ``Terminal256Formatter`` instead of the ``TerminalTrueColorFormatter`` in
+the ``SQLFormatter.format()`` method. (Thanks `Felix Hummel
+<https://twitter.com/felixhummel/status/730684858738053120>`_).
 
 .. _Python's logging module: https://docs.python.org/3/library/logging.html
