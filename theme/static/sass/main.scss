@@ -93,7 +93,7 @@ tt {
   }
   a {
     color: $primary-color-light;
-    @include transition(color .3s ease);
+    transition: .3s;
     &:hover {
       color: $primary-color;
     }

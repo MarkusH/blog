@@ -7,7 +7,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'materialize/dist/',
           src: [
-            'font/**',
+            'fonts/**',
           ],
           dest: 'theme/static/',
           flatten: false
