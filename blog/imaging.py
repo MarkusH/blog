@@ -12,13 +12,14 @@ FILENAME = object()
 
 COVER_IMAGE_SIZES = (
     # index
-    (520, 293),  # 1 col, small
-    (382, 215),  # 2 col, medium
-    (397, 224),  # 3 col, large
+    (682, 316),  # 1 col, small
+    (502, 232),  # 2 col, medium
+    (380, 176),  # 3 col, large
     # detail
     # 1 col, small: as above
-    (786, 230),  # 1 col, medium
-    (1026, 300),  # 1 col, large
+    (682, 316),  # 1 col, small
+    (1075, 316),  # 1 col, medium
+    (1280, 375),  # 1 col, large
     # Open Graph
     # Google: https://developers.google.com/+/web/snippet/article-rendering#example_with_full-bleed_image
     (1012, 422),  # 2 x (506, 211)

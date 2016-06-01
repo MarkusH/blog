@@ -6,7 +6,7 @@ $(document).ready(function(){
   var $container = $('#posts');
   var layout = function(){
     $container.masonry({
-      columnWidth: '.s12, .m6, .l4',
+      columnWidth: '.s6, .m3, .l2',
       itemSelector: '.col'
     });
   };

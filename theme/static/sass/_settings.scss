@@ -27,3 +27,14 @@ $h6-fontsize: 1rem;
 /* Custom */
 
 $card-link-color: $link-color !default;
+$card-padding: 30px;
+
+$small-screen-up: 768px !default;
+$medium-screen-up: 1280px !default;
+$large-screen-up: 1440px !default;
+$small-screen: 767px !default;
+$medium-screen: 1278px !default;
+$large-screen: 1439px !default;
+
+$num-cols: 6;
+$gutter-width: 5rem;

@@ -48,11 +48,11 @@ html{
   @media only screen and (min-width: 0) {
     font-size: 14px;
   }
-  
+
   @media only screen and (min-width: $medium-screen) {
     font-size: 14px;
   }
-  
+
   @media only screen and (min-width: $large-screen) {
     font-size: 14px;
   }
@@ -65,7 +65,7 @@ html{
     }
   }
   .container {
-      width: 96%;
+    width: calc(100% - 5rem);  // $gutter-width
   }
 }
 
@@ -152,6 +152,10 @@ tt {
     table.footnote td.label {
       vertical-align: top;
     }
+
+    .card-content {
+      border-radius: 0;
+    }
   }
   .card-action {
     a {
@@ -160,18 +164,29 @@ tt {
         color: $primary-color-light;
       }
     }
+    border-top: 0;
+    border-bottom: 1px solid rgba(160,160,160,.2);
   }
+  .card-image {
+    border-radius: 0;
+    img {
+      border-radius: 0;
+    }
+  }
+
+  @extend .z-depth-0;
+  border-radius: 0;
 }
 
 .speakerdeck {
   @media only screen and (min-width: 0) {
     width: 100%;
   }
-  
+
   @media only screen and (min-width: $medium-screen) {
     width: 75%;
   }
-  
+
   @media only screen and (min-width: $large-screen) {
     width: 50%;
   }
