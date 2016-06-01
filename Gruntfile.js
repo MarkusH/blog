@@ -16,8 +16,8 @@ module.exports = function(grunt) {
     },
     webfont: {
         icons: {
-            src: 'theme/static/font-src/*.svg',
-            dest: 'theme/static/font',
+            src: 'theme/static/fonts-src/*.svg',
+            dest: 'theme/static/fonts',
             destCss: 'theme/static/sass',
             options: {
               htmlDemo: false,
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
     watch: {
       options: {
         atBegin: true
-      },  
+      },
       sass: {
         files: ['materialize/sass/**', 'theme/static/sass/**'],
         tasks: ['default'],
