@@ -153,9 +153,8 @@ tt {
       vertical-align: top;
     }
 
-    .card-content {
-      border-radius: 0;
-    }
+    border-radius: 0;
+    padding: $card-padding 0 0 0;
   }
   .card-action {
     a {
@@ -176,6 +175,7 @@ tt {
 
   @extend .z-depth-0;
   border-radius: 0;
+  margin-bottom: $element-top-margin; // yes, I want the same margin as for the top
 }
 
 .speakerdeck {
