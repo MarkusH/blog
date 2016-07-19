@@ -3,7 +3,8 @@ Dominator 1.0 released
 ======================
 
 
-:tags: Arch, C/C++, Debian, Eclipse, Git, KDE, Linux, Studium, Ubuntu, Windows
+:tags: Arch Linux, C/C++, Debian, Eclipse, Git, KDE, Linux, Studium, Ubuntu,
+   Windows
 :author: Markus Holtermann
 
 

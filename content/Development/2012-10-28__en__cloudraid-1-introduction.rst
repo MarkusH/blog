@@ -2,7 +2,7 @@
 [CloudRAID] 1. Introduction
 ===========================
 
-:tags: Apache, CloudRAID, Cluster, Eclipse, Encryption Java, Network, Security,
+:tags: Apache, CloudRAID, Cluster, Eclipse, Encryption, Java, Network, Security,
    Server, Studium
 :author: Markus Holtermann
 :summary: During last year a fellow student of mine, Florian Bausch, and I
