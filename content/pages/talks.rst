@@ -9,6 +9,23 @@ Talks
 2016
 ====
 
+SSL All The Things -- DjangoCon US
+----------------------------------
+
+Over the last few years SSL/TLS encryption of not only websites but many other
+services as well has risen tremendously. The Let’s Encrypt organization and
+certificate authority (CA) makes that pretty easy. Since September 2015 almost
+1.8 million certificates have been issued. And you can use it, too. For free!
+
+In this talk I'll demonstrate how to integrate SSL/TLS and point out some
+common pitfalls. I’ll briefly layout the Let's Encrypt ACME protocol and
+explain what you need to set up in Django to make SSL/TLS the default and only
+way to access your site.
+
+`Blog article <{filename}/Development/2016-07-19__en__ssl-all-the-things.rst>`__
+
+.. speakerdeck:: 4b3c84c76a764060b434e3782245665b
+
 Don't be afraid of writing migrations
 -------------------------------------
 
@@ -25,7 +42,7 @@ dirty, and show you how writing migrations is easier than you think. Migrations
 are just Python code, and are as much a part of your apps as your models,
 forms, and views. After all, they were always meant to be human-writable.
 
-`Blog article <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-migrations.rst>`_
+`Blog article <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-migrations.rst>`__
 
 .. speakerdeck:: 4a655fe76c8c4526992c313885e66920
    :ratio: 1.77777777777
