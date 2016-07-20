@@ -64,7 +64,7 @@ def get_optimize_command(ext, filename):
     return [(filename if part is FILENAME else part) for part in cmd]
 
 
-def gen_article_thumbnails(source, sizes=None):
+def gen_article_thumbnails(source, sizes=None, crop=True):
     out = []
     source_dir = dirname(source)
     source_name = basename(source)
@@ -85,7 +85,10 @@ def gen_article_thumbnails(source, sizes=None):
     if sizes is None:
         sizes = COVER_IMAGE_SIZES
     for width, height in sizes:
-        dest_name = '{0}-{1}x{2}{3}'.format(name, width, height, ext)
+        if crop:
+            dest_name = '{0}-{1}x{2}{3}'.format(name, width, height, ext)
+        else:
+            dest_name = '{0}-{1}x{2}-nocrop{3}'.format(name, width, height, ext)
         dest = join(dest_dir, dest_name)
         out.append(join(source_dir, dest_name))
         if skip and exists(dest):
@@ -95,7 +98,12 @@ def gen_article_thumbnails(source, sizes=None):
             source_file,
             '-resize', '{0}x{1}^'.format(width, height),
             '-gravity', 'center',
-            '-crop', '{0}x{1}+0+0'.format(width, height),
+        ]
+        if crop:
+            cmd += [
+                '-crop', '{0}x{1}+0+0'.format(width, height),
+            ]
+        cmd += [
             '+repage',
             '-auto-orient',
             dest,
@@ -140,10 +148,13 @@ def gen_equation_image(equation):
     with tempfile.NamedTemporaryFile('w', suffix='.tex') as tfp:
         tfp.write(text)
         tfp.flush()
-        subprocess.call(
-            ['pdflatex', '-shell-escape', tfp.name],
-            cwd=dirname(tfp.name)
-        )
+        try:
+            subprocess.call(
+                ['pdflatex', '-shell-escape', tfp.name],
+                cwd=dirname(tfp.name)
+            )
+        except OSError:
+            raise OSError("No pdflatex installed?")
         name, ext = splitext(tfp.name)
         source_file = name + '.png'
         subprocess.call(

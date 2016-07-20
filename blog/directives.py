@@ -19,12 +19,13 @@ GUTTER_WIDTH = 10.5
 
 class Gallery(Directive):
     required_arguments = 0
-    optional_arguments = 3
+    optional_arguments = 4
     final_argument_whitespace = True
     option_spec = {
         'small': directives.nonnegative_int,
         'medium': directives.nonnegative_int,
         'large': directives.nonnegative_int,
+        'nocrop': directives.flag,
     }
     has_content = True
 
@@ -46,6 +47,8 @@ class Gallery(Directive):
         counts['s'] = self.options.get('small', 1)
         counts['m'] = self.options.get('medium', counts['s'])
         counts['l'] = self.options.get('large', counts['m'])
+        # When flag is set: True, else False
+        crop = self.options.get('nocrop', True) is not None
 
         # We use a 6-column grid. How many columns does each image span per
         # size normally, not accounting for extra wide images.
@@ -75,7 +78,7 @@ class Gallery(Directive):
             target = img.attributes.get('uri', img.attributes.get('refuri'))
             assert target
             img.source = target
-            img.thumbs = gen_article_thumbnails(target, sizes=sizes)
+            img.thumbs = gen_article_thumbnails(target, sizes=sizes, crop=crop)
             gallery.images.append(img)
         return [gallery]
 
