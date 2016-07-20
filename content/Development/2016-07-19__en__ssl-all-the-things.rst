@@ -5,9 +5,9 @@ DjangoCon US 2016: SSL All The Things
 :tags: Apache, Django, DjangoCon, Network, Nginx, Security, Server, Talk
 :author: Markus Holtermann
 :image: djangoconus2016/talk-cover.jpg
-:summary: Django migrations are complex. They do a lot for you but sometimes
-   you need to tell 'em how to do things. There's no reason to be afraid of
-   that, though.
+:summary: Over the last few years SSL/TLS encryption of websites has risen
+   tremendously. The Let’s Encrypt organization makes that pretty easy.  And
+   you can use it.
 
 
 .. image:: /images/djangoconus2016/logo.png
