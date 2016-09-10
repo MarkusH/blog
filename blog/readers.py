@@ -3,7 +3,18 @@ from docutils.core import Publisher
 from docutils.io import StringOutput
 from pelican.readers import RstReader, render_node_to_html
 
-from .translators import BlogHTMLTranslator
+from .translators import BlogHTMLTranslator, AMPTranslator
+
+
+class AMPString(str):
+
+    @property
+    def amp_data(self):
+        return self._amp_data
+
+    @amp_data.setter
+    def amp_data(self, value):
+        self._amp_data = value
 
 
 class BlogReader(RstReader):
@@ -33,7 +44,7 @@ class BlogReader(RstReader):
                 output[name] = self.process_metadata(name, value)
         return output
 
-    def _get_publisher(self, source_path):
+    def _get_publisher(self, source_path, translator_class=BlogHTMLTranslator):
         extra_params = {
             'initial_header_level': '2',
             'syntax_highlight': 'short',
@@ -50,8 +61,18 @@ class BlogReader(RstReader):
             destination_class=StringOutput
         )
         pub.set_components('standalone', 'restructuredtext', 'html')
-        pub.writer.translator_class = BlogHTMLTranslator
+        pub.writer.translator_class = translator_class
         pub.process_programmatic_settings(None, extra_params, None)
         pub.set_source(source_path=source_path)
         pub.publish(enable_exit_status=True)
         return pub
+
+    def read(self, source_path):
+        content, metadata = super().read(source_path)
+        content = AMPString(content)
+
+        pub = self._get_publisher(source_path, AMPTranslator)
+        parts = pub.writer.parts
+        content.amp_data = parts.get('body')
+
+        return content, metadata

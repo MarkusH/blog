@@ -9,6 +9,7 @@
     {% if article.image %}
     <meta property="og:image" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
     {% endif %}
+    <link rel="amphtml" href="{{ SITEURL }}/{{ article.amp_url }}">
     <meta name="description" content="{{ article.summary|striptags }}" />
     <meta name="tags" content="{{ article.tags|join(' ') }}" />
 {% endblock %}
