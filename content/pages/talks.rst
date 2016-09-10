@@ -9,6 +9,19 @@ Talks
 2016
 ====
 
+SSL All The Things -- PyCon AU / PyCon NZ
+-----------------------------------------
+
+A revised version of my talk from DjangoCon US targeted at a more generic
+Python audience. Instead of having Django specific code and slides I show how
+to use Python's built-in ``ssl`` module.
+
+`Blog article <{filename}/Development/2016-09-10__en__ssl-all-the-things-in-python.rst>`__
+
+.. speakerdeck:: 857314c6dbe64db1be8fb5bcafb17a7f
+
+.. speakerdeck:: a1a78b393ebc4a569d83f57346aa025e
+
 SSL All The Things -- DjangoCon US
 ----------------------------------
 
