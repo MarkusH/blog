@@ -1,5 +1,3 @@
--r requirements.txt
-
 ecdsa==0.13
 Fabric==1.11.1
 fabric-virtualenv==0.3.0

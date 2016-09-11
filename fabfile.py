@@ -1,7 +1,6 @@
 from functools import wraps
-import os
 
-from fabric.api import abort, cd, env, local, run, task
+from fabric.api import abort, cd, env, run, task
 from fabric.context_managers import path
 from fabvenv import virtualenv
 
@@ -84,7 +83,7 @@ def grunt_remote():
     Remote -- Runs Grunt
     """
     with cd(env.repo_dir), path(env.sass_dir):
-        run('./node_modules/grunt-cli/bin/grunt -v')
+        run('make grunt')
 
 
 @task
@@ -94,7 +93,7 @@ def pelican_remote():
     Remote -- Runs Pelican
     """
     with cd(env.repo_dir), virtualenv(env.venv_dir):
-        run('pelican -o dist -s {pelicanconf}'.format(**env))
+        run('make pelican -e PELICAN_SETTINGS={pelicanconf}'.format(**env))
 
 
 @task
@@ -149,46 +148,3 @@ def deploy():
     update()
     build_remote()
     rsync()
-
-
-@task
-def clean():
-    """
-    Cleans local build directory.
-    """
-    if os.path.isdir('build'):
-        local('rm -rf build/*')
-        local('mkdir -p build')
-
-
-@task
-def grunt():
-    """
-    Runs grunt locally
-    """
-    local('./node_modules/grunt-cli/bin/grunt')
-
-
-@task
-def pelican():
-    """
-    Runs pelican locally
-    """
-    local('pelican -o build -s pelicanconf.py --ignore-cache')
-
-
-@task
-def build():
-    """
-    Builds the page locally: grunt, pelican
-    """
-    grunt()
-    pelican()
-
-
-@task
-def serve():
-    """
-    Runs a local HTTP server.
-    """
-    local('cd build && python -m SimpleHTTPServer')
