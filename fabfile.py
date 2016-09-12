@@ -103,7 +103,7 @@ def zip_theme_remote():
     Remote -- Zips theme files
     """
     with cd(env.repo_dir):
-        run('find dist/theme -type f -exec gzip --keep --force --verbose -9 {} \;')
+        run('find build/theme -type f -! -name "*.gz" -exec gzip --keep --force --verbose -9 {} \;')
 
 
 @task
@@ -113,7 +113,7 @@ def zip_images_remote():
     Remote -- Zips images
     """
     with cd(env.repo_dir):
-        run('find dist/images -type f -exec gzip --keep --force --verbose -9 {} \;')
+        run('find build/images -type f -! -name "*.gz" -exec gzip --keep --force --verbose -9 {} \;')
 
 
 @task
@@ -135,7 +135,7 @@ def rsync():
     Remote -- Rsync
     """
     with cd(env.repo_dir):
-        run('rsync -av --delete ./dist/ {deploy_dir}'.format(**env))
+        run('rsync -av --delete ./build/ {deploy_dir}'.format(**env))
 
 
 @task
