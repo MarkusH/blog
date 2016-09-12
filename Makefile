@@ -13,5 +13,4 @@ pelican:
 build: grunt pelican
 
 serve:
-	cd build
-	python -m SimpleHTTPServer 8080
+	cd build && python -m http.server 8080
