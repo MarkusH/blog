@@ -9,6 +9,20 @@ Talks
 2016
 ====
 
+Django and 2 Factor Authentication -- DjangoCon AU
+--------------------------------------------------
+
+Most websites these days require some kind of authentication. User name &
+password is the most common one. OAuth with Facebook / Github / Google /
+Twitter is also common. But sometimes you can't rely on 3rd party services and
+user name & password is not enough. In those cases 2 Factor Authentication is a
+nice, additional security layer. Use e.g. a phone to ensure a more secure
+authentication.
+
+`Blog article <{filename}/Development/2016-09-12__en__2-factor-authentication-in-django.rst>`__
+
+.. speakerdeck:: c3beb76e4f0747a58412d7bc5ce5144f
+
 SSL All The Things -- PyCon AU / PyCon NZ
 -----------------------------------------
 
