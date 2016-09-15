@@ -1,4 +1,7 @@
-from docutils import nodes
+import re
+from os.path import join
+
+import PIL
 from pelican.readers import PelicanHTMLTranslator
 
 __all__ = ['BlogHTMLTranslator']
@@ -121,18 +124,106 @@ class BlogHTMLTranslator(GalleryTranslator, ProjectTranslator,
                          PNGMathTranslator, SpeakerdeckTranslator,
                          PelicanHTMLTranslator):
 
-    def visit_math(self, node, math_env=''):
-        try:
-            PelicanHTMLTranslator.visit_math(self, node, math_env=math_env)
-        except nodes.SkipNode:
-            # content processed
-            if '</div>' in self.body[-1] and '<div class="math">' in self.body[-4]:
-                self.body[-1] = '</math>\n'
-                self.body[-4] = '<math>\n'
-        raise nodes.SkipNode
-
     def visit_section(self, node):
         self.section_level += 1
 
     def depart_section(self, node):
         self.section_level -= 1
+
+
+class AMPTranslator(BlogHTMLTranslator):
+
+    def visit_gallery_node(self, node):
+        self.body.append(self.starttag(node, 'amp-carousel', WIDTH=1, HEIGHT=1, LAYOUT='responsive', TYPE='slides'))
+        for image in node.images:
+            self.body.append('<div class="slide">')
+            src = join('content', 'images', 'thumb', image.thumbs[2])
+            width, height = PIL.Image.open(src).size
+            image.attributes['classes'] = []
+            self.body.append(self.starttag(
+                image, 'amp-img',
+                SRC='/images/thumb/%s' % image.thumbs[2],
+                WIDTH=width, HEIGHT=height, LAYOUT='responsive', alt=image['alt'], title=image['alt']
+            ).strip())
+            self.body.append('</amp-img>')
+            self.body.append('<div class="caption">')
+            self.body.append(image['alt'])
+            self.body.append('</div>')
+            self.body.append('</div>\n')
+
+    def depart_gallery_node(self, node):
+        self.body.append('</amp-carousel>')
+
+    RE_IMAGE_CLASSES = re.compile(r'class="([^"]+)"')
+
+    def visit_image(self, node):
+        super().visit_image(node)
+        last = self.body[-1]
+        if last.startswith('<img '):
+            kwargs = {
+                'LAYOUT': 'fixed',
+                'SRC': node['uri']
+            }
+            self.body.pop()
+            src = node['uri']
+            if src.startswith('/'):
+                src = join('content', src[1:])
+                kwargs['width'], kwargs['height'] = PIL.Image.open(src).size
+            matched = self.RE_IMAGE_CLASSES.search(last)
+            if matched:
+                kwargs['class'] = matched.groups()[0]
+            self.body.append(self.starttag(node, 'amp-img', **kwargs).strip())
+            self.body.append('</amp-img>')
+        else:
+            raise AssertionError("Why's there no <img> tag as last element on the stack?")
+
+    def visit_citation(self, node):
+        self.body.append(self.starttag(node, 'table', CLASS='docutils citation'))
+        self.body.append('<colgroup><col class="label" /><col /></colgroup><tbody><tr>')
+        self.footnote_backrefs(node)
+
+    def visit_docinfo(self, node):
+        self.context.append(len(self.body))
+        self.body.append(self.starttag(node, 'table', CLASS='docinfo'))
+        self.body.append('<col class="docinfo-name" /><col class="docinfo-content" /><tbody>')
+        self.in_docinfo = True
+
+    def visit_footnote(self, node):
+        self.body.append(self.starttag(node, 'table', CLASS='docutils footnote'))
+        self.body.append('<colgroup><col class="label" /><col /></colgroup><tbody><tr>')
+        self.footnote_backrefs(node)
+
+    def visit_field_list(self, node):
+        super().visit_field_list(node)
+        new_last = '<col class="field-name" /><col class="field-body" /><tbody>'
+        self.body = self.body[:-1] + [new_last]
+
+    def visit_option_list(self, node):
+        self.body.append(self.starttag(node, 'table', CLASS='docutils option-list'))
+        self.body.append('<col class="option" /><col class="description" /><tbody>')
+
+    def visit_pngmath(self, node):
+        src = node.attributes['src']
+        kwargs = {
+            'CLASS': 'pngmath',
+            'LAYOUT': 'responsive',
+            'SRC': src,
+        }
+        src = join('content', src[1:])
+        kwargs['width'], kwargs['height'] = PIL.Image.open(src).size
+        self.body.append(self.starttag(node, 'amp-img', **kwargs).strip())
+
+    def depart_pngmath(self, node):
+        self.body.append('</amp-img>')
+
+    def visit_tbody(self, node):
+        self.write_colspecs()
+        self.body.append(self.context.pop())  # '</colgroup>\n' or ''
+        self.body.append(self.starttag(node, 'tbody'))
+
+    def visit_thead(self, node):
+        self.write_colspecs()
+        self.body.append(self.context.pop())  # '</colgroup>\n'
+        # There may or may not be a <thead>; this is for <tbody> to use:
+        self.context.append('')
+        self.body.append(self.starttag(node, 'thead'))

@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import json
 from functools import partial
 
 from docutils.parsers.rst.directives import register_directive
+from jinja2.filters import do_striptags as striptags
 
 from pelican import signals
+from pelican.contents import Article, Page
 
 from . import directives
+from .generators import AMPGenerator
 from .imaging import gen_article_thumbnails
-from .readers import BlogReader
+from .readers import AMPString, BlogReader
 
 
 def register():
@@ -18,8 +22,10 @@ def register():
     """
     register_directives()
     patch_docutils_image()
+    patch_article_content_class()
     signals.readers_init.connect(add_reader)
     signals.readers_init.connect(patch_typogrify)
+    signals.get_generators.connect(get_generators)
     signals.article_generator_finalized.connect(thumbnail_generator)
     signals.article_generator_finalized.connect(exclude_articles_from_index)
     signals.article_writer_finalized.connect(write_excluded_articles)
@@ -34,6 +40,10 @@ def register_directives():
 
 def add_reader(readers):
     readers.reader_classes['rst'] = BlogReader
+
+
+def get_generators(pelican_object):
+    return AMPGenerator
 
 
 def thumbnail_generator(article_generator):
@@ -72,6 +82,61 @@ def patch_docutils_image():
     Image.option_spec['lcols'] = nonnegative_int
 
 
+def patch_article_content_class():
+    def __init__(self, content, metadata=None, settings=None, source_path=None, context=None):
+        self.amp_content = getattr(content, 'amp_data', None)
+        Page.__init__(self, content, metadata=metadata, settings=settings, source_path=source_path, context=context)
+
+    def amp_save_as(self):
+        return self.get_url_setting('amp_save_as')
+
+    def amp_url(self):
+        return self.get_url_setting('amp_url')
+
+    def json_ld(self):
+        image = None
+        SITEURL = self.settings['SITEURL']
+        if self.image:
+            image = {
+                '@type': 'ImageObject',
+                'url': '%s/images/thumb/%s-1012x422.%s' % (
+                    SITEURL, self.image.rpartition('.')[0], self.image.rpartition('.')[2]
+                ),
+                'width': 1012,
+                'height': 422,
+            }
+        data = {
+            '@context': 'http://schema.org',
+            '@type': 'BlogPosting',
+            'headline': striptags(self.title),
+            'image': image,
+            'keywords': ', '.join(sorted(map(str, self.tags))),
+            'url': '%s/%s' % (SITEURL, self.url),
+            'datePublished': self.date.isoformat(),
+            'dateModified': getattr(self, 'modified', self.date).isoformat(),
+            'description': striptags(self.summary),
+            'publisher': {
+                '@type': 'Person',
+                'name': 'Markus Holtermann',
+            },
+            'mainEntityOfPage': '%s/%s' % (SITEURL, self.url),
+            'author': [{
+                '@type': 'Person',
+                'name': str(author),
+                'url': '%s/%s' % (SITEURL, author.url),
+            } for author in self.authors],
+        }
+        for k, v in data.items():
+            if v is None:
+                del data[k]
+        return json.dumps(data)
+
+    Article.__init__ = __init__
+    Article.amp_save_as = property(amp_save_as)
+    Article.amp_url = property(amp_url)
+    Article.json_ld = property(json_ld)
+
+
 def patch_typogrify(readers):
     try:
         from typogrify import filters
@@ -82,7 +147,12 @@ def patch_typogrify(readers):
         from typogrify.filters import _typogrify
         ignore_tags = ignore_tags or []
         ignore_tags.append('math')
-        return _typogrify(text, ignore_tags=ignore_tags)
+        content = _typogrify(text, ignore_tags=ignore_tags)
+        if isinstance(text, AMPString):
+            amp_data = text.amp_data
+            content = AMPString(content)
+            content.amp_data = _typogrify(amp_data, ignore_tags=ignore_tags)
+        return content
 
     if not hasattr(filters, '_typogrify'):
         setattr(filters, '_typogrify', getattr(filters, 'typogrify'))
@@ -99,8 +169,12 @@ def patch_typogrify(readers):
             )
         else:
             attr = smartypants.default_smartypants_attr | smartypants.Attr.w
-            output = smartypants.smartypants(text, attr=attr)
-            return output
+            content = smartypants.smartypants(text, attr=attr)
+            if isinstance(text, AMPString):
+                amp_data = text.amp_data
+                content = AMPString(content)
+                content.amp_data = smartypants.smartypants(amp_data, attr=attr)
+            return content
 
     setattr(filters, 'smartypants', smartypants_wrapper)
 
