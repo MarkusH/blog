@@ -28,8 +28,8 @@
             <!--[if IE 9]></video><![endif]-->
             <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
           </picture>
-          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
-          <meta itemprop="representativeOfPage" content="true" />
+          <meta itemprop="thumbnail url" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
+          <meta itemprop="representativeOfPage" content="true" /><meta itemprop="height" content="422" /><meta itemprop="width" content="1012" />
           {% if article.image_credits %}
           <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
           {% endif %}
@@ -40,7 +40,7 @@
             <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
             <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.locale_date }}</time> &bull;
             {% for author in article.authors %}
-            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ author }}</span></a>{% if not loop.last %}, {% endif %}
             {% endfor %}
             <div class="tags" itemprop="keywords">
               {% for tag in article.tags|sort %}
@@ -53,7 +53,7 @@
           </div>
           <div class="flow-text" itemprop="articleBody">
             <div class="card-title">
-              <h1 itemprop="headline">{{ article.title }}</h1>
+              <h1 itemprop="headline name">{{ article.title }}</h1>
             </div>
             {{ article.content }}
           </div>
