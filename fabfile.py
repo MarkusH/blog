@@ -98,22 +98,13 @@ def pelican_remote():
 
 @task
 @verify_remote
-def zip_theme_remote():
+def zip_remote():
     """
-    Remote -- Zips theme files
-    """
-    with cd(env.repo_dir):
-        run('find build/theme -type f -! -name "*.gz" -exec gzip --keep --force --verbose -9 {} \;')
-
-
-@task
-@verify_remote
-def zip_images_remote():
-    """
-    Remote -- Zips images
+    Remote -- Zips files
     """
     with cd(env.repo_dir):
-        run('find build/images -type f -! -name "*.gz" -exec gzip --keep --force --verbose -9 {} \;')
+        # run('find build/theme -type f -! -name "*.gz" -exec gzip --keep --force --verbose -9 {} \;')
+        run('''find build -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0} || echo "[SKIP] ${0} is up to date"' {} \;''')
 
 
 @task
@@ -124,8 +115,7 @@ def build_remote():
     """
     grunt_remote()
     pelican_remote()
-    zip_theme_remote()
-    zip_images_remote()
+    zip_remote()
 
 
 @task
