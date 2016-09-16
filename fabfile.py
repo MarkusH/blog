@@ -98,24 +98,12 @@ def pelican_remote():
 
 @task
 @verify_remote
-def zip_remote():
-    """
-    Remote -- Zips files
-    """
-    with cd(env.repo_dir):
-        # run('find build/theme -type f -! -name "*.gz" -exec gzip --keep --force --verbose -9 {} \;')
-        run('''find build -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0} || echo "[SKIP] ${0} is up to date"' {} \;''')
-
-
-@task
-@verify_remote
 def build_remote():
     """
     Remote -- Deploys the latest changes: grunt_remote, pelican_remote, zip_*_remote
     """
     grunt_remote()
     pelican_remote()
-    zip_remote()
 
 
 @task
@@ -125,7 +113,19 @@ def rsync():
     Remote -- Rsync
     """
     with cd(env.repo_dir):
-        run('rsync -av --delete ./build/ {deploy_dir}'.format(**env))
+        run('rsync -av --checksum ./build/ {deploy_dir}'.format(**env))
+
+
+@task
+@verify_remote
+def zip_remote():
+    """
+    Remote -- Zips files
+    """
+    with cd(env.deploy_dir):
+        run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0}' {} \;''')
+        # Include "[SKIP] <file>  is up to date" debugging
+        # run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0} || echo "[SKIP] ${0} is up to date"' {} \;''')
 
 
 @task
@@ -138,3 +138,4 @@ def deploy():
     update()
     build_remote()
     rsync()
+    zip_remote()
