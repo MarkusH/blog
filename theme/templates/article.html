@@ -2,13 +2,7 @@
 {% block title %}{{ super() }} &mdash; {{ article.title|striptags }}{% endblock title %}
 
 {% block head %}
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ article.title|striptags }}" />
-    <meta property="og:description" content="{{ article.summary|striptags }}" />
-    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-    {% if article.image %}
-    <meta property="og:image" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
-    {% endif %}
+    {% include "_open_graph.html" %}
     <link rel="amphtml" href="{{ SITEURL }}/{{ article.amp_url }}">
     <meta name="description" content="{{ article.summary|striptags }}" />
     <meta name="tags" content="{{ article.tags|join(' ') }}" />
