@@ -182,6 +182,14 @@ class AMPTranslator(BlogHTMLTranslator):
         self.body.append('<colgroup><col class="label" /><col /></colgroup><tbody><tr>')
         self.footnote_backrefs(node)
 
+    def write_colspecs(self):
+        width = 0
+        for node in self.colspecs:
+            width += node['colwidth']
+        for node in self.colspecs:
+            self.body.append(self.emptytag(node, 'col'))
+        self.colspecs = []
+
     def visit_docinfo(self, node):
         self.context.append(len(self.body))
         self.body.append(self.starttag(node, 'table', CLASS='docinfo'))
@@ -227,3 +235,11 @@ class AMPTranslator(BlogHTMLTranslator):
         # There may or may not be a <thead>; this is for <tbody> to use:
         self.context.append('')
         self.body.append(self.starttag(node, 'thead'))
+
+    def visit_speakerdeck(self, node):
+        # There's no support for speakerdeck in AMP so far
+        pass
+
+    def depart_speakerdeck(self, node):
+        # There's no support for speakerdeck in AMP so far
+        pass
