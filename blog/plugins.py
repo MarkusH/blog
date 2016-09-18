@@ -96,7 +96,7 @@ def patch_article_content_class():
     def json_ld(self):
         image = None
         SITEURL = self.settings['SITEURL']
-        if self.image:
+        if getattr(self, 'image', None):
             image = {
                 '@type': 'ImageObject',
                 'url': '%s/images/thumb/%s-1012x422.%s' % (
@@ -126,9 +126,11 @@ def patch_article_content_class():
                 'url': '%s/%s' % (SITEURL, author.url),
             } for author in self.authors],
         }
-        for k, v in data.items():
-            if v is None:
-                del data[k]
+        data = {
+            k: v
+            for k, v in data.items()
+            if v is not None
+        }
         return json.dumps(data)
 
     Article.__init__ = __init__
