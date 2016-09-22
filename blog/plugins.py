@@ -9,6 +9,7 @@ from jinja2.filters import do_striptags as striptags
 
 from pelican import signals
 from pelican.contents import Article, Page
+from pelican.utils import memoized
 
 from . import directives
 from .generators import AMPGenerator
@@ -84,8 +85,18 @@ def patch_docutils_image():
 
 def patch_article_content_class():
     def __init__(self, content, metadata=None, settings=None, source_path=None, context=None):
-        self.amp_content = getattr(content, 'amp_data', None)
+        self._amp_content = getattr(content, 'amp_data', None)
         Page.__init__(self, content, metadata=metadata, settings=settings, source_path=source_path, context=context)
+
+    def get_amp_content(self, siteurl):
+        if hasattr(self, '_get_amp_content'):
+            amp_content = self._get_amp_content()
+        else:
+            amp_content = self._amp_content
+        return self._update_content(amp_content, siteurl)
+
+    def amp_content(self):
+        return self.get_amp_content(self.get_siteurl())
 
     def amp_save_as(self):
         return self.get_url_setting('amp_save_as')
@@ -134,6 +145,8 @@ def patch_article_content_class():
         return json.dumps(data)
 
     Article.__init__ = __init__
+    Article.get_amp_content = memoized(get_amp_content)
+    Article.amp_content = property(amp_content)
     Article.amp_save_as = property(amp_save_as)
     Article.amp_url = property(amp_url)
     Article.json_ld = property(json_ld)
