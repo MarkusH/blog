@@ -2,7 +2,7 @@
 2 Factor Authentication in Django
 =================================
 
-:tags: Django, DjangoCon, Security Talk
+:tags: Django, DjangoCon, Security, Talk
 :author: Markus Holtermann
 :image: djangoconau2016/talk-cover.jpg
 :image_credits: `"Night View of Grimshaw Architects Seafarers Footbridge at
