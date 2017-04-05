@@ -6,6 +6,22 @@ Talks
 :lang: en
 
 
+2017
+====
+
+To Index Or Not, That’s Not The Questions -- DjangoCon Europe
+-------------------------------------------------------------
+
+As databases are used to store more and more information every day, these are
+also a key component in every Django project. Thus it's important to understand
+how they work.
+
+`Blog article <{filename}/Development/2017-04-05__en__to-index-or-not-is-not-the-question.rst>`__
+
+.. speakerdeck:: b34ad0c583854e6cba4764dc1b44e928
+   :ratio: 1.77777777777
+
+
 2016
 ====
 
