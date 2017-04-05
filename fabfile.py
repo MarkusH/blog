@@ -132,7 +132,7 @@ def zip_remote():
 @verify_remote
 def deploy():
     """
-    Remote -- Do everything needed to deploy: git, update, build_remote, rsync
+    Remote -- Do everything needed to deploy: git, update, build_remote, rsync, zip_remote
     """
     git()
     update()
