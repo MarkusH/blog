@@ -2,9 +2,10 @@
 Binärtaschenrechner mit Flex und Bison
 ======================================
 
-
 :tags: Bison, Flex
 :author: Markus Holtermann
+:summary: Einen Taschenrechner für Binärzahlen kann man mit Flex und Bison
+   recht schnell erstellen.
 
 
 Einen Taschenrechner für Binärzahlen kann man mit `Flex
