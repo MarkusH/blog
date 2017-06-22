@@ -1,5 +1,5 @@
 ecdsa==0.13
-Fabric==1.11.1
+Fabric==1.13.2
 fabric-virtualenv==0.3.0
-paramiko==2.0.0
+paramiko==2.2.1
 pycrypto==2.6.1
