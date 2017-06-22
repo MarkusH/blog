@@ -1,5 +1,7 @@
 PELICAN_SETTINGS ?= pelicanconf.py
 
+all: build
+
 clean:
 	rm -rf build/*
 	mkdir -p build
@@ -13,4 +15,4 @@ pelican:
 build: grunt pelican
 
 serve:
-	cd build && python -m http.server 8080
+	cd build && python3 -m http.server 8080
