@@ -24,13 +24,13 @@
       <div class="nav-wrapper container"><a id="logo-container" href="{{ SITEURL }}" class="brand-logo">markusholtermann</a>
         <ul class="right hide-on-med-and-down">
           <li{% if category == "australia" %} class="active"{% endif %}><a href="{{ SITEURL }}/category/australia.html">Australia</a></li>
-          {% for pg in PAGES %}
+          {% for pg in pages %}
           <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
           {% endfor %}
         </ul>
         <ul id="nav-mobile" class="side-nav">
           <li{% if category == "australia" %} class="active"{% endif %}><a href="{{ SITEURL }}/category/australia.html">Australia</a></li>
-          {% for pg in PAGES %}
+          {% for pg in pages %}
           <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
           {% endfor %}
         </ul>
