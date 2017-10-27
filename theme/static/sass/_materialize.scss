@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
 // Mixins
-@import "components/mixins";
 @import "_color";
+
+// Colors
+// @import "components/color";
 
 // Variables;
 @import "components/variables";
@@ -12,7 +14,7 @@
 
 // components
 @import "components/global";
-// @import "components/badges";
+@import "components/badges";
 // @import "components/icons-material-design";
 @import "components/grid";
 @import "components/navbar";
