@@ -9,6 +9,17 @@ Talks
 2017
 ====
 
+Thoughts About Normal and Abnormal Data -- PyCon UK
+---------------------------------------------------
+
+A lot of data lives in relational databases. And there are relations between
+records in these databases. Relations that might be normal or abnormal.
+
+`Blog article <{filename}/Misc/2017-10-27__en__thoughts-about-normal-and-abnormal-data.rst>`__
+
+.. speakerdeck:: cc07d328d61549348dd70afdd5e4644a
+   :ratio: 1.77777777777
+
 To Index Or Not, That’s Not The Questions -- DjangoCon Europe
 -------------------------------------------------------------
 
