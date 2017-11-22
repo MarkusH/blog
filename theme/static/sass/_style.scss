@@ -79,7 +79,7 @@ tt {
     }
     h1, h2, h3, h4, h5, h6 { color: $primary-color; }
     .flow-text {
-      p {
+      p, .line-block {
         margin-bottom: 0.75rem;
       }
     }
