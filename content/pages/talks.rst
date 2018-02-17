@@ -6,8 +6,33 @@ Talks
 :lang: en
 
 
+2018
+====
+
+Oh, I Found a Security Issue -- PyCaribbean
+-------------------------------------------
+
+An extended version of my PyCon CA 2017 talk. I'm additionally looking into
+what security issues existed in Django and what types of security issues are
+out there in the web context.
+
+.. speakerdeck:: 1b4aa86a50b34ac28aaaf67882776ed4
+   :ratio: 1.77777777777
+
+
 2017
 ====
+
+Oh, I Found a Security Issue -- PyCon CA
+----------------------------------------
+
+A 10 minutes talk about Django's Security Process and how one can implement a
+similar process for their own projects.
+
+`Blog article <{filename}/Misc/2017-11-22__en__oh-i-found-a-security-issue.rst>`__
+
+.. speakerdeck:: 0803d05dbd78495691cce016b00d3b37
+   :ratio: 1.77777777777
 
 Thoughts About Normal and Abnormal Data -- PyCon UK
 ---------------------------------------------------
