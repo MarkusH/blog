@@ -12,7 +12,7 @@ Talks
 On The Look-Out For Your Data -- DjangoCon EU
 ---------------------------------------------
 
-My `DjangoCon Europe 2018 <https://2018.djangocon.eu/>`_ talk.
+My `DjangoCon Europe 2018 <https://2018.djangocon.eu/>`__ talk.
 
 Do you have data in the database of your Django project? Do you want to find
 that needle in the haystack of your data? There are plenty options how you can
@@ -22,7 +22,7 @@ I'll give an insight into what the most common are nowadays.
 .. speakerdeck:: 1fe1af1a182749789e1b9f4629eab723
    :ratio: 1.77777777777
 
-* `Video recording <https://www.youtube.com/watch?v=GpynTvoxPHI>`_
+* `Video recording <https://www.youtube.com/watch?v=GpynTvoxPHI>`__
 
 Oh, I Found a Security Issue -- PyCaribbean
 -------------------------------------------
@@ -49,7 +49,7 @@ similar process for their own projects.
 .. speakerdeck:: 0803d05dbd78495691cce016b00d3b37
    :ratio: 1.77777777777
 
-* `Video recording <https://www.youtube.com/watch?v=ugcQr6kjA4A>`_
+* `Video recording <https://www.youtube.com/watch?v=ugcQr6kjA4A>`__
 
 Thoughts About Normal and Abnormal Data -- PyCon UK
 ---------------------------------------------------
@@ -151,7 +151,7 @@ What's new in Django 1.9
 ------------------------
 
 I gave this presentation at the `Sydney Django meetup
-<http://www.meetup.com/SyDjango/events/225080835/>`_ on Nov 24th, 2015.
+<http://www.meetup.com/SyDjango/events/225080835/>`__ on Nov 24th, 2015.
 
 See the full Django 1.9 release notes for details and all changes:
 https://docs.djangoproject.com/en/dev/releases/1.9/
@@ -162,7 +162,7 @@ https://docs.djangoproject.com/en/dev/releases/1.9/
 The Necessity of Configuration and System Management Tools -- PyCon AU
 ----------------------------------------------------------------------
 
-I gave this talk during `PyCon Australia 2015 <http://2015.pycon-au.org/>`_ in
+I gave this talk during `PyCon Australia 2015 <http://2015.pycon-au.org/>`__ in
 Brisbane.
 
 In practically every moment of our life we rely on the possibly largest
@@ -180,13 +180,13 @@ even impossible.
 
 .. speakerdeck:: 3c742309f97a46f682f4679746221545
 
-* `Video recording <https://www.youtube.com/watch?v=1NowxI9WATs>`_
+* `Video recording <https://www.youtube.com/watch?v=1NowxI9WATs>`__
 
 
 "Forms are static" -- "No, they aren't" -- DjangoCon EU
 -------------------------------------------------------
 
-I gave this talk during `DjangoCon Europe 2015 <http://2015.djangocon.eu/>`_ in
+I gave this talk during `DjangoCon Europe 2015 <http://2015.djangocon.eu/>`__ in
 Cardiff, Wales.
 
 .. speakerdeck:: 6d6ba705ba7849fc983204b1cfb7b175
@@ -207,7 +207,7 @@ Combining Django & Elasticsearch
 
 Some thoughts and ideas on how to intregrate Elasticsearch into your Django
 project. I gave that talk at a `Django Users Berlin meetup
-<http://www.meetup.com/django-user-group-berlin/events/219547330/>`_.
+<http://www.meetup.com/django-user-group-berlin/events/219547330/>`__.
 
 .. speakerdeck:: 449ec3df8af14d82827040327391fed2
    :ratio: 1.77777777777
@@ -223,9 +223,9 @@ This talk you make you start thinking about when database normalization -- as
 you might have learned during computer science lessens at school or university
 -- is a good approach and when you should actually avoid it. I gave this talk
 at various occasions, one being the `pykonik
-<http://blog.pykonik.org/2014/09/september-meeting-spotkanie-wrzesniowe.html>`_,
+<http://blog.pykonik.org/2014/09/september-meeting-spotkanie-wrzesniowe.html>`__,
 the Krakow Python meetup, where I have been invited to by the amazing `Ola
-Sendecka <https://twitter.com/asendecka>`_ and `Tomasz Paczkowski
+Sendecka <https://twitter.com/asendecka>`__ and `Tomasz Paczkowski
 <https://twitter.com/oinopion>`_.
 
 .. speakerdeck:: 0ae3593038fb013275d462001b84dca3
