@@ -100,7 +100,7 @@ def pelican_remote():
 @verify_remote
 def build_remote():
     """
-    Remote -- Deploys the latest changes: grunt_remote, pelican_remote, zip_*_remote
+    Remote -- Deploys the latest changes: grunt_remote, pelican_remote, zip_remote
     """
     grunt_remote()
     pelican_remote()
