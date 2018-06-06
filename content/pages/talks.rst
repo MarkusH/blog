@@ -9,6 +9,21 @@ Talks
 2018
 ====
 
+On The Look-Out For Your Data -- DjangoCon EU
+---------------------------------------------
+
+My `DjangoCon Europe 2018 <https://2018.djangocon.eu/>`_ talk.
+
+Do you have data in the database of your Django project? Do you want to find
+that needle in the haystack of your data? There are plenty options how you can
+achieve that. With various levels of complexity, confidence, and reliability.
+I'll give an insight into what the most common are nowadays.
+
+.. speakerdeck:: 1fe1af1a182749789e1b9f4629eab723
+   :ratio: 1.77777777777
+
+* `Video recording <https://www.youtube.com/watch?v=GpynTvoxPHI>`_
+
 Oh, I Found a Security Issue -- PyCaribbean
 -------------------------------------------
 
@@ -34,6 +49,8 @@ similar process for their own projects.
 .. speakerdeck:: 0803d05dbd78495691cce016b00d3b37
    :ratio: 1.77777777777
 
+* `Video recording <https://www.youtube.com/watch?v=ugcQr6kjA4A>`_
+
 Thoughts About Normal and Abnormal Data -- PyCon UK
 ---------------------------------------------------
 
@@ -45,8 +62,8 @@ records in these databases. Relations that might be normal or abnormal.
 .. speakerdeck:: cc07d328d61549348dd70afdd5e4644a
    :ratio: 1.77777777777
 
-To Index Or Not, That’s Not The Questions -- DjangoCon Europe
--------------------------------------------------------------
+To Index Or Not, That’s Not The Questions -- DjangoCon EU
+---------------------------------------------------------
 
 As databases are used to store more and more information every day, these are
 also a key component in every Django project. Thus it's important to understand
@@ -105,8 +122,8 @@ way to access your site.
 
 .. speakerdeck:: 4b3c84c76a764060b434e3782245665b
 
-Don't be afraid of writing migrations
--------------------------------------
+Don't be afraid of writing migrations -- DjangoCon EU
+-----------------------------------------------------
 
 With Django 1.7 the built-in migrations framework was introduced. With the
 release of version 1.9, the migrations framework is much more robust, faster
@@ -142,8 +159,8 @@ https://docs.djangoproject.com/en/dev/releases/1.9/
 .. speakerdeck:: 63961d8b68d743688bf5c72a820c3a11
 
 
-The Necessity of Configuration and System Management Tools
-----------------------------------------------------------
+The Necessity of Configuration and System Management Tools -- PyCon AU
+----------------------------------------------------------------------
 
 I gave this talk during `PyCon Australia 2015 <http://2015.pycon-au.org/>`_ in
 Brisbane.
@@ -166,8 +183,8 @@ even impossible.
 * `Video recording <https://www.youtube.com/watch?v=1NowxI9WATs>`_
 
 
-"Forms are static" -- "No, they aren't"
----------------------------------------
+"Forms are static" -- "No, they aren't" -- DjangoCon EU
+-------------------------------------------------------
 
 I gave this talk during `DjangoCon Europe 2015 <http://2015.djangocon.eu/>`_ in
 Cardiff, Wales.
