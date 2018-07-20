@@ -19,8 +19,8 @@ def verify_remote(func):
         if c.config.sass_dir is None:
             print('No sass_dir specified')
             sys.exit(3)
-        if c.config.venv_name is None:
-            print('No venv_name specified')
+        if c.config.venv_dir is None:
+            print('No venv_dir specified')
             sys.exit(4)
         func(c)
 
