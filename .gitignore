@@ -15,8 +15,8 @@ theme/static/fonts/
 theme/static/js/
 theme/static/sass/_icons.scss
 
-production.ini
-staging.ini
+production.yaml
+staging.yaml
 
 !.gitignore
 !.gitmodules

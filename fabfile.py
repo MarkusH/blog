@@ -1,141 +1,135 @@
+import sys
+
 from functools import wraps
 
-from fabric.api import abort, cd, env, run, task
-from fabric.context_managers import path
-from fabvenv import virtualenv
+from fabric import task
 
-env.use_ssh_config = True
-
-_defaults = {
-    'branch': 'master',
-    'pelicanconf': 'publishconf.py',
-    'repository': 'git@github.com:MarkusH/blog.git',
-
-    'deploy_dir': None,
-    'repo_dir': None,
-    'sass_dir': None,
-    'venv_dir': None,
-}
-for k, v in _defaults.items():
-    env.setdefault(k, v)
-
+hosts = ['kamp1.markusholtermann.eu']
 
 def verify_remote(func):
     @wraps(func)
-    def wrapper(*args, **kwargs):
-        if env.deploy_dir is None:
-            abort('No deploy_dir specified')
-        if env.repo_dir is None:
-            abort('No repo_dir specified')
-        if env.sass_dir is None:
-            abort('No sass_dir specified')
-        if env.venv_dir is None:
-            abort('No venv_dir specified')
-        func(*args, **kwargs)
+    def wrapper(c):
+        if c.config.deploy_dir is None:
+            print('No deploy_dir specified')
+            sys.exit(1)
+        if c.config.repo_dir is None:
+            print('No repo_dir specified')
+            sys.exit(2)
+        if c.config.sass_dir is None:
+            print('No sass_dir specified')
+            sys.exit(3)
+        if c.config.venv_name is None:
+            print('No venv_name specified')
+            sys.exit(4)
+        func(c)
 
     return wrapper
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def bootstrap():
+def bootstrap(c):
     """
-    Remote -- Bootstrap git repo, virtualenv, sass, grunt, bower
+    Remote -- Bootstrap git repo, virtualenv, sass, grunt
     """
-    run('mkdir -p {repo_dir}'.format(**env))
-    with cd(env.repo_dir):
-        run('git clone {repository} .'.format(**env))
-        run('git checkout {branch}'.format(**env))
-        run('virtualenv {venv_dir}'.format(**env))
-        run('gem install --user-install sass:3.4.13')
-    git()
-    update()
+    c.run(f'mkdir -p {c.config.repo_dir}')
+    with c.cd(c.config.repo_dir):
+        c.run(f'git clone {c.config.repository} .', warn=True)
+        c.run(f'git checkout {c.config.branch}')
+        c.run(f'mkvirtualenv {c.config.venv_name}', warn=True)
+        c.run('gem install --user-install sass:3.5.7')
+    git(c)
+    update(c)
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def git():
+def git(c):
     """
     Remote -- Installs and updates all requirements.
     """
-    with cd(env.repo_dir):
-        run('git checkout -f {branch}'.format(**env))
-        run('git pull origin {branch}'.format(**env))
-        run('git submodule init')
-        run('git submodule update')
+    with c.cd(c.config.repo_dir):
+        c.run(f'git checkout -f {c.config.branch}')
+        c.run(f'git pull origin {c.config.branch}')
+        c.run('git submodule init')
+        c.run('git submodule update')
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def update():
+def update(c):
     """
     Remote -- Installs and updates all requirements.
     """
-    with cd(env.repo_dir), virtualenv(env.venv_dir):
-        run('pip install -r requirements.txt')
-        run('npm install')
+    with c.cd(c.config.repo_dir):
+        with c.prefix(f'workon {c.config.venv_name}'):
+            c.run('pip install -r requirements.txt')
+            c.run('npm install')
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def grunt_remote():
+def grunt_remote(c):
     """
     Remote -- Runs Grunt
     """
-    with cd(env.repo_dir), path(env.sass_dir):
-        run('make grunt')
+    with c.cd(c.config.repo_dir):
+        with c.prefix(f'export PATH=$PATH:{c.config.sass_dir}'):
+            # c.run('env', env={'FOO': c.config.sass_dir})
+            c.run('make grunt')
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def pelican_remote():
+def pelican_remote(c):
     """
     Remote -- Runs Pelican
     """
-    with cd(env.repo_dir), virtualenv(env.venv_dir):
-        run('make pelican -e PELICAN_SETTINGS={pelicanconf}'.format(**env))
+    with c.cd(c.config.repo_dir):
+        with c.prefix(f'workon {c.config.venv_name}'):
+            c.run(f'make pelican -e PELICAN_SETTINGS={c.config.pelicanconf}')
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def build_remote():
+def build_remote(c):
     """
     Remote -- Deploys the latest changes: grunt_remote, pelican_remote, zip_remote
     """
-    grunt_remote()
-    pelican_remote()
+    grunt_remote(c)
+    pelican_remote(c)
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def rsync():
+def rsync(c):
     """
     Remote -- Rsync
     """
-    with cd(env.repo_dir):
-        run('rsync -av --checksum ./build/ {deploy_dir}'.format(**env))
+    with c.cd(c.config.repo_dir):
+        c.run(f'rsync -av --checksum ./build/ {c.config.deploy_dir}')
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def zip_remote():
+def zip_remote(c):
     """
     Remote -- Zips files
     """
-    with cd(env.deploy_dir):
-        run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0}' {} \;''')
+    with c.cd(c.config.deploy_dir):
+        c.run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0}' {} \;''')
         # Include "[SKIP] <file>  is up to date" debugging
-        # run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0} || echo "[SKIP] ${0} is up to date"' {} \;''')
+        # c.run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0} || echo "[SKIP] ${0} is up to date"' {} \;''')
 
 
-@task
+@task(hosts=hosts)
 @verify_remote
-def deploy():
+def deploy(c):
     """
     Remote -- Do everything needed to deploy: git, update, build_remote, rsync, zip_remote
     """
-    git()
-    update()
-    build_remote()
-    rsync()
-    zip_remote()
+    git(c)
+    update(c)
+    build_remote(c)
+    # rsync(c)
+    # zip_remote(c)
