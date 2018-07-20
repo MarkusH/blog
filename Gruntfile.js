@@ -60,6 +60,7 @@ module.exports = function(grunt) {
             'theme/static/js/init.js',
           ],
           'theme/static/js/head.js': [
+            'theme/static/js-src/head.js',
             'theme/static/js/picturefill.min.js',
           ],
         },
