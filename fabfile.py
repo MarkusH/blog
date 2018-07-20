@@ -6,6 +6,7 @@ from fabric import task
 
 hosts = ['kamp1.markusholtermann.eu']
 
+
 def verify_remote(func):
     @wraps(func)
     def wrapper(c):
@@ -36,7 +37,7 @@ def bootstrap(c):
     with c.cd(c.config.repo_dir):
         c.run(f'git clone {c.config.repository} .', warn=True)
         c.run(f'git checkout {c.config.branch}')
-        c.run(f'mkvirtualenv {c.config.venv_name}', warn=True)
+        c.run(f'virtualenv {c.config.venv_dir}', warn=True)
         c.run('gem install --user-install sass:3.5.7')
     git(c)
     update(c)
@@ -62,7 +63,7 @@ def update(c):
     Remote -- Installs and updates all requirements.
     """
     with c.cd(c.config.repo_dir):
-        with c.prefix(f'workon {c.config.venv_name}'):
+        with c.prefix(f'source {c.config.venv_dir}bin/activate'):
             c.run('pip install -r requirements.txt')
             c.run('npm install')
 
@@ -86,7 +87,7 @@ def pelican_remote(c):
     Remote -- Runs Pelican
     """
     with c.cd(c.config.repo_dir):
-        with c.prefix(f'workon {c.config.venv_name}'):
+        with c.prefix(f'source {c.config.venv_dir}bin/activate'):
             c.run(f'make pelican -e PELICAN_SETTINGS={c.config.pelicanconf}')
 
 
