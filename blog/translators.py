@@ -2,6 +2,7 @@ import re
 from os.path import join
 
 import PIL
+from docutils import nodes
 from pelican.readers import PelicanHTMLTranslator
 
 __all__ = ['BlogHTMLTranslator']
@@ -182,13 +183,19 @@ class AMPTranslator(BlogHTMLTranslator):
         self.body.append('<colgroup><col class="label" /><col /></colgroup><tbody><tr>')
         self.footnote_backrefs(node)
 
-    def write_colspecs(self):
-        width = 0
-        for node in self.colspecs:
-            width += node['colwidth']
+    def depart_colspec(self, node):
+        # write out <colgroup> when all colspecs are processed
+        if isinstance(node.next_node(descend=False, siblings=True),
+                      nodes.colspec):
+            return
+        if 'colwidths-auto' in node.parent.parent['classes'] or (
+            'colwidths-auto' in self.settings.table_style and
+            ('colwidths-given' not in node.parent.parent['classes'])):
+            return
+        self.body.append(self.starttag(node, 'colgroup'))
         for node in self.colspecs:
             self.body.append(self.emptytag(node, 'col'))
-        self.colspecs = []
+        self.body.append('</colgroup>\n')
 
     def visit_docinfo(self, node):
         self.context.append(len(self.body))
@@ -225,15 +232,9 @@ class AMPTranslator(BlogHTMLTranslator):
         self.body.append('</amp-img>')
 
     def visit_tbody(self, node):
-        self.write_colspecs()
-        self.body.append(self.context.pop())  # '</colgroup>\n' or ''
         self.body.append(self.starttag(node, 'tbody'))
 
     def visit_thead(self, node):
-        self.write_colspecs()
-        self.body.append(self.context.pop())  # '</colgroup>\n'
-        # There may or may not be a <thead>; this is for <tbody> to use:
-        self.context.append('')
         self.body.append(self.starttag(node, 'thead'))
 
     def visit_speakerdeck(self, node):
