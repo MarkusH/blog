@@ -16,10 +16,8 @@
         {% if article.image %}
         <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
           <picture class="activator">
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
             <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.{{ article.image.rpartition('.')[2] }}" media="(min-width: 1280px)">
             <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.{{ article.image.rpartition('.')[2] }}" media="(min-width: 768px)">
-            <!--[if IE 9]></video><![endif]-->
             <img srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
           </picture>
           <meta itemprop="thumbnail url" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />

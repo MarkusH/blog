@@ -10,10 +10,8 @@
         <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ SITEURL }}/{{ article.url }}">
             <picture class="activator">
-              <!--[if IE 9]><video style="display: none;"><![endif]-->
               <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-380x176.{{ article.image.rpartition('.')[2] }}" media="(min-width: 1280px)">
               <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-502x232.{{ article.image.rpartition('.')[2] }}" media="(min-width: 768px)">
-              <!--[if IE 9]></video><![endif]-->
               <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
             </picture>
           </a>

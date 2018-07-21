@@ -15,10 +15,8 @@ class GalleryTranslator:
         for image in node.images:
             self.body.append(self.starttag(image, 'a', HREF='/images/' + image.source))
             self.body.append(self.starttag(node, 'picture', CLASS='activator'))
-            self.body.append('<!--[if IE 9]><video style="display: none;"><![endif]-->')
             self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 993px)">' % image.thumbs[2])
             self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 601px)">' % image.thumbs[1])
-            self.body.append('<!--[if IE 9]></video><![endif]-->')
             self.body.append('<img srcset="/images/thumb/%s" alt="%s" title="%s">' % (
                 image.thumbs[0], image['alt'], image['alt'])
             )
