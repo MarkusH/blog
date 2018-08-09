@@ -132,5 +132,5 @@ def deploy(c):
     git(c)
     update(c)
     build_remote(c)
-    # rsync(c)
-    # zip_remote(c)
+    rsync(c)
+    zip_remote(c)
