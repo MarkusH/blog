@@ -2,16 +2,16 @@
 {% block title %}{{ super() }}{% endblock title %}
 
 {% macro render_card(article, image_size='') -%}
+{% set title_escaped = article.title|striptags|escape %}
+{% set image_credits_escaped = article.image_credits|striptags|escape %}
 <div class="ml-pnl">
   <div class="ml-pnl__cntnt card" itemscope itemtype="http://schema.org/BlogPosting">
     {% if article.image %}
     <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="{{ SITEURL }}/{{ article.url }}">
-        <img src="/images/thumb/{{ article.image.rpartition('.')[0] }}-{{ image_size }}.{{ article.image.rpartition('.')[2] }}"{% if article.image_credits %} title="{{ article.image_credits|striptags|escape }}"{% endif %}>
-      </a>
+      <a href="{{ SITEURL }}/{{ article.url }}" title="{{ title_escaped }}"><img src="/images/thumb/{{ article.image.rpartition('.')[0] }}-{{ image_size }}.{{ article.image.rpartition('.')[2] }}" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}"></a>
       <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}" />
       {% if article.image_credits %}
-        <meta itemprop="license" content="{{ article.image_credits|striptags|escape }}" />
+        <meta itemprop="license" content="{{ image_credits_escaped }}" />
       {% endif %}
     </div>
     {% endif %}
@@ -43,12 +43,12 @@
 {% endmacro %}
 
 {% block content %}
-<div class="ml ml--small" id="posts" itemscope itemtype="http://schema.org/Blog">
+<div class="ml ml--small" itemscope itemtype="http://schema.org/Blog">
   {% for article_idx in range(0, articles_page.object_list | length, 1) %}
     {{ render_card(articles_page.object_list[article_idx], '682x316') }}
   {% endfor %}
 </div>
-<div class="ml ml--medium" id="posts" itemscope itemtype="http://schema.org/Blog">
+<div class="ml ml--medium" itemscope itemtype="http://schema.org/Blog">
   {% for article_idx in range(0, articles_page.object_list | length, 2) %}
     {{ render_card(articles_page.object_list[article_idx], '502x232') }}
   {% endfor %}
@@ -56,7 +56,7 @@
     {{ render_card(articles_page.object_list[article_idx], '502x232') }}
   {% endfor %}
 </div>
-<div class="ml ml--large" id="posts" itemscope itemtype="http://schema.org/Blog">
+<div class="ml ml--large" itemscope itemtype="http://schema.org/Blog">
   {% for article_idx in range(0, articles_page.object_list | length, 3) %}
     {{ render_card(articles_page.object_list[article_idx], '380x176') }}
   {% endfor %}

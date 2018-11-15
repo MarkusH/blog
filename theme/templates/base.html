@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="{{ SITEURL }}/images/favicon.png"/>
     <title>{% block title %}{{ SITENAME }}{% endblock title %}{% if articles_page and articles_page.number > 1 %} &mdash; Page {{ articles_page.number }}{% endif %}</title>
     {% if FEED_ALL_ATOM %}
@@ -32,7 +32,7 @@
           <li{% if pg == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
           {% endfor %}
         </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="icon-menu"></i></a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse" title="open/close menu"><i class="icon-menu"></i></a>
       </div>
     </nav>
     <div class="container">

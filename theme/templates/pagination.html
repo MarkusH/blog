@@ -2,14 +2,12 @@
 <ul class="pagination">
   {% if articles_page.has_previous() %}
     {% if articles_page.previous_page_number() == 1 %}
-      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}.html"><i class="icon-chevron-left"></i></a></li>
+      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}.html" title="previous page"><i class="icon-chevron-left"></i></a></li>
     {% else %}
-      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html"><i class="icon-chevron-left"></i></a></li>
+      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html" title="previous page"><i class="icon-chevron-left"></i></a></li>
     {% endif %}
-  {% else %}
-    <li class="disabled"><a href=""><i class="icon-chevron-left"></i></a></li>
   {% endif %}
-  
+
   {% set offset_start = 1 %}
   {% if articles_page.number > 4 %}
     {% set offset_start = articles_page.number - 3 %}
@@ -29,9 +27,7 @@
   {% endfor %}
 
   {% if articles_page.has_next() %}
-    <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html"><i class="icon-chevron-right"></i></a></li>
-  {% else %}
-    <li class="disabled"><a href=""><i class="icon-chevron-right"></i></a></li>
+    <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" title="next page"><i class="icon-chevron-right"></i></a></li>
   {% endif %}
 </ul>
 </div>
