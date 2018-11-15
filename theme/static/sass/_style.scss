@@ -38,6 +38,10 @@ tt {
   display: inline-block;
 }
 
+.section {
+  padding-top: 3rem;
+}
+
 .meta {
   color: $primary-color-light;
   .tags {
@@ -116,7 +120,10 @@ tt {
     }
 
     border-radius: 0;
-    padding: $card-padding 0 0 0;
+    padding: $card-padding/2 0 0 0;
+  }
+  .card-content:first-child {
+    padding-top: 0;
   }
   .card-action {
     a {
@@ -137,7 +144,8 @@ tt {
 
   @extend .z-depth-0;
   border-radius: 0;
-  margin-bottom: $element-top-margin; // yes, I want the same margin as for the top
+  margin-top: 0; // yes, I want the same margin as for the top
+}
 
 @media only screen and (max-width: $small-screen) {
   img.medium, .card .card-image img.medium {

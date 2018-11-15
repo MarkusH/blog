@@ -1,48 +1,71 @@
 {% extends "base.html" %}
 {% block title %}{{ super() }}{% endblock title %}
 
-{% block content %}
-  <div class="row" id="posts" itemscope itemtype="http://schema.org/Blog">
-    {% for article in articles_page.object_list %}
-    <div class="col s6 m3 l2">
-      <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
-        {% if article.image %}
-        <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
-          <a href="{{ SITEURL }}/{{ article.url }}">
-            <img class="small" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
-            <img class="medium" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-502x232.{{ article.image.rpartition('.')[2] }}">
-            <img class="large" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-380x176.{{ article.image.rpartition('.')[2] }}">
-          </a>
-          <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}" />
-          {% if article.image_credits %}
-          <meta itemprop="license" content="{{ article.image_credits|striptags|escape }}" />
-          {% endif %}
-        </div>
+{% macro render_card(article, image_size='') -%}
+<div class="ml-pnl">
+  <div class="ml-pnl__cntnt card" itemscope itemtype="http://schema.org/BlogPosting">
+    {% if article.image %}
+    <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="{{ SITEURL }}/{{ article.url }}">
+        <img src="/images/thumb/{{ article.image.rpartition('.')[0] }}-{{ image_size }}.{{ article.image.rpartition('.')[2] }}"{% if article.image_credits %} title="{{ article.image_credits|striptags|escape }}"{% endif %}>
+      </a>
+      <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}" />
+      {% if article.image_credits %}
+        <meta itemprop="license" content="{{ article.image_credits|striptags|escape }}" />
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="card-content">
+      <div class="meta">
+        <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{
+          article.category }}</a> &bull;
+        {{ article.locale_date }} &bull;
+        {% for author in article.authors %}
+        <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last
+        %}, {% endif %}
+        {% endfor %}
+        {% if article.image_credits %}
+          <div class="image-credits">Article image: {{ article.image_credits }}</div>
         {% endif %}
-        <div class="card-content">
-          <div class="meta">
-            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
-            {{ article.locale_date }} &bull;
-            {% for author in article.authors %}
-            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-            {% if article.image_credits %}
-            <div class="image-credits">Article image: {{ article.image_credits }}</div>
-            {% endif %}
-          </div>
-          <div class="card-title" itemprop="name">
-            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-          </div>
-          <div class="flow-text" itemprop="about">
-            {{ article.summary|striptags|truncate(160) }}
-          </div>
-        </div>
-        <div class="card-action">
-          <a href="{{ SITEURL }}/{{ article.url }}">Read more</a>
-        </div>
+      </div>
+      <div class="card-title" itemprop="name">
+        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+      </div>
+      <div class="flow-text" itemprop="about">
+        {{ article.summary|striptags|truncate(160) }}
       </div>
     </div>
-    {% endfor %}
+    <div class="card-action">
+      <a href="{{ SITEURL }}/{{ article.url }}">Read more</a>
+    </div>
   </div>
-  {% include "pagination.html" %}
+</div>
+{% endmacro %}
+
+{% block content %}
+<div class="ml ml--small" id="posts" itemscope itemtype="http://schema.org/Blog">
+  {% for article_idx in range(0, articles_page.object_list | length, 1) %}
+    {{ render_card(articles_page.object_list[article_idx], '682x316') }}
+  {% endfor %}
+</div>
+<div class="ml ml--medium" id="posts" itemscope itemtype="http://schema.org/Blog">
+  {% for article_idx in range(0, articles_page.object_list | length, 2) %}
+    {{ render_card(articles_page.object_list[article_idx], '502x232') }}
+  {% endfor %}
+  {% for article_idx in range(1, articles_page.object_list | length, 2) %}
+    {{ render_card(articles_page.object_list[article_idx], '502x232') }}
+  {% endfor %}
+</div>
+<div class="ml ml--large" id="posts" itemscope itemtype="http://schema.org/Blog">
+  {% for article_idx in range(0, articles_page.object_list | length, 3) %}
+    {{ render_card(articles_page.object_list[article_idx], '380x176') }}
+  {% endfor %}
+  {% for article_idx in range(1, articles_page.object_list | length, 3) %}
+    {{ render_card(articles_page.object_list[article_idx], '380x176') }}
+  {% endfor %}
+  {% for article_idx in range(2, articles_page.object_list | length, 3) %}
+    {{ render_card(articles_page.object_list[article_idx], '380x176') }}
+  {% endfor %}
+</div>
+{% include "pagination.html" %}
 {% endblock %}

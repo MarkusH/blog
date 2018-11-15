@@ -54,8 +54,6 @@ module.exports = function(grunt) {
         files: {
           'theme/static/js/main.js': [
             'theme/static/js/jquery-2.1.1.min.js',
-            'theme/static/js/masonry.pkgd.min.js',
-            'theme/static/js/imagesloaded.pkgd.min.js',
             'materialize/dist/js/materialize.min.js',
             'theme/static/js/init.js',
           ],

@@ -1,0 +1,51 @@
+/* Masonry CSS by https://codeburst.io/how-to-pure-css-masonry-layouts-a8ede07ba31a */
+.ml {
+    box-sizing: border-box;
+    column-count: 1;
+    column-gap: 70px;
+    position: relative;
+}
+.ml * {
+    box-sizing: border-box;
+}
+@media only screen and (max-width: $small-screen) {
+    .ml--medium {
+        display: none;
+    }
+    .ml--large {
+        display: none;
+    }
+}
+@media only screen and (min-width: $small-screen-up) {
+    .ml {
+        column-count: 2;
+    }
+}
+@media only screen and (max-width: $medium-screen) and (min-width: $small-screen-up) {
+    .ml--small {
+        display: none;
+    }
+    .ml--large {
+        display: none;
+    }
+}
+@media only screen and (min-width: $medium-screen-up) {
+    .ml {
+        column-count: 3;
+    }
+    .ml--small {
+        display: none;
+    }
+    .ml--medium {
+        display: none;
+    }
+}
+@media only screen and (min-width: $small-screen-up) {
+    .ml-pnl {
+        break-inside: avoid;
+    }
+}
+.ml-pnl__cntnt {
+    overflow: hidden;
+    width: 100%;
+}
