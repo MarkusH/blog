@@ -5,7 +5,7 @@
 <article>
   <header>
     <h1 class="entry-title"><a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark"
-           title="Permalink to {{ page.title|striptags }}">{{ page.title }}</a></h1>
+           title="Permalink to {{ page.title|striptags|escape }}">{{ page.title }}</a></h1>
     {% if page.translations %}
       <div class="post-info">
         <div class="small-offset-8 small-4 medium-offset-10 medium-2 columns">

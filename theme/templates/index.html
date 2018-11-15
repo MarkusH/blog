@@ -15,7 +15,7 @@
           </a>
           <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}" />
           {% if article.image_credits %}
-          <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
+          <meta itemprop="license" content="{{ article.image_credits|striptags|escape }}" />
           {% endif %}
         </div>
         {% endif %}

@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta property="og:type" content="article" />
-<meta property="og:title" content="{{ article.title|striptags }}" />
-<meta property="og:description" content="{{ article.summary|striptags }}" />
+<meta property="og:title" content="{{ article.title|striptags|escape }}" />
+<meta property="og:description" content="{{ article.summary|striptags|escape }}" />
 <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
 {% if article.image %}
 <meta property="og:image" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />

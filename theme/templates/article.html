@@ -4,7 +4,7 @@
 {% block head %}
     {% include "_open_graph.html" %}
     <link rel="amphtml" href="{{ SITEURL }}/{{ article.amp_url }}">
-    <meta name="description" content="{{ article.summary|striptags }}" />
+    <meta name="description" content="{{ article.summary|striptags|escape }}" />
     <meta name="tags" content="{{ article.tags|join(' ') }}" />
 {% endblock %}
 
@@ -21,7 +21,7 @@
           <meta itemprop="thumbnail url" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
           <meta itemprop="representativeOfPage" content="true" /><meta itemprop="height" content="422" /><meta itemprop="width" content="1012" />
           {% if article.image_credits %}
-          <meta itemprop="license" content="{{ article.image_credits|striptags }}" />
+          <meta itemprop="license" content="{{ article.image_credits|striptags|escape }}" />
           {% endif %}
         </div>
         {% endif %}
