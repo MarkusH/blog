@@ -267,7 +267,7 @@ $orange: (
   "base":       #ff9800,
   // "darken-1":   #fb8c00,
   // "darken-2":   #f57c00,
-  // "darken-3":   #ef6c00,
+  "darken-3":   #ef6c00,
   // "darken-4":   #e65100,
   // "accent-1":   #ffd180,
   "accent-2":   #ffab40,
@@ -409,4 +409,3 @@ $colors: (
   @warn "Unknown color `#{$color}` with type `#{$type}` in $colors.";
   @return null;
 }
-
