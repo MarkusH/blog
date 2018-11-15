@@ -4,6 +4,7 @@ Simple TOTP Bash Script
 
 :tags: Bash, 2FA, Security, TOTP
 :author: Markus Holtermann
+:image: binary-code.jpg
 :summary: Most TOTP / 2FA clients are for smartphones. There's not really an
    easy / simple one for Linux. Here's one in Bash
 
