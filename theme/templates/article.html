@@ -15,11 +15,9 @@
         <meta itemprop="datePublished" content="{{ article.date.isoformat() }}"/>
         {% if article.image %}
         <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <picture class="activator">
-            <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.{{ article.image.rpartition('.')[2] }}" media="(min-width: 1280px)">
-            <source srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.{{ article.image.rpartition('.')[2] }}" media="(min-width: 768px)">
-            <img srcset="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
-          </picture>
+          <img class="small" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
+          <img class="medium" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.{{ article.image.rpartition('.')[2] }}">
+          <img class="large" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.{{ article.image.rpartition('.')[2] }}">
           <meta itemprop="thumbnail url" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
           <meta itemprop="representativeOfPage" content="true" /><meta itemprop="height" content="422" /><meta itemprop="width" content="1012" />
           {% if article.image_credits %}

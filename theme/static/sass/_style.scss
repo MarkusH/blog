@@ -138,6 +138,30 @@ tt {
   @extend .z-depth-0;
   border-radius: 0;
   margin-bottom: $element-top-margin; // yes, I want the same margin as for the top
+
+@media only screen and (max-width: $small-screen) {
+  img.medium, .card .card-image img.medium {
+    display: none;
+  }
+  img.large, .card .card-image img.large {
+    display: none;
+  }
+}
+@media only screen and (max-width: $medium-screen) and (min-width: $small-screen-up) {
+  img.small, .card .card-image img.small {
+    display: none;
+  }
+  img.large, .card .card-image img.large {
+    display: none;
+  }
+}
+@media only screen and (min-width: $medium-screen-up) {
+  img.small, .card .card-image img.small {
+    display: none;
+  }
+  img.medium, .card .card-image img.medium {
+    display: none;
+  }
 }
 
 .speakerdeck {

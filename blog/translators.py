@@ -14,13 +14,18 @@ class GalleryTranslator:
         self.body.append(self.starttag(node, 'div', CLASS='row gallery'))
         for image in node.images:
             self.body.append(self.starttag(image, 'a', HREF='/images/' + image.source))
-            self.body.append(self.starttag(node, 'picture', CLASS='activator'))
-            self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 993px)">' % image.thumbs[2])
-            self.body.append('<source srcset="/images/thumb/%s" media="(min-width: 601px)">' % image.thumbs[1])
-            self.body.append('<img srcset="/images/thumb/%s" alt="%s" title="%s">' % (
-                image.thumbs[0], image['alt'], image['alt'])
+            self.body.append(
+                '<img class="large" src="/images/thumb/%s" alt="%s" title="%s">'
+                % (image.thumbs[2], image['alt'], image['alt'])
             )
-            self.body.append('</picture>')
+            self.body.append(
+                '<img class="medium" src="/images/thumb/%s" alt="%s" title="%s">'
+                % (image.thumbs[1], image['alt'], image['alt'])
+            )
+            self.body.append(
+                '<img class="small" src="/images/thumb/%s" alt="%s" title="%s">'
+                % (image.thumbs[0], image['alt'], image['alt'])
+            )
             self.body.append('</a>')
 
     def depart_gallery_node(self, node):

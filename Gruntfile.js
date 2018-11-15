@@ -59,10 +59,6 @@ module.exports = function(grunt) {
             'materialize/dist/js/materialize.min.js',
             'theme/static/js/init.js',
           ],
-          'theme/static/js/head.js': [
-            'theme/static/js-src/head.js',
-            'theme/static/js/picturefill.min.js',
-          ],
         },
       },
     },

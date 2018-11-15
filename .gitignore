@@ -23,4 +23,3 @@ staging.yaml
 !theme/static/js/imagesloaded.pkgd.min.js
 !theme/static/js/jquery-2.1.1.min.js
 !theme/static/js/masonry.pkgd.min.js
-!theme/static/js/picturefill.min.js

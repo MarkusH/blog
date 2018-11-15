@@ -9,11 +9,9 @@
         {% if article.image %}
         <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ SITEURL }}/{{ article.url }}">
-            <picture class="activator">
-              <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-380x176.{{ article.image.rpartition('.')[2] }}" media="(min-width: 1280px)">
-              <source srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-502x232.{{ article.image.rpartition('.')[2] }}" media="(min-width: 768px)">
-              <img srcset="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
-            </picture>
+            <img class="small" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}">
+            <img class="medium" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-502x232.{{ article.image.rpartition('.')[2] }}">
+            <img class="large" src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-380x176.{{ article.image.rpartition('.')[2] }}">
           </a>
           <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}" />
           {% if article.image_credits %}
