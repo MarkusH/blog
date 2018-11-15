@@ -5,9 +5,9 @@ Mirroring gitolite
 :tags: Bash, Git, Network, Server
 :author: Markus Holtermann
 :image: mirrors.jpg
-:image_credits: Licensed under the terms of the `Creative Commons
-   Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0)
-   <https://creativecommons.org/licenses/by-nc/2.0/>`_ by `Alex Brown
+:image_credits: `CC BY-NC 2.0
+   <https://creativecommons.org/licenses/by-nc/2.0/>`_
+   by `Alex Brown
    <https://www.flickr.com/photos/alexbrn/7268101804>`_
 :summary: A long time ago I wrote an article about how to install gitolite.
    Yesterday an article popped up in my feed reader that shows a short script

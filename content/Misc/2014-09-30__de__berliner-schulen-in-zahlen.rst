@@ -5,9 +5,9 @@ Berliner Schulen in Zahlen
 :tags: Berlin, Projekte, Studium
 :authors: Alexander Grießer, Markus Holtermann
 :image: west-berlin-dust.jpg
-:image_credits:  Licensed under the terms of the `Creative Commons Attribution-
-   ShareAlike 2.0 Generic (CC BY-SA 2.0)
-   <https://creativecommons.org/licenses/by-sa/2.0/>`_ by `Sascha Kohlmann
+:image_credits:  `CC BY-SA 2.0
+   <https://creativecommons.org/licenses/by-sa/2.0/>`_
+   by `Sascha Kohlmann
    <https://www.flickr.com/photos/skohlmann/12177486313/>`_
 :summary: Eine Übersicht über die Schulen in Berlin.
 
@@ -87,7 +87,7 @@ in diesem Abschnitt nicht drum herum. Die Webseite ist als sogenannte
 `Single-Page-App`_ umgesetzt, so dass bei Benutzung des Filters oder bei der
 Navigation immer nur Teile der Seite neu geladen werden. Designtechnisch haben
 wir uns auf `Zurb's Foundation`_ verlassen und das Standardtheme praktisch
-nicht angepasst, daher sieht das auch so gut aus ;) 
+nicht angepasst, daher sieht das auch so gut aus ;)
 
 Für die dynamische Programmierung haben wir `AngularJS`_ verwendet, eine
 Javascript Bibliothek welche wir anhand dieses Projekts kennen gelernt haben.

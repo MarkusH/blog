@@ -8,9 +8,9 @@
 :image_credits: `"Night View of Grimshaw Architects Seafarers Footbridge at
    South Wharf, Melbourne"
    <https://commons.wikimedia.org/wiki/User:Donaldytong#/media/File:South_Wharf_Foot_Bridge.jpg>`_
-   Licensed under the terms of the `Creative Commons Attribution-Share Alike
-   3.0 Unported (CC BY-SA 2.0 DE)
-   <https://creativecommons.org/licenses/by-sa/3.0/deed.en>`_ by `Donaldytong
+   `CC BY-SA 2.0 DE
+   <https://creativecommons.org/licenses/by-sa/3.0/deed.en>`_
+   by `Donaldytong
    <https://commons.wikimedia.org/wiki/User:Donaldytong>`_
 :summary: Most websites require some kind of authentication. Email & password
    is common but sometimes not enough. In those cases 2FA adds an additional

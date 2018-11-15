@@ -5,8 +5,8 @@ Australia -- Take Off
 :tags: Holiday
 :author: Markus Holtermann
 :image: australia-daily/day000-cover.jpg
-:image_credits: Licensed under the terms of the `Attribution-NonCommercial 2.0
-   Generic (CC BY-NC 2.0) <https://creativecommons.org/licenses/by-nc/2.0/>`_
+:image_credits: `CC BY-NC 2.0
+   <https://creativecommons.org/licenses/by-nc/2.0/>`_
    by `Duncan Rawlinson
    <https://www.flickr.com/photos/thelastminute/7481519408>`_
 :summary: In about 14 hours my big journey starts. I'm heading for Australia on

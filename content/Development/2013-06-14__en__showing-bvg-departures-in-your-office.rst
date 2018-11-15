@@ -5,9 +5,9 @@ Showing BVG Departures In Your Office
 :tags: Git, Linux, Python, Studium
 :author: Markus Holtermann
 :image: subway-berlin.jpg
-:image_credits: Licensed under the terms of the `Creative Commons
-   Attribution-ShareAlike 2.0 Germany (CC BY-SA 2.0 DE)
-   <http://creativecommons.org/licenses/by-sa/2.0/de/deed.en>`_ by `Jcornelius
+:image_credits: `CC BY-SA 2.0 DE
+   <http://creativecommons.org/licenses/by-sa/2.0/de/deed.en>`_
+   by `Jcornelius
    <http://commons.wikimedia.org/w/index.php?title=File:U-Bahn_Berlin_verschiedene_Fahrzeugtypen_Friedrichsfelde.JPG&oldid=158648414>`_
 :summary: A small Python application to fetch departures from the BVG website.
 
@@ -101,7 +101,7 @@ can see above, here are 2 short examples how to use them:
     In [2]: resp = ActualDepartureQueryApi("Ernst-Reuter-Platz").call()
 
     In [3]: resp.departures
-    Out[3]: 
+    Out[3]:
     [('Ernst-Reuter-Platz',
       [Start: Ernst-Reuter-Platz, End: S+U Zoologischer Garten, when: 13:56, now: 13:54, line: Bus 245,
        Start: Ernst-Reuter-Platz, End: S+U Zoologischer Garten, when: 14:01, now: 13:54, line: Bus X9,
@@ -115,7 +115,7 @@ can see above, here are 2 short examples how to use them:
     In [5]: resp = ScheduledDepartureQueryApi("Ernst-Reuter-Platz").call()
 
     In [6]: resp.departures
-    Out[6]: 
+    Out[6]:
     [('Ernst-Reuter-Platz',
       [Start: Ernst-Reuter-Platz, End: Johannesstift (Berlin), when: 13:54, now: 13:54, line: Bus  M45,
        Start: Ernst-Reuter-Platz, End: Hertzallee (Berlin), when: 13:56, now: 13:54, line: Bus  245,

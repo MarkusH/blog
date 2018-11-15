@@ -5,9 +5,10 @@ DjangoCon Europe 2015 -- The Boy Band Conference
 :tags: Community, Django, DjangoCon
 :author: Markus Holtermann
 :image: djangoconeu2015/groupfoto.jpg
-:image_credits: Licensed under the terms of the `Attribution-ShareAlike 2.0
-   Generic (CC BY-SA 2.0) <https://creativecommons.org/licenses/by-sa/2.0/>`_
-   by `Patryk Zawadzki <https://www.flickr.com/photos/patrys/18510465600/>`_
+:image_credits: `CC BY-SA 2.0
+   <https://creativecommons.org/licenses/by-sa/2.0/>`_
+   by `Patryk Zawadzki
+   <https://www.flickr.com/photos/patrys/18510465600/>`_
 :summary: 2015's DjangoCon Europe edition with 350 attendees took place in the
    beautiful city of Cardiff, Wales, UK.
 
