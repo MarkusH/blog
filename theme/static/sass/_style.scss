@@ -43,7 +43,7 @@ tt {
 }
 
 .meta {
-  color: $primary-color-light;
+  color: $primary-color;
   .tags {
     font-size: rem-calc(14);
     margin-top: 0.5rem;
@@ -52,10 +52,10 @@ tt {
     display: inline;
   }
   a {
-    color: $primary-color-light;
+    color: $primary-color;
     transition: .3s;
     &:hover {
-      color: $primary-color;
+      text-decoration: underline;
     }
   }
 }
