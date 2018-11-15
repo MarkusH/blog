@@ -21,4 +21,4 @@ staging.yaml
 !.gitignore
 !.gitmodules
 !theme/static/js/jquery-2.2.4.min.js
-!theme/static/js/masonry.pkgd.min.js
+!theme/static/js/lazysizes-4.1.4.min.js

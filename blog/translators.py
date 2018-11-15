@@ -15,15 +15,15 @@ class GalleryTranslator:
         for image in node.images:
             self.body.append(self.starttag(image, 'a', HREF='/images/' + image.source))
             self.body.append(
-                '<img class="large" src="/images/thumb/%s" alt="%s" title="%s">'
+                '<img class="large lazyload" data-src="/images/thumb/%s" alt="%s" title="%s">'
                 % (image.thumbs[2], image['alt'], image['alt'])
             )
             self.body.append(
-                '<img class="medium" src="/images/thumb/%s" alt="%s" title="%s">'
+                '<img class="medium lazyload" data-src="/images/thumb/%s" alt="%s" title="%s">'
                 % (image.thumbs[1], image['alt'], image['alt'])
             )
             self.body.append(
-                '<img class="small" src="/images/thumb/%s" alt="%s" title="%s">'
+                '<img class="small lazyload" data-src="/images/thumb/%s" alt="%s" title="%s">'
                 % (image.thumbs[0], image['alt'], image['alt'])
             )
             self.body.append('</a>')
