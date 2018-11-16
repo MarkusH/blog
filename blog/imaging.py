@@ -31,8 +31,10 @@ THUMB_BASE_DIR = join(IMG_BASE_DIR, 'thumb')
 MANIFEST_FILE = join(THUMB_BASE_DIR, '.manifest.json')
 
 OPTIMIZE_COMMANDS = {
-    '.jpg': ['jpegtran', '-copy', 'none', '-optimize', '-outfile', FILENAME, FILENAME],
-    '.png': ['optipng', FILENAME],
+    '.jpg': [
+        'jpeg-recompress', '--quality', 'medium', '--method', 'smallfry',
+        '--min', '40', '--max', '85', FILENAME, FILENAME,
+    ],
 }
 
 
@@ -86,9 +88,9 @@ def gen_article_thumbnails(source, sizes=None, crop=True):
         sizes = COVER_IMAGE_SIZES
     for width, height in sizes:
         if crop:
-            dest_name = '{0}-{1}x{2}{3}'.format(name, width, height, ext)
+            dest_name = '{0}-{1}x{2}.jpg'.format(name, width, height)
         else:
-            dest_name = '{0}-{1}x{2}-nocrop{3}'.format(name, width, height, ext)
+            dest_name = '{0}-{1}x{2}-nocrop.jpg'.format(name, width, height)
         dest = join(dest_dir, dest_name)
         out.append(join(source_dir, dest_name))
         if skip and exists(dest):
@@ -110,7 +112,7 @@ def gen_article_thumbnails(source, sizes=None, crop=True):
         ]
         subprocess.call(cmd)
 
-        optimize = get_optimize_command(ext, dest)
+        optimize = get_optimize_command('jpg', dest)
         if optimize:
             try:
                 subprocess.call(optimize)

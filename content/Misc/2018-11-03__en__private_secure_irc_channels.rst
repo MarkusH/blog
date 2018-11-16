@@ -4,7 +4,7 @@ Setting up a private & secure IRC channel
 
 :tags: IRC, Security
 :author: Markus Holtermann
-:image: irc-terminal.png
+:image: irc-terminal.jpg
 :summary: While over 30y old, IRC is still used today. A lot because of it's
    reliability and configuration options. But those make setting up a private
    IRC channels hard.

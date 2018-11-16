@@ -110,8 +110,8 @@ def patch_article_content_class():
         if getattr(self, 'image', None):
             image = {
                 '@type': 'ImageObject',
-                'url': '%s/images/thumb/%s-1012x422.%s' % (
-                    SITEURL, self.image.rpartition('.')[0], self.image.rpartition('.')[2]
+                'url': '%s/images/thumb/%s-1012x422.jpg' % (
+                    SITEURL, self.image.rpartition('.')[0]
                 ),
                 'width': 1012,
                 'height': 422,

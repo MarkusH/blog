@@ -19,10 +19,10 @@
         <meta itemprop="datePublished" content="{{ article.date.isoformat() }}"/>
         {% if article.image %}
         <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <img class="small lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.{{ article.image.rpartition('.')[2] }}" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <img class="medium lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.{{ article.image.rpartition('.')[2] }}" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <img class="large lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.{{ article.image.rpartition('.')[2] }}" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <meta itemprop="thumbnail url" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.{{ article.image.rpartition('.')[2] }}" />
+          <img class="small lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+          <img class="medium lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+          <img class="large lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+          <meta itemprop="thumbnail url" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.jpg" />
           <meta itemprop="representativeOfPage" content="true" /><meta itemprop="height" content="422" /><meta itemprop="width" content="1012" />
           {% if article.image_credits %}
           <meta itemprop="license" content="{{ image_credits_escaped }}" />
