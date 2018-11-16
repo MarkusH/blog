@@ -14,6 +14,7 @@ kangaroos on the beach at `Cape Hillsborough`_.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day014-cover.jpg
       :alt: Sunrise with kangaroos on the beach
@@ -31,6 +32,7 @@ to the lack of a better camera, I can only show you the `Crux`_.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day014-04.jpg
       :alt: Red dirt road near Cape Palmerson

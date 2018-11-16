@@ -21,6 +21,7 @@ views over the park.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day088-01.jpg
       :alt: Waterfalls near Buley Rockhole

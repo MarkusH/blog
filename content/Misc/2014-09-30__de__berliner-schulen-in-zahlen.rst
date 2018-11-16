@@ -66,6 +66,7 @@ Webseite:
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: berlin-school-data/school1.png
       :alt: Startseite

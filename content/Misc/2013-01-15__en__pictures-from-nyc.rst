@@ -17,9 +17,9 @@ those days, I picked the following 8.
 Enjoy them!
 
 .. gallery::
-   :small: 2
-   :medium: 3
-   :large: 4
+   :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: nyc2009/nyc1.jpg
       :alt: View from the Empire State Building to Midtown Manhattan and Central Park

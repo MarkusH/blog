@@ -26,6 +26,8 @@ Of course there are many, many more changes.
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: kde410tb.png
       :alt: KDE 4.10 RC1

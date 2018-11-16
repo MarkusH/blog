@@ -51,6 +51,7 @@ diving trip for the first time of my life. What an exciting experience.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day121-01.jpg
       :alt: A fish swarm

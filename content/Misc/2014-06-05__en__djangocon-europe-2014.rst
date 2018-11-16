@@ -54,7 +54,8 @@ that bad. We walked through the city to the harbor and grabbed some lunch.
 
 .. gallery::
    :small: 1
-   :medium: 3
+   :medium: 2
+   :large: 3
 
    .. image:: djangoconeu2014/dce01.jpg
       :alt: DjangoCon Europe 2014 -- Toulon

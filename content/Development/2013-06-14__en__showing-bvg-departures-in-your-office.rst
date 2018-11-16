@@ -28,7 +28,8 @@ As computer scientists we had to come up with a solution to somehow grab the
 departures of the bus stop and show them in the room.
 
 .. gallery::
-   :small: 2
+   :small: 1
+   :medium: 2
 
    .. image:: bvg-grabber-lightningtalk1.jpg
       :alt: bvg-grabber in use

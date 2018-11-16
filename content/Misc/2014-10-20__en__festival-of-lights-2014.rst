@@ -30,7 +30,8 @@ Brandenburg Gate
 ================
 
 .. gallery::
-   :small: 2
+   :small: 1
+   :medium: 2
 
    .. image:: festival-of-lights2014/fol01-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
@@ -67,14 +68,14 @@ Potsdam Square
 ==============
 
 .. gallery::
-   :small: 2
+   :small: 1
+   :medium: 2
 
    .. image:: festival-of-lights2014/fol06-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
 
    .. image:: festival-of-lights2014/fol06.jpg
       :alt: 10. Festival of Lights, Berlin 2014
-
 
    .. image:: festival-of-lights2014/fol07-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014
@@ -87,7 +88,8 @@ Humboldt University and Hotel de Rome
 =====================================
 
 .. gallery::
-   :small: 2
+   :small: 1
+   :medium: 2
 
    .. image:: festival-of-lights2014/fol08-bw.jpg
       :alt: 10. Festival of Lights, Berlin 2014

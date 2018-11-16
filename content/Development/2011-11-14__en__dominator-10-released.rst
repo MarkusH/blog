@@ -16,6 +16,8 @@ based 3D domino simulation. You can find a demo video at `YouTube
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: dominator-1.0-screenshot.png
       :alt: Dominator 1.0 Screenshot
@@ -40,4 +42,3 @@ should be supported as well, but we couldn't get Newton Game Dynamics compiled.
 And here's `the code on Github <http://github.com/MarkusH/dominator>`_.
 
 Markus
-

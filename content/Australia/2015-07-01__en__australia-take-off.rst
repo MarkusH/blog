@@ -26,6 +26,7 @@ As a start, here's my luggage:
 
 .. gallery::
    :small: 1
+   :medium: 2
 
    .. image:: australia-daily/day000-01.jpg
       :alt: My luggage

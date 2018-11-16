@@ -20,6 +20,7 @@ after heavy rain flushed away all paths a few years prior.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day006-01.jpg
       :alt: Kuranda Scenic Railway

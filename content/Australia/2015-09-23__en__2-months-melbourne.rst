@@ -37,6 +37,7 @@ Rush`_ and the main reason for Melbourne's early success.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day083-01.jpg
       :alt: Sunset over Melbourne harbor
@@ -66,6 +67,7 @@ settlement in Australia.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day083-04.jpg
       :alt: Impressive street art
@@ -84,6 +86,7 @@ Melbourne. I guess I have to come back for that:
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day083-06.jpg
       :alt: A valley north of Melbourne

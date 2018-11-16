@@ -20,6 +20,7 @@ existence. Anyway, here are a few photos:
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day011-01.jpg
       :alt: Kangaroo

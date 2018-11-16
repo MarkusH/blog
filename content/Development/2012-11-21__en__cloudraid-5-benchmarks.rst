@@ -170,6 +170,8 @@ file size, probably caused by the overhead opening the five files.
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: cloudraid/final_combined_raid5_split.png
       :alt: Runtime for split in various benchmark environments
@@ -190,6 +192,8 @@ for files of size 2 GiB and larger as well.
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: cloudraid/final_env3_raid5_split_zoom.png
       :alt: Split statistics for Tower 2 for huge files
@@ -214,6 +218,8 @@ on page 60.
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: cloudraid/final_combined_raid5_merge.png
       :alt: Runtime for merge in various benchmark environments
@@ -253,6 +259,8 @@ environment might be caused by the SATA controller.
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: cloudraid/final_env3_raid5_merge_zoom.png
       :alt: Merge statistics for third environment for huge files
@@ -275,7 +283,9 @@ bytes``. Since reading is generally much faster than writing this explains the
 speed of merge processes.
 
 .. gallery::
-   :small: 2
+   :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: cloudraid/final_env1_raid5_comparison.png
       :alt: Split and merge comparisons for environment 1
@@ -295,7 +305,7 @@ Figure 5a - 5d: Split and merge comparisons for environments one to four
 Sources
 =======
 
-.. [Hol12] Markus Holtermann. Bachelorthesis: Testing Approach for an in-kernel Crypto Functionality – For Linux on System z, June 4, 2012. *(unpublished)* 
+.. [Hol12] Markus Holtermann. Bachelorthesis: Testing Approach for an in-kernel Crypto Functionality – For Linux on System z, June 4, 2012. *(unpublished)*
 
 
 .. _CloudRAID:

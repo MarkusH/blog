@@ -20,7 +20,8 @@ time I flashed my HTC Desire HD with some CyanogenMod fork back in summer
 2013), the entire process went smoothly. At least kind of.
 
 .. gallery::
-   :small: 2
+   :small: 1
+   :medium: 2
 
    .. image:: android-5-lollipop1.png
       :alt: Android 5 "Lollipop"

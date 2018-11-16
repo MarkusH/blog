@@ -55,7 +55,7 @@ of the regular Python implementation:
     user    29m12.519s
     sys     0m0.977s
 
-    $ time pypy mandelbrot.py 
+    $ time pypy mandelbrot.py
     real    16m21.750s
     user    16m18.200s
     sys     0m1.320s
@@ -66,6 +66,8 @@ to PNG with a size of 1.7MB:
 
 .. gallery::
    :small: 1
+   :medium: 2
+   :large: 3
 
    .. image:: mandelbrot.png
       :alt: KDE 4.10 RC1

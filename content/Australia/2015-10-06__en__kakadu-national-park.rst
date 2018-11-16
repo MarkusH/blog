@@ -23,6 +23,7 @@ the Aboriginal culture.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day094-01.jpg
       :alt: Rock art near Ubirr
@@ -33,6 +34,7 @@ The most gorgeous part of the park is the view from Ubirr rock, though. The
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day094-02.jpg
       :alt: View from Ubirr rock
@@ -51,6 +53,7 @@ introduced again.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day094-05.jpg
       :alt: Bush fire in Kakadu National Park
@@ -61,6 +64,7 @@ awesome views shown above, but also allows you to enjoy to sunset
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day094-06.jpg
       :alt: Sunset over Kakadu National Park

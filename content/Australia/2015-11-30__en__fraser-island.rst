@@ -23,6 +23,7 @@ as well as a touristic attraction with plenty of guided, self-driving tours.
 .. gallery::
    :small: 1
    :medium: 2
+   :large: 3
 
    .. image:: australia-daily/day147-cover.jpg
       :alt: Lots of tire tracks in the sand
