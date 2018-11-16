@@ -105,6 +105,11 @@ def gen_article_thumbnails(source, sizes=None, crop=True):
             cmd += [
                 '-crop', '{0}x{1}+0+0'.format(width, height),
             ]
+        if ext != 'jpg':
+            cmd += [
+                '-background', 'white',
+                '-flatten',
+            ]
         cmd += [
             '+repage',
             '-auto-orient',
