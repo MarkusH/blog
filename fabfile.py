@@ -118,9 +118,18 @@ def zip_remote(c):
     Remote -- Zips files
     """
     with c.cd(c.config.deploy_dir):
-        c.run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0}' {} \;''')
-        # Include "[SKIP] <file>  is up to date" debugging
-        # c.run('''find . -type f -a -! -name "*.gz" -exec sh -c 'test "${0}" -nt "${0}.gz" && gzip --keep --force --verbose -9 ${0} || echo "[SKIP] ${0} is up to date"' {} \;''')
+        # Everything but ./images/
+        c.run('''
+            find . -type f -a -! -wholename "./images/*" -a -! -name "*.gz" -a -! -name "*.br" -print -exec sh -c '
+                test "${0}" -nt "${0}.br" && brotli --keep --force --verbose --best ${0}
+            ' {} \;
+        ''')
+        # Everything in ./images/thumb/
+        c.run('''
+            find ./images/thumb/ -type f -a -! -name "*.gz" -a -! -name "*.br" -print -exec sh -c '
+                test "${0}" -nt "${0}.br" && brotli --keep --force --verbose --best ${0}
+            ' {} \;
+        ''')
 
 
 @task(hosts=hosts)
