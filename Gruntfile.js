@@ -1,4 +1,6 @@
-module.exports = function(grunt) {
+const sass = require('node-sass');
+
+module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     copy: {
@@ -15,22 +17,26 @@ module.exports = function(grunt) {
       }
     },
     webfont: {
-        icons: {
-            src: 'theme/static/fonts-src/*.svg',
-            dest: 'theme/static/fonts',
-            destCss: 'theme/static/sass',
-            options: {
-              htmlDemo: false,
-              stylesheet: 'scss',
-              syntax: 'bootstrap',
-              types: 'eot,woff,ttf,svg'
-            }
+      icons: {
+        src: 'theme/static/fonts-src/*.svg',
+        dest: 'theme/static/fonts',
+        destCss: 'theme/static/sass',
+        options: {
+          htmlDemo: false,
+          stylesheet: 'scss',
+          syntax: 'bootstrap',
+          types: 'eot,woff,ttf,svg'
         }
+      }
     },
     sass: {
+      options: {
+        implementation: sass,
+        sourceMap: false
+      },
       dist: {
         options: {
-          loadPath: ['materialize/sass/'],
+          includePaths: ['materialize/sass/'],
           style: 'compressed'
         },
         files: {
@@ -60,22 +66,12 @@ module.exports = function(grunt) {
           ],
         },
       },
-    },
-    watch: {
-      options: {
-        atBegin: true
-      },
-      sass: {
-        files: ['materialize/sass/**', 'theme/static/sass/**'],
-        tasks: ['default'],
-      }
     }
   });
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-webfont');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-webfonts');
   grunt.registerTask('default', ['webfont', 'sass', 'copy', 'uglify', 'concat']);
 };
