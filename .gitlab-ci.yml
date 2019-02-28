@@ -1,0 +1,44 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: normal
+
+stages:
+  - grunt
+  - deploy
+
+grunt:
+  stage: grunt
+  image: node:11-slim
+  script:
+    - echo "Grunt"
+    - apt-get update
+    - apt-get install -y fontforge ttfautohint python2.7 git
+    - npm install
+    - ./node_modules/grunt/bin/grunt -v
+  artifacts:
+    paths:
+      - theme/static/css/
+      - theme/static/fonts/
+      - theme/static/js/
+    expire_in: 1h
+  only:
+    - master
+
+pages:
+  stage: deploy
+  image: python:3.7-slim
+  dependencies:
+    - grunt
+  script:
+    - apt-get update
+    - apt-get install -y imagemagick texlive-latex-base texlive-latex-extra
+    - pip install -r requirements.txt
+    - pelican -o public -s publishconf.py
+  cache:
+    paths:
+      - content/images/thumb/
+    key: thumbnails
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
