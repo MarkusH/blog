@@ -25,16 +25,25 @@ COVER_IMAGE_SIZES = (
     (1012, 422),  # 2 x (506, 211)
 )
 
-IMG_BASE_DIR = join('content', 'images')
-EQUATION_BASE_DIR = join(IMG_BASE_DIR, 'equation')
-THUMB_BASE_DIR = join(IMG_BASE_DIR, 'thumb')
-MANIFEST_FILE = join(THUMB_BASE_DIR, '.manifest.json')
+IMG_BASE_DIR = join("content", "images")
+EQUATION_BASE_DIR = join(IMG_BASE_DIR, "equation")
+THUMB_BASE_DIR = join(IMG_BASE_DIR, "thumb")
+MANIFEST_FILE = join(THUMB_BASE_DIR, ".manifest.json")
 
 OPTIMIZE_COMMANDS = {
-    '.jpg': [
-        'jpeg-recompress', '--quality', 'medium', '--method', 'smallfry',
-        '--min', '40', '--max', '85', FILENAME, FILENAME,
-    ],
+    ".jpg": [
+        "jpeg-recompress",
+        "--quality",
+        "medium",
+        "--method",
+        "smallfry",
+        "--min",
+        "40",
+        "--max",
+        "85",
+        FILENAME,
+        FILENAME,
+    ]
 }
 
 
@@ -47,12 +56,12 @@ def load_manifest():
 
 
 def write_manifest(data):
-    with open(MANIFEST_FILE, 'w') as fp:
+    with open(MANIFEST_FILE, "w") as fp:
         json.dump(data, fp)
 
 
 def get_hash(filename):
-    with open(filename, 'rb') as fp:
+    with open(filename, "rb") as fp:
         data = fp.read()
     m = hashlib.md5()
     m.update(data)
@@ -78,7 +87,7 @@ def gen_article_thumbnails(source, sizes=None, crop=True):
 
     manifest = load_manifest()
     hash = get_hash(source_file)
-    if hash == manifest.get(source, ''):
+    if hash == manifest.get(source, ""):
         skip = True
     else:
         skip = False
@@ -88,36 +97,22 @@ def gen_article_thumbnails(source, sizes=None, crop=True):
         sizes = COVER_IMAGE_SIZES
     for width, height in sizes:
         if crop:
-            dest_name = '{0}-{1}x{2}.jpg'.format(name, width, height)
+            dest_name = f"{name}-{width}x{height}.jpg"
         else:
-            dest_name = '{0}-{1}x{2}-nocrop.jpg'.format(name, width, height)
+            dest_name = f"{name}-{width}x{height}-nocrop.jpg"
         dest = join(dest_dir, dest_name)
         out.append(join(source_dir, dest_name))
         if skip and exists(dest):
             continue
-        cmd = [
-            'convert', '-verbose',
-            source_file,
-            '-resize', '{0}x{1}^'.format(width, height),
-            '-gravity', 'center',
-        ]
+        cmd = ["convert", "-verbose", source_file, "-resize", f"{width}x{height}^"]
         if crop:
-            cmd += [
-                '-crop', '{0}x{1}+0+0'.format(width, height),
-            ]
-        if ext != 'jpg':
-            cmd += [
-                '-background', 'white',
-                '-flatten',
-            ]
-        cmd += [
-            '+repage',
-            '-auto-orient',
-            dest,
-        ]
+            cmd += ["+repage", "-gravity", "center", "-crop", f"{width}x{height}+0+0"]
+        if ext != "jpg":
+            cmd += ["+repage", "-background", "white", "-flatten"]
+        cmd += ["+repage", "-auto-orient", dest]
         subprocess.call(cmd)
 
-        optimize = get_optimize_command('jpg', dest)
+        optimize = get_optimize_command("jpg", dest)
         if optimize:
             try:
                 subprocess.call(optimize)
@@ -134,42 +129,39 @@ def gen_equation_image(equation):
         os.makedirs(EQUATION_BASE_DIR)
 
     content = [
-        r'\documentclass[convert={density=150,outext=.png},preview]{standalone}',
-        r'\usepackage{amsmath}',
-        r'\begin{document}',
+        r"\documentclass[convert={density=150,outext=.png},preview]{standalone}",
+        r"\usepackage{amsmath}",
+        r"\begin{document}",
     ]
     content.extend(equation)
-    content.extend([
-        r'\end{document}'
-    ])
+    content.extend([r"\end{document}"])
 
-    text = '\n'.join(content)
-    hash = hashlib.md5(text.encode('utf-8')).hexdigest()
-    dest_file = join(EQUATION_BASE_DIR, hash + '.png')
+    text = "\n".join(content)
+    hash = hashlib.md5(text.encode("utf-8")).hexdigest()
+    dest_file = join(EQUATION_BASE_DIR, hash + ".png")
 
-    out = dest_file[len('content'):]
+    out = dest_file[len("content") :]
 
     if exists(dest_file):
         return out
 
-    with tempfile.NamedTemporaryFile('w', suffix='.tex') as tfp:
+    with tempfile.NamedTemporaryFile("w", suffix=".tex") as tfp:
         tfp.write(text)
         tfp.flush()
         try:
             subprocess.call(
-                ['pdflatex', '-shell-escape', tfp.name],
-                cwd=dirname(tfp.name)
+                ["pdflatex", "-shell-escape", tfp.name], cwd=dirname(tfp.name)
             )
         except OSError:
             raise OSError("No pdflatex installed?")
         name, ext = splitext(tfp.name)
-        source_file = name + '.png'
+        source_file = name + ".png"
         subprocess.call(
-            ['convert', '-verbose', '-trim', source_file, source_file],
-            cwd=dirname(tfp.name)
+            ["convert", "-verbose", "-trim", source_file, source_file],
+            cwd=dirname(tfp.name),
         )
         shutil.move(source_file, dest_file)
-        for ext in ('.aux', '.log', '.pdf'):
+        for ext in (".aux", ".log", ".pdf"):
             fn = name + ext
             if exists(fn):
                 os.unlink(fn)
