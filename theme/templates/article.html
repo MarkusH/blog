@@ -19,10 +19,10 @@
         <meta itemprop="datePublished" content="{{ article.date.isoformat() }}"/>
         {% if article.image %}
         <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <img class="small lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <img class="medium lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <img class="large lazyload" data-src="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <meta itemprop="thumbnail url" content="{{ SITEURL }}/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.jpg" />
+          <img class="small lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+          <img class="medium lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+          <img class="large lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+          <meta itemprop="thumbnail url" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.jpg" />
           <meta itemprop="representativeOfPage" content="true" /><meta itemprop="height" content="422" /><meta itemprop="width" content="1012" />
           {% if article.image_credits %}
           <meta itemprop="license" content="{{ image_credits_escaped }}" />
@@ -31,14 +31,14 @@
         {% endif %}
         <div class="card-content">
           <div class="meta">
-            <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
+            <a href="/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
             <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.locale_date }}</time> &bull;
             {% for author in article.authors %}
-            <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ author }}</span></a>{% if not loop.last %}, {% endif %}
+            <a href="/{{ author.url }}" class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ author }}</span></a>{% if not loop.last %}, {% endif %}
             {% endfor %}
             <div class="tags" itemprop="keywords">
               {% for tag in article.tags|sort %}
-              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+              <a href="/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
               {% endfor %}
             </div>
             {% if article.image_credits %}

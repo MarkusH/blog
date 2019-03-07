@@ -2,9 +2,9 @@
 <ul class="pagination">
   {% if articles_page.has_previous() %}
     {% if articles_page.previous_page_number() == 1 %}
-      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}.html" title="previous page"><i class="icon-chevron-left"></i></a></li>
+      <li class="waves-effect"><a href="/{{ page_name }}.html" title="previous page"><i class="icon-chevron-left"></i></a></li>
     {% else %}
-      <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html" title="previous page"><i class="icon-chevron-left"></i></a></li>
+      <li class="waves-effect"><a href="/{{ page_name }}{{ articles_page.previous_page_number() }}.html" title="previous page"><i class="icon-chevron-left"></i></a></li>
     {% endif %}
   {% endif %}
 
@@ -20,14 +20,14 @@
 
   {% for number in range(offset_start, offset_end + 1) %}
     {% if number == 1 %}
-      <li class="{% if number == articles_page.number%}active{% else %}waves-effect{% endif %}"><a href="{{ SITEURL }}/{{ page_name }}.html">{{ number }}</a></li>
+      <li class="{% if number == articles_page.number%}active{% else %}waves-effect{% endif %}"><a href="/{{ page_name }}.html">{{ number }}</a></li>
     {% else %}
-      <li class="{% if number == articles_page.number%}active{% else %}waves-effect{% endif %}"><a href="{{ SITEURL }}/{{ page_name }}{{ number }}.html">{{ number }}</a></li>
+      <li class="{% if number == articles_page.number%}active{% else %}waves-effect{% endif %}"><a href="/{{ page_name }}{{ number }}.html">{{ number }}</a></li>
     {% endif %}
   {% endfor %}
 
   {% if articles_page.has_next() %}
-    <li class="waves-effect"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" title="next page"><i class="icon-chevron-right"></i></a></li>
+    <li class="waves-effect"><a href="/{{ page_name }}{{ articles_page.next_page_number() }}.html" title="next page"><i class="icon-chevron-right"></i></a></li>
   {% endif %}
 </ul>
 </div>

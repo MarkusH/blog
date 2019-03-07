@@ -4,7 +4,7 @@
 {% block content %}
 <div class="collection">
   {% for tag, articles in tags|sort %}
-  <a href="{{ SITEURL }}/{{ tag.url }}" class="collection-item">{{ tag }}<span class="badge">{{ articles|count }}</span></a>
+  <a href="/{{ tag.url }}" class="collection-item">{{ tag }}<span class="badge">{{ articles|count }}</span></a>
   {% endfor %}
 </div>
 {% endblock %}

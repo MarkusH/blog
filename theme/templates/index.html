@@ -8,7 +8,7 @@
   <div class="ml-pnl__cntnt card" itemscope itemtype="http://schema.org/BlogPosting">
     {% if article.image %}
     <div class="card-image" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="{{ SITEURL }}/{{ article.url }}" title="{{ title_escaped }}"><img class="lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-{{ image_size }}.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}"></a>
+      <a href="/{{ article.url }}" title="{{ title_escaped }}"><img class="lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-{{ image_size }}.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}"></a>
       <meta itemprop="thumbnail" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.jpg" />
       {% if article.image_credits %}
         <meta itemprop="license" content="{{ image_credits_escaped }}" />
@@ -17,11 +17,11 @@
     {% endif %}
     <div class="card-content">
       <div class="meta">
-        <a href="{{ SITEURL }}/{{ article.category.url }}" class="category" itemprop="articleSection">{{
+        <a href="/{{ article.category.url }}" class="category" itemprop="articleSection">{{
           article.category }}</a> &bull;
         {{ article.locale_date }} &bull;
         {% for author in article.authors %}
-        <a href="{{ SITEURL }}/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last
+        <a href="/{{ author.url }}" class="author" itemprop="author">{{ author }}</a>{% if not loop.last
         %}, {% endif %}
         {% endfor %}
         {% if article.image_credits %}
@@ -29,14 +29,14 @@
         {% endif %}
       </div>
       <div class="card-title" itemprop="name">
-        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+        <a href="/{{ article.url }}">{{ article.title }}</a>
       </div>
       <div class="flow-text" itemprop="about">
         {{ article.summary|striptags|truncate(160) }}
       </div>
     </div>
     <div class="card-action">
-      <a href="{{ SITEURL }}/{{ article.url }}">Read more</a>
+      <a href="/{{ article.url }}">Read more</a>
     </div>
   </div>
 </div>
