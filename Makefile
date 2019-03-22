@@ -7,7 +7,7 @@ clean:
 	mkdir -p build
 
 grunt:
-	./node_modules/grunt-cli/bin/grunt -v
+	./node_modules/grunt/bin/grunt -v
 
 pelican:
 	pelican -o build -s $(PELICAN_SETTINGS)
