@@ -4,5 +4,4 @@ repository: git@github.com:MarkusH/blog.git
 
 deploy_dir:
 repo_dir:
-sass_dir:
 venv_dir:

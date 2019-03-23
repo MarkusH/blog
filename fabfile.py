@@ -16,9 +16,6 @@ def verify_remote(func):
         if c.config.repo_dir is None:
             print('No repo_dir specified')
             sys.exit(2)
-        if c.config.sass_dir is None:
-            print('No sass_dir specified')
-            sys.exit(3)
         if c.config.venv_dir is None:
             print('No venv_dir specified')
             sys.exit(4)
@@ -75,9 +72,7 @@ def grunt_remote(c):
     Remote -- Runs Grunt
     """
     with c.cd(c.config.repo_dir):
-        with c.prefix(f'export PATH=$PATH:{c.config.sass_dir}'):
-            # c.run('env', env={'FOO': c.config.sass_dir})
-            c.run('make grunt')
+        c.run('make grunt')
 
 
 @task(hosts=hosts)

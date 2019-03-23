@@ -6,6 +6,34 @@ Talks
 :lang: en
 
 
+2019
+====
+
+Less Obvious Things To Do With Django's ORM -- PyCon SK
+-------------------------------------------------------
+
+My `PyCon SK 2019 <https://2019.pycon.sk/en/>`__ talk.
+
+Django's ORM is powerful. And it has been for ages. It only became even more
+powerful over the last years. Django's ORM can be intimidating because it can
+do so many things. And it can also be confusing when trying to find out how to
+do things.
+
+.. speakerdeck:: 31bc1996e13e405f8caf94695416fca2
+   :ratio: 1.77777777777
+
+`Blog article <{filename}/Development/2019-03-23__en__less-obvious-things-to-do-with-djangos-orm.rst>`__
+
+
+Oh, I Found a Security Issue -- Python.Pizza.Berlin
+---------------------------------------------------
+
+My `Python.Pizza.Berlin <https://berlin.python.pizza/>`__ talk.
+
+.. speakerdeck:: f330603c49c94de09a04ae1e212db268
+   :ratio: 1.77777777777
+
+
 2018
 ====
 
