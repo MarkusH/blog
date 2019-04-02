@@ -146,7 +146,7 @@ How does SSL work?
 
    .. image:: djangoconus2016/truststore.png
       :alt: Certificate Authorities and Trust Store concept in browsers
-      :class: offset-l2
+      :class: offset-l4
 
 Let us start with CAs: CA stands for Certificate Authority. These are "trusted"
 entities we or our browsers rely on in order to establish a *chain of trust*
@@ -214,7 +214,7 @@ In order to use the Let's Encrypt API one needs three things:
 
    .. image:: djangoconus2016/acme.png
       :alt: The ACME process
-      :class: offset-l2
+      :class: offset-l4
 
 The first API endpoint is "new-reg". This authenticates *you* as a "person" or
 "server" against Let's Encrypt. You send your Account Key's public key signed

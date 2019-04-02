@@ -21,7 +21,7 @@ html{
     }
   }
   .container {
-    width: calc(100% - 5rem);  // $gutter-width
+    width: calc(100% - $gutter-width);  // $gutter-width
   }
 }
 
