@@ -9,6 +9,27 @@ Talks
 2019
 ====
 
+Logging Rethought 2: The Actions of Frank Taylor Jr. -- DjangoCon EU, PyCon AU, PyCon UK
+----------------------------------------------------------------------------------------
+
+My talk from `DjangoCon Europe 2019
+<https://2019.djangocon.eu/talks/logging-rethought-2-the-actions-of-frank-taylor-jr/>`__,
+`PyCon AU 2019
+<https://2019.pycon-au.org/talks/logging-rethought-2-the-actions-of-frank-taylor-jr>`__
+and `PyCon UK <https://pretalx.com/pyconuk-2019/talk/WJGTWP/>`__.
+
+We build services, potentially used by thousands or even millions of people.
+And despite all the testing we do, some interactions with these services will
+not work out the way we hope. Wouldn't it be great to reconstruct what let to a
+problem and analyze if the problem occurred at other times?
+
+.. speakerdeck:: cd4e594fe22b433a9a738805e6a89b76
+   :ratio: 1.77777777777
+
+`Blog article <{filename}/Misc/2019-04-12__en__logging-rethought.rst>`__
+
+`Video recording <https://www.youtube.com/watch?v=SdfEsPEPOEg>`__
+
 Less Obvious Things To Do With Django's ORM -- PyCon SK
 -------------------------------------------------------
 
@@ -157,7 +178,7 @@ With Django 1.7 the built-in migrations framework was introduced. With the
 release of version 1.9, the migrations framework is much more robust, faster
 and can handle many more edge cases.
 
-While the makemigrations management command became smarter in the last two
+While the ``makemigrations`` management command became smarter in the last two
 releases in terms of detecting what has changed and what migrations to
 generate, there are still a couple of things Django cannot do automatically.
 
@@ -224,7 +245,7 @@ Introduction to Django
 ----------------------
 
 This is an introductory talk I gave to a course of Bachelor students at
-Technical Univeristy of Berlin as guide about how to build a *basic* web
+Technical University of Berlin as guide about how to build a *basic* web
 application.
 
 .. speakerdeck:: 07c3c95bac5b4e9ca6c126eea96568dc
@@ -233,7 +254,7 @@ application.
 Combining Django & Elasticsearch
 --------------------------------
 
-Some thoughts and ideas on how to intregrate Elasticsearch into your Django
+Some thoughts and ideas on how to integrate Elasticsearch into your Django
 project. I gave that talk at a `Django Users Berlin meetup
 <http://www.meetup.com/django-user-group-berlin/events/219547330/>`__.
 
