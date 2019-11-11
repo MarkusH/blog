@@ -1,0 +1,30 @@
+name: Python application
+
+on:
+  schedule:
+    - cron: '55 * * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Collect outdated packages
+      run: |
+        pip list --outdated > /tmp/packages
+        cat /tmp/packages
+    - name: Notify about outdated packages
+      run: |
+        set +x
+        PAYLOAD=$(jq --rawfile packages /tmp/packages '{text: ("```" + $packages + "```")}' -n)
+        curl -X POST "$SLACK_WEBHOOK" -d "payload=$PAYLOAD"
