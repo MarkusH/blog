@@ -2,7 +2,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '36 * * * *'
 
 jobs:
   build:
@@ -25,5 +25,5 @@ jobs:
       run: |
         set +x
         PACKAGES=$(pip list --outdated)
-        PAYLOAD=$(jq --arg packages "$packages" '{text: ("```" + $packages + "```")}' -n)
+        PAYLOAD=$(jq --arg packages "$PACKAGES" '{text: ("```" + $packages + "```")}' -n)
         curl -X POST "$SLACK_WEBHOOK" -d "payload=$PAYLOAD"
