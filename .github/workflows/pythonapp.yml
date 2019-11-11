@@ -2,7 +2,7 @@ name: Python application
 
 on:
   schedule:
-    - cron: '08 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   build:
@@ -20,6 +20,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Collect and notify about outdated packages
+      env:
+         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       run: |
         set +x
         PACKAGES=$(pip list --outdated)
