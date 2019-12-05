@@ -34,8 +34,8 @@ def bootstrap(c):
     with c.cd(c.config.repo_dir):
         c.run(f'git clone {c.config.repository} .', warn=True)
         c.run(f'git checkout {c.config.branch}')
-        c.run(f'virtualenv {c.config.venv_dir}', warn=True)
-        c.run('gem install --user-install sass:3.5.7')
+        c.run(f'virtualenv --python python3.7 {c.config.venv_dir}', warn=True)
+        c.run('gem install --user-install sass:3.7.4')
     git(c)
     update(c)
 

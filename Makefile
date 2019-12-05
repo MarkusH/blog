@@ -15,4 +15,4 @@ pelican:
 build: grunt pelican
 
 serve:
-	cd build && python3 -m http.server 8080
+	cd build && python3 -m http.server --bind 127.0.0.1 8080
