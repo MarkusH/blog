@@ -4,6 +4,9 @@ All Hands on Deck — Handling Security Issues
 
 :tags: Lead Dev, Management, Security, Talk, Titanic
 :author: Markus Holtermann
+:image: all-hands-on-deck/titanic.jpg
+:image_credits: `F.G.O. Stuart
+    <https://commons.wikimedia.org/wiki/File:RMS_Titanic_3.jpg>`_
 :summary: Building a service that exposes millions of user records or is open
     to all kinds of security issues is very quickly done. Let's look into who's
     going to fix it?
@@ -195,12 +198,12 @@ handling security issues.
 Resources
 =========
 
-The `Oceanus magazine, volume 28, number 4, winter 1985/86`_. This edition
-gives an in-depth insight into what happened around the *Titanic* tragedy.
+* The `Oceanus magazine, volume 28, number 4, winter 1985/86`_. This edition
+  gives an in-depth insight into what happened around the *Titanic* tragedy.
 
-And `Agile Application Security`_ by Laura Bell and others. It's about how
-agile teams can deal and handle security issues. And they can do that despite
-their ability to iterate quickly.
+* And `Agile Application Security`_ by Laura Bell and others. It's about how
+  agile teams can deal and handle security issues. And they can do that despite
+  their ability to iterate quickly.
 
 
 .. _Captain Edward Smith: https://en.wikipedia.org/wiki/Edward_Smith_(sea_captain)
