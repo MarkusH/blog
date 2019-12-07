@@ -2,7 +2,7 @@
 All Hands on Deck — Handling Security Issues
 ============================================
 
-:tags: Lead Dev, Management, Security, Talk, Titanic
+:tags: Incident Handling, LeadDev, Management, Security, Talk, Titanic
 :author: Markus Holtermann
 :image: all-hands-on-deck/titanic.jpg
 :image_credits: `F.G.O. Stuart
@@ -20,21 +20,21 @@ responding to an issue.
 A Historic Event
 ================
 
-On April 10th, 1912, the R.M.S. *Titanic* on April 10, 1912 was on its maiden
+On April 10th, 1912, the `R.M.S. Titanic`_ on April 10, 1912 was on its maiden
 voyage from the port in Southampton to New York City. At that time, the
 *Titanic* was the largest ocean liner in service. There were about 2,224 people
 on board.
 
 Four days into the journey, on April 14, at about 9 am ship time, `Captain
-Edward Smith`_ received this message from steamship *Caronia*:
+Edward Smith`_ received this message from steamship `Caronia`_:
 
    West-bound steamers report bergs, growlers, and field ice […]
 
-A few hours later, at 1:42 pm, this message from steamship *Baltic* made it to
+A few hours later, at 1:42 pm, this message from steamship `Baltic`_ made it to
 the captain:
 
-   […] Greek steamer *Athenia* reports passing icebergs and large quantities of
-   field ice today […]
+   […] Greek steamer `Athenia`_ reports passing icebergs and large quantities
+   of field ice today […]
 
 The captain acknowledged both messages. But it wasn't uncommon to see icebergs
 and field ice in that area in April. And it was also a general assumption that
@@ -43,13 +43,13 @@ ocean liners weren't at risk when hitting an ice berg.
 Throughout the day, four more messages were received by the radio operators on
 board *Titanic*. At 1:45 pm:
 
-   *Amerika* passed two large icebergs […]
+   `Amerika`_ passed two large icebergs […]
 
-At 7:30 pm:
+At 7:30 pm, a message from the `Californian`_ to the *Antillian*:
 
    […] Three large bergs 5 miles southward of us. […]
 
-And at 9:40 pm:
+And at 9:40 pm from the *Mesaba* to the *Titanic*:
 
    Ice report […]. Saw much heavy pack ice and great number large icebergs.
    Also field ice.
@@ -60,7 +60,7 @@ The sixth and final message which was about to be received by the radio
 operators on the *Titanic* at 11 pm from the *Californian*. The *Californian*
 was another steam ship which stopped nearby in the middle of the ice. However,
 the radio operator on duty at that time was still busy processing a backlog of
-messages from the day before. Instead of responding he shut the sending up
+messages from the day before. Instead of responding he, shut up the sending
 operator with:
 
    Shut up! Shut up! I'm working Cape Race.
@@ -205,8 +205,16 @@ Resources
   agile teams can deal and handle security issues. And they can do that despite
   their ability to iterate quickly.
 
+* `Slides <https://speakerdeck.com/markush/all-hands-on-deck-handling-security-issues-leaddevberlin-2019>`_
 
+
+.. _R.M.S. Titanic: https://en.wikipedia.org/wiki/RMS_Titanic
 .. _Captain Edward Smith: https://en.wikipedia.org/wiki/Edward_Smith_(sea_captain)
+.. _Caronia: https://en.wikipedia.org/wiki/RMS_Caronia_(1904)
+.. _Baltic: https://en.wikipedia.org/wiki/RMS_Baltic_(1903)
+.. _Athenia: https://en.wikipedia.org/wiki/SS_Athenia_(1903)
+.. _Amerika: https://en.wikipedia.org/wiki/USS_America_(ID-3006)
+.. _Californian: https://en.wikipedia.org/wiki/SS_Californian
 .. _Cape Race: https://en.wikipedia.org/wiki/Cape_Race
 .. _Oceanus magazine, volume 28, number 4, winter 1985/86: https://archive.org/stream/oceanusv2804wood
 .. _Agile Application Security: https://www.oreilly.com/library/view/agile-application-security/9781491938836/

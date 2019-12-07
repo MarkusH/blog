@@ -9,6 +9,33 @@ Talks
 2019
 ====
 
+All Hands on Deck — Handling Security Issues
+--------------------------------------------
+
+My talk from `The Lead Developer Berlin 2019
+<https://berlin2019.theleaddeveloper.com/talks#markus-holtermann>`__ conference.
+
+In this talk, we will look into what it means for a company when there is a
+security issue in a piece of software. This talk will provide suggestions on
+who needs to get involved.
+
+We live in a world of technology and engineering. Almost everything around us
+requires software. Unfortunately, the software we use or build has bugs. While
+most bugs can be fixed, there are these other types of bugs, called
+vulnerabilities, that cause headaches and haunt us at night. Security issues
+can be found in our own infrastructure, on customers' infrastructure, or —
+worse — around user data. It is on us as engineers to do the best we can to not
+make security issues in the first place. But it is on everybody involved in a
+product to provide communication, guidance, and support when an issue exists.
+
+.. speakerdeck:: d930a220649a4df5a246a7af65d58a4d
+   :ratio: 1.77777777777
+
+`Blog article <{filename}/Misc/2019-12-06__en__all-hands-on-deck-handling-security-issues.rst>`__
+
+.. `Video recording <https://www.youtube.com/watch?v=SdfEsPEPOEg>`__
+
+
 Logging Rethought 2: The Actions of Frank Taylor Jr. -- DjangoCon EU, PyCon AU, PyCon UK
 ----------------------------------------------------------------------------------------
 
