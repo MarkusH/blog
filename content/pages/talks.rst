@@ -28,12 +28,12 @@ worse — around user data. It is on us as engineers to do the best we can to no
 make security issues in the first place. But it is on everybody involved in a
 product to provide communication, guidance, and support when an issue exists.
 
+* `Blog article <{filename}/Misc/2019-12-06__en__all-hands-on-deck-handling-security-issues.rst>`__
+
+* `Video recording <https://www.youtube.com/watch?v=-Q1sn9J2jiA>`__
+
 .. speakerdeck:: d930a220649a4df5a246a7af65d58a4d
    :ratio: 1.77777777777
-
-`Blog article <{filename}/Misc/2019-12-06__en__all-hands-on-deck-handling-security-issues.rst>`__
-
-.. `Video recording <https://www.youtube.com/watch?v=SdfEsPEPOEg>`__
 
 
 Logging Rethought 2: The Actions of Frank Taylor Jr. -- DjangoCon EU, PyCon AU, PyCon UK
@@ -50,12 +50,12 @@ And despite all the testing we do, some interactions with these services will
 not work out the way we hope. Wouldn't it be great to reconstruct what let to a
 problem and analyze if the problem occurred at other times?
 
+* `Blog article <{filename}/Misc/2019-04-12__en__logging-rethought.rst>`__
+
+* `Video recording <https://www.youtube.com/watch?v=SdfEsPEPOEg>`__
+
 .. speakerdeck:: cd4e594fe22b433a9a738805e6a89b76
    :ratio: 1.77777777777
-
-`Blog article <{filename}/Misc/2019-04-12__en__logging-rethought.rst>`__
-
-`Video recording <https://www.youtube.com/watch?v=SdfEsPEPOEg>`__
 
 Less Obvious Things To Do With Django's ORM -- PyCon SK
 -------------------------------------------------------
@@ -67,10 +67,10 @@ powerful over the last years. Django's ORM can be intimidating because it can
 do so many things. And it can also be confusing when trying to find out how to
 do things.
 
+* `Blog article <{filename}/Development/2019-03-23__en__less-obvious-things-to-do-with-djangos-orm.rst>`__
+
 .. speakerdeck:: 31bc1996e13e405f8caf94695416fca2
    :ratio: 1.77777777777
-
-`Blog article <{filename}/Development/2019-03-23__en__less-obvious-things-to-do-with-djangos-orm.rst>`__
 
 
 Oh, I Found a Security Issue -- Python.Pizza.Berlin
@@ -95,10 +95,10 @@ that needle in the haystack of your data? There are plenty options how you can
 achieve that. With various levels of complexity, confidence, and reliability.
 I'll give an insight into what the most common are nowadays.
 
+* `Video recording <https://www.youtube.com/watch?v=GpynTvoxPHI>`__
+
 .. speakerdeck:: 1fe1af1a182749789e1b9f4629eab723
    :ratio: 1.77777777777
-
-* `Video recording <https://www.youtube.com/watch?v=GpynTvoxPHI>`__
 
 Oh, I Found a Security Issue -- PyCaribbean
 -------------------------------------------
@@ -120,12 +120,12 @@ Oh, I Found a Security Issue -- PyCon CA
 A 10 minutes talk about Django's Security Process and how one can implement a
 similar process for their own projects.
 
-`Blog article <{filename}/Misc/2017-11-22__en__oh-i-found-a-security-issue.rst>`__
+* `Blog article <{filename}/Misc/2017-11-22__en__oh-i-found-a-security-issue.rst>`__
+
+* `Video recording <https://www.youtube.com/watch?v=ugcQr6kjA4A>`__
 
 .. speakerdeck:: 0803d05dbd78495691cce016b00d3b37
    :ratio: 1.77777777777
-
-* `Video recording <https://www.youtube.com/watch?v=ugcQr6kjA4A>`__
 
 Thoughts About Normal and Abnormal Data -- PyCon UK
 ---------------------------------------------------
@@ -133,7 +133,7 @@ Thoughts About Normal and Abnormal Data -- PyCon UK
 A lot of data lives in relational databases. And there are relations between
 records in these databases. Relations that might be normal or abnormal.
 
-`Blog article <{filename}/Misc/2017-10-27__en__thoughts-about-normal-and-abnormal-data.rst>`__
+* * * * * * * * * `Blog article <{filename}/Misc/2017-10-27__en__thoughts-about-normal-and-abnormal-data.rst>`__
 
 .. speakerdeck:: cc07d328d61549348dd70afdd5e4644a
    :ratio: 1.77777777777
@@ -145,7 +145,7 @@ As databases are used to store more and more information every day, these are
 also a key component in every Django project. Thus it's important to understand
 how they work.
 
-`Blog article <{filename}/Development/2017-04-05__en__to-index-or-not-is-not-the-question.rst>`__
+* `Blog article <{filename}/Development/2017-04-05__en__to-index-or-not-is-not-the-question.rst>`__
 
 .. speakerdeck:: b34ad0c583854e6cba4764dc1b44e928
    :ratio: 1.77777777777
@@ -164,7 +164,7 @@ user name & password is not enough. In those cases 2 Factor Authentication is a
 nice, additional security layer. Use e.g. a phone to ensure a more secure
 authentication.
 
-`Blog article <{filename}/Development/2016-09-12__en__2-factor-authentication-in-django.rst>`__
+* `Blog article <{filename}/Development/2016-09-12__en__2-factor-authentication-in-django.rst>`__
 
 .. speakerdeck:: c3beb76e4f0747a58412d7bc5ce5144f
 
@@ -175,7 +175,7 @@ A revised version of my talk from DjangoCon US targeted at a more generic
 Python audience. Instead of having Django specific code and slides I show how
 to use Python's built-in ``ssl`` module.
 
-`Blog article <{filename}/Development/2016-09-10__en__ssl-all-the-things-in-python.rst>`__
+* `Blog article <{filename}/Development/2016-09-10__en__ssl-all-the-things-in-python.rst>`__
 
 .. speakerdeck:: 857314c6dbe64db1be8fb5bcafb17a7f
 
@@ -194,7 +194,7 @@ common pitfalls. I’ll briefly layout the Let's Encrypt ACME protocol and
 explain what you need to set up in Django to make SSL/TLS the default and only
 way to access your site.
 
-`Blog article <{filename}/Development/2016-07-19__en__ssl-all-the-things.rst>`__
+* `Blog article <{filename}/Development/2016-07-19__en__ssl-all-the-things.rst>`__
 
 .. speakerdeck:: 4b3c84c76a764060b434e3782245665b
 
@@ -214,7 +214,7 @@ dirty, and show you how writing migrations is easier than you think. Migrations
 are just Python code, and are as much a part of your apps as your models,
 forms, and views. After all, they were always meant to be human-writable.
 
-`Blog article <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-migrations.rst>`__
+* `Blog article <{filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-migrations.rst>`__
 
 .. speakerdeck:: 4a655fe76c8c4526992c313885e66920
    :ratio: 1.77777777777
@@ -254,9 +254,9 @@ This talk I will introduce you to configuration management and explain the
 problems that arise over time and make changing something back complicated or
 even impossible.
 
-.. speakerdeck:: 3c742309f97a46f682f4679746221545
-
 * `Video recording <https://www.youtube.com/watch?v=1NowxI9WATs>`__
+
+.. speakerdeck:: 3c742309f97a46f682f4679746221545
 
 
 "Forms are static" -- "No, they aren't" -- DjangoCon EU

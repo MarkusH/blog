@@ -207,6 +207,7 @@ Resources
 
 * `Slides <https://speakerdeck.com/markush/all-hands-on-deck-handling-security-issues-leaddevberlin-2019>`_
 
+* `Video recording <https://www.youtube.com/watch?v=-Q1sn9J2jiA>`__
 
 .. _R.M.S. Titanic: https://en.wikipedia.org/wiki/RMS_Titanic
 .. _Captain Edward Smith: https://en.wikipedia.org/wiki/Edward_Smith_(sea_captain)
