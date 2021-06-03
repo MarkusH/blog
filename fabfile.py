@@ -89,7 +89,7 @@ def pelican_remote(c):
 @verify_remote
 def build_remote(c):
     """
-    Remote -- Deploys the latest changes: grunt_remote, pelican_remote, zip_remote
+    Remote -- Deploys the latest changes: grunt-remote, pelican-remote
     """
     grunt_remote(c)
     pelican_remote(c)
@@ -107,37 +107,11 @@ def rsync(c):
 
 @task(hosts=hosts)
 @verify_remote
-def zip_remote(c):
-    """
-    Remote -- Zips files
-    """
-    with c.cd(c.config.deploy_dir):
-        # Everything but ./images/
-        c.run(
-            """
-            find . -type f -a -! -wholename "./images/*" -a -! -name "*.gz" -a -! -name "*.br" -print -exec sh -c '
-                test "${0}" -nt "${0}.br" && brotli --keep --force --verbose --best ${0}
-            ' {} \;
-        """
-        )
-        # Everything in ./images/thumb/
-        c.run(
-            """
-            find ./images/thumb/ -type f -a -! -name "*.gz" -a -! -name "*.br" -print -exec sh -c '
-                test "${0}" -nt "${0}.br" && brotli --keep --force --verbose --best ${0}
-            ' {} \;
-        """
-        )
-
-
-@task(hosts=hosts)
-@verify_remote
 def deploy(c):
     """
-    Remote -- Do everything needed to deploy: git, update, build_remote, rsync, zip_remote
+    Remote -- Do everything needed to deploy: git, update, build-remote, rsync
     """
     git(c)
     update(c)
     build_remote(c)
     rsync(c)
-    zip_remote(c)
