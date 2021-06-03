@@ -1,4 +1,4 @@
-branch: master
+branch: main
 pelicanconf: publishconf.py
 repository: git@gitlab.com:MarkusH/blog.git
 
