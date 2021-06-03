@@ -5,6 +5,59 @@ Talks
 :slug: talks
 :lang: en
 
+2021
+====
+
+Writing Safe Database Migrations in Django
+------------------------------------------
+
+My talk from `DjangoCon Europe 2021
+<https://cfp.2021.djangocon.eu/2021/talk/F9J8CU/>`__.
+
+Whether you build Django projects or apps, you won't get past database
+migrations. And Django's built-in migration framework is great. It works
+tremendously. But that's only on the surface. Whenever you deploy your code and
+apply migrations in production, you are about to enter dangerous territory. I
+will point out common pitfalls and show you ways to avoid them. And with some
+additional best practices at hand, you will be ready for your next production
+deployment.
+
+.. * `Blog article <{filename}/Development/2021-06-03__en__writing-safe-database-migrations-in-django.rst>`__
+
+.. speakerdeck:: a28cd9eed4fb4aa7b2fc2afdace94e30
+  :ratio: 1.77777777777
+
+2020
+====
+
+A Pony On The Move: How Migrations Work In Django 🐎
+----------------------------------------------------
+
+My talk from `DjangoCon Europe 2020
+<https://cfp.2021.djangocon.eu/porto/talk/CEGCQX/>`__.
+
+Django’s migration framework has been around for almost 6 years. From the
+outset, it had a long journey ahead, considering all the learnings and
+experience Andrew Godwin had with the 3rd party package South. However,
+Django’s migrations are not to be considered a rewrite of South as they work
+fundamentally different.
+
+This talk will give an insight view into the components that make up Django’s
+migration framework. The talk will lay-out how these components fit and work
+together. It will outline major challenges and problems that were encountered
+and overcome along the way.
+
+One of the goals of this talk is to reduce the entry barrier for potential
+Django contributors to the rather complex migration framework. From their own
+experience, the author is well aware that there are some parts that are tricky
+and non-trivial and non-obvious. Thus, this talk is absolutely aimed at
+prospective contributors, regardless if they are first-time Django contributors
+or ones with a year-long track record.
+
+* `Video recording <https://www.youtube.com/watch?v=u6cVvbuUzlk>`__
+
+.. speakerdeck:: c539dc666ffd4309b04cb654933743a4
+  :ratio: 1.77777777777
 
 2019
 ====
@@ -138,7 +191,7 @@ records in these databases. Relations that might be normal or abnormal.
 .. speakerdeck:: cc07d328d61549348dd70afdd5e4644a
    :ratio: 1.77777777777
 
-To Index Or Not, That’s Not The Questions -- DjangoCon EU
+To Index Or Not, That's Not The Questions -- DjangoCon EU
 ---------------------------------------------------------
 
 As databases are used to store more and more information every day, these are
@@ -185,12 +238,12 @@ SSL All The Things -- DjangoCon US
 ----------------------------------
 
 Over the last few years SSL/TLS encryption of not only websites but many other
-services as well has risen tremendously. The Let’s Encrypt organization and
+services as well has risen tremendously. The Let's Encrypt organization and
 certificate authority (CA) makes that pretty easy. Since September 2015 almost
 1.8 million certificates have been issued. And you can use it, too. For free!
 
 In this talk I'll demonstrate how to integrate SSL/TLS and point out some
-common pitfalls. I’ll briefly layout the Let's Encrypt ACME protocol and
+common pitfalls. I'll briefly layout the Let's Encrypt ACME protocol and
 explain what you need to set up in Django to make SSL/TLS the default and only
 way to access your site.
 
