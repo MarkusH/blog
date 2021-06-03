@@ -65,6 +65,7 @@
   </div>
 </div>
 
+{% if article.share_post and article.status != 'draft' %}
 <div class="fixed-action-btn">
   <a class="btn-floating btn-large green">
     <i class="large icon-share-variant"></i>
@@ -76,8 +77,7 @@
           class="large icon-facebook"></i></a></li>
     <li><a href="{{ article.share_post['twitter'] }}" target="_blank" class="btn-floating twitter"><i
           class="large icon-twitter"></i></a></li>
-    <li><a href="{{ article.share_post['google-plus'] }}" target="_blank" class="btn-floating google"><i
-          class="large icon-google-plus"></i></a></li>
   </ul>
 </div>
+{% endif %}
 {% endblock %}
