@@ -5,7 +5,7 @@ feedgenerator==1.9
 Jinja2==2.11.3
 MarkupSafe==1.0
 pelican==3.7.1
-pexpect==4.6.0
+pexpect==4.8.0
 Pygments==2.7.4
 python-dateutil==2.7.3
 pytz==2018.5
