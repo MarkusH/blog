@@ -12,6 +12,6 @@
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-sass": "^3.0.2",
     "grunt-webfonts": "^3.0.1",
-    "node-sass": "^4.13.1"
+    "node-sass": "^6.0.0"
   }
 }
