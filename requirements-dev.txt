@@ -4,7 +4,7 @@ cffi==1.11.5
 cryptography==3.3.2
 Fabric==2.6.0
 fabric-virtualenv==0.3.0
-idna==2.7
+idna==3.2
 paramiko==2.7.2
 pyasn1==0.4.8
 pycparser==2.20
