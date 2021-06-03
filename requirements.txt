@@ -10,7 +10,7 @@ Pygments==2.7.4
 python-dateutil==2.7.3
 pytz==2018.5
 six==1.11.0
-Unidecode==1.0.22
+Unidecode==1.2.0
 
 Pillow==8.1.1
 
