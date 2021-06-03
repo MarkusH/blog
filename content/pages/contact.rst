@@ -21,6 +21,6 @@ My `former key`_ expired on December 31st, 2013. DO NOT USE IT ANY LONGER:
     7835 BD5D 46AC 9CC6 848A  DE33 03C2 732F 351E D8B3
 
 
-.. _my GPG key: {filename}/files/D41C7E39.asc
-.. _former key: {filename}/files/351ED8B3.asc
+.. _my GPG key: {static}/files/D41C7E39.asc
+.. _former key: {static}/files/351ED8B3.asc
 

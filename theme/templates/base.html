@@ -1,82 +1,98 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0"/>
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}{% if articles_page and articles_page.number > 1 %} &mdash; Page {{ articles_page.number }}{% endif %}</title>
-    {% if FEED_ALL_ATOM %}
-    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Full Atom Feed" />
-    {% endif %}
-    {% if CATEGORY_FEED_ATOM and category %}
-    <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Category {{ category }} Atom Feed" />
-    {% endif %}
-    {% if TAG_FEED_ATOM and tag %}
-    <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
-    {% endif %}
-    {% block head %}{% endblock %}
-    <link href="/theme/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  </head>
-  <body>
-    <nav class="" role="navigation">
-      <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">markusholtermann</a>
-        <ul class="right hide-on-med-and-down">
-          <li{% if category == "australia" %} class="active"{% endif %}><a href="/category/australia.html">Australia</a></li>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0" />
+  <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}{% if articles_page and articles_page.number > 1 %} &mdash;
+    Page {{ articles_page.number }}{% endif %}</title>
+  {% if FEED_ALL_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+    title="{{ SITENAME }} &mdash; Full Atom Feed" />
+  {% endif %}
+  {% if CATEGORY_FEED_ATOM and category %}
+  <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(slug=category.slug) }}" type="application/atom+xml"
+    rel="alternate" title="{{ SITENAME }} &mdash; Category {{ category }} Atom Feed" />
+  {% endif %}
+  {% if TAG_FEED_ATOM and tag %}
+  <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(slug=tag.slug) }}" type="application/atom+xml" rel="alternate"
+    title="{{ SITENAME }} &mdash; Tag {{ tag }} Atom Feed" />
+  {% endif %}
+  {% block head %}{% endblock %}
+  <link href="/theme/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class="" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">markusholtermann</a>
+      <ul class="right hide-on-med-and-down">
+        <li{% if category=="australia" %} class="active" {% endif %}><a href="/category/australia.html">Australia</a>
+          </li>
           {% for pg in pages %}
-          <li{% if pg == page %} class="active"{% endif %}><a href="/{{ pg.url }}">{{ pg.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul id="nav-mobile" class="side-nav">
-          <li{% if category == "australia" %} class="active"{% endif %}><a href="/category/australia.html">Australia</a></li>
+          <li{% if pg==page %} class="active" {% endif %}><a href="/{{ pg.url }}">{{ pg.title }}</a></li>
+            {% endfor %}
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li{% if category=="australia" %} class="active" {% endif %}><a href="/category/australia.html">Australia</a>
+          </li>
           {% for pg in pages %}
-          <li{% if pg == page %} class="active"{% endif %}><a href="/{{ pg.url }}">{{ pg.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse" title="open/close menu"><i class="icon-menu"></i></a>
-      </div>
-    </nav>
+          <li{% if pg==page %} class="active" {% endif %}><a href="/{{ pg.url }}">{{ pg.title }}</a></li>
+            {% endfor %}
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse" title="open/close menu"><i
+          class="icon-menu"></i></a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="section">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+  <footer class="page-footer">
     <div class="container">
-      <div class="section">
-        {% block content %}{% endblock %}
+      <div class="row">
+        <div class="col s12 m12 l4">
+          <h5 class="white-text">Markus Holtermann</h5>
+          <p>I'm a software developer and system engineer from Germany and a <a
+              href="https://www.djangoproject.com/">Django core developer</a>.</p>
+          <p>The content on this page is licensed under a <a rel="license" class="white-text"
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
+              Attribution-NonCommercial-ShareAlike 4.0 International License</a> unless otherwise noted.</p>
+        </div>
+        <div class="col s12 m12 l4">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="white-text" href="/tags.html">Tags</a></li>
+            <li><a class="white-text" href="/categories.html">Categories</a></li>
+            <li><a class="white-text" href="/imprint/">Imprint</a></li>
+          </ul>
+        </div>
+        <div class="col s12 m12 l4">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/MarkusH"><i class="icon-github-circle"></i> Github</a>
+            </li>
+            <li><a class="white-text" href="https://plus.google.com/+MarkusHoltermann"><i class="icon-google-plus"></i>
+                Google+</a></li>
+            <li><a class="white-text" href="https://twitter.com/m_holtermann"><i class="icon-twitter"></i> Twitter</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <footer class="page-footer">
+    <div class="footer-copyright">
       <div class="container">
-        <div class="row">
-          <div class="col s12 m12 l4">
-            <h5 class="white-text">Markus Holtermann</h5>
-            <p>I'm a software developer and system engineer from Germany and a <a href="https://www.djangoproject.com/">Django core developer</a>.</p>
-            <p>The content on this page is licensed under a <a rel="license" class="white-text" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> unless otherwise noted.</p>
-          </div>
-          <div class="col s12 m12 l4">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="white-text" href="/tags.html">Tags</a></li>
-              <li><a class="white-text" href="/categories.html">Categories</a></li>
-              <li><a class="white-text" href="/imprint/">Imprint</a></li>
-            </ul>
-          </div>
-          <div class="col s12 m12 l4">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="https://github.com/MarkusH"><i class="icon-github-circle"></i> Github</a></li>
-              <li><a class="white-text" href="https://plus.google.com/+MarkusHoltermann"><i class="icon-google-plus"></i> Google+</a></li>
-              <li><a class="white-text" href="https://twitter.com/m_holtermann"><i class="icon-twitter"></i> Twitter</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
         Powered by <a class="orange-text text-lighten-3 center" href="http://blog.getpelican.com/">Pelican</a>
-        <span class="right">Made with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a></span>
-        </div>
+        <span class="right">Made with <a class="orange-text text-lighten-3"
+            href="http://materializecss.com">Materialize</a></span>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!--  Scripts-->
-    <script async src="/theme/js/main.js"></script>
-    <script type="application/ld+json">
+  <!--  Scripts-->
+  <script async src="/theme/js/main.js"></script>
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Person",
@@ -89,5 +105,6 @@
       ]
     }
     </script>
-  </body>
+</body>
+
 </html>

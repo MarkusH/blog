@@ -24,7 +24,7 @@ Wentworth Falls
 ===============
 
 The `Wentworth Falls`_ is a three-tiered waterfall fed by the Jamison Creek,
-near the same-named city and have a total height of about 190 meters. 
+near the same-named city and have a total height of about 190 meters.
 
 .. gallery::
    :small: 1

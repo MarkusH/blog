@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import math
 
 from docutils import nodes
-from docutils.parsers.rst import directives, Directive
+from docutils.parsers.rst import Directive, directives
 
 from .imaging import gen_article_thumbnails, gen_equation_image
 from .nodes import (
@@ -18,7 +18,6 @@ from .nodes import (
     project_node,
     speakerdeck,
 )
-
 
 NUM_COLS = 12
 GUTTER_WIDTH = 10.5

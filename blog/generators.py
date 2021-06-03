@@ -23,13 +23,19 @@ class AMPGenerator(ArticlesGenerator):
         """
         Return the AMP template name
         """
-        return super(AMPGenerator, self).get_template('%s.amp' % name)
+        return super(AMPGenerator, self).get_template("%s.amp" % name)
 
     def generate_articles(self, write):
         """Generate the articles."""
         for article in chain(self.translations, self.articles):
-            if not article.save_as.endswith('.html'):
-                logging.error('[SKIP] Not an .html article file: %r %s' % (article, article.save_as))
+            if not article.save_as.endswith(".html"):
+                logging.error(
+                    "[SKIP] Not an .html article file: %r %s"
+                    % (article, article.save_as)
+                )
+                continue
+            if article.status == "draft":
+                # Don't write AMP files for drafts
                 continue
             write(
                 article.amp_save_as,
@@ -37,11 +43,11 @@ class AMPGenerator(ArticlesGenerator):
                 self.context,
                 article=article,
                 category=article.category,
-                override_output=hasattr(article, 'override_save_as'),
+                override_output=hasattr(article, "override_save_as"),
                 blog=True,
             )
 
     def generate_output(self, writer):
-        write = partial(writer.write_file, relative_urls=self.settings['RELATIVE_URLS'])
+        write = partial(writer.write_file, relative_urls=self.settings["RELATIVE_URLS"])
         self.generate_articles(write)
         signals.article_writer_finalized.send(self, writer=writer)

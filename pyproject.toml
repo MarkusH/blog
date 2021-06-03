@@ -1,0 +1,7 @@
+[tool.black]
+line-length = 88
+
+[tool.isort]
+combine_as_imports = true
+line_length = 88
+profile = "black"

@@ -20,32 +20,32 @@ class project_desc(nodes.list_item):
 
 
 class project_code(nodes.TextElement):
-    label = 'Code'
-    icon = 'icon-code-array'
+    label = "Code"
+    icon = "icon-code-array"
 
 
 class project_docs(nodes.TextElement):
-    label = 'Documentation'
-    icon = 'icon-file-document'
+    label = "Documentation"
+    icon = "icon-file-document"
 
 
 class project_download(nodes.TextElement):
-    label = 'Download'
-    icon = 'icon-download'
+    label = "Download"
+    icon = "icon-download"
 
 
 class project_homepage(nodes.TextElement):
-    label = 'Homepage'
-    icon = 'icon-link'
+    label = "Homepage"
+    icon = "icon-link"
 
 
 class project_license(nodes.TextElement):
-    label = 'License'
-    icon = 'icon-gavel'
+    label = "License"
+    icon = "icon-gavel"
 
 
 class pngmath(nodes.TextElement):
-    tagname = 'img'
+    tagname = "img"
 
 
 class speakerdeck(nodes.TextElement):

@@ -6,65 +6,78 @@
 {% block title %}{{ super() }} &mdash; {{ title_escaped }}{% endblock title %}
 
 {% block head %}
-    {% include "_open_graph.html" %}
-    <link rel="amphtml" href="{{ SITEURL }}/{{ article.amp_url }}">
-    <meta name="description" content="{{ article.summary|striptags|escape }}" />
-    <meta name="tags" content="{{ article.tags|join(' ') }}" />
+{% include "_open_graph.html" %}
+{% if article.status != "draft" %}
+<link rel="amphtml" href="{{ SITEURL }}/{{ article.amp_url }}">{% endif %}
+<meta name="description" content="{{ article.summary|striptags|escape }}" />
+<meta name="tags" content="{{ article.tags|join(' ') }}" />
 {% endblock %}
 
 {% block content %}
-  <div class="row">
-    <div class="col s12">
-      <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
-        <meta itemprop="datePublished" content="{{ article.date.isoformat() }}"/>
-        {% if article.image %}
-        <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-          <img class="small lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <img class="medium lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <img class="large lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.jpg" alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
-          <meta itemprop="thumbnail url" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.jpg" />
-          <meta itemprop="representativeOfPage" content="true" /><meta itemprop="height" content="422" /><meta itemprop="width" content="1012" />
+<div class="row">
+  <div class="col s12">
+    <div class="card" itemscope itemtype="http://schema.org/BlogPosting">
+      <meta itemprop="datePublished" content="{{ article.date.isoformat() }}" />
+      {% if article.image %}
+      <div class="card-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+        <img class="small lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-682x316.jpg"
+          alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+        <img class="medium lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-1075x316.jpg"
+          alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+        <img class="large lazyload" data-src="/images/thumb/{{ article.image.rpartition('.')[0] }}-1280x375.jpg"
+          alt="{% if article.image_credits %}{{ image_credits_escaped }}{% else %}{{ title_escaped }}{% endif %}">
+        <meta itemprop="thumbnail url" content="/images/thumb/{{ article.image.rpartition('.')[0] }}-1012x422.jpg" />
+        <meta itemprop="representativeOfPage" content="true" />
+        <meta itemprop="height" content="422" />
+        <meta itemprop="width" content="1012" />
+        {% if article.image_credits %}
+        <meta itemprop="license" content="{{ image_credits_escaped }}" />
+        {% endif %}
+      </div>
+      {% endif %}
+      <div class="card-content">
+        <div class="meta">
+          <a href="/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a>
+          &bull;
+          <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.locale_date }}</time> &bull;
+          {% for author in article.authors %}
+          <a href="/{{ author.url }}" class="author" itemprop="author" itemscope
+            itemtype="http://schema.org/Person"><span itemprop="name">{{ author }}</span></a>{% if not loop.last %}, {%
+          endif %}
+          {% endfor %}
+          <div class="tags" itemprop="keywords">
+            {% for tag in article.tags|sort %}
+            <a href="/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </div>
           {% if article.image_credits %}
-          <meta itemprop="license" content="{{ image_credits_escaped }}" />
+          <div class="image-credits">Article image: {{ article.image_credits }}</div>
           {% endif %}
         </div>
-        {% endif %}
-        <div class="card-content">
-          <div class="meta">
-            <a href="/{{ article.category.url }}" class="category" itemprop="articleSection">{{ article.category }}</a> &bull;
-            <time datetime="{{ article.date.strftime('%Y-%m-%d') }}">{{ article.locale_date }}</time> &bull;
-            {% for author in article.authors %}
-            <a href="/{{ author.url }}" class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ author }}</span></a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-            <div class="tags" itemprop="keywords">
-              {% for tag in article.tags|sort %}
-              <a href="/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-              {% endfor %}
-            </div>
-            {% if article.image_credits %}
-            <div class="image-credits">Article image: {{ article.image_credits }}</div>
-            {% endif %}
+        <div class="flow-text" itemprop="articleBody">
+          <div class="card-title">
+            <h1 itemprop="headline name">{{ article.title }}</h1>
           </div>
-          <div class="flow-text" itemprop="articleBody">
-            <div class="card-title">
-              <h1 itemprop="headline name">{{ article.title }}</h1>
-            </div>
-            {{ article.content }}
-          </div>
+          {{ article.content }}
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="fixed-action-btn">
-    <a class="btn-floating btn-large green">
-      <i class="large icon-share-variant"></i>
-    </a>
-    <ul>
-      <li><a href="{{ article.share_post['email'] }}" target="_blank" class="btn-floating yellow"><i class="large icon-email-open"></i></a></li>
-      <li><a href="{{ article.share_post['facebook'] }}" target="_blank" class="btn-floating facebook"><i class="large icon-facebook"></i></a></li>
-      <li><a href="{{ article.share_post['twitter'] }}" target="_blank" class="btn-floating twitter"><i class="large icon-twitter"></i></a></li>
-      <li><a href="{{ article.share_post['google-plus'] }}" target="_blank" class="btn-floating google"><i class="large icon-google-plus"></i></a></li>
-    </ul>
-  </div>
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large green">
+    <i class="large icon-share-variant"></i>
+  </a>
+  <ul>
+    <li><a href="{{ article.share_post['email'] }}" target="_blank" class="btn-floating yellow"><i
+          class="large icon-email-open"></i></a></li>
+    <li><a href="{{ article.share_post['facebook'] }}" target="_blank" class="btn-floating facebook"><i
+          class="large icon-facebook"></i></a></li>
+    <li><a href="{{ article.share_post['twitter'] }}" target="_blank" class="btn-floating twitter"><i
+          class="large icon-twitter"></i></a></li>
+    <li><a href="{{ article.share_post['google-plus'] }}" target="_blank" class="btn-floating google"><i
+          class="large icon-google-plus"></i></a></li>
+  </ul>
+</div>
 {% endblock %}

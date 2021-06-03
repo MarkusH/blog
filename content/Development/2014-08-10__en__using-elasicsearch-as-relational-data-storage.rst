@@ -240,7 +240,7 @@ The Detail Page
 
 The detail page is quite straightforward. One requirement we defined for the
 detail page was, that we should be able to provide a deep linking option. This
-was actually quite easy to implement using the `ngRoute`_ module of AngularJS. 
+was actually quite easy to implement using the `ngRoute`_ module of AngularJS.
 
 The URL is defined to look like this: "domain.de/#/schools/BSN". The BSN is a
 unique identifier for each school in Berlin (we assume it stands for Berlin

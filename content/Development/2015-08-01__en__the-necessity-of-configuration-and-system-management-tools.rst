@@ -90,6 +90,6 @@ Download
 .. _Chef: https://www.getchef.com
 .. _Puppet: https://docs.puppetlabs.com
 
-.. _Master's Thesis: {filename}/files/masterthesis-v1.1.pdf
+.. _Master's Thesis: {static}/files/masterthesis-v1.1.pdf
 .. _Presentation from PyCon Australia 2015: https://speakerdeck.com/markush/the-necessity-of-configuration-and-system-management-tools
 .. _Video recording from PyCon Australia 2015: https://www.youtube.com/watch?v=1NowxI9WATs

@@ -34,7 +34,7 @@ the mapping between the sub paths and URL parameters is done, has been taken
 from the `Django`_ `URL dispatcher`_.
 
 The complete pattern and mapping implementation is done in the class
-``RestApiUrlMapping`` within the package 
+``RestApiUrlMapping`` within the package
 ``de.dhbw_mannheim.cloudraid.api.impl`` and is part of the ``CloudRAID``-REST
 bundle. The ``RestApiUrlMapping`` constructor takes two to four parameter of
 various type as one can see in listing 9 below:

@@ -117,7 +117,7 @@ you will get a nice information:
     $ ssh git@server
     hello markus, this is gitolite running on git
     the gitolite config gives you the following access:
-         R   W      gitolite-admin 
+         R   W      gitolite-admin
          R   W      project1
          R   W      project2
          R   W      project3

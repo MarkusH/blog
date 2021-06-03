@@ -4,7 +4,6 @@ import os
 import shutil
 import subprocess
 import tempfile
-
 from os.path import basename, dirname, exists, join, splitext
 
 FILENAME = object()
@@ -140,7 +139,8 @@ def gen_equation_image(equation):
     hash = hashlib.md5(text.encode("utf-8")).hexdigest()
     dest_file = join(EQUATION_BASE_DIR, hash + ".png")
 
-    out = dest_file[len("content") :]
+    l = len("content")
+    out = dest_file[l:]
 
     if exists(dest_file):
         return out

@@ -12,7 +12,7 @@ Whitsunday Islands
 With some delay I finally found the time to write up another article.
 
 2 weeks ago I went on a 3 day sailing trip around the `Whitsunday Islands`_.
-One of the highlights of the tour was the visit of `Whitehaven Beach`_. 
+One of the highlights of the tour was the visit of `Whitehaven Beach`_.
 
 The sand on Whiteheaven Beach is very fine, making it a real danger for all
 kinds of electronic devices such as cameras and mobile phones. Furthermore, the
