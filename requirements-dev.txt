@@ -8,4 +8,4 @@ idna==3.2
 paramiko==2.7.2
 pyasn1==0.4.8
 pycparser==2.20
-pynacl==1.2.1
+pynacl==1.4.0
