@@ -7,5 +7,5 @@ fabric-virtualenv==0.3.0
 idna==2.7
 paramiko==2.4.2
 pyasn1==0.4.3
-pycparser==2.18
+pycparser==2.20
 pynacl==1.2.1
