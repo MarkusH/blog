@@ -21,7 +21,7 @@ grunt:
       - theme/static/js/
     expire_in: 1h
   only:
-    - master
+    - main
 
 pages:
   stage: deploy
@@ -41,4 +41,4 @@ pages:
     paths:
       - public
   only:
-    - master
+    - main
