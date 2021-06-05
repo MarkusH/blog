@@ -1,6 +1,6 @@
-==========================================
-Writing Safe Database Migrations in Django
-==========================================
+====================================================
+A Pony On The Move: How Migrations Work In Django 🐎
+====================================================
 
 :tags: Django, Migration
 :author: Markus Holtermann

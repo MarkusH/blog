@@ -56,6 +56,8 @@ or ones with a year-long track record.
 
 * `Video recording <https://www.youtube.com/watch?v=u6cVvbuUzlk>`__
 
+* `Blog article <{filename}/Development/2021-06-05__en__a-pony-on-the-move-how-migrations-work-in-django.rst>`__
+
 .. speakerdeck:: c539dc666ffd4309b04cb654933743a4
   :ratio: 1.77777777777
 
