@@ -10,19 +10,18 @@ Writing Safe Database Migrations in Django
    to avoid them.
 :status: draft
 
-Five years ago, at DjangoCon Europe 2016 in Budapest, I gave a talk "Don't Be
-Afraid Of Writing Migrations". Back then, while migrations in Django weren't
+Five years ago, at DjangoCon Europe 2016 in Budapest, I gave a talk `Don't Be
+Afraid Of Writing Migrations`_. Back then, while migrations in Django weren't
 particularly new, they shipped in 2014, I saw many folks struggle and worry
-about touching the migration files. Many people didn't touch the auto-generated
-migration files. And even fewer wrote migrations by hand. Mind you, I wouldn't
-recommend writing entire migration files by hand, that's why Django has tools
-to generate them for us. But I do recommend looking at them, understanding what
-they do, and then see if they need to be adjusted. Because, in the end, as an
-engineer, you will always know more about your application than Django will
-ever be able to.
+about touching the migration files. And even fewer wrote migrations by hand.
+Mind you, I wouldn't recommend writing entire migration files by hand. Django
+has tools to generate them for us. But I do recommend looking at them,
+understanding what they do, and then see if they need to be adjusted. Because,
+in the end, as an engineer, you will always know more about your application
+than Django will ever be able to.
 
 As an example, when you add a non-nullable field to a model and run
-makemigrations, Django will ask you for a one-off default value. That value
+``makemigrations``, Django will ask you for a one-off default value. That value
 would be set for all existing rows. This is the correct behavior when there's
 data in that table already. But if you know that the table is empty everywhere,
 it can easily appear to be useless. As an engineer, you can make a distinction
@@ -30,15 +29,11 @@ there. As an engineer you can decide that it's fine not to have a default
 value. As an engineer, you know more about your project than Django does. But
 Django must be conservative to ensure the default way works for everyone.
 
-If you're still new to Django, I'd recommend to have a look at that talk after
-this DjangoCon, to not miss out on all the cool stuff.
-
-But for now, let's this of today's talk as a sequel to my previous one.
 
 Migrations! How? When?
 ======================
 
-I want to start this talk with some general considerations. Questions like how
+I want to start this post with some general considerations. Questions like how
 and when do you apply migrations? How are migrations related to deployments?
 What are dos and don'ts that follow from that?
 
@@ -47,14 +42,14 @@ zero-downtime deployments. On common way for that is something called a rolling
 upgrade or a staged rollout. On a high level, it works like this.
 
 In the beginning, all your servers run the old version of you application. They
-are indicated by this blue circle
+are indicated by the blue circle. Then you start rolling out the new version to
+a few servers (indicated by the orange part). You keep this state for a short
+while, to ensure everything keeps working. Over time, you deploy the new
+version to more and more servers. Until the new version is running everywhere.
 
-Then you start rolling out the new version to a few servers. You keep this
-state for a short while, to ensure everything keeps working.
-
-Over time, you deploy the new version to more and more servers.
-
-Until the new version is running everywhere.
+.. image:: /images/djangoconeu2021/deployment-stages.png
+   :alt: Stages of a staged-rollout process.
+   :class: responsive-img
 
 The clear benefit of this rolling upgrade or staged rollout is the ability to
 notice issues early on, way before the new version is running everywhere. The
@@ -75,7 +70,7 @@ we involve databases. Whatever you do with objects in the database, you need to
 remember that there can always be this one server that has not been updated yet
 and thus runs the previous version.
 
-Which brings me back to one of the opening questions:
+Which brings me back to one of the opening questions.
 
 When Do We Deploy Migrations?
 -----------------------------
@@ -105,10 +100,10 @@ Which leaves the question: how do rename a field? Short answer, you don't. The
 long answer is you add a new field, copy the data, and remove the old one.
 Something similar to the third migration recipe from my previous talk.
 
+Which brings me to the next question.
+
 How Do We Deploy Migrations?
 ----------------------------
-
-Which brings me to the next question: how do we deploy migrations?
 
 While I'd love to present the perfect solution to you, I can't. And I can't,
 for several reasons.
@@ -128,7 +123,7 @@ is preceded with a change request process where 3 department heads have to sign
 off. Or something like that.
 
 If we look a little bit below the surface of the variety of those processes, we
-can see that they all have something in common:
+can see that they all have something in common.
 
 Only Go Forwards & Never Look Back
 ----------------------------------
@@ -180,7 +175,6 @@ containers is this:
 
     exec $cmd
 
-
 I'll first try to connect to the database, PostgreSQL in this case, until it
 succeeds. Once done, I apply all migrations in the project. And then execute
 the actual command, such as running gunicorn.
@@ -194,7 +188,7 @@ migrations need to be applied, the migrate command is like a no-op. However,
 when you think back about the staged rollout, you must make sure that the very
 first stage is exactly one Docker container.
 
-Now, after all this theory, let's look at something more …. hands-on.
+Now, after all this theory, let's look at something more hands-on.
 
 Adding A Field Is Harmless
 ==========================
@@ -203,8 +197,7 @@ Our database models evolve over time. And one of the most frequent changes we
 do to our models, is adding field. And doing so seems rather harmless, doesn't
 it?
 
-We have two models. In the first one, we add a nullable field, in the second
-one, we add a field with an explicit default value. This seems fine, right?
+We have two models.
 
 .. code-block:: python
 
@@ -215,6 +208,9 @@ one, we add a field with an explicit default value. This seems fine, right?
 
     class AddFieldModel2(models.Model):
         name = models.CharField(max_length=10)
+
+In the first one, we add a nullable field, in the second one, we add a field
+with an explicit default value. This seems fine, right?
 
 .. code-block:: python
 
@@ -256,21 +252,22 @@ First, let's look at the migration that Django creates
 For those of you who have looked at migration files before, this is nothing
 new. For everyone else, let me briefly explain what you can see here:
 
-First, this migration depends on another one, namely migration "0001_initial"
-form the app "add_field". Which means, this migration can only ever be applied
-to the database, when that dependency has been applied. Or in reverse: when you
-are applying this migration, that dependency will be applied before.
+First, this migration depends on another one, namely migration ``0001_initial``
+form the app ``add_field``. Which means, this migration can only ever be
+applied to the database, when that dependency has been applied. Or in reverse:
+when you are applying this migration, that dependency will be applied before.
 
 Second, you see a list of operations. An operation is Django's abstraction
 around some so called database instructions that alter your database, such as
 adding and removing database columns, creating and removing database tables,
 and more.
 
-The two operations here, each add a field called "field" to the models
-addfieldmodel1 and addfieldmodel2, respectively. The field that is added is
-then describe there.
+The two operations here, each add a field called ``field`` to the models
+``addfieldmodel1`` and ``addfieldmodel2``, respectively. The field that is
+added is then describe there.
 
-We can now use Django's sqlmigrate command to get the underlying SQL commands.
+We can now use Django's ``sqlmigrate`` command to get the underlying SQL
+commands.
 
 .. code-block:: sql
 
@@ -293,8 +290,8 @@ All of these commands still look fairly harmless, don't they?
 
 Well, you might have guessed it, the answer is no!
 
-The first ALTER TABLE is kind of okay, but the second one can cause you some
-real headache.
+The first ``ALTER TABLE`` is kind of okay, but the second one can cause you
+some real headache.
 
 To understand why, we need to understand how databases handle these types of
 schema alterations.
@@ -323,7 +320,7 @@ one and scratch the idea of adding a default value out of your head.
 But I Want A Default Value!
 ===========================
 
-Well, okay. You can get a default value. The migration recipe number two in
+Well, okay. You can get a default value. `The migration recipe number two`_ in
 talk linked before gives you step-by-step instructions.
 
 However, I'd only recommend that approach for tables with a fairly small amount
@@ -368,14 +365,14 @@ Write a management command and run that after applying the migration:
 The management command will lock at most 5000 objects at a time, and then
 update their field value.
 
-By using select_for_update() for each chunk, you can be sure that the field
+By using ``select_for_update()`` for each chunk, you can be sure that the field
 value for those objects won't be overridden by anybody else in the meantime.
 
 Sure, running this command will take longer than updating all records at once
 while locking your table. But it allows you to keep your site operational.
 Which, very often, I guess, is more important.
 
-But coming back to what I said earlier: as an engineer you know more about the
+But coming back to what I said earlier, as an engineer you know more about the
 project than Django does, this applies here as well. If you know that the table
 you're adding a field to is small or maybe even empty, it's absolutely okay to
 add a default value.
@@ -400,12 +397,12 @@ Modern Django versions provide not just one but two ways to do so:
     class AddIndexModel2(models.Model):
         name = models.CharField(max_length=10)
 
-Firstly, the old way that's been around forever. You can set db_index to True
+Firstly, the old way that's been around forever. You can set ``db_index=True``
 on a field and Django will create an index.
 
 Secondly, since Django 1.11, you can define class based indexes in a model's
-Meta class. They are far more flexible, and powerful. And since Django 3.2 you
-can even add indexes on expressions, also known as functional indexes.
+``Meta`` class. They are far more flexible, and powerful. And since Django 3.2
+you can even add indexes on expressions, also known as functional indexes.
 
 .. code-block:: python
 
@@ -422,14 +419,15 @@ can even add indexes on expressions, also known as functional indexes.
                 models.Index(fields=("name",), name="my_idx")
             ]
 
-There's actually a third option. The index_together/unique_together attributes
-in the model's Meta class allow you to create indexes on multiple columns.
-Personally, I'd consider them outdated as well. Additionally, for the example
-at hand, I'm going to ignore them. Because they behave identically to db_index
-and can be replaced with class-based indexes.
+There's actually a third option. The ``index_together`` / ``unique_together``
+attributes in the model's ``Meta`` class allow you to create indexes on
+multiple columns.  Personally, I'd consider them outdated as well.
+Additionally, for the example at hand, I'm going to ignore them. Because they
+behave identically to ``db_index`` and can be replaced with class-based
+indexes.
 
-Looking at the auto generated migration, you can see an AlterField which adds
-the db_index=True, as well as an AddIndex operation.
+Looking at the auto generated migration, you can see an ``AlterField`` which
+adds the ``db_index=True``, as well as an ``AddIndex`` operation.
 
 .. code-block:: python
 
@@ -453,13 +451,13 @@ the db_index=True, as well as an AddIndex operation.
         ),
     ]
 
-A downside of the AlterField operation is, that you don't really see on the
+A downside of the ``AlterField`` operation is, that you don't really see on the
 Python level what changed on the field. You need to search for the last
 migration operation involving a field in order to be able to tell that the
 index was added.
 
-In contrast to that, the AddIndex operation is clear in what it does: it adds
-an index.
+In contrast to that, the ``AddIndex`` operation is clear in what it does: it
+adds an index.
 
 When we now look at the generated SQL, we can see something very interesting:
 
@@ -480,12 +478,12 @@ When we now look at the generated SQL, we can see something very interesting:
 
     COMMIT;
 
-Firstly, db_index not only adds a single index, but it adds two. The first one
-is the one that we all expect. The second one, however, is one that Django adds
-to make LIKE queries efficient.
+Firstly, ``db_index`` not only adds a single index, but it adds two. The first
+one is the one that we all expect. The second one, however, is one that Django
+adds to make ``LIKE`` queries efficient.
 
-Secondly, the name for the auto-generated db_index indexes is unpleasant to
-look at. The 8 random characters are part of an md5 hash over several
+Secondly, the name for the auto-generated ``db_index`` indexes is unpleasant to
+look at. The 8 random characters are part of an MD5 hash over several
 attributes to uniquely identify the index.
 
 Using the class based index, we can, however define out own index name, which
@@ -494,21 +492,21 @@ added benefit that it's easier to debug database issue. The index name can
 carry additional context that then allows the database administrators to debug
 certain issues more effectively. But it's important to know that some
 databases, among them PostgreSQL requires an index name to be unique within a
-database. Using my_idx as I did in the example here, is probably not the best
-idea. But it's short to read and makes the code fit on the slides.
+database. Using ``my_idx`` as I did in the example here, is probably not the
+best idea. But it's short to read and makes the code fit on the slides.
 
 Now, if you go ahead and apply this migration on your database, you'll be fine
 when there's not really any load on it and when a table doesn't have a lot of
-records. However, as with the ADD COLUMN example earlier, this operation can
-lock your table for quite a while.
+records. However, as with the ``ADD COLUMN`` example earlier, this operation
+can lock your table for quite a while.
 
-And the worst thing, using db_index, it does so twice. Once for each index.
+And the worst thing, using ``db_index``, it does so twice. Once for each index.
 Even if you'll never use the one for LIKE queries.
 
-I got to admit, though, using a CharField as an example here is the worst
-example I could give. If you set db_index on an integer field Django will only
-create one index. But this demonstrates that it's a good idea to look at the
-migration files and see what they'll actually do.
+I got to admit, though, using a ``CharField`` as an example here is the worst
+example I could give. If you set ``db_index`` on an ``IntegerField`` Django
+will only create one index. But this demonstrates that it's a good idea to look
+at the migration files and see what they'll actually do.
 
 So, how do we fix the table lock issue?
 
@@ -516,9 +514,9 @@ Well, PostgreSQL can build indexes concurrently, while allowing access to the
 data in the underlying table. That, however, comes with the downside that this
 needs to run outside of transactions.
 
-Since each migration runs within a transaction, we need to set atomic to False.
-Then we can use AddIndexConcurrently to turn our class-based index into one
-that's added concurrently.
+Since each migration runs within a transaction, we need to set
+``atomic=False``.  Then we can use ``AddIndexConcurrently`` to turn our
+class-based index into one that's added concurrently.
 
 .. code-block:: python
 
@@ -561,8 +559,8 @@ Let's look at what actually changed on the SQL level:
     --
     CREATE INDEX CONCURRENTLY "my_idx" ON "add_index_addindexmodel2" ("name");
 
-As you can see, the BEGIN and COMMIT statements are gone. And the last CREATE
-INDEX statement now has an additional CONCURRENTLY.
+As you can see, the ``BEGIN`` and ``COMMIT`` statements are gone. And the last
+``CREATE INDEX`` statement now has an additional ``CONCURRENTLY``.
 
 Now, if you're asking yourself how you deal with that on MySQL and MariaDB, I
 got to disappoint you: you don't. Because luckily, you do not even need to,
@@ -595,9 +593,9 @@ Let me briefly summarize what we've seen today:
 
 It's usually a good idea to apply migrations before you deploy and run new
 code. While not trivial, it's relatively easy to wrap one's head around it.
-CreateModel and AddField can go into the same release as the code; DeleteModel
-and RemoveField need a separate release. Renaming is a combination of add and
-remove.
+``CreateModel`` and ``AddField`` can go into the same release as the code;
+``DeleteModel`` and ``RemoveField`` need a separate release. Renaming is a
+combination of add and remove.
 
 It's a good approach to only ever go forwards. Rolling back database migrations
 can lead to additional unexpected behavior, in addition to the one you're
@@ -610,3 +608,6 @@ If you want default values, that's fine, but populate existing rows manually.
 
 When you add indexes, try to do that concurrently. Again, especially on bigger
 tables.
+
+.. _Don't Be Afraid Of Writing Migrations: {filename}/Development/2016-04-04__en__dont-be-afraid-of-writing-migrations.rst
+.. _The migration recipe number two: {filename}/Development/2016-04-04__en__django-migrations-recipe-2.rst
