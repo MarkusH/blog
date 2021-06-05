@@ -22,7 +22,9 @@ will point out common pitfalls and show you ways to avoid them. And with some
 additional best practices at hand, you will be ready for your next production
 deployment.
 
-.. * `Blog article <{filename}/Development/2021-06-03__en__writing-safe-database-migrations-in-django.rst>`__
+* `Blog article <{filename}/Development/2021-06-06__en__writing-safe-database-migrations-in-django.rst>`__
+
+.. * `Video recording <https://www.youtube.com/watch?v=...........>`__
 
 .. speakerdeck:: a28cd9eed4fb4aa7b2fc2afdace94e30
   :ratio: 1.77777777777
@@ -54,9 +56,9 @@ and non-trivial and non-obvious. Thus, this talk is absolutely aimed at
 prospective contributors, regardless if they are first-time Django contributors
 or ones with a year-long track record.
 
-* `Video recording <https://www.youtube.com/watch?v=u6cVvbuUzlk>`__
-
 * `Blog article <{filename}/Development/2021-06-05__en__a-pony-on-the-move-how-migrations-work-in-django.rst>`__
+
+* `Video recording <https://www.youtube.com/watch?v=u6cVvbuUzlk>`__
 
 .. speakerdeck:: c539dc666ffd4309b04cb654933743a4
   :ratio: 1.77777777777

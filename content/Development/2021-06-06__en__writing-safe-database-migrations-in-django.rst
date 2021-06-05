@@ -8,7 +8,6 @@ Writing Safe Database Migrations in Django
 :summary: Whenever you deploy your code and apply migrations in production,
    you're entering dangerous territory. I'll show common pitfalls and ways
    to avoid them.
-:status: draft
 
 Five years ago, at DjangoCon Europe 2016 in Budapest, I gave a talk `Don't Be
 Afraid Of Writing Migrations`_. Back then, while migrations in Django weren't
