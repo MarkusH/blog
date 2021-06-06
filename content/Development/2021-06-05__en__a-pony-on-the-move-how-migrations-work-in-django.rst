@@ -2,7 +2,7 @@
 A Pony On The Move: How Migrations Work In Django 🐎
 ====================================================
 
-:tags: Django, Migration
+:tags: Django, DjangoCon, Migration
 :author: Markus Holtermann
 :image: django-logo.png
 :summary: While migrations are widely used by almost every Django project ever

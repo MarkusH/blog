@@ -2,7 +2,7 @@
 Writing Safe Database Migrations in Django
 ==========================================
 
-:tags: Django, Migration
+:tags: Django, DjangoCon, Migration
 :author: Markus Holtermann
 :image: djangoconeu2021/talk-cover.jpg
 :summary: Whenever you deploy your code and apply migrations in production,
