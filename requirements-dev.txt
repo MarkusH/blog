@@ -7,7 +7,7 @@ Fabric==2.6.0
 fabric-virtualenv==0.3.0
 flake8==3.9.2
 idna==3.2
-isort==5.9.1
+isort==5.10.0
 paramiko==2.7.2
 pyasn1==0.4.8
 pycparser==2.20
