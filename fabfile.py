@@ -3,7 +3,7 @@ from functools import wraps
 
 from fabric import task
 
-from .fabric_config import *
+from fabric_config import *
 
 hosts = ["kamp1.markusholtermann.eu"]
 
