@@ -1,0 +1,6 @@
+branch = "main"
+pelicanconf = "publishconf.py"
+repository = "git@github.com:MarkusH/blog.git"
+deploy_dir = ""
+repo_dir = ""
+venv_dir = ""
